@@ -10,7 +10,7 @@
 - `p/HB001.html … p/HB260.html` 产品详情页
 - `about.html` 关于我们 / 下单方式 / FAQ，`404.html`
 - `css/style.css`、`js/cart.js`（购物车 + WhatsApp 下单，localStorage，无追踪）
-- `img/p/` 产品图（webp，取自 Hunter Boom 年货目录 / TT Fireworks 目录页面裁切），`img/og.jpg` 分享图
+- `img/p/` 产品图（webp，取自 Hunter Boom 年货目录 / TT Fireworks 目录页面裁切），`img/og-cny2027.jpg` 分享图（羊年三阳开泰海报横图）
 - `data/products.json` 产品数据（来源：价目表 PDF）
 - `sitemap.xml`、`robots.txt`、`site.webmanifest`
 - `tools/build_site.py` 生成器（改价或改资料后重跑）

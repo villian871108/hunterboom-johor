@@ -59,8 +59,15 @@ IC_WA = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0
 
 def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", keywords=None):
     can = absu(path)
-    img = og_img or "img/og.jpg"
+    img = og_img or "img/og-cny2027.jpg"
     img_abs = (SITE_ORIGIN + "/" + img) if SITE_ORIGIN else root + img
+    og_dims = (
+        '<meta property="og:image:width" content="1200">\n'
+        '<meta property="og:image:height" content="630">\n'
+        '<meta property="og:image:type" content="image/jpeg">\n'
+        '<meta property="og:image:alt" content="Hunter BOOM JOHOR 总代理 三阳开泰 羊年海报">\n'
+        if img.endswith("og-cny2027.jpg") else ""
+    )
     kw = f'<meta name="keywords" content="{e(keywords)}">' if keywords else ""
     return f"""<!doctype html>
 <html lang="zh-Hans">
@@ -81,7 +88,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{e(can)}">
 <meta property="og:image" content="{e(img_abs)}">
-<meta name="twitter:card" content="summary_large_image">
+{og_dims}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="twitter:image" content="{e(img_abs)}">
@@ -338,7 +345,7 @@ STORE_LD = {
     "@context": "https://schema.org", "@type": "Store", "@id": absu("") + "#store",
     "name": SHOP, "alternateName": ["Hunter BOOM JOHOR", "Hunter Boom Johor 新山烟花", "猎人烟花 新山"],
     "description": f"{TAG}。新山烟花批发零售：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花，WhatsApp 下单。",
-    "url": absu(""), "image": (SITE_ORIGIN + "/img/og.jpg") if SITE_ORIGIN else "/img/og.jpg",
+    "url": absu(""), "image": (SITE_ORIGIN + "/img/og-cny2027.jpg") if SITE_ORIGIN else "/img/og-cny2027.jpg",
     "logo": (SITE_ORIGIN + "/img/icon-512.png") if SITE_ORIGIN else "/img/icon-512.png",
     "telephone": PHONE_I, "priceRange": "RM{:,.0f} – RM{:,.0f}".format(min(p["price"] for p in P), max(p["price"] for p in P)),
     "currenciesAccepted": "MYR",
