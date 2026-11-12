@@ -1,2 +1,4 @@
 REPORT.md
 .git
+__pycache__/
+*.pyc

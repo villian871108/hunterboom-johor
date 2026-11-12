@@ -81,7 +81,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=3">
+<link rel="stylesheet" href="{root}css/style.css?v=4">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -122,7 +122,7 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=3" defer></script>
+<script src="{root}js/cart.js?v=4" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -138,11 +138,191 @@ def btn_attrs(p, root):
     i = p["thumb"] if p.get("image") else ""
     return f'data-sku="{p["sku"]}" data-name="{e(p["title"])}" data-price="{p["price"]:.2f}" data-img="{e(i)}"'
 
+
+def intro(p):
+    """Short catalog blurb from the product's name and category. No invented duration, effects, or safety claims."""
+    import re
+    sku, n, cat = p["sku"], p["name"], p["category"]
+    ov = {
+        "HB001": "8尺红炮，开年迎宾常用的条装礼炮",
+        "HB002": "8尺红炮礼盒彩箱装，方便送礼和收纳",
+        "HB010": "8尺五色混装礼炮，一箱多种颜色",
+        "HB011": "五万头礼炮，开年场面更大的礼盒款",
+        "HB012": "十万头礼炮，开年响声和场面都更足",
+        "HB013": "网红东方巨龙礼炮，特红色，开年很常见",
+        "HB014": "网红东方巨龙礼炮，玫瑰粉色",
+        "HB015": "网红东方巨龙礼炮，黄金色",
+        "HB016": "网红东方巨龙礼炮，五彩色",
+        "HB024": "30尺七色精品礼盒，贺岁礼炮",
+        "HB032": "88尺九色礼炮，九五至尊款",
+        "HB040": "小盒沙炮，地面连续噼啪作响",
+        "HB041": "大号沙炮，响声比小沙炮更足",
+        "HB042": "加强款沙炮，响声更大",
+        "HB043": "地面喷泉，莲花造型慢慢开花",
+        "HB046": "会转的彩烟陀螺，边转边冒彩烟",
+        "HB048": "小支手持霞光棒，握住慢慢喷花",
+        "HB049": "大号手持霞光棒，喷花比小霞光更长",
+        "HB050": "手持变色霞光，颜色会变换",
+        "HB053": "手持彩色棒，握住燃放",
+        "HB054": "7寸手持金色电光花（火花棒）",
+        "HB064": "手持舞龙棒，挥动时有火花",
+        "HB066": "手持大号花棒，复仇联盟造型",
+        "HB068": "拉环五色烟雾，拉一下冒彩烟",
+        "HB071": "加特林喷泉，持续往上喷黄金效果",
+        "HB075": "7寸冰淇淋造型喷泉，锥形花筒",
+        "HB080": "发财树造型喷泉，地面往上喷花",
+        "HB085": "趣味喷泉，孔雀下蛋造型",
+        "HB086": "趣味喷泉，燃放时像母鸡下蛋",
+        "HB087": "小型喷泉，满地珍珠效果",
+        "HB088": "MILO罐造型趣味喷泉",
+        "HB090": "地面旋转喷花，像风车一样转着开",
+        "HB098": "龙蛋造型喷泉，放在地上燃放",
+        "HB102": "坦克造型飞天趣味款",
+        "HB103": "悟空造型飞天趣味款",
+        "HB104": "大黄蜂造型飞天趣味款",
+        "HB107": "飞天趣味款，消声月旅行",
+        "HB108": "50发飞天鼠，一串串飞出去",
+        "HB110": "飞天火箭，狼嚎火箭造型",
+        "HB112": "无人机造型飞天趣味款",
+        "HB113": "飞天伞花，升空后张开降落伞",
+        "HB115": "三层飞机造型飞天趣味款",
+        "HB117": "甲壳虫造型飞天趣味款",
+        "HB118": "水母造型，飞起来像小UFO",
+        "HB119": "超级大水母，飞天UFO造型",
+        "HB123": "顺利红，传统响声小炮",
+        "HB168": "5寸552发盆花，猎人之花",
+        "HB181": "9寸138发盆花，七彩筋斗云",
+        "HB188": "10寸盆花盲盒款，效果看燃放才知道",
+        "HB249": "9寸238发盆花 DEEPSEEK",
+        "HB251": "10寸488发大盆花，大汉风歌压轴款",
+        "HB252": "12寸588发大盆花，大唐盛世压轴款",
+        "HB253": "2寸洞25发球盒，马皇后",
+        "HB256": "2寸洞88发球盒，刘伯温",
+        "HB259": "4寸洞16发球盒，龙腾盛世",
+        "HB260": "精品4寸洞16发球盒，金意金丝柳",
+    }
+    if sku in ov:
+        return ov[sku]
+    if cat == "hongpao":
+        m = re.search(r"(\d+)尺", n)
+        size = (m.group(1) + "尺") if m else ""
+        color = ""
+        for k, v in (("玫瑰红", "玫瑰粉色"), ("翡翠玫瑰", "翡翠玫瑰"), ("满地黄金", "满地黄金"),
+                     ("黄金满地", "满地黄金"), ("大红大紫", "大红大紫"), ("红宝石", "红宝石特红"),
+                     ("王红炮", "王红炮"), ("特红", "特红色"), ("黄金", "黄金色"),
+                     ("七星", "七星款"), ("五彩", "五彩色")):
+            if k in n:
+                color = v
+                break
+        gift = ("礼盒" in n) or ("彩盒" in n) or ("彩箱" in n)
+        if "东方巨龙" in n:
+            return "网红东方巨龙礼炮" + (("，" + color) if color else "")
+        parts = [(size + "红炮礼炮") if size else "红炮礼炮"]
+        if color:
+            parts.append(color)
+        parts.append("礼盒包装" if gift else "开年迎宾用")
+        return "，".join(parts)
+    if cat == "poppop":
+        return "地面沙炮，连续噼啪作响"
+    if cat == "handheld":
+        if "电光花" in n:
+            inch = re.search(r"(\d+)寸", n)
+            return ((inch.group(1) + "寸") if inch else "") + "手持金色电光花（火花棒）"
+        if "霞光" in n:
+            return "手持霞光棒，握住慢慢喷花"
+        if "魔术棒" in n or "流星" in n or "霹雳" in n or "波" in n:
+            return "手持花棒，一波波往上喷花"
+        if "烟雾" in n or "烟" in n:
+            return "手持彩烟，拉环或点燃后冒烟"
+        if "火炬" in n:
+            return "手持五彩火炬，握住燃放"
+        if "瀑布" in n:
+            return "手持瀑布效果，火花往下洒"
+        return "手持烟花，握住燃放"
+    if cat == "fountain":
+        if "加特林" in n:
+            return "加特林喷泉，持续往上喷花"
+        if "冰淇淋" in n or "锥形" in n:
+            return "锥形喷泉花筒，放在地上喷花"
+        if "孔雀" in n:
+            return "孔雀造型地面喷泉"
+        if "母鸡" in n:
+            return "母鸡造型趣味喷泉"
+        if "风车" in n:
+            return "旋转喷泉，转着喷花"
+        if "龙蛋" in n or "金玉" in n:
+            return "龙蛋造型地面喷泉"
+        if "发财树" in n or "黄金树" in n:
+            return "树形喷泉，地面往上喷花"
+        if "铁塔" in n or "巴黎" in n or "东方明珠" in n:
+            return "建筑造型地面喷泉"
+        if "陀螺" in n:
+            return "会转的彩烟陀螺"
+        if "火山" in n:
+            return "火山造型地面喷泉"
+        if "伞" in n:
+            return "雨伞造型地面喷泉"
+        return "地面喷泉喷花，放在地上燃放"
+    if cat == "fly":
+        if "火箭" in n:
+            return "飞天火箭，点燃后升空"
+        if "坦克" in n or "飞机" in n or "无人机" in n or "悟空" in n or "黄蜂" in n or "甲壳虫" in n:
+            return "造型飞天趣味款，点燃后会飞"
+        if "鼠" in n or "美人" in n:
+            return "飞天鼠，一串串飞出去"
+        if "水母" in n or "UFO" in n:
+            return "飞天水母（UFO）造型"
+        if "降落伞" in n or "伞" in n:
+            return "飞天伞花，升空后张开"
+        if "雷" in n:
+            return "飞天响声趣味款"
+        return "飞天趣味烟花，点燃后会飞或升空"
+    if cat == "sound":
+        if "火柴炮" in n:
+            return "火柴炮，点燃后发出响声"
+        if "雨打芭蕉" in n:
+            return "雨打芭蕉，连续响声"
+        if "双响" in n:
+            return "天地双响，一声接一声"
+        if "雷" in n or "炮弹" in n:
+            return "响声烟花，以爆响为主"
+        return "响声系列，以爆响为主"
+    if cat == "bear":
+        bare = n.replace("(熊炮)", "").replace("（熊炮）", "").strip()
+        return "熊炮系列，" + bare
+    shots = re.search(r"(\d+)\s*发", n)
+    inch = re.search(r"(\d+(?:\.\d+)?)\s*寸", n)
+    bits = []
+    if inch:
+        bits.append(inch.group(1) + "寸")
+    if shots:
+        bits.append(shots.group(1) + "发")
+    size = "".join(bits)
+    tail = re.sub(r"(纸筒|模压|塑模|精品|盆花|高)?", "", n)
+    tail = re.sub(r"\d+(\.\d+)?\s*寸(洞|高)?", "", tail)
+    tail = re.sub(r"\d+\s*发", "", tail)
+    tail = re.sub(r"[-—–]+", " ", tail)
+    tail = " ".join(tail.split()).strip(" -·")
+    if cat == "shot":
+        if not tail or len(tail) < 2:
+            return (size + "球盒，洞径更大的升空款").strip()
+        return (size + "球盒 · " + tail).strip(" ·")
+    if cat == "bigcake":
+        if not tail or len(tail) < 2:
+            return (size + "大盆花，发数多、场面更大").strip()
+        return (size + "大盆花 · " + tail).strip(" ·")
+    if not tail or len(tail) < 2:
+        return (size + "地面盆花，多发连放升空开花").strip()
+    return (size + "盆花 · " + tail).strip(" ·")
+
+
 def card(p, root, idx=0):
-    s = f"{p['sku']} {p['name']} {p['title']} {p['name_en']} {CAT[p['category']]['name']}".lower()
+    blurb = intro(p)
+    s = f"{p['sku']} {p['name']} {p['title']} {p['name_en']} {CAT[p['category']]['name']} {blurb}".lower()
     en = f'<div class="en" lang="en">{e(p["name_en"])}</div>' if p["name_en"] else '<div class="en">&nbsp;</div>'
     return (f'<article class="pc" data-s="{e(s)}"><a class="im" href="{root}p/{p["sku"]}.html">{img_block(p, root, eager=idx<4)}<span class="cd2">{p["sku"]}</span>{'<span class="vb" title="有视频介绍">▶ 视频</span>' if p.get("video_embed") else ""}</a>'
             f'<div class="b"><h3><a href="{root}p/{p["sku"]}.html">{e(p["title"])}</a></h3>{en}'
+            f'<p class="intro">{e(blurb)}</p>'
             f'<div class="row"><div><div class="pr">{rm(p["price"])}</div><div class="pk">包装 {e(p["packing"])}</div></div>'
             f'<button type="button" class="add" data-add {btn_attrs(p, root)} aria-label="把 {e(p["title"])} 加入购物车">加入购物车</button></div></div></article>')
 
@@ -190,11 +370,22 @@ def cards_for(skus, root, start=0):
 
 # Each SKU appears in at most one shelf. Families (colorways of the same cake /
 # cannon) are represented once. Prefer items that have product photos.
+# 小朋友专区 is merchandising (milder handheld, fountain and novelty),
+# not an official child-safety certification. Overlapping "必玩" SKUs moved here.
+KIDS_HOME = ["HB048", "HB054", "HB053", "HB043", "HB075", "HB086",
+             "HB090", "HB085", "HB098", "HB046", "HB068", "HB087"]
+KIDS_ALL = ["HB048", "HB049", "HB050", "HB051", "HB053", "HB054", "HB055",
+            "HB064", "HB065", "HB068", "HB043", "HB046", "HB075", "HB080",
+            "HB085", "HB086", "HB087", "HB088", "HB090", "HB098", "HB118", "HB119"]
+KIDS_NOTE = "本专区由店家按较温和的手持、喷泉和趣味款整理，方便家长选购，不是官方童用认证。请由成人操作或在家长看护下燃放，并遵守当地规定。"
+
 SHELVES = [
     ("hot", "🔥", "最畅销", "热门口碑款，十个分类都有", "c/index.html", "浏览全部分类 ›",
-     ["HB013", "HB040", "HB048", "HB071", "HB102", "HB123", "HB168", "HB181", "HB253", "HB011"]),
-    ("must", "✨", "必玩推荐", "沙炮、趣味飞天、手持，好看又好玩", "c/fly.html", "看飞天趣味 ›",
-     ["HB042", "HB066", "HB090", "HB086", "HB103", "HB112", "HB085", "HB118", "HB064", "HB046", "HB107", "HB068"]),
+     ["HB013", "HB040", "HB079", "HB071", "HB102", "HB123", "HB168", "HB181", "HB253", "HB011"]),
+    ("kids", "🧒", "小朋友专区", "手持、喷泉和趣味小品，请在家长看护下燃放", "c/kids.html", "查看全部 ›",
+     KIDS_HOME),
+    ("must", "✨", "必玩推荐", "沙炮、趣味飞天、喷泉，好看又好玩", "c/fly.html", "看飞天趣味 ›",
+     ["HB042", "HB066", "HB103", "HB112", "HB104", "HB115", "HB113", "HB108", "HB094", "HB110", "HB117", "HB107"]),
     ("cannon", "🧧", "贺岁礼炮", "不同尺数各挑一款，颜色不重复", "c/hongpao.html", "全部礼炮 ›",
      ["HB001", "HB010", "HB024", "HB032", "HB012", "HB036"]),
     ("cake", "💐", "盆花精选", "纸筒、彩烟、三军到球盒，系列不扎堆", "c/cake.html", "全部盆花 ›",
@@ -214,14 +405,17 @@ def home():
             if s in seen:
                 raise SystemExit("duplicate sku across shelves: " + s)
             seen.add(s)
-    icons = "".join(f'<a href="c/{c["id"]}.html"><span>{c["icon"]}</span>{e(c["name"])}</a>' for c in CATS)
+    icons = (f'<a href="#kids"><span>🧒</span>小朋友专区</a>'
+             + "".join(f'<a href="c/{c["id"]}.html"><span>{c["icon"]}</span>{e(c["name"])}</a>' for c in CATS))
     secs = []; idx = 0
     for sid, icon, title, lead, more_href, more_txt, skus in SHELVES:
         html, idx = cards_for(skus, root, idx)
+        note = f'<p class="shelf-note">{e(KIDS_NOTE)}</p>' if sid == "kids" else ""
         secs.append(
             f'<section class="sec shelf" id="{sid}" aria-labelledby="h-{sid}">'
             f'<h2 id="h-{sid}">{icon} {e(title)} <small>{e(lead)}</small>'
             f'<a class="more" href="{more_href}">{e(more_txt)}</a></h2>'
+            f'{note}'
             f'<div class="g">{html}</div></section>'
         )
     # Full catalog stays in the page (hidden until search) so the home search still finds all 260.
@@ -247,6 +441,7 @@ def home():
 </section>
 <nav class="ic" aria-label="分类快捷入口">{icons}</nav>
 <div class="info"><div><b>🏮 批发 · 零售</b>整箱批发与零售都可询价</div><div><b>🚚 柔佛送货</b>五福城、Sutera、公主城等，运费请询问</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
+<a class="kids-banner" href="#kids"><span>🧒</span><span>小朋友专区<small>手持、喷泉和趣味小品，请在家长看护下燃放</small></span></a>
 <div id="list"><div id="featured">{''.join(secs)}</div>{catalog}<p class="nores" id="nores" hidden>找不到相关产品，试试其他关键词，或直接 <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">WhatsApp 询问</a>。</p></div>
 </main>
 {footer(root, 'home')}
@@ -281,7 +476,10 @@ def catpages():
 </body></html>"""
         write(f"c/{c['id']}.html", head(title, desc, f"c/{c['id']}.html", root, extra_ld=ld, keywords=KW) + body)
     # category index
-    tiles = "".join(f'<a href="{c["id"]}.html" class="pc" style="padding:14px;text-align:center"><span style="font-size:34px">{c["icon"]}</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">{e(c["name"])}</h2><span class="pk">{len(BYCAT[c["id"]])} 款 · {rm(min(p["price"] for p in BYCAT[c["id"]]))} 起</span></a>' for c in CATS)
+    kids_tile = (f'<a href="kids.html" class="pc" style="padding:14px;text-align:center;background:linear-gradient(180deg,#fff8e8,#fff)">'
+                 f'<span style="font-size:34px">🧒</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">小朋友专区</h2>'
+                 f'<span class="pk">{len(KIDS_ALL)} 款 · 手持喷泉小品</span></a>')
+    tiles = kids_tile + "".join(f'<a href="{c["id"]}.html" class="pc" style="padding:14px;text-align:center"><span style="font-size:34px">{c["icon"]}</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">{e(c["name"])}</h2><span class="pk">{len(BYCAT[c["id"]])} 款 · {rm(min(p["price"] for p in BYCAT[c["id"]]))} 起</span></a>' for c in CATS)
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"全部分类 | {BRAND}", "url": absu("c/index.html"),
            "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"c/{c['id']}.html"), "name": c["name"]} for i, c in enumerate(CATS)]}},
           bc_ld([("首页", ""), ("全部分类", "c/index.html")])]
@@ -293,6 +491,29 @@ def catpages():
 {footer(root, 'cats')}
 </body></html>"""
     write("c/index.html", head("烟花分类 | 新山烟花批发零售 | Hunter BOOM JOHOR 总代理", f"浏览 Hunter BOOM JOHOR 总代理全部 {len(CATS)} 个烟花分类：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、盆花、大盆花等，新山依斯干达公主城 WhatsApp 下单。", "c/index.html", root, extra_ld=ld, keywords=KW) + body)
+
+    # 小朋友专区 collection (editorial merchandising, not a formal category)
+    kids_items = [BY_SKU[s] for s in KIDS_ALL]
+    prices = [p["price"] for p in kids_items]
+    kids_title = "小朋友专区 | 新山烟花 | Hunter BOOM JOHOR 总代理"
+    kids_desc = f"Hunter BOOM JOHOR 小朋友专区：{len(kids_items)} 款较温和的手持、喷泉和趣味小品，价目表价 {rm(min(prices))} 起。请由成人操作或家长看护，遵守当地规定。新山依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+    kids_ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"小朋友专区 | {BRAND}", "url": absu("c/kids.html"), "inLanguage": "zh-Hans",
+                "isPartOf": {"@type": "WebSite", "name": BRAND, "url": absu("")},
+                "description": KIDS_NOTE,
+                "mainEntity": {"@type": "ItemList", "numberOfItems": len(kids_items),
+                               "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"p/{p['sku']}.html"), "name": p["title"]} for i, p in enumerate(kids_items)]}},
+               bc_ld([("首页", ""), ("小朋友专区", "c/kids.html")])]
+    kids_body = f"""<body data-root="../">
+{topbar(root)}
+<main class="wrap">
+<nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>小朋友专区</span></nav>
+<section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">🧒 小朋友专区 · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(kids_items)} 款)</small></h1>
+<p class="shelf-note" style="margin:0 2px 14px">{e(KIDS_NOTE)} 价目表价 {rm(min(prices))} – {rm(max(prices))}。</p>
+<div class="g">{''.join(card(p, root, i) for i, p in enumerate(kids_items))}</div></section>
+</main>
+{footer(root)}
+</body></html>"""
+    write("c/kids.html", head(kids_title, kids_desc, "c/kids.html", root, extra_ld=kids_ld, keywords=KW) + kids_body)
 
 # ---------------- product pages ----------------
 def video_section(p):
@@ -375,6 +596,7 @@ def products():
 </div></article>
 {video_section(p)}
 <section class="desc"><h2>产品说明</h2>
+<p>{e(intro(p))}。</p>
 <p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，价目表价 {rm(p['price'])}。</p>
 <p>新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货、批发数量与送货安排（依斯干达公主城、五福城、Sutera 等）。{img_src}。</p>
 </section>
@@ -413,7 +635,7 @@ def about():
     write("404.html", nf + f"""<body data-root="/">{topbar('/')}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="/index.html" style="color:#c8161d">返回首页</a>，或 <a href="{WA}" style="color:#1fae55">WhatsApp {PHONE_D}</a> 询问。</p></div></main>{footer('/')}</body></html>""")
 
 def meta_files():
-    urls = [("", "1.0"), ("c/index.html", "0.6"), ("about.html", "0.5")] + [(f"c/{c['id']}.html", "0.8") for c in CATS] + [(f"p/{p['sku']}.html", "0.7") for p in P]
+    urls = [("", "1.0"), ("c/index.html", "0.6"), ("c/kids.html", "0.8"), ("about.html", "0.5")] + [(f"c/{c['id']}.html", "0.8") for c in CATS] + [(f"p/{p['sku']}.html", "0.7") for p in P]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u, pr in urls:
         sm.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>")
