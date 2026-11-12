@@ -81,7 +81,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=1">
+<link rel="stylesheet" href="{root}css/style.css?v=2">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -89,7 +89,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 
 def topbar(root, active=None, home=False):
     tabs = []
-    href = (lambda c: f"#{c['id']}") if home else (lambda c: f"{root}c/{c['id']}.html")
+    href = (lambda c: f"{root}c/{c['id']}.html")
     tabs.append(f'<a href="{root}index.html"{" class=on" if active=="home" else ""}>全部</a>')
     for c in CATS:
         tabs.append(f'<a href="{href(c)}"{" class=on" if active==c["id"] else ""}>{e(c["name"])}</a>')
@@ -122,7 +122,7 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=1" defer></script>
+<script src="{root}js/cart.js?v=2" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -174,17 +174,63 @@ def write(rel, s):
 
 KW = "新山烟花, 柔佛烟花, 猎人烟花, Hunter Boom Johor, 依斯干达公主城, 烟花批发, 羊年烟花, Johor Bahru fireworks, mercun Johor"
 
-# ---------------- home ----------------
+# ---------------- home: curated diverse shelves (not a raw dump) ----------------
+# Merchandising picks requested for the shop homepage. These are editorial
+# highlights (one face per product family, mixed categories), not audited sales ranks.
+BY_SKU = {p["sku"]: p for p in P}
+
+def cards_for(skus, root, start=0):
+    out = []; i = start
+    for s in skus:
+        p = BY_SKU[s]
+        if not p:
+            raise SystemExit("missing sku " + s)
+        out.append(card(p, root, i)); i += 1
+    return "".join(out), i
+
+# Each SKU appears in at most one shelf. Families (colorways of the same cake /
+# cannon) are represented once. Prefer items that have product photos.
+SHELVES = [
+    ("hot", "🔥", "最畅销", "热门口碑款，十个分类都有", "c/index.html", "浏览全部分类 ›",
+     ["HB013", "HB040", "HB048", "HB071", "HB102", "HB123", "HB168", "HB181", "HB253", "HB011"]),
+    ("must", "✨", "必玩推荐", "沙炮、趣味飞天、手持，好看又好玩", "c/fly.html", "看飞天趣味 ›",
+     ["HB042", "HB066", "HB090", "HB086", "HB103", "HB112", "HB085", "HB118", "HB064", "HB046", "HB107", "HB068"]),
+    ("cannon", "🧧", "贺岁礼炮", "不同尺数各挑一款，颜色不重复", "c/hongpao.html", "全部礼炮 ›",
+     ["HB001", "HB010", "HB024", "HB032", "HB012", "HB036"]),
+    ("cake", "💐", "盆花精选", "纸筒、彩烟、三军到球盒，系列不扎堆", "c/cake.html", "全部盆花 ›",
+     ["HB140", "HB174", "HB193", "HB243", "HB246", "HB188", "HB249", "HB257"]),
+    ("finale", "👑", "压轴大秀", "大盆花与球盒压轴款，适合年夜收尾", "c/bigcake.html", "全部大盆花 ›",
+     ["HB251", "HB252", "HB189", "HB242", "HB259", "HB260"]),
+]
+
 def home():
     root = ""
-    icons = "".join(f'<a href="#{c["id"]}"><span>{c["icon"]}</span>{e(c["name"])}</a>' for c in CATS)
+    # Validate no duplicate SKUs across shelves and all exist with photos preferred
+    seen = set()
+    for _id, _ic, _t, _d, _u, _m, skus in SHELVES:
+        for s in skus:
+            if s not in BY_SKU:
+                raise SystemExit("unknown sku in shelf: " + s)
+            if s in seen:
+                raise SystemExit("duplicate sku across shelves: " + s)
+            seen.add(s)
+    icons = "".join(f'<a href="c/{c["id"]}.html"><span>{c["icon"]}</span>{e(c["name"])}</a>' for c in CATS)
     secs = []; idx = 0
-    for c in CATS:
-        items = BYCAT[c["id"]]
-        cards = []
-        for p in items:
-            cards.append(card(p, root, idx)); idx += 1
-        secs.append(f'<section class="sec" id="{c["id"]}" aria-labelledby="h-{c["id"]}"><h2 id="h-{c["id"]}">{c["icon"]} {e(c["name"])} <small>({len(items)})</small><a class="more" href="c/{c["id"]}.html">查看分类 ›</a></h2><div class="g">{"".join(cards)}</div></section>')
+    for sid, icon, title, lead, more_href, more_txt, skus in SHELVES:
+        html, idx = cards_for(skus, root, idx)
+        secs.append(
+            f'<section class="sec shelf" id="{sid}" aria-labelledby="h-{sid}">'
+            f'<h2 id="h-{sid}">{icon} {e(title)} <small>{e(lead)}</small>'
+            f'<a class="more" href="{more_href}">{e(more_txt)}</a></h2>'
+            f'<div class="g">{html}</div></section>'
+        )
+    # Full catalog stays in the page (hidden until search) so the home search still finds all 260.
+    cat_cards = "".join(card(p, root, 99) for p in P)
+    catalog = (
+        f'<section class="sec" id="catalog" hidden>'
+        f'<h2>搜索结果 <small>全部 {len(P)} 款</small></h2>'
+        f'<div class="g">{cat_cards}</div></section>'
+    )
     title = "新山烟花批发零售 | Hunter BOOM JOHOR 总代理 | 柔佛依斯干达公主城"
     desc = f"Hunter BOOM JOHOR 总代理：新山烟花、柔佛烟花批发零售，{len(P)} 款羊年烟花——红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花。依斯干达公主城，WhatsApp {PHONE_D} 下单。"
     item_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Hunter BOOM JOHOR 产品分类",
@@ -197,11 +243,11 @@ def home():
 <h1 id="h1"><em>新山烟花</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
 <p>{TAG}。柔佛烟花、猎人烟花（Hunter Boom）羊年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货，柔佛送货请 WhatsApp 询问。</p>
 <div class="cd" id="cd" aria-live="polite"></div>
-<div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#list">浏览 {len(P)} 款烟花</a></div>
+<div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
 <nav class="ic" aria-label="分类快捷入口">{icons}</nav>
 <div class="info"><div><b>🏮 批发 · 零售</b>整箱批发与零售都可询价</div><div><b>🚚 柔佛送货</b>五福城、Sutera、公主城等，运费请询问</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
-<div id="list">{''.join(secs)}<p class="nores" id="nores">找不到相关产品，试试其他关键词，或直接 <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">WhatsApp 询问</a>。</p></div>
+<div id="list"><div id="featured">{''.join(secs)}</div>{catalog}<p class="nores" id="nores" hidden>找不到相关产品，试试其他关键词，或直接 <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">WhatsApp 询问</a>。</p></div>
 </main>
 {footer(root, 'home')}
 </body></html>"""

@@ -158,3 +158,8 @@ footer .legal{grid-column:1/-1;border-top:1px solid #ffffff22;padding-top:12px;f
 .dw .em{padding:40px 10px;text-align:center;color:var(--mut)}
 .toast{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%) scale(.9);background:#2a0a06e6;color:#fff;padding:12px 20px;border-radius:14px;font-weight:700;z-index:80;opacity:0;pointer-events:none;transition:.2s;text-align:center;max-width:80%}
 .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+.sec h2{flex-wrap:wrap}
+.sec.shelf h2 small{flex:1 1 100%;margin:0;order:3}
+@media(min-width:640px){.sec.shelf h2 small{flex:0 1 auto;order:0}}
+#catalog[hidden],.nores[hidden],#featured[hidden]{display:none!important}
