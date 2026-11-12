@@ -10,8 +10,8 @@ All pages are generated from data/products.json.
 import json, os, sys, html, datetime, urllib.parse
 
 # ===== The ONE place to set the public domain (no trailing slash). =====
-# Live GitHub Pages shop. Rebuild with --origin https://hunterboom.my once that domain is connected.
-SITE_ORIGIN = "https://villian871108.github.io/hunterboom-johor"
+# Official shop domain. GitHub Pages still serves the same repo as a fallback.
+SITE_ORIGIN = "https://hunterboom.my"
 if "--origin" in sys.argv:
     SITE_ORIGIN = sys.argv[sys.argv.index("--origin") + 1].rstrip("/")
 

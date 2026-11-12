@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://villian871108.github.io/hunterboom-johor/sitemap.xml
+Sitemap: https://hunterboom.my/sitemap.xml

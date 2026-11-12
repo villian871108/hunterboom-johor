@@ -40,4 +40,5 @@ python3 -m http.server 8765   # 然后打开 http://127.0.0.1:8765/
 ```
 
 
-预览地址：https://villian871108.github.io/hunterboom-johor/
+官网：https://hunterboom.my/
+GitHub Pages 备份：https://villian871108.github.io/hunterboom-johor/
