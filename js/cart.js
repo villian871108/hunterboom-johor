@@ -1,7 +1,7 @@
 /* Hunter BOOM JOHOR — cart & WhatsApp ordering (no tracking) */
 (function(){
 'use strict';
-var WA='60178270901',K='hbj_cart_v1';
+var WA='60177891688',K='hbj_cart_v1';
 var root=document.body.getAttribute('data-root')||'';
 function ld(){try{var a=JSON.parse(localStorage.getItem(K)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
 function sv(a){try{localStorage.setItem(K,JSON.stringify(a))}catch(e){}render()}

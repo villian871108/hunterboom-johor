@@ -2,7 +2,7 @@
 """Static site generator for Hunter BOOM JOHOR 总代理.
 
 Usage:
-  python3 tools/build_site.py                     # SITE_ORIGIN below (default: empty = relative URLs)
+  python3 tools/build_site.py                     # default origin is the live GitHub Pages shop
   python3 tools/build_site.py --origin https://your-domain.com   # set real domain before publishing
 
 All pages are generated from data/products.json.
@@ -10,9 +10,8 @@ All pages are generated from data/products.json.
 import json, os, sys, html, datetime, urllib.parse
 
 # ===== The ONE place to set the public domain (no trailing slash). =====
-# Empty = root-relative canonical URLs. Set to the real domain once it is live,
-# e.g. "https://hunterboomjohor.com" (placeholder, NOT live yet), then rebuild.
-SITE_ORIGIN = ""
+# Live GitHub Pages shop. Rebuild with --origin https://hunterboom.my once that domain is connected.
+SITE_ORIGIN = "https://villian871108.github.io/hunterboom-johor"
 if "--origin" in sys.argv:
     SITE_ORIGIN = sys.argv[sys.argv.index("--origin") + 1].rstrip("/")
 
@@ -29,7 +28,7 @@ TODAY = datetime.date.today().isoformat()
 SHOP = "Hunter BOOM JOHOR 总代理"
 BRAND = "Hunter BOOM JOHOR"
 TAG = "用一分钟的绚烂，治愈一整年的荒芜"
-PHONE_D = "017-827 0901"; PHONE_I = "+60178270901"; WA = "https://wa.me/60178270901"
+PHONE_D = "017-789 1688"; PHONE_I = "+60177891688"; WA = "https://wa.me/60177891688"
 FB = "https://www.facebook.com/profile.php?id=61585987514444"
 ADDR = "Iskandar Puteri, Johor Bahru, Malaysia, 81200"
 ADDR_ZH = "柔佛新山 依斯干达公主城（Iskandar Puteri）81200"
@@ -96,7 +95,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=6">
+<link rel="stylesheet" href="{root}css/style.css?v=7">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -137,7 +136,7 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=5" defer></script>
+<script src="{root}js/cart.js?v=6" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -451,7 +450,7 @@ def home():
 <a href="img/cny2027-poster.jpg" target="_blank" rel="noopener">
 <picture>
 <source srcset="img/cny2027-poster.webp" type="image/webp">
-<img src="img/cny2027-poster.jpg" width="1200" height="2278" alt="Hunter BOOM JOHOR 羊年春节海报：三阳开泰，总代理·新山，2027年2月6日，WhatsApp 017-827 0901" decoding="async">
+<img src="img/cny2027-poster.jpg" width="1200" height="2278" alt="Hunter BOOM JOHOR 羊年春节海报：三阳开泰，总代理·新山，2027年2月6日，WhatsApp 017-789 1688" decoding="async">
 </picture>
 </a>
 </figure>
@@ -459,6 +458,8 @@ def home():
 <span class="tag">🐐 {CNY}</span>
 <h1 id="h1"><em>新山烟花</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
 <p>{TAG}。柔佛烟花、猎人烟花（Hunter Boom）羊年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货。{SHIP_LINE}</p>
+<p lang="en">Hunter BOOM JOHOR is the Johor Bahru authorised dealer for Hunter Boom fireworks — wholesale and retail from Iskandar Puteri. WhatsApp {PHONE_D} to order. This shop is not the Hunter Boom brand headquarters.</p>
+<p lang="ms">Hunter BOOM JOHOR ialah ejen sah Johor Bahru untuk bunga api Hunter Boom. Borong dan runcit dari Iskandar Puteri. Tempah melalui WhatsApp {PHONE_D}. Laman ini bukan laman rasmi ibu pejabat jenama Hunter Boom.</p>
 <div class="cd" id="cd" aria-live="polite"></div>
 <div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
@@ -587,8 +588,9 @@ def products():
         desc = f"{p['title']}{('（' + p['name_en'] + '）') if p['name_en'] else ''}，编号 {p['sku']}，包装 {p['packing']}，价目表价 {rm(p['price'])}。Hunter BOOM JOHOR 总代理，新山依斯干达公主城烟花批发零售，WhatsApp {PHONE_D} 下单。"
         url = f"p/{p['sku']}.html"
         prod = {"@context": "https://schema.org", "@type": "Product", "name": p["title"] + en, "sku": p["sku"],
-                "description": desc, "category": c["name"], "url": absu(url),
+                "description": desc, "category": c["name"], "url": absu(url), "brand": {"@type": "Brand", "name": "Hunter Boom"},
                 "offers": {"@type": "Offer", "price": f"{p['price']:.2f}", "priceCurrency": "MYR", "url": absu(url),
+                           "itemCondition": "https://schema.org/NewCondition",
                            "seller": {"@type": "Organization", "name": SHOP, "@id": absu("") + "#store"}}}
         if p["name_en"]: prod["alternateName"] = p["name_en"]
         if p.get("image"): prod["image"] = (SITE_ORIGIN + "/" + p["image"]) if SITE_ORIGIN else "/" + p["image"]
@@ -642,7 +644,7 @@ def products():
 # ---------------- about / 404 ----------------
 def about():
     root = ""
-    faq = [("怎么下单？", "在网站挑选产品加入购物车，点「发送订单到 WhatsApp」，系统会把产品编号与数量整理成一段文字，发送给 017-827 0901，店家确认价格、数量与交货方式后完成下单。"),
+    faq = [("怎么下单？", "在网站挑选产品加入购物车，点「发送订单到 WhatsApp」，系统会把产品编号与数量整理成一段文字，发送给 017-789 1688，店家确认价格、数量与交货方式后完成下单。"),
            ("可以批发吗？", "可以。Hunter BOOM JOHOR 总代理提供批发与零售，整箱数量请 WhatsApp 询价。"),
            ("有送货吗？", SHIP_FACE + "。" + SHIP_JB + "。" + SHIP_WM + "。"),
            ("价格是最终价格吗？", "网站价格依据最新价目表，包装栏位（PACKING）为原表规格；最终价格与数量以店家 WhatsApp 回复为准。西马邮费一律 RM15（任买）；新山区 Lalamove 运费自付。")]
@@ -668,14 +670,27 @@ def about():
 {footer(root)}
 </body></html>"""
     write("about.html", head("关于我们 · 下单方式 | Hunter BOOM JOHOR 总代理 | 新山烟花", f"Hunter BOOM JOHOR 总代理：柔佛新山依斯干达公主城烟花批发零售。了解 WhatsApp 下单方式、柔佛送货与联系资料：{PHONE_D}。", "about.html", root, extra_ld=ld, keywords=KW) + body)
-    nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回 Hunter BOOM JOHOR 新山烟花首页。", "404.html", "/").replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex">')
-    write("404.html", nf + f"""<body data-root="/">{topbar('/')}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="/index.html" style="color:#c8161d">返回首页</a>，或 <a href="{WA}" style="color:#1fae55">WhatsApp {PHONE_D}</a> 询问。</p></div></main>{footer('/')}</body></html>""")
+    # 404 is served for any missing path; use the public origin so links do not jump off the GitHub Pages subpath.
+    r404 = (SITE_ORIGIN + "/") if SITE_ORIGIN else "/"
+    nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回 Hunter BOOM JOHOR 新山烟花首页。", "404.html", r404).replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex">')
+    write("404.html", nf + f"""<body data-root="{r404}">{topbar(r404)}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="{r404}index.html" style="color:#c8161d">返回首页</a>，或 <a href="{WA}" style="color:#1fae55">WhatsApp {PHONE_D}</a> 询问。</p></div></main>{footer(r404)}</body></html>""")
 
 def meta_files():
     urls = [("", "1.0"), ("c/index.html", "0.6"), ("c/kids.html", "0.8"), ("about.html", "0.5")] + [(f"c/{c['id']}.html", "0.8") for c in CATS] + [(f"p/{p['sku']}.html", "0.7") for p in P]
-    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+    img_by_path = {f"p/{p['sku']}.html": p for p in P if p.get("image")}
     for u, pr in urls:
-        sm.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>")
+        loc = f"<url><loc>{e(absu(u))}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority>"
+        if u == "":
+            loc += f'<image:image><image:loc>{e(absu("img/og-cny2027.jpg"))}</image:loc><image:title>Hunter BOOM JOHOR 总代理 三阳开泰 羊年海报</image:title></image:image>'
+            loc += f'<image:image><image:loc>{e(absu("img/cny2027-poster.jpg"))}</image:loc><image:title>Hunter BOOM JOHOR 羊年春节海报</image:title></image:image>'
+        p = img_by_path.get(u)
+        if p:
+            title = e(p["title"] + ((" " + p["name_en"]) if p.get("name_en") else "") + " 烟花产品图")
+            loc += f'<image:image><image:loc>{e(absu(p["image"]))}</image:loc><image:title>{title}</image:title></image:image>'
+        loc += "</url>"
+        sm.append(loc)
     sm.append("</urlset>")
     write("sitemap.xml", "\n".join(sm) + "\n")
     smloc = (SITE_ORIGIN + "/sitemap.xml") if SITE_ORIGIN else "/sitemap.xml"

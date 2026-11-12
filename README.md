@@ -29,7 +29,7 @@ python3 tools/build_site.py --origin https://你的域名.com
 编辑 `data/products.json`（`price` 为数字 RM，`packing` 为价目表包装规格），然后 `python3 tools/build_site.py`。
 
 ## 下单流程
-购物车 → 「发送订单到 WhatsApp」→ 打开 `https://wa.me/60178270901?text=我要下单…`（每行：编号 名称 x数量，附参考合计）。
+购物车 → 「发送订单到 WhatsApp」→ 打开 `https://wa.me/60177891688?text=我要下单…`（每行：编号 名称 x数量，附参考合计）。
 
 ## 分析代码
 未安装任何 analytics。如需要，在 `tools/build_site.py` 的 `<!-- Optional analytics -->` 注释处加入自己的代码再重建。
