@@ -18,7 +18,10 @@ if "--origin" in sys.argv:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(ROOT, "data", "products.json"), encoding="utf-8"))
-P = D["products"]; CATS = D["categories"]
+# unpublished (published: false) stay in the data file but are not built into the public shop
+ALL_P = D["products"]
+P = [p for p in ALL_P if p.get("published", True)]
+CATS = [c for c in D["categories"] if any(p["category"] == c["id"] for p in P)]
 CAT = {c["id"]: c for c in CATS}
 BYCAT = {c["id"]: [p for p in P if p["category"] == c["id"]] for c in CATS}
 TODAY = datetime.date.today().isoformat()
@@ -385,7 +388,7 @@ KIDS_ALL = ["HB048", "HB049", "HB050", "HB051", "HB053", "HB054", "HB055",
 KIDS_NOTE = "本专区由店家按较温和的手持、喷泉和趣味款整理，方便家长选购，不是官方童用认证。请由成人操作或在家长看护下燃放，并遵守当地规定。"
 
 SHELVES = [
-    ("hot", "🔥", "最畅销", "热门口碑款，十个分类都有", "c/index.html", "浏览全部分类 ›",
+    ("hot", "🔥", "最畅销", "热门口碑款，多个分类都有", "c/index.html", "浏览全部分类 ›",
      ["HB013", "HB040", "HB079", "HB071", "HB102", "HB123", "HB168", "HB181", "HB253", "HB011"]),
     ("kids", "🧒", "小朋友专区", "手持、喷泉和趣味小品，请在家长看护下燃放", "c/kids.html", "查看全部 ›",
      KIDS_HOME),
@@ -667,6 +670,25 @@ def meta_files():
                                           "icons": [{"src": "img/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "img/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, ensure_ascii=False, indent=1))
     return len(urls)
 
+def cleanup_unpublished():
+    """Delete leftover generated pages for products/categories no longer on the public site."""
+    import glob
+    live_skus = {p["sku"] for p in P}
+    live_cats = {c["id"] for c in CATS} | {"index", "kids"}
+    removed = []
+    for fp in glob.glob(os.path.join(ROOT, "p", "*.html")):
+        sku = os.path.splitext(os.path.basename(fp))[0]
+        if sku not in live_skus:
+            os.remove(fp); removed.append("p/" + os.path.basename(fp))
+    for fp in glob.glob(os.path.join(ROOT, "c", "*.html")):
+        cid = os.path.splitext(os.path.basename(fp))[0]
+        if cid not in live_cats:
+            os.remove(fp); removed.append("c/" + os.path.basename(fp))
+    return removed
+
 if __name__ == "__main__":
     home(); catpages(); products(); about(); n = meta_files()
+    gone = cleanup_unpublished()
     print(f"built {len(P)} products, {len(CATS)} categories, sitemap urls={n}, SITE_ORIGIN={SITE_ORIGIN or '(relative)'}")
+    if gone:
+        print("removed unpublished:", ", ".join(gone))

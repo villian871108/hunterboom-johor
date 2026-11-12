@@ -3571,6 +3571,7 @@
    "packing": "72/6",
    "price": 460.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 雷王           (Bearboom) THUNDER KING          72/6     RM460.00",
    "image": null
   },
@@ -3582,6 +3583,7 @@
    "packing": "12/1",
    "price": 648.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 花开雪莲          (Bearboom) TAYCAN SPARKLE         12/1     RM648.00",
    "image": null
   },
@@ -3593,6 +3595,7 @@
    "packing": "12/3",
    "price": 640.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 大风车          (Bearboom) KIPAS FOUNTAIN         12/3     RM640.00",
    "image": null
   },
@@ -3604,6 +3607,7 @@
    "packing": "20/4",
    "price": 710.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 仙女棒喷泉         (Bearboom) MAGIC FOUNTAIN         20/4     RM710.00",
    "image": null
   },
@@ -3615,6 +3619,7 @@
    "packing": "60/5",
    "price": 510.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 雪花瀑布         (Bearboom) WATERFALL SUNSET        60/5     RM510.00",
    "image": null
   },
@@ -3626,6 +3631,7 @@
    "packing": "36/6",
    "price": 485.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 大蝴蝶           (Bearboom) BIG BUTTERFLY         36/6     RM485.00",
    "image": null
   },
@@ -3637,6 +3643,7 @@
    "packing": "50/5",
    "price": 648.0,
    "category": "bear",
+   "published": false,
    "source_line": "(熊炮) 五色彩烟筒          (Bearboom) SMOKE 5 COLOR         50/5     RM648.00",
    "image": null
   },
