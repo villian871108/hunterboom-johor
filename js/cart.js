@@ -13,7 +13,12 @@ function waUrl(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
 function msg(a){
   var l=['我要下单'];
   a.forEach(function(x){l.push(x.c+' '+x.n+' x'+x.q)});
-  l.push('');l.push('参考合计：'+rm(total(a))+'（以店家确认为准）');
+  l.push('');l.push('参考合计：'+rm(total(a))+'（以店家确认为准，不含运费）');
+  l.push('');
+  l.push('送货方式（请选一项）：');
+  l.push('- 五福城（Sutera）面交');
+  l.push('- 新山区 Lalamove（运费自付）');
+  l.push('- 西马邮寄（邮费 RM15 任买）');
   return l.join('\n');
 }
 var toastT;
@@ -35,7 +40,8 @@ function ensure(){
    '<div class="hd"><b id="dwt">🛒 我的购物车</b><button class="x" type="button" data-close aria-label="关闭购物车">×</button></div>'+
    '<div class="ls" id="dwl"></div>'+
    '<div class="ft"><div class="tt"><span>参考合计</span><b id="dwt2">RM0.00</b></div>'+
-   '<p>价格依据价目表，最终价格、数量与送货安排以 WhatsApp 确认为准。</p>'+
+   '<p>价格依据价目表，最终价格与数量以 WhatsApp 确认为准。</p>'+
+   '<p>送货：五福城（Sutera）面交；新山区 Lalamove 运费自付；西马邮费一律 RM15（任买）。</p>'+
    '<button class="btn wa send" type="button" id="send">发送订单到 WhatsApp</button>'+
    '<p style="text-align:center;margin:8px 0 0"><button type="button" id="clr" style="border:0;background:none;color:#8a5a4a;text-decoration:underline;cursor:pointer;font-size:12px">清空购物车</button></p></div></section>';
   document.body.appendChild(d);
@@ -77,7 +83,7 @@ document.addEventListener('click',function(e){
   if(o){e.preventDefault();open();return}
   var w=e.target.closest?e.target.closest('[data-wa-item]'):null;
   if(w){e.preventDefault();var qq=document.getElementById(w.getAttribute('data-qty-from')||'');var it=fromBtn(w);var q2=Math.max(1,parseInt(qq&&qq.value,10)||1);
-    window.open(waUrl('我要下单\n'+it.c+' '+it.n+' x'+q2),'_blank','noopener');return}
+    window.open(waUrl(msg([{c:it.c,n:it.n,p:it.p,q:q2}])),'_blank','noopener');return}
   var st=e.target.closest?e.target.closest('[data-step]'):null;
   if(st){var inp=document.getElementById(st.getAttribute('data-for'));if(inp){inp.value=Math.max(1,(parseInt(inp.value,10)||1)+parseInt(st.getAttribute('data-step'),10))}}
 });

@@ -31,6 +31,11 @@ FB = "https://www.facebook.com/profile.php?id=61585987514444"
 ADDR = "Iskandar Puteri, Johor Bahru, Malaysia, 81200"
 ADDR_ZH = "柔佛新山 依斯干达公主城（Iskandar Puteri）81200"
 CNY = "羊年春节（2027年2月6日）"
+# Delivery as stated by the shop (12 Nov 2026). Do not invent East Malaysia or free meetup.
+SHIP_FACE = "五福城（Sutera）可面交，请先 WhatsApp 约时间"
+SHIP_JB = "新山区可用 Lalamove，运费自付"
+SHIP_WM = "西马邮费一律 RM15，买多少都是 RM15"
+SHIP_LINE = "五福城（Sutera）可面交；新山区可用 Lalamove（运费自付）；西马邮费一律 RM15（任买）。"
 
 e = lambda s: html.escape(str(s if s is not None else ""), quote=True)
 def rm(x): return "RM{:,.2f}".format(x)
@@ -81,7 +86,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=4">
+<link rel="stylesheet" href="{root}css/style.css?v=5">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -99,14 +104,14 @@ def topbar(root, active=None, home=False):
 <form class="sb" role="search"{act} method="get"><label class="sr" for="q">搜索产品</label><input id="q" name="q" type="search" placeholder="搜索名称或编号，如 HB001、红炮、加特林" autocomplete="off"><button type="submit">搜索</button></form>
 <nav class="tabs" aria-label="产品分类">{''.join(tabs)}</nav>
 </div></header>
-<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山批发零售</span><span>📍 依斯干达公主城</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
+<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山批发零售</span><span>🤝 五福城（Sutera）面交</span><span>📦 西马邮费 RM15 任买</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
 """
 
 def footer(root, active=None):
     cats = "".join(f'<a href="{root}c/{c["id"]}.html">{e(c["name"])}</a>' for c in CATS)
     def on(x): return ' class="on"' if active == x else ""
     return f"""<footer><div class="in">
-<div><h2>{SHOP}</h2><p>{TAG}</p><p>新山烟花批发零售，柔佛地区可安排送货（如五福城、Sutera、依斯干达公主城一带），详情请 WhatsApp 询问。</p></div>
+<div><h2>{SHOP}</h2><p>{TAG}</p><p>新山烟花批发零售。{SHIP_LINE}</p></div>
 <div><h3>联系我们</h3>
 <address style="font-style:normal"><p>📍 {ADDR}<br><small>{ADDR_ZH}</small></p>
 <p>📲 WhatsApp / 电话：<a href="{WA}" target="_blank" rel="noopener">{PHONE_D}</a></p>
@@ -122,7 +127,7 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=4" defer></script>
+<script src="{root}js/cart.js?v=5" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -435,12 +440,20 @@ def home():
 <section class="hero" aria-labelledby="h1">
 <span class="tag">🐐 {CNY}</span>
 <h1 id="h1"><em>新山烟花</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
-<p>{TAG}。柔佛烟花、猎人烟花（Hunter Boom）羊年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货，柔佛送货请 WhatsApp 询问。</p>
+<p>{TAG}。柔佛烟花、猎人烟花（Hunter Boom）羊年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货。{SHIP_LINE}</p>
 <div class="cd" id="cd" aria-live="polite"></div>
 <div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
 <nav class="ic" aria-label="分类快捷入口">{icons}</nav>
-<div class="info"><div><b>🏮 批发 · 零售</b>整箱批发与零售都可询价</div><div><b>🚚 柔佛送货</b>五福城、Sutera、公主城等，运费请询问</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
+<div class="info"><div><b>🏮 批发 · 零售</b>整箱批发与零售都可询价</div><div><b>🚚 送货方式</b>五福城面交 · 新山 Lalamove 自付 · 西马 RM15</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
+<section class="ship" id="ship" aria-labelledby="h-ship">
+<h2 id="h-ship">🚚 送货方式</h2>
+<ul>
+<li><b>🤝 面交</b>五福城（Sutera），请先 WhatsApp 约时间</li>
+<li><b>🛵 新山区</b>可用 Lalamove，运费自付</li>
+<li><b>📦 西马</b>邮费一律 RM15，买多少都是 RM15</li>
+</ul>
+</section>
 <a class="kids-banner" href="#kids"><span>🧒</span><span>小朋友专区<small>手持、喷泉和趣味小品，请在家长看护下燃放</small></span></a>
 <div id="list"><div id="featured">{''.join(secs)}</div>{catalog}<p class="nores" id="nores" hidden>找不到相关产品，试试其他关键词，或直接 <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">WhatsApp 询问</a>。</p></div>
 </main>
@@ -582,7 +595,7 @@ def products():
 <h1>{e(p['title'])}</h1>
 {f'<p class="en" lang="en">{e(p["name_en"])}</p>' if p['name_en'] else ''}
 <div class="pr">{rm(p['price'])}</div>
-<p class="note">价目表价 · 包装 {e(p['packing'])}。最终价格、数量与送货请以 WhatsApp 确认为准。</p>
+<p class="note">价目表价 · 包装 {e(p['packing'])}。{e(SHIP_LINE)}最终价格与数量以 WhatsApp 确认为准。</p>
 <div class="act"><div class="qty"><button type="button" data-step="-1" data-for="qty" aria-label="减少数量">−</button><input id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="数量"><button type="button" data-step="1" data-for="qty" aria-label="增加数量">+</button></div></div>
 <div class="act"><button type="button" class="btn gd" data-add data-qty-from="qty" {btn_attrs(p, root)}>加入购物车</button>
 <button type="button" class="btn wa" data-wa-item data-qty-from="qty" {btn_attrs(p, root)}>WhatsApp 下单此款</button></div>
@@ -598,7 +611,7 @@ def products():
 <section class="desc"><h2>产品说明</h2>
 <p>{e(intro(p))}。</p>
 <p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，价目表价 {rm(p['price'])}。</p>
-<p>新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货、批发数量与送货安排（依斯干达公主城、五福城、Sutera 等）。{img_src}。</p>
+<p>送货：{e(SHIP_LINE)}新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货与批发数量。{img_src}。</p>
 </section>
 {pn}
 <section class="sec"><h2>同类推荐 <small>{e(c['name'])}</small><a class="more" href="../c/{c['id']}.html">全部 ›</a></h2><div class="g">{''.join(card(x, root, 99) for x in rel)}</div></section>
@@ -613,8 +626,8 @@ def about():
     root = ""
     faq = [("怎么下单？", "在网站挑选产品加入购物车，点「发送订单到 WhatsApp」，系统会把产品编号与数量整理成一段文字，发送给 017-827 0901，店家确认价格、数量与交货方式后完成下单。"),
            ("可以批发吗？", "可以。Hunter BOOM JOHOR 总代理提供批发与零售，整箱数量请 WhatsApp 询价。"),
-           ("有送货吗？", "柔佛地区可安排送货，如五福城、Sutera、依斯干达公主城一带；运费与时间请 WhatsApp 询问。"),
-           ("价格是最终价格吗？", "网站价格依据最新价目表，包装栏位（PACKING）为原表规格；最终价格、数量与送货安排以店家 WhatsApp 回复为准。")]
+           ("有送货吗？", SHIP_FACE + "。" + SHIP_JB + "。" + SHIP_WM + "。"),
+           ("价格是最终价格吗？", "网站价格依据最新价目表，包装栏位（PACKING）为原表规格；最终价格与数量以店家 WhatsApp 回复为准。西马邮费一律 RM15（任买）；新山区 Lalamove 运费自付。")]
     ld = [STORE_LD, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
           bc_ld([("首页", ""), ("关于我们", "about.html")])]
     body = f"""<body data-root="">
@@ -623,7 +636,13 @@ def about():
 <article class="txt"><h1>关于 Hunter BOOM JOHOR 总代理</h1>
 <p><b>{TAG}</b></p>
 <p>Hunter BOOM JOHOR 总代理位于柔佛新山依斯干达公主城（Iskandar Puteri），提供新山烟花、柔佛烟花批发与零售，产品包括红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、飞天趣味、响声系列、盆花与大盆花等，迎接{CNY}。</p>
-<h2>下单方式</h2><ol><li>浏览产品，点「加入购物车」，可调整数量。</li><li>打开购物车，点「发送订单到 WhatsApp」。</li><li>店家通过 WhatsApp 确认价格、数量、取货或送货安排。</li></ol>
+<h2>下单方式</h2><ol><li>浏览产品，点「加入购物车」，可调整数量。</li><li>打开购物车，点「发送订单到 WhatsApp」。</li><li>店家通过 WhatsApp 确认价格、数量与送货安排。</li></ol>
+<h2>送货方式</h2>
+<ul>
+<li><b>面交：</b>五福城（Sutera），请先 WhatsApp 约时间</li>
+<li><b>新山区：</b>可用 Lalamove，运费自付</li>
+<li><b>西马：</b>邮费一律 RM15，买多少都是 RM15</li>
+</ul>
 <h2>常见问题</h2>{''.join(f'<h3 style="font-size:15px;margin:12px 0 4px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q, a in faq)}
 <h2>联系资料</h2><address style="font-style:normal"><p>店名：{SHOP}<br>地址：{ADDR}（{ADDR_ZH}）<br>WhatsApp / 电话：<a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a><br>Facebook：<a href="{FB}" target="_blank" rel="noopener" style="color:#c8161d">{SHOP}</a><br>营业时间：Facebook 主页显示 Always open（来取货前请先 WhatsApp 约时间）</p></address>
 <p><a class="btn wa" href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></p>
