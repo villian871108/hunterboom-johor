@@ -97,7 +97,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="manifest" href="{root}site.webmanifest">
 <link rel="stylesheet" href="{root}css/style.css?v=7">
 {''.join(jd(x) for x in extra_ld)}
-<!-- Optional analytics: none installed. Add your own tag here if needed. -->
+<!-- Site stats: js/stats.js -> Google Apps Script (tools/stats_api.gs); see tools/STATS.md -->
 </head>
 """
 
@@ -136,7 +136,8 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=6" defer></script>
+<script src="{root}js/stats.js?v=1" defer></script>
+<script src="{root}js/cart.js?v=7" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -675,6 +676,106 @@ def about():
     nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回 Hunter BOOM JOHOR 新山烟花首页。", "404.html", r404).replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex">')
     write("404.html", nf + f"""<body data-root="{r404}">{topbar(r404)}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="{r404}index.html" style="color:#c8161d">返回首页</a>，或 <a href="{WA}" style="color:#1fae55">WhatsApp {PHONE_D}</a> 询问。</p></div></main>{footer(r404)}</body></html>""")
 
+# ---------------- 店铺统计 / 下单记录 (stats.html): PRIVATE, owner PIN, unlisted, noindex, not in sitemap ----------------
+STATS_CSS = """<style>
+.st-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px}
+.st-hd h1{margin:0}
+.st-date{color:var(--mut);font-size:13px}
+.st-out{border:0;background:none;color:var(--mut);text-decoration:underline;cursor:pointer;font-size:12px}
+.st-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.st-tile{background:linear-gradient(160deg,#c8161d,#8f0d13);color:#fff3d0;border-radius:16px;padding:14px 12px;text-align:center;box-shadow:0 6px 18px #8f0d1333;position:relative;overflow:hidden}
+.st-tile:after{content:"";position:absolute;inset:auto -20px -30px auto;width:90px;height:90px;border-radius:50%;background:#f6c45322}
+.st-tile span{display:block;font-size:13px;letter-spacing:1px;color:#ffdf8a}
+.st-tile b{display:block;font-size:38px;line-height:1.15;margin:6px 0 2px;color:#fff;font-variant-numeric:tabular-nums}
+.st-tile small{font-size:11px;color:#f3c9a3}
+.st-status{font-size:12.5px;color:var(--mut);margin:4px 0 10px}
+.st-status.err{color:#c8161d;font-weight:700;background:#fff3d0;border:1px solid #f6c453;border-radius:10px;padding:8px 10px}
+.st-gate{max-width:380px;margin:30px auto;text-align:center}
+.st-gate form{display:flex;gap:8px;margin-top:12px}
+.st-gate input{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:18px;letter-spacing:4px;text-align:center}
+.st-chart{background:#fffaf0;border:1px solid var(--line);border-radius:14px;padding:8px 6px 2px;margin:8px 0}
+.st-chart svg{width:100%;height:auto;display:block}
+.st-key{font-size:12px;color:var(--mut);display:flex;gap:14px;flex-wrap:wrap;margin:4px 2px 0}
+.st-key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.st-tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px;font-variant-numeric:tabular-nums}
+.st-tbl th{background:#c8161d;color:#fff3d0;font-weight:700;padding:8px 6px;text-align:right}
+.st-tbl th:first-child,.st-tbl td:first-child{text-align:left}
+.st-tbl td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right}
+.st-tbl tr[data-day]{cursor:pointer}
+.st-tbl td small{color:var(--mut);font-size:11px}
+.st-tbl td a{color:var(--r);font-weight:700}
+.st-tbl tr.today td{background:#fff3d0;font-weight:700}
+.st-def{font-size:13px;color:var(--ink);background:#fffaf0;border-left:4px solid #f6c453;border-radius:8px;padding:8px 12px;margin:12px 0 0}
+.st-def p{margin:3px 0}
+.od-box{border:2px solid #f6c453;border-radius:16px;padding:12px;background:#fffdf6;margin:6px 0 14px}
+.od-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.od-top h2{margin:0}
+.od-top select{padding:8px 10px;border-radius:10px;border:1px solid var(--line);font-size:14px;background:#fff;max-width:100%}
+.od-sum{display:flex;flex-wrap:wrap;gap:8px 16px;margin:10px 0;font-size:14px}
+.od-sum b{color:var(--rd);font-size:18px}
+.od-fl{display:flex;gap:6px;margin:6px 0 10px}
+.od-fl button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer}
+.od-fl button.on{background:#c8161d;color:#fff3d0;border-color:#c8161d}
+.od{border:1px solid var(--line);border-left:5px solid #c8161d;border-radius:12px;padding:10px 12px;margin:0 0 10px;background:#fff}
+.od.done{border-left-color:#1fae55;opacity:.8}
+.od-h{display:flex;justify-content:space-between;gap:8px;font-weight:700}
+.od-h small{font-weight:400;color:var(--mut)}
+.od-s{color:#c8161d}.od.done .od-s{color:#1fae55}
+.od ul{margin:8px 0;padding-left:18px;font-size:14px}
+.od li span{font-weight:700;color:var(--rd)}
+.od li small{color:var(--mut)}
+.od-f{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+.od-b{display:flex;gap:6px;flex-wrap:wrap}
+.od-b .btn{padding:7px 12px;font-size:13px}
+.od-empty{text-align:center;color:var(--mut);padding:18px 6px}
+@media(max-width:420px){.st-tile b{font-size:30px}.st-tile{padding:12px 6px}}
+</style>"""
+
+def stats_page():
+    root = ""
+    hd = head("店铺统计 | Hunter BOOM JOHOR", "店家内部统计页。", "stats.html", root)
+    hd = hd.replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex,nofollow,noarchive">\n<meta name="referrer" content="no-referrer">')
+    hd = hd.replace("</head>", STATS_CSS + "\n</head>")
+    body = f"""<body data-root="" data-stats-page>
+{topbar(root)}
+<main class="wrap">
+<section class="txt st-gate" id="st-gate">
+<h1>🔒 店铺统计</h1><p>仅限店家查看，请输入密码。</p>
+<form id="st-login" autocomplete="off"><label class="sr" for="st-pin">密码</label><input id="st-pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="密码"><button class="btn gd" id="st-go" type="submit">进入</button></form>
+<p class="st-status" id="st-gmsg"></p>
+</section>
+<section class="txt" id="stats" hidden>
+<div class="st-hd"><h1>📊 店铺统计</h1><span class="st-date">今天：<b id="st-date">—</b> <button type="button" class="st-out" id="st-out">退出</button></span></div>
+<p class="st-status" id="st-status">正在读取…</p>
+<div class="st-tiles">
+<div class="st-tile"><span>今日下单</span><b id="st-orders">—</b><small id="st-ototal">参考合计 —</small></div>
+<div class="st-tile"><span>今日人数</span><b id="st-visitors">—</b><small>独立访客</small></div>
+<div class="st-tile"><span>今日浏览</span><b id="st-views">—</b><small>页面浏览次数</small></div>
+</div>
+<div class="od-box" id="orders">
+<div class="od-top"><h2>🧾 下单记录 · 客服工单</h2><label><span class="sr">选择日期</span><select id="od-day"></select></label></div>
+<div class="od-sum"><span id="od-title">—</span><span>下单 <b id="od-count">0</b> 次</span><span>参考合计 <b id="od-total">RM0.00</b></span><span>当天待处理 <b id="od-pend">0</b></span><span>全部待处理 <b id="st-pall">0</b></span></div>
+<div class="od-fl"><button type="button" data-filt="all" class="on">全部</button><button type="button" data-filt="pending">⏳ 待处理</button><button type="button" data-filt="done">✅ 已处理</button></div>
+<div id="od-list"></div>
+<p class="st-status">顾客点「发送订单到 WhatsApp」时，订单内容会直接发到店家 WhatsApp 017-789 1688（人工通知）；这里同步记一笔工单，跟进后点「标记已处理」。时间为马来西亚时间（UTC+8）。</p>
+</div>
+<h2>近 14 天走势</h2>
+<div class="st-chart" id="st-chart"></div>
+<div class="st-key"><span><i style="background:#f6c453"></i>浏览</span><span><i style="background:#c8161d"></i>人数</span><span>🛒 下单次数</span></div>
+<h2>近 30 天每日明细 <small style="font-size:12px;color:var(--mut);font-weight:400">（马来西亚时间 UTC+8，点一行看当天订单）</small></h2>
+<p class="st-status" id="st-sum"></p>
+<div style="overflow-x:auto"><table class="st-tbl"><thead><tr><th>日期</th><th>下单</th><th>参考合计</th><th>人数</th><th>浏览</th></tr></thead><tbody id="st-rows"></tbody></table></div>
+<div class="st-def">
+<p><b>下单</b> = 从本站发送到 WhatsApp 的订单次数（最终成交以店家确认为准）</p>
+<p><b>人数</b> = 当日独立访客（同一手机/浏览器一天只算一次）</p>
+<p><b>浏览</b> = 当日页面浏览次数</p>
+<p style="color:var(--mut);font-size:12px">日期按马来西亚时间（UTC+8）每天 00:00 重新计算。数字全部来自真实访问记录，从统计上线当天开始累计；本页本身的打开不计入浏览。参考合计按价目表计算，不含运费。</p>
+</div>
+</section></main>
+{footer(root)}
+</body></html>"""
+    write("stats.html", hd + body)
+
 def meta_files():
     urls = [("", "1.0"), ("c/index.html", "0.6"), ("c/kids.html", "0.8"), ("about.html", "0.5")] + [(f"c/{c['id']}.html", "0.8") for c in CATS] + [(f"p/{p['sku']}.html", "0.7") for p in P]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -717,7 +818,7 @@ def cleanup_unpublished():
     return removed
 
 if __name__ == "__main__":
-    home(); catpages(); products(); about(); n = meta_files()
+    home(); catpages(); products(); about(); stats_page(); n = meta_files()
     gone = cleanup_unpublished()
     print(f"built {len(P)} products, {len(CATS)} categories, sitemap urls={n}, SITE_ORIGIN={SITE_ORIGIN or '(relative)'}")
     if gone:

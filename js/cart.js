@@ -1,4 +1,4 @@
-/* Hunter BOOM JOHOR — cart & WhatsApp ordering (no tracking) */
+/* Hunter BOOM JOHOR — cart & WhatsApp ordering (order count reported to js/stats.js) */
 (function(){
 'use strict';
 var WA='60177891688',K='hbj_cart_v1';
@@ -9,6 +9,7 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
 function rm(n){return 'RM'+Number(n||0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
 function total(a){return a.reduce(function(s,x){return s+(x.p||0)*x.q},0)}
 function count(a){return a.reduce(function(s,x){return s+x.q},0)}
+function stat(a){try{if(window.HBJStats&&a&&a.length)window.HBJStats.order(a)}catch(e){}}
 function waUrl(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
 function msg(a){
   var l=['我要下单'];
@@ -57,7 +58,7 @@ function ensure(){
   });
   d.addEventListener('change',function(e){var t=e.target,c=t.getAttribute('data-c');if(!c||t.tagName!=='INPUT')return;
     var a=ld();a.forEach(function(x){if(x.c===c)x.q=Math.max(1,parseInt(t.value,10)||1)});sv(a)});
-  document.getElementById('send').addEventListener('click',function(){var a=ld();if(!a.length){toast('购物车是空的');return}window.open(waUrl(msg(a)),'_blank','noopener')});
+  document.getElementById('send').addEventListener('click',function(){var a=ld();if(!a.length){toast('购物车是空的');return}stat(a);window.open(waUrl(msg(a)),'_blank','noopener')});
   document.getElementById('clr').addEventListener('click',function(){if(confirm('确定清空购物车？'))sv([])});
 }
 function open(){ensure();render();var d=document.getElementById('dw');d.classList.add('open');d.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
@@ -83,7 +84,7 @@ document.addEventListener('click',function(e){
   if(o){e.preventDefault();open();return}
   var w=e.target.closest?e.target.closest('[data-wa-item]'):null;
   if(w){e.preventDefault();var qq=document.getElementById(w.getAttribute('data-qty-from')||'');var it=fromBtn(w);var q2=Math.max(1,parseInt(qq&&qq.value,10)||1);
-    window.open(waUrl(msg([{c:it.c,n:it.n,p:it.p,q:q2}])),'_blank','noopener');return}
+    var one=[{c:it.c,n:it.n,p:it.p,q:q2}];if(it.c){stat(one)}window.open(waUrl(msg(one)),'_blank','noopener');return}
   var st=e.target.closest?e.target.closest('[data-step]'):null;
   if(st){var inp=document.getElementById(st.getAttribute('data-for'));if(inp){inp.value=Math.max(1,(parseInt(inp.value,10)||1)+parseInt(st.getAttribute('data-step'),10))}}
 });
