@@ -163,3 +163,18 @@ footer .legal{grid-column:1/-1;border-top:1px solid #ffffff22;padding-top:12px;f
 .sec.shelf h2 small{flex:1 1 100%;margin:0;order:3}
 @media(min-width:640px){.sec.shelf h2 small{flex:0 1 auto;order:0}}
 #catalog[hidden],.nores[hidden],#featured[hidden]{display:none!important}
+/* video intro (v3) */
+.vb{position:absolute;right:8px;top:8px;background:#000a;color:#fff;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:9px;letter-spacing:.2px}
+.vid{background:#fff;border-radius:16px;padding:14px 16px;border:1px solid var(--line);margin:0 0 18px}
+.vid h2{font-size:16px;margin:0 0 10px;color:var(--rd);display:flex;align-items:baseline;gap:8px}
+.vid h2 small{font-size:12px;color:var(--mut);font-weight:500}
+.vf{position:relative;margin:0 auto;border-radius:14px;overflow:hidden;background:#111}
+.vf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vf.v169{width:100%;max-width:760px;aspect-ratio:16/9}
+.vf.v916{aspect-ratio:9/16;height:min(70vh,640px);max-width:100%}
+.vs{margin:8px 0 0;font-size:12.5px;color:var(--mut);text-align:center}
+.vs a{color:var(--r);font-weight:600}
+.vph{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:22px 14px;border-radius:14px;background:radial-gradient(circle at 50% 35%,#e0342a,#9a0f15);color:#fff}
+.vph svg{width:46px;height:46px}
+.vph b{font-size:16px}.vph i{font-style:normal;font-size:13px;opacity:.85}
+.vph .btn{margin-top:6px}

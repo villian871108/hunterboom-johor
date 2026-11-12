@@ -7,7 +7,7 @@ Usage:
 
 All pages are generated from data/products.json.
 """
-import json, os, sys, html, datetime
+import json, os, sys, html, datetime, urllib.parse
 
 # ===== The ONE place to set the public domain (no trailing slash). =====
 # Empty = root-relative canonical URLs. Set to the real domain once it is live,
@@ -81,7 +81,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=2">
+<link rel="stylesheet" href="{root}css/style.css?v=3">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -122,7 +122,7 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/cart.js?v=2" defer></script>
+<script src="{root}js/cart.js?v=3" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -141,7 +141,7 @@ def btn_attrs(p, root):
 def card(p, root, idx=0):
     s = f"{p['sku']} {p['name']} {p['title']} {p['name_en']} {CAT[p['category']]['name']}".lower()
     en = f'<div class="en" lang="en">{e(p["name_en"])}</div>' if p["name_en"] else '<div class="en">&nbsp;</div>'
-    return (f'<article class="pc" data-s="{e(s)}"><a class="im" href="{root}p/{p["sku"]}.html">{img_block(p, root, eager=idx<4)}<span class="cd2">{p["sku"]}</span></a>'
+    return (f'<article class="pc" data-s="{e(s)}"><a class="im" href="{root}p/{p["sku"]}.html">{img_block(p, root, eager=idx<4)}<span class="cd2">{p["sku"]}</span>{'<span class="vb" title="有视频介绍">▶ 视频</span>' if p.get("video_embed") else ""}</a>'
             f'<div class="b"><h3><a href="{root}p/{p["sku"]}.html">{e(p["title"])}</a></h3>{en}'
             f'<div class="row"><div><div class="pr">{rm(p["price"])}</div><div class="pk">包装 {e(p["packing"])}</div></div>'
             f'<button type="button" class="add" data-add {btn_attrs(p, root)} aria-label="把 {e(p["title"])} 加入购物车">加入购物车</button></div></div></article>')
@@ -295,6 +295,37 @@ def catpages():
     write("c/index.html", head("烟花分类 | 新山烟花批发零售 | Hunter BOOM JOHOR 总代理", f"浏览 Hunter BOOM JOHOR 总代理全部 {len(CATS)} 个烟花分类：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、盆花、大盆花等，新山依斯干达公主城 WhatsApp 下单。", "c/index.html", root, extra_ld=ld, keywords=KW) + body)
 
 # ---------------- product pages ----------------
+def video_section(p):
+    """「视频介绍」 block for a product page. Real catalog/official video or an honest placeholder."""
+    if p.get("video_embed"):
+        vert = p.get("video_orientation") == "vertical"
+        if p["video_kind"] == "youtube":
+            src = p["video_embed"] + "?rel=0&modestbranding=1&playsinline=1"
+            allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            open_txt = "在 YouTube 打开"
+        else:
+            src = p["video_embed"]; allow = "autoplay; encrypted-media; fullscreen"
+            open_txt = "在 Google Drive 打开"
+        t = f"{p['title']} 燃放视频介绍"
+        return (f'<section class="vid" id="video"><h2>视频介绍 <small>{e(p["sku"])}</small></h2>'
+                f'<div class="vf {"v916" if vert else "v169"}"><iframe src="{e(src)}" title="{e(t)}" loading="lazy" '
+                f'allow="{allow}" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'
+                f'<p class="vs">视频来源：{e("Hunter Boom 官方" if p["video_kind"]=="youtube" else "TT Fireworks 产品目录")}'
+                f' · <a href="{e(p["video"])}" target="_blank" rel="noopener">{open_txt}</a></p></section>')
+    return (f'<section class="vid" id="video"><h2>视频介绍 <small>{e(p["sku"])}</small></h2>'
+            f'<div class="vph">{BURST}<b>视频介绍待更新</b><i>这款暂时还没有官方燃放视频</i>'
+            f'<a class="btn wa" href="{WA}?text={e(urllib.parse.quote("你好，想看 " + p["sku"] + " " + p["title"] + " 的燃放视频"))}" target="_blank" rel="noopener">WhatsApp 索取视频</a></div></section>')
+
+def video_ld(p, url):
+    if not p.get("video_embed"): return None
+    if p["video_kind"] == "youtube":
+        vid = p["video_embed"].rsplit("/", 1)[1]; thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+    else:
+        fid = p["video_embed"].split("/d/")[1].split("/")[0]; thumb = f"https://drive.google.com/thumbnail?id={fid}&sz=w640"
+    return {"@context": "https://schema.org", "@type": "VideoObject", "name": f"{p['title']} 燃放视频介绍",
+            "description": f"{p['title']}（{p['sku']}）烟花燃放效果视频，Hunter BOOM JOHOR 新山。",
+            "thumbnailUrl": thumb, "embedUrl": p["video_embed"], "url": p["video"], "isPartOf": absu(url)}
+
 def products():
     root = "../"
     for i, p in enumerate(P):
@@ -310,6 +341,8 @@ def products():
         if p["name_en"]: prod["alternateName"] = p["name_en"]
         if p.get("image"): prod["image"] = (SITE_ORIGIN + "/" + p["image"]) if SITE_ORIGIN else "/" + p["image"]
         ld = [prod, bc_ld([("首页", ""), (c["name"], f"c/{c['id']}.html"), (p["title"], url)])]
+        vld = video_ld(p, url)
+        if vld: ld.append(vld)
         rel = [x for x in BYCAT[c["id"]] if x["sku"] != p["sku"]]
         j = BYCAT[c["id"]].index(p)
         rel = (BYCAT[c["id"]][j + 1:] + BYCAT[c["id"]][:j])[:8]
@@ -340,6 +373,7 @@ def products():
 <tr><th>分类</th><td><a href="../c/{c['id']}.html" style="color:#c8161d">{e(c['name'])}</a></td></tr>
 </table>
 </div></article>
+{video_section(p)}
 <section class="desc"><h2>产品说明</h2>
 <p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，价目表价 {rm(p['price'])}。</p>
 <p>新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货、批发数量与送货安排（依斯干达公主城、五福城、Sutera 等）。{img_src}。</p>
