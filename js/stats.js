@@ -5,7 +5,7 @@
 (function(){
 'use strict';
 /* ===== PASTE the deployed Apps Script Web App URL here (…/exec). Empty = tracking off. ===== */
-var API = "";
+var API = "https://script.google.com/macros/s/AKfycbxD5lZUXh1E0tjAEkGQD_NIJmOsUczKiD5y4tznS6Y5x_XMBHUW_7VfsRXbcFEXnvhMIg/exec";
 /* ========================================================================================== */
 var WA = '60177891688', VK = 'hbj_vid_v1', TK = 'hbj_stats_token';
 function vid(){
