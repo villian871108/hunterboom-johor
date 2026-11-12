@@ -1,0 +1,5350 @@
+{
+ "currency": "MYR",
+ "source": "Hunter Boom supply/agent price list PDF (价目表)",
+ "price_note": "价格按价目表原文（PACKING 为原表箱规）。实际零售单位与价格以 WhatsApp 确认为准。",
+ "categories": [
+  {
+   "id": "hongpao",
+   "name": "红炮礼炮",
+   "icon": "🧨",
+   "count": 39
+  },
+  {
+   "id": "poppop",
+   "name": "Pop Pop 沙炮",
+   "icon": "💥",
+   "count": 3
+  },
+  {
+   "id": "handheld",
+   "name": "手持烟花",
+   "icon": "✨",
+   "count": 21
+  },
+  {
+   "id": "fountain",
+   "name": "喷泉喷花",
+   "icon": "⛲",
+   "count": 38
+  },
+  {
+   "id": "fly",
+   "name": "飞天趣味",
+   "icon": "🚀",
+   "count": 19
+  },
+  {
+   "id": "sound",
+   "name": "响声系列",
+   "icon": "🔊",
+   "count": 14
+  },
+  {
+   "id": "bear",
+   "name": "熊炮系列",
+   "icon": "🐻",
+   "count": 7
+  },
+  {
+   "id": "cake",
+   "name": "盆花",
+   "icon": "🎆",
+   "count": 51
+  },
+  {
+   "id": "bigcake",
+   "name": "大盆花",
+   "icon": "🎇",
+   "count": 60
+  },
+  {
+   "id": "shot",
+   "name": "球盒系列",
+   "icon": "🏮",
+   "count": 8
+  }
+ ],
+ "products": [
+  {
+   "sku": "HB001",
+   "name": "8尺红炮",
+   "title": "8尺红炮",
+   "name_en": "8 FT RED",
+   "packing": "40/1",
+   "price": 200.0,
+   "category": "hongpao",
+   "source_line": "8尺红炮                    8 FT RED           40/1     RM200.00",
+   "image": "img/p/HB001.webp",
+   "thumb": "img/p/HB001-s.webp",
+   "image_size": [
+    345,
+    418
+   ],
+   "thumb_size": [
+    330,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB002",
+   "name": "8尺红炮 - 礼盒+彩箱",
+   "title": "8尺红炮 - 礼盒+彩箱",
+   "name_en": "8 FT RED BOX",
+   "packing": "40/1",
+   "price": 238.0,
+   "category": "hongpao",
+   "source_line": "8尺红炮 - 礼盒+彩箱              8 FT RED BOX          40/1     RM238.00",
+   "image": "img/p/HB002.webp",
+   "thumb": "img/p/HB002-s.webp",
+   "image_size": [
+    345,
+    418
+   ],
+   "thumb_size": [
+    330,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB003",
+   "name": "8尺特红(1.0)",
+   "title": "8尺特红(1.0)",
+   "name_en": "8 FT RED 1.0",
+   "packing": "30/1",
+   "price": 348.0,
+   "category": "hongpao",
+   "source_line": "8尺特红(1.0)               8 FT RED 1.0         30/1     RM348.00",
+   "image": "img/p/HB003.webp",
+   "thumb": "img/p/HB003-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB004",
+   "name": "8尺玫瑰红(1.0)",
+   "title": "8尺玫瑰红(1.0)",
+   "name_en": "8 FT ROSE 1.0",
+   "packing": "30/1",
+   "price": 348.0,
+   "category": "hongpao",
+   "source_line": "8尺玫瑰红(1.0)              8 FT ROSE 1.0         30/1     RM348.00",
+   "image": "img/p/HB004.webp",
+   "thumb": "img/p/HB004-s.webp",
+   "image_size": [
+    345,
+    417
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB005",
+   "name": "8尺满地黄金(1.0)",
+   "title": "8尺满地黄金(1.0)",
+   "name_en": "8 FT EMAS 1.0",
+   "packing": "30/1",
+   "price": 360.0,
+   "category": "hongpao",
+   "source_line": "8尺满地黄金(1.0)              8 FT EMAS 1.0         30/1     RM360.00",
+   "image": "img/p/HB005.webp",
+   "thumb": "img/p/HB005-s.webp",
+   "image_size": [
+    345,
+    417
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB006",
+   "name": "8尺王红炮(2.0)",
+   "title": "8尺王红炮(2.0)",
+   "name_en": "8 FT KING RED 2.0",
+   "packing": "12/1",
+   "price": 368.0,
+   "category": "hongpao",
+   "source_line": "8尺王红炮(2.0)            8 FT KING RED 2.0       12/1     RM368.00",
+   "image": "img/p/HB006.webp",
+   "thumb": "img/p/HB006-s.webp",
+   "image_size": [
+    346,
+    417
+   ],
+   "thumb_size": [
+    332,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB007",
+   "name": "8尺特红(1.0) - 礼盒",
+   "title": "8尺特红(1.0) - 礼盒",
+   "name_en": "8 FT RED 1.0 BOX",
+   "packing": "30/1",
+   "price": 360.0,
+   "category": "hongpao",
+   "source_line": "8尺特红(1.0) - 礼盒          8 FT RED 1.0 BOX       30/1     RM360.00",
+   "image": "img/p/HB007.webp",
+   "thumb": "img/p/HB007-s.webp",
+   "image_size": [
+    345,
+    418
+   ],
+   "thumb_size": [
+    330,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB008",
+   "name": "8尺玫瑰红(1.0) - 礼盒",
+   "title": "8尺玫瑰红(1.0) - 礼盒",
+   "name_en": "8 FT ROSE 1.0 BOX",
+   "packing": "30/1",
+   "price": 368.0,
+   "category": "hongpao",
+   "source_line": "8尺玫瑰红(1.0) - 礼盒         8 FT ROSE 1.0 BOX       30/1     RM368.00",
+   "image": "img/p/HB008.webp",
+   "thumb": "img/p/HB008-s.webp",
+   "image_size": [
+    345,
+    418
+   ],
+   "thumb_size": [
+    330,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB009",
+   "name": "8尺满地黄金(1.0) - 礼盒",
+   "title": "8尺满地黄金(1.0) - 礼盒",
+   "name_en": "8 FT EMAS 1.0 BOX",
+   "packing": "30/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "8尺满地黄金(1.0) - 礼盒         8 FT EMAS 1.0 BOX       30/1     RM378.00",
+   "image": "img/p/HB009.webp",
+   "thumb": "img/p/HB009-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 3"
+  },
+  {
+   "sku": "HB010",
+   "name": "8尺(1.0) 五色混装 (蓝紫橙青红)",
+   "title": "8尺(1.0) 五色混装 (蓝紫橙青红)",
+   "name_en": "8FT 5 COLOUR",
+   "packing": "30/1",
+   "price": 418.0,
+   "category": "hongpao",
+   "source_line": "8尺(1.0) 五色混装 (蓝紫橙青红)         8FT 5 COLOUR          30/1     RM418.00",
+   "image": "img/p/HB010.webp",
+   "thumb": "img/p/HB010-s.webp",
+   "image_size": [
+    387,
+    391
+   ],
+   "thumb_size": [
+    387,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB011",
+   "name": "五万头礼炮",
+   "title": "五万头礼炮",
+   "name_en": "50,000 MERCUN BOX",
+   "packing": "4/1",
+   "price": 478.0,
+   "category": "hongpao",
+   "source_line": "五万头礼炮               50,000 MERCUN BOX         4/1     RM478.00",
+   "image": "img/p/HB011.webp",
+   "thumb": "img/p/HB011-s.webp",
+   "image_size": [
+    359,
+    391
+   ],
+   "thumb_size": [
+    359,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB012",
+   "name": "十万头礼炮",
+   "title": "十万头礼炮",
+   "name_en": "100,000 MERCUN BOX",
+   "packing": "2/1",
+   "price": 448.0,
+   "category": "hongpao",
+   "source_line": "十万头礼炮              100,000 MERCUN BOX         2/1     RM448.00",
+   "image": "img/p/HB012.webp",
+   "thumb": "img/p/HB012-s.webp",
+   "image_size": [
+    359,
+    391
+   ],
+   "thumb_size": [
+    359,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB013",
+   "name": "网红爆款 东方巨龙 - 特红礼炮",
+   "title": "网红爆款 东方巨龙 - 特红礼炮",
+   "name_en": "EASTERN RED DRAGON BOX",
+   "packing": "3/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "网红爆款 东方巨龙 - 特红礼炮       EASTERN RED DRAGON BOX       3/1     RM378.00",
+   "image": "img/p/HB013.webp",
+   "thumb": "img/p/HB013-s.webp",
+   "image_size": [
+    368,
+    461
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB014",
+   "name": "网红爆款 东方巨龙 - 玫瑰礼炮",
+   "title": "网红爆款 东方巨龙 - 玫瑰礼炮",
+   "name_en": "EASTERN PINK DRAGON BOX",
+   "packing": "3/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "网红爆款 东方巨龙 - 玫瑰礼炮       EASTERN PINK DRAGON BOX      3/1     RM378.00",
+   "image": "img/p/HB014.webp",
+   "thumb": "img/p/HB014-s.webp",
+   "image_size": [
+    372,
+    460
+   ],
+   "thumb_size": [
+    323,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB015",
+   "name": "网红爆款 东方巨龙 - 黄金礼炮",
+   "title": "网红爆款 东方巨龙 - 黄金礼炮",
+   "name_en": "EASTERN GOLD DRAGON BOX",
+   "packing": "3/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "网红爆款 东方巨龙 - 黄金礼炮       EASTERN GOLD DRAGON BOX      3/1     RM378.00",
+   "image": "img/p/HB015.webp",
+   "thumb": "img/p/HB015-s.webp",
+   "image_size": [
+    359,
+    460
+   ],
+   "thumb_size": [
+    312,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB016",
+   "name": "网红爆款 东方巨龙 - 五彩礼炮",
+   "title": "网红爆款 东方巨龙 - 五彩礼炮",
+   "name_en": "EASTERN 5C DRAGON BOX",
+   "packing": "3/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "网红爆款 东方巨龙 - 五彩礼炮        EASTERN 5C DRAGON BOX       3/1     RM378.00",
+   "image": "img/p/HB016.webp",
+   "thumb": "img/p/HB016-s.webp",
+   "image_size": [
+    360,
+    462
+   ],
+   "thumb_size": [
+    312,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB017",
+   "name": "18尺特红",
+   "title": "18尺特红",
+   "name_en": "18 FT RED",
+   "packing": "18/1",
+   "price": 408.0,
+   "category": "hongpao",
+   "source_line": "18尺特红                   18 FT RED           18/1     RM408.00",
+   "image": "img/p/HB017.webp",
+   "thumb": "img/p/HB017-s.webp",
+   "image_size": [
+    370,
+    463
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB018",
+   "name": "18尺玫瑰红",
+   "title": "18尺玫瑰红",
+   "name_en": "18 FT ROSE",
+   "packing": "18/1",
+   "price": 428.0,
+   "category": "hongpao",
+   "source_line": "18尺玫瑰红                  18 FT ROSE           18/1     RM428.00",
+   "image": "img/p/HB018.webp",
+   "thumb": "img/p/HB018-s.webp",
+   "image_size": [
+    369,
+    462
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 4"
+  },
+  {
+   "sku": "HB019",
+   "name": "18尺满地黄金",
+   "title": "18尺满地黄金",
+   "name_en": "18 FT EMAS",
+   "packing": "18/1",
+   "price": 448.0,
+   "category": "hongpao",
+   "source_line": "18尺满地黄金                  18 FT EMAS           18/1     RM448.00",
+   "image": "img/p/HB019.webp",
+   "thumb": "img/p/HB019-s.webp",
+   "image_size": [
+    382,
+    389
+   ],
+   "thumb_size": [
+    382,
+    389
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB020",
+   "name": "18尺王红炮(2.0)",
+   "title": "18尺王红炮(2.0)",
+   "name_en": "18 FT KING RED 2.0 BOX",
+   "packing": "4/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "18尺王红炮(2.0)         18 FT KING RED 2.0 BOX     4/1     RM378.00",
+   "image": "img/p/HB020.webp",
+   "thumb": "img/p/HB020-s.webp",
+   "image_size": [
+    362,
+    391
+   ],
+   "thumb_size": [
+    362,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB021",
+   "name": "18尺特红(彩盒)",
+   "title": "18尺特红(彩盒)",
+   "name_en": "18 FT RED BOX",
+   "packing": "12/1",
+   "price": 368.0,
+   "category": "hongpao",
+   "source_line": "18尺特红(彩盒)               18 FT RED BOX         12/1     RM368.00",
+   "image": "img/p/HB021.webp",
+   "thumb": "img/p/HB021-s.webp",
+   "image_size": [
+    362,
+    390
+   ],
+   "thumb_size": [
+    362,
+    390
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB022",
+   "name": "18尺玫瑰(彩盒)",
+   "title": "18尺玫瑰(彩盒)",
+   "name_en": "18 FT PINK BOX",
+   "packing": "12/1",
+   "price": 358.0,
+   "category": "hongpao",
+   "source_line": "18尺玫瑰(彩盒)              18 FT PINK BOX         12/1     RM358.00",
+   "image": "img/p/HB022.webp",
+   "thumb": "img/p/HB022-s.webp",
+   "image_size": [
+    371,
+    461
+   ],
+   "thumb_size": [
+    322,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB023",
+   "name": "18尺黄金(彩盒)",
+   "title": "18尺黄金(彩盒)",
+   "name_en": "18 FT GOLD BOX",
+   "packing": "12/1",
+   "price": 378.0,
+   "category": "hongpao",
+   "source_line": "18尺黄金(彩盒)              18 FT GOLD BOX         12/1     RM378.00",
+   "image": "img/p/HB023.webp",
+   "thumb": "img/p/HB023-s.webp",
+   "image_size": [
+    371,
+    460
+   ],
+   "thumb_size": [
+    323,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB024",
+   "name": "30尺七星报喜(七色精品礼盒装)",
+   "title": "30尺七星报喜(七色精品礼盒装)",
+   "name_en": "30 FT 7 COLOR BOX",
+   "packing": "5/1",
+   "price": 488.0,
+   "category": "hongpao",
+   "source_line": "30尺七星报喜(七色精品礼盒装)           30 FT 7 COLOR BOX        5/1     RM488.00",
+   "image": "img/p/HB024.webp",
+   "thumb": "img/p/HB024-s.webp",
+   "image_size": [
+    346,
+    510
+   ],
+   "thumb_size": [
+    271,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB025",
+   "name": "38尺大红大紫",
+   "title": "38尺大红大紫",
+   "name_en": "38 FT MIX RED & ROSE BOX",
+   "packing": "5/1",
+   "price": 418.0,
+   "category": "hongpao",
+   "source_line": "38尺大红大紫           38 FT MIX RED & ROSE BOX     5/1     RM418.00",
+   "image": "img/p/HB025.webp",
+   "thumb": "img/p/HB025-s.webp",
+   "image_size": [
+    364,
+    462
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB026",
+   "name": "38尺翡翠玫瑰",
+   "title": "38尺翡翠玫瑰",
+   "name_en": "38 FT ROSE BOX",
+   "packing": "5/1",
+   "price": 390.0,
+   "category": "hongpao",
+   "source_line": "38尺翡翠玫瑰                38 FT ROSE BOX          5/1     RM390.00",
+   "image": "img/p/HB026.webp",
+   "thumb": "img/p/HB026-s.webp",
+   "image_size": [
+    370,
+    462
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB027",
+   "name": "38尺满地黄金",
+   "title": "38尺满地黄金",
+   "name_en": "38 FT GOLD BOX",
+   "packing": "5/1",
+   "price": 408.0,
+   "category": "hongpao",
+   "source_line": "38尺满地黄金                38 FT GOLD BOX          5/1     RM408.00",
+   "image": "img/p/HB027.webp",
+   "thumb": "img/p/HB027-s.webp",
+   "image_size": [
+    368,
+    461
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 5"
+  },
+  {
+   "sku": "HB028",
+   "name": "88尺红宝石(特红)",
+   "title": "88尺红宝石(特红)",
+   "name_en": "88 FT RED BOX",
+   "packing": "4/1",
+   "price": 448.0,
+   "category": "hongpao",
+   "source_line": "88尺红宝石(特红)               88 FT RED BOX          4/1     RM448.00",
+   "image": "img/p/HB028.webp",
+   "thumb": "img/p/HB028-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB029",
+   "name": "88尺翡翠玫瑰",
+   "title": "88尺翡翠玫瑰",
+   "name_en": "88 FT ROSE BOX",
+   "packing": "4/1",
+   "price": 460.0,
+   "category": "hongpao",
+   "source_line": "88尺翡翠玫瑰                88 FT ROSE BOX          4/1     RM460.00",
+   "image": "img/p/HB029.webp",
+   "thumb": "img/p/HB029-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB030",
+   "name": "88尺黄金满地",
+   "title": "88尺黄金满地",
+   "name_en": "88 FT EMAS BOX",
+   "packing": "4/1",
+   "price": 478.0,
+   "category": "hongpao",
+   "source_line": "88尺黄金满地                88 FT EMAS BOX          4/1     RM478.00",
+   "image": "img/p/HB030.webp",
+   "thumb": "img/p/HB030-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB031",
+   "name": "88尺七星高照",
+   "title": "88尺七星高照",
+   "name_en": "88 KAKI 7 COLOR",
+   "packing": "4/1",
+   "price": 685.0,
+   "category": "hongpao",
+   "source_line": "88尺七星高照           88 KAKI 7 COLOR         4/1      RM685.00",
+   "image": null
+  },
+  {
+   "sku": "HB032",
+   "name": "88尺九五至尊(九色)",
+   "title": "88尺九五至尊(九色)",
+   "name_en": "88 FT 9 COLOUR BOX",
+   "packing": "4/1",
+   "price": 608.0,
+   "category": "hongpao",
+   "source_line": "88尺九五至尊(九色)      88 FT 9 COLOUR BOX        4/1      RM608.00",
+   "image": "img/p/HB032.webp",
+   "thumb": "img/p/HB032-s.webp",
+   "image_size": [
+    364,
+    510
+   ],
+   "thumb_size": [
+    285,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB033",
+   "name": "108尺红宝石(特红)",
+   "title": "108尺红宝石(特红)",
+   "name_en": "108 FT RED BOX",
+   "packing": "3/1",
+   "price": 448.0,
+   "category": "hongpao",
+   "source_line": "108尺红宝石(特红)        108 FT RED BOX          3/1      RM448.00",
+   "image": "img/p/HB033.webp",
+   "thumb": "img/p/HB033-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB034",
+   "name": "108尺翡翠玫瑰",
+   "title": "108尺翡翠玫瑰",
+   "name_en": "108 FT ROSE BOX",
+   "packing": "3/1",
+   "price": 458.0,
+   "category": "hongpao",
+   "source_line": "108尺翡翠玫瑰          108 FT ROSE BOX         3/1      RM458.00",
+   "image": "img/p/HB034.webp",
+   "thumb": "img/p/HB034-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB035",
+   "name": "108尺满地黄金",
+   "title": "108尺满地黄金",
+   "name_en": "108 FT GOLD BOX",
+   "packing": "3/1",
+   "price": 468.0,
+   "category": "hongpao",
+   "source_line": "108尺满地黄金          108 FT GOLD BOX         3/1      RM468.00",
+   "image": "img/p/HB035.webp",
+   "thumb": "img/p/HB035-s.webp",
+   "image_size": [
+    346,
+    418
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 6"
+  },
+  {
+   "sku": "HB036",
+   "name": "118尺大红大紫",
+   "title": "118尺大红大紫",
+   "name_en": "118 FT MIX RED & ROSE",
+   "packing": "3/1",
+   "price": 490.0,
+   "category": "hongpao",
+   "source_line": "118尺大红大紫       118 FT MIX RED & ROSE      3/1      RM490.00",
+   "image": "img/p/HB036.webp",
+   "thumb": "img/p/HB036-s.webp",
+   "image_size": [
+    485,
+    602
+   ],
+   "thumb_size": [
+    322,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+  },
+  {
+   "sku": "HB037",
+   "name": "168尺红宝石(特红)",
+   "title": "168尺红宝石(特红)",
+   "name_en": "168 FT RED BOX",
+   "packing": "2/1",
+   "price": 508.0,
+   "category": "hongpao",
+   "source_line": "168尺红宝石(特红)        168 FT RED BOX          2/1      RM508.00",
+   "image": "img/p/HB037.webp",
+   "thumb": "img/p/HB037-s.webp",
+   "image_size": [
+    485,
+    604
+   ],
+   "thumb_size": [
+    321,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+  },
+  {
+   "sku": "HB038",
+   "name": "168尺翡翠玫瑰",
+   "title": "168尺翡翠玫瑰",
+   "name_en": "168 FT ROSE BOX",
+   "packing": "2/1",
+   "price": 508.0,
+   "category": "hongpao",
+   "source_line": "168尺翡翠玫瑰          168 FT ROSE BOX         2/1      RM508.00",
+   "image": "img/p/HB038.webp",
+   "thumb": "img/p/HB038-s.webp",
+   "image_size": [
+    494,
+    619
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+  },
+  {
+   "sku": "HB039",
+   "name": "168尺 满地黄金",
+   "title": "168尺 满地黄金",
+   "name_en": "168 FT GOLD BOX",
+   "packing": "2/1",
+   "price": 518.0,
+   "category": "hongpao",
+   "source_line": "168尺 满地黄金         168 FT GOLD BOX         2/1      RM518.00",
+   "image": "img/p/HB039.webp",
+   "thumb": "img/p/HB039-s.webp",
+   "image_size": [
+    494,
+    618
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+  },
+  {
+   "sku": "HB040",
+   "name": "小沙炮 POP POP",
+   "title": "小沙炮 POP POP",
+   "name_en": "POP POP KECIL",
+   "packing": "12/50/35",
+   "price": 278.0,
+   "category": "poppop",
+   "source_line": "小沙炮 POP POP        POP POP KECIL        12/50/35   RM278.00",
+   "image": "img/p/HB040.webp",
+   "thumb": "img/p/HB040-s.webp",
+   "image_size": [
+    470,
+    550
+   ],
+   "thumb_size": [
+    342,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 8"
+  },
+  {
+   "sku": "HB041",
+   "name": "大沙炮 POP POP",
+   "title": "大沙炮 POP POP",
+   "name_en": "POP POP BESAR",
+   "packing": "12/40/20",
+   "price": 290.0,
+   "category": "poppop",
+   "source_line": "大沙炮 POP POP        POP POP BESAR        12/40/20   RM290.00",
+   "image": "img/p/HB041.webp",
+   "thumb": "img/p/HB041-s.webp",
+   "image_size": [
+    480,
+    550
+   ],
+   "thumb_size": [
+    349,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 8"
+  },
+  {
+   "sku": "HB042",
+   "name": "超级雷神沙炮",
+   "title": "超级雷神沙炮",
+   "name_en": "SUPER POP POP",
+   "packing": "12/12/20",
+   "price": 278.0,
+   "category": "poppop",
+   "source_line": "超级雷神沙炮            SUPER POP POP         12/12/20   RM278.00",
+   "image": "img/p/HB042.webp",
+   "thumb": "img/p/HB042-s.webp",
+   "image_size": [
+    530,
+    540
+   ],
+   "thumb_size": [
+    393,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 8"
+  },
+  {
+   "sku": "HB043",
+   "name": "莲花开",
+   "title": "莲花开",
+   "name_en": "LOTUS BLOOMING",
+   "packing": "30/12",
+   "price": 398.0,
+   "category": "fountain",
+   "source_line": "莲花开           LOTUS BLOOMING          30/12     RM398.00",
+   "image": "img/p/HB043.webp",
+   "thumb": "img/p/HB043-s.webp",
+   "image_size": [
+    545,
+    564
+   ],
+   "thumb_size": [
+    387,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 9"
+  },
+  {
+   "sku": "HB044",
+   "name": "炸珠大地花开",
+   "title": "炸珠大地花开（包装 50/50）",
+   "name_en": "GASING",
+   "packing": "50/50",
+   "price": 498.0,
+   "category": "fountain",
+   "source_line": "炸珠大地花开                GASING             50/50     RM498.00",
+   "image": "img/p/HB044.webp",
+   "thumb": "img/p/HB044-s.webp",
+   "image_size": [
+    546,
+    564
+   ],
+   "thumb_size": [
+    387,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 9"
+  },
+  {
+   "sku": "HB045",
+   "name": "炸珠大地花开",
+   "title": "炸珠大地花开（包装 80/30）",
+   "name_en": "GASING",
+   "packing": "80/30",
+   "price": 585.0,
+   "category": "fountain",
+   "source_line": "炸珠大地花开                GASING             80/30     RM585.00",
+   "image": "img/p/HB045.webp",
+   "thumb": "img/p/HB045-s.webp",
+   "image_size": [
+    546,
+    564
+   ],
+   "thumb_size": [
+    387,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 9"
+  },
+  {
+   "sku": "HB046",
+   "name": "彩烟陀螺",
+   "title": "彩烟陀螺",
+   "name_en": "SMOKE GASING",
+   "packing": "48/12",
+   "price": 320.0,
+   "category": "fountain",
+   "source_line": "彩烟陀螺             SMOKE GASING          48/12     RM320.00",
+   "image": "img/p/HB046.webp",
+   "thumb": "img/p/HB046-s.webp",
+   "image_size": [
+    545,
+    565
+   ],
+   "thumb_size": [
+    386,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 9"
+  },
+  {
+   "sku": "HB047",
+   "name": "东方明珠塔",
+   "title": "东方明珠塔",
+   "name_en": "ORIENTAL PEARL CAMELIA",
+   "packing": "16/1",
+   "price": 360.0,
+   "category": "fountain",
+   "source_line": "东方明珠塔        ORIENTAL PEARL CAMELIA      16/1     RM360.00",
+   "image": "img/p/HB047.webp",
+   "thumb": "img/p/HB047-s.webp",
+   "image_size": [
+    546,
+    565
+   ],
+   "thumb_size": [
+    387,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 9"
+  },
+  {
+   "sku": "HB048",
+   "name": "小霞光",
+   "title": "小霞光",
+   "name_en": "SUNSET",
+   "packing": "60/4/25",
+   "price": 478.0,
+   "category": "handheld",
+   "source_line": "小霞光                SUNSET            60/4/25    RM478.00",
+   "image": "img/p/HB048.webp",
+   "thumb": "img/p/HB048-s.webp",
+   "image_size": [
+    385,
+    392
+   ],
+   "thumb_size": [
+    385,
+    392
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB049",
+   "name": "大霞光",
+   "title": "大霞光",
+   "name_en": "SUNSET BAR",
+   "packing": "40/100",
+   "price": 448.0,
+   "category": "handheld",
+   "source_line": "大霞光              SUNSET BAR          40/100     RM448.00",
+   "image": "img/p/HB049.webp",
+   "thumb": "img/p/HB049-s.webp",
+   "image_size": [
+    365,
+    393
+   ],
+   "thumb_size": [
+    365,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB050",
+   "name": "超级变变变",
+   "title": "超级变变变",
+   "name_en": "SUPER DUPER SUNSET",
+   "packing": "60/10",
+   "price": 358.0,
+   "category": "handheld",
+   "source_line": "超级变变变          SUPER DUPER SUNSET       60/10     RM358.00",
+   "image": "img/p/HB050.webp",
+   "thumb": "img/p/HB050-s.webp",
+   "image_size": [
+    364,
+    389
+   ],
+   "thumb_size": [
+    364,
+    389
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB051",
+   "name": "四色花",
+   "title": "四色花",
+   "name_en": "SUNSET 4 COLOR",
+   "packing": "30/4/30",
+   "price": 408.0,
+   "category": "handheld",
+   "source_line": "四色花            SUNSET 4 COLOR        30/4/30    RM408.00",
+   "image": "img/p/HB051.webp",
+   "thumb": "img/p/HB051-s.webp",
+   "image_size": [
+    367,
+    468
+   ],
+   "thumb_size": [
+    314,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB052",
+   "name": "大号手持瀑布",
+   "title": "大号手持瀑布",
+   "name_en": "SUNSET DIAMOND (90 SEC)",
+   "packing": "60/5",
+   "price": 438.0,
+   "category": "handheld",
+   "source_line": "大号手持瀑布        SUNSET DIAMOND (90 SEC)     60/5     RM438.00",
+   "image": "img/p/HB052.webp",
+   "thumb": "img/p/HB052-s.webp",
+   "image_size": [
+    368,
+    461
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB053",
+   "name": "彩色棒",
+   "title": "彩色棒",
+   "name_en": "ASAP COLOUR",
+   "packing": "100/2/25",
+   "price": 438.0,
+   "category": "handheld",
+   "source_line": "彩色棒             ASAP COLOUR          100/2/25   RM438.00",
+   "image": "img/p/HB053.webp",
+   "thumb": "img/p/HB053-s.webp",
+   "image_size": [
+    369,
+    468
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB054",
+   "name": "7寸金色电光花",
+   "title": "7寸金色电光花",
+   "name_en": "7\" BESI",
+   "packing": "30/50/8",
+   "price": 388.0,
+   "category": "handheld",
+   "source_line": "7寸金色电光花               7\" BESI           30/50/8    RM388.00",
+   "image": "img/p/HB054.webp",
+   "thumb": "img/p/HB054-s.webp",
+   "image_size": [
+    377,
+    467
+   ],
+   "thumb_size": [
+    323,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB055",
+   "name": "14寸金色电光花",
+   "title": "14寸金色电光花（包装 20/20/8）",
+   "name_en": "14\" BESI",
+   "packing": "20/20/8",
+   "price": 408.0,
+   "category": "handheld",
+   "source_line": "14寸金色电光花              14\" BESI          20/20/8    RM408.00",
+   "image": "img/p/HB055.webp",
+   "thumb": "img/p/HB055-s.webp",
+   "image_size": [
+    373,
+    467
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB056",
+   "name": "14寸金色电光花",
+   "title": "14寸金色电光花（包装 20/20/6）",
+   "name_en": "14\" BESI",
+   "packing": "20/20/6",
+   "price": 360.0,
+   "category": "handheld",
+   "source_line": "14寸金色电光花              14\" BESI          20/20/6    RM360.00",
+   "image": "img/p/HB056.webp",
+   "thumb": "img/p/HB056-s.webp",
+   "image_size": [
+    373,
+    467
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB057",
+   "name": "18寸金色电光花",
+   "title": "18寸金色电光花",
+   "name_en": "18''BESI",
+   "packing": "20/20/6",
+   "price": 408.0,
+   "category": "handheld",
+   "source_line": "18寸金色电光花              18''BESI          20/20/6    RM408.00",
+   "image": "img/p/HB057.webp",
+   "thumb": "img/p/HB057-s.webp",
+   "image_size": [
+    358,
+    467
+   ],
+   "thumb_size": [
+    307,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 10"
+  },
+  {
+   "sku": "HB058",
+   "name": "18寸彩色喷漆电光花",
+   "title": "18寸彩色喷漆电光花",
+   "name_en": "18INCI BESI MIX COLOUR",
+   "packing": "100/5",
+   "price": 328.0,
+   "category": "handheld",
+   "source_line": "18寸彩色喷漆电光花      18INCI BESI MIX COLOUR    100/5     RM328.00",
+   "image": "img/p/HB058.webp",
+   "thumb": "img/p/HB058-s.webp",
+   "image_size": [
+    366,
+    460
+   ],
+   "thumb_size": [
+    318,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB059",
+   "name": "精品10波流星雨",
+   "title": "精品10波流星雨",
+   "name_en": "VIP DAS 10",
+   "packing": "30/4",
+   "price": 408.0,
+   "category": "handheld",
+   "source_line": "精品10波流星雨             VIP DAS 10           30/4     RM408.00",
+   "image": "img/p/HB059.webp",
+   "thumb": "img/p/HB059-s.webp",
+   "image_size": [
+    382,
+    390
+   ],
+   "thumb_size": [
+    382,
+    390
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB060",
+   "name": "10波霹雳雨",
+   "title": "10波霹雳雨",
+   "name_en": "DAS 10",
+   "packing": "40/6",
+   "price": 308.0,
+   "category": "handheld",
+   "source_line": "10波霹雳雨               DAS 10              40/6     RM308.00",
+   "image": "img/p/HB060.webp",
+   "thumb": "img/p/HB060-s.webp",
+   "image_size": [
+    363,
+    391
+   ],
+   "thumb_size": [
+    363,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB061",
+   "name": "15波奇幻魔术棒",
+   "title": "15波奇幻魔术棒",
+   "name_en": "DAS 15",
+   "packing": "80/12",
+   "price": 418.0,
+   "category": "handheld",
+   "source_line": "15波奇幻魔术棒              DAS 15             80/12     RM418.00",
+   "image": "img/p/HB061.webp",
+   "thumb": "img/p/HB061-s.webp",
+   "image_size": [
+    363,
+    390
+   ],
+   "thumb_size": [
+    363,
+    390
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB062",
+   "name": "20波奇幻魔术棒",
+   "title": "20波奇幻魔术棒",
+   "name_en": "DAS 20",
+   "packing": "48/12",
+   "price": 348.0,
+   "category": "handheld",
+   "source_line": "20波奇幻魔术棒                 DAS 20              48/12   RM348.00",
+   "image": "img/p/HB062.webp",
+   "thumb": "img/p/HB062-s.webp",
+   "image_size": [
+    368,
+    463
+   ],
+   "thumb_size": [
+    318,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB063",
+   "name": "30波奇幻魔术棒",
+   "title": "30波奇幻魔术棒",
+   "name_en": "DAS 30",
+   "packing": "36/12",
+   "price": 348.0,
+   "category": "handheld",
+   "source_line": "30波奇幻魔术棒                 DAS 30              36/12   RM348.00",
+   "image": "img/p/HB063.webp",
+   "thumb": "img/p/HB063-s.webp",
+   "image_size": [
+    370,
+    460
+   ],
+   "thumb_size": [
+    322,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB064",
+   "name": "舞龙棒",
+   "title": "舞龙棒",
+   "name_en": "DRAGON FIREWORK",
+   "packing": "40/1",
+   "price": 288.0,
+   "category": "handheld",
+   "source_line": "舞龙棒              DRAGON FIREWORK           40/1    RM288.00",
+   "image": "img/p/HB064.webp",
+   "thumb": "img/p/HB064-s.webp",
+   "image_size": [
+    365,
+    463
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB065",
+   "name": "手持五彩火炬",
+   "title": "手持五彩火炬",
+   "name_en": "5C DRAGON FIREWORK",
+   "packing": "40/2",
+   "price": 308.0,
+   "category": "handheld",
+   "source_line": "手持五彩火炬           5C DRAGON FIREWORK          40/2    RM308.00",
+   "image": "img/p/HB065.webp",
+   "thumb": "img/p/HB065-s.webp",
+   "image_size": [
+    363,
+    463
+   ],
+   "thumb_size": [
+    314,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB066",
+   "name": "复仇联盟灭霸",
+   "title": "复仇联盟灭霸",
+   "name_en": "TANUS VIP DAS",
+   "packing": "8/1",
+   "price": 508.0,
+   "category": "handheld",
+   "source_line": "复仇联盟灭霸               TANUS VIP DAS            8/1    RM508.00",
+   "image": "img/p/HB066.webp",
+   "thumb": "img/p/HB066-s.webp",
+   "image_size": [
+    439,
+    430
+   ],
+   "thumb_size": [
+    400,
+    392
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB067",
+   "name": "如意金箍棒",
+   "title": "如意金箍棒",
+   "name_en": "JIN GU STICK",
+   "packing": "20/2",
+   "price": 490.0,
+   "category": "handheld",
+   "source_line": "如意金箍棒                JIN GU STICK           20/2    RM490.00",
+   "image": "img/p/HB067.webp",
+   "thumb": "img/p/HB067-s.webp",
+   "image_size": [
+    374,
+    463
+   ],
+   "thumb_size": [
+    323,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+  },
+  {
+   "sku": "HB068",
+   "name": "拉环五色烟雾",
+   "title": "拉环五色烟雾",
+   "name_en": "SMOKE DETECTOR",
+   "packing": "50/1",
+   "price": 328.0,
+   "category": "handheld",
+   "source_line": "拉环五色烟雾              SMOKE DETECTOR           50/1    RM328.00",
+   "image": "img/p/HB068.webp",
+   "thumb": "img/p/HB068-s.webp",
+   "image_size": [
+    551,
+    429
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB069",
+   "name": "888蓝色海洋加特林",
+   "title": "888蓝色海洋加特林",
+   "name_en": "888 SHOOT GATLING GUN",
+   "packing": "12/1",
+   "price": 578.0,
+   "category": "fountain",
+   "source_line": "888蓝色海洋加特林       888 SHOOT GATLING GUN        12/1    RM578.00",
+   "image": null
+  },
+  {
+   "sku": "HB070",
+   "name": "1088黄金瀑布加特林",
+   "title": "1088黄金瀑布加特林",
+   "name_en": "1088 SHOOT GATLING GUN",
+   "packing": "12/1",
+   "price": 618.0,
+   "category": "fountain",
+   "source_line": "1088黄金瀑布加特林      1088 SHOOT GATLING GUN       12/1    RM618.00",
+   "image": null
+  },
+  {
+   "sku": "HB071",
+   "name": "加特林 - 天降黄金",
+   "title": "加特林 - 天降黄金",
+   "name_en": "1088 GATLING GOLD EFFECT",
+   "packing": "12/1",
+   "price": 438.0,
+   "category": "fountain",
+   "source_line": "加特林 - 天降黄金      1088 GATLING GOLD EFFECT      12/1    RM438.00",
+   "image": "img/p/HB071.webp",
+   "thumb": "img/p/HB071-s.webp",
+   "image_size": [
+    536,
+    452
+   ],
+   "thumb_size": [
+    400,
+    337
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB072",
+   "name": "加特林 - 大展红图",
+   "title": "加特林 - 大展红图",
+   "name_en": "1288 GATLING RED EFFECT",
+   "packing": "12/1",
+   "price": 448.0,
+   "category": "fountain",
+   "source_line": "加特林 - 大展红图       1288 GATLING RED EFFECT      12/1    RM448.00",
+   "image": "img/p/HB072.webp",
+   "thumb": "img/p/HB072-s.webp",
+   "image_size": [
+    445,
+    451
+   ],
+   "thumb_size": [
+    395,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB073",
+   "name": "加特林 - 粉色浪漫",
+   "title": "加特林 - 粉色浪漫",
+   "name_en": "1388 GATLING PINK EFFECT",
+   "packing": "12/1",
+   "price": 448.0,
+   "category": "fountain",
+   "source_line": "加特林 - 粉色浪漫       1388 GATLING PINK EFFECT     12/1    RM448.00",
+   "image": "img/p/HB073.webp",
+   "thumb": "img/p/HB073-s.webp",
+   "image_size": [
+    531,
+    446
+   ],
+   "thumb_size": [
+    400,
+    336
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB074",
+   "name": "一触即发 - 金钛柳墙",
+   "title": "一触即发 - 金钛柳墙",
+   "name_en": "GOLDEN BLUE WALL EFFECT",
+   "packing": "8/1",
+   "price": 390.0,
+   "category": "fountain",
+   "source_line": "一触即发 - 金钛柳墙     GOLDEN BLUE WALL EFFECT        8/1    RM390.00",
+   "image": "img/p/HB074.webp",
+   "thumb": "img/p/HB074-s.webp",
+   "image_size": [
+    449,
+    445
+   ],
+   "thumb_size": [
+    400,
+    396
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 12"
+  },
+  {
+   "sku": "HB075",
+   "name": "7寸冰淇淋",
+   "title": "7寸冰淇淋",
+   "name_en": "7'' ICE CREAM",
+   "packing": "24/4",
+   "price": 488.0,
+   "category": "fountain",
+   "source_line": "7寸冰淇淋                7'' ICE CREAM          24/4    RM488.00",
+   "image": "img/p/HB075.webp",
+   "thumb": "img/p/HB075-s.webp",
+   "image_size": [
+    384,
+    391
+   ],
+   "thumb_size": [
+    384,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB076",
+   "name": "10寸锥形花筒",
+   "title": "10寸锥形花筒",
+   "name_en": "10'' ICE CREAM",
+   "packing": "10/2",
+   "price": 348.0,
+   "category": "fountain",
+   "source_line": "10寸锥形花筒              10'' ICE CREAM          10/2    RM348.00",
+   "image": "img/p/HB076.webp",
+   "thumb": "img/p/HB076-s.webp",
+   "image_size": [
+    363,
+    390
+   ],
+   "thumb_size": [
+    363,
+    390
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB077",
+   "name": "13寸锥形花筒",
+   "title": "13寸锥形花筒",
+   "name_en": "13'' ICE CREAM",
+   "packing": "8/2",
+   "price": 390.0,
+   "category": "fountain",
+   "source_line": "13寸锥形花筒              13'' ICE CREAM           8/2    RM390.00",
+   "image": "img/p/HB077.webp",
+   "thumb": "img/p/HB077-s.webp",
+   "image_size": [
+    363,
+    389
+   ],
+   "thumb_size": [
+    363,
+    389
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB078",
+   "name": "15寸锥形花筒",
+   "title": "15寸锥形花筒",
+   "name_en": "15'' ICE CREAM",
+   "packing": "6/2",
+   "price": 360.0,
+   "category": "fountain",
+   "source_line": "15寸锥形花筒              15'' ICE CREAM           6/2    RM360.00",
+   "image": "img/p/HB078.webp",
+   "thumb": "img/p/HB078-s.webp",
+   "image_size": [
+    374,
+    461
+   ],
+   "thumb_size": [
+    325,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB079",
+   "name": "巴黎铁塔喷泉13'",
+   "title": "巴黎铁塔喷泉13'",
+   "name_en": "PARIS EIFFEL FOUNTAIN 13'",
+   "packing": "16/1",
+   "price": 420.0,
+   "category": "fountain",
+   "source_line": "巴黎铁塔喷泉13’       PARIS EIFFEL FOUNTAIN 13‘    16/1    RM420.00",
+   "image": "img/p/HB079.webp",
+   "thumb": "img/p/HB079-s.webp",
+   "image_size": [
+    367,
+    460
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB080",
+   "name": "发财树",
+   "title": "发财树",
+   "name_en": "POKOK RAYA",
+   "packing": "72/6",
+   "price": 428.0,
+   "category": "fountain",
+   "source_line": "发财树                 POKOK RAYA             72/6    RM428.00",
+   "image": "img/p/HB080.webp",
+   "thumb": "img/p/HB080-s.webp",
+   "image_size": [
+    363,
+    463
+   ],
+   "thumb_size": [
+    314,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB081",
+   "name": "超大发财树",
+   "title": "超大发财树",
+   "name_en": "POKOK RAYA BESAR",
+   "packing": "40/4",
+   "price": 498.0,
+   "category": "fountain",
+   "source_line": "超大发财树             POKOK RAYA BESAR          40/4    RM498.00",
+   "image": "img/p/HB081.webp",
+   "thumb": "img/p/HB081-s.webp",
+   "image_size": [
+    365,
+    466
+   ],
+   "thumb_size": [
+    313,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB082",
+   "name": "超级和生财",
+   "title": "超级和生财",
+   "name_en": "TRIANGLE FOUNTAIN",
+   "packing": "40/1",
+   "price": 348.0,
+   "category": "fountain",
+   "source_line": "超级和生财            TRIANGLE FOUNTAIN          40/1    RM348.00",
+   "image": "img/p/HB082.webp",
+   "thumb": "img/p/HB082-s.webp",
+   "image_size": [
+    371,
+    463
+   ],
+   "thumb_size": [
+    321,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB083",
+   "name": "惊喜双色-红蓝",
+   "title": "惊喜双色-红蓝",
+   "name_en": "SURPRISE FOUNTAIN RED BLUE",
+   "packing": "18/1",
+   "price": 378.0,
+   "category": "fountain",
+   "source_line": "惊喜双色-红蓝       SURPRISE FOUNTAIN RED BLUE     18/1    RM378.00",
+   "image": "img/p/HB083.webp",
+   "thumb": "img/p/HB083-s.webp",
+   "image_size": [
+    366,
+    463
+   ],
+   "thumb_size": [
+    316,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 13"
+  },
+  {
+   "sku": "HB084",
+   "name": "孔雀开屏 '6管",
+   "title": "孔雀开屏 '6管",
+   "name_en": "PEACOCK '6 ROLL",
+   "packing": "24/1",
+   "price": 418.0,
+   "category": "fountain",
+   "source_line": "孔雀开屏 '6管            PEACOCK '6 ROLL          24/1    RM418.00",
+   "image": "img/p/HB084.webp",
+   "thumb": "img/p/HB084-s.webp",
+   "image_size": [
+    382,
+    391
+   ],
+   "thumb_size": [
+    382,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB085",
+   "name": "孔雀下蛋",
+   "title": "孔雀下蛋",
+   "name_en": "PEACOCK BERTELUR",
+   "packing": "24/1",
+   "price": 430.0,
+   "category": "fountain",
+   "source_line": "孔雀下蛋             PEACOCK BERTELUR          24/1    RM430.00",
+   "image": "img/p/HB085.webp",
+   "thumb": "img/p/HB085-s.webp",
+   "image_size": [
+    365,
+    393
+   ],
+   "thumb_size": [
+    365,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB086",
+   "name": "母鸡下蛋",
+   "title": "母鸡下蛋",
+   "name_en": "AYAM BERTELUR",
+   "packing": "36/10",
+   "price": 388.0,
+   "category": "fountain",
+   "source_line": "母鸡下蛋              AYAM BERTELUR            36/10   RM388.00",
+   "image": "img/p/HB086.webp",
+   "thumb": "img/p/HB086-s.webp",
+   "image_size": [
+    363,
+    392
+   ],
+   "thumb_size": [
+    363,
+    392
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB087",
+   "name": "满地珍珠",
+   "title": "满地珍珠",
+   "name_en": "MINI ICE CREAM - PEARL",
+   "packing": "60/10",
+   "price": 408.0,
+   "category": "fountain",
+   "source_line": "满地珍珠           MINI ICE CREAM - PEARL      60/10   RM408.00",
+   "image": "img/p/HB087.webp",
+   "thumb": "img/p/HB087-s.webp",
+   "image_size": [
+    370,
+    467
+   ],
+   "thumb_size": [
+    317,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB088",
+   "name": "超级MILO罐",
+   "title": "超级MILO罐",
+   "name_en": "TIN MILO FOUNTAIN",
+   "packing": "8/1",
+   "price": 320.0,
+   "category": "fountain",
+   "source_line": "超级MILO罐           TIN MILO FOUNTAIN          8/1    RM320.00",
+   "image": "img/p/HB088.webp",
+   "thumb": "img/p/HB088-s.webp",
+   "image_size": [
+    371,
+    464
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB089",
+   "name": "微醺多巴胺(精品)",
+   "title": "微醺多巴胺(精品)",
+   "name_en": "TIPSY DOPAMINE FOUNTAIN (PRO)",
+   "packing": "3/12",
+   "price": 428.0,
+   "category": "fountain",
+   "source_line": "微醺多巴胺(精品)     TIPSY DOPAMINE FOUNTAIN (PRO)   3/12    RM428.00",
+   "image": "img/p/HB089.webp",
+   "thumb": "img/p/HB089-s.webp",
+   "image_size": [
+    362,
+    467
+   ],
+   "thumb_size": [
+    310,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB090",
+   "name": "魔法风车",
+   "title": "魔法风车",
+   "name_en": "MAGIC WINDMILL",
+   "packing": "24/1",
+   "price": 428.0,
+   "category": "fountain",
+   "source_line": "魔法风车              MAGIC WINDMILL           24/1    RM428.00",
+   "image": "img/p/HB090.webp",
+   "thumb": "img/p/HB090-s.webp",
+   "image_size": [
+    363,
+    468
+   ],
+   "thumb_size": [
+    310,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB091",
+   "name": "南马四方来财",
+   "title": "南马四方来财",
+   "name_en": "SOUTERN MAGIC CUBE",
+   "packing": "18/1",
+   "price": 508.0,
+   "category": "fountain",
+   "source_line": "南马四方来财            SOUTERN MAGIC CUBE         18/1    RM508.00",
+   "image": "img/p/HB091.webp",
+   "thumb": "img/p/HB091-s.webp",
+   "image_size": [
+    370,
+    464
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB092",
+   "name": "南方虎金三角",
+   "title": "南方虎金三角",
+   "name_en": "SOUTERN TIGER EXTRA TRIANGLE",
+   "packing": "12/1",
+   "price": 508.0,
+   "category": "fountain",
+   "source_line": "南方虎金三角       SOUTERN TIGER EXTRA TRIANGLE    12/1    RM508.00",
+   "image": "img/p/HB092.webp",
+   "thumb": "img/p/HB092-s.webp",
+   "image_size": [
+    367,
+    466
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 14"
+  },
+  {
+   "sku": "HB093",
+   "name": "上海京剧喷泉",
+   "title": "上海京剧喷泉",
+   "name_en": "PEKING OPERA FOUNTAIN",
+   "packing": "25/1",
+   "price": 388.0,
+   "category": "fountain",
+   "source_line": "上海京剧喷泉      PEKING OPERA FOUNTAIN     25/1      RM388.00",
+   "image": "img/p/HB093.webp",
+   "thumb": "img/p/HB093-s.webp",
+   "image_size": [
+    422,
+    421
+   ],
+   "thumb_size": [
+    400,
+    399
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 15"
+  },
+  {
+   "sku": "HB094",
+   "name": "火山爆发",
+   "title": "火山爆发",
+   "name_en": "VOLCANO FOUNTAIN",
+   "packing": "18/1",
+   "price": 348.0,
+   "category": "fountain",
+   "source_line": "火山爆发        VOLCANO FOUNTAIN         18/1      RM348.00",
+   "image": "img/p/HB094.webp",
+   "thumb": "img/p/HB094-s.webp",
+   "image_size": [
+    374,
+    421
+   ],
+   "thumb_size": [
+    355,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 15"
+  },
+  {
+   "sku": "HB095",
+   "name": "超级黄金树",
+   "title": "超级黄金树",
+   "name_en": "GOLDEN TREE FOUNTAIN",
+   "packing": "24/1",
+   "price": 430.0,
+   "category": "fountain",
+   "source_line": "超级黄金树       GOLDEN TREE FOUNTAIN      24/1      RM430.00",
+   "image": "img/p/HB095.webp",
+   "thumb": "img/p/HB095-s.webp",
+   "image_size": [
+    421,
+    421
+   ],
+   "thumb_size": [
+    400,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 15"
+  },
+  {
+   "sku": "HB096",
+   "name": "狼嚎喷泉",
+   "title": "狼嚎喷泉",
+   "name_en": "WOLF KING FOUNTAIN",
+   "packing": "12/1",
+   "price": 318.0,
+   "category": "fountain",
+   "source_line": "狼嚎喷泉        WOLF KING FOUNTAIN       12/1      RM318.00",
+   "image": "img/p/HB096.webp",
+   "thumb": "img/p/HB096-s.webp",
+   "image_size": [
+    378,
+    421
+   ],
+   "thumb_size": [
+    359,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 15"
+  },
+  {
+   "sku": "HB097",
+   "name": "爱情伞",
+   "title": "爱情伞",
+   "name_en": "LOVE UMBRELLA",
+   "packing": "6/2",
+   "price": 490.0,
+   "category": "fountain",
+   "source_line": "爱情伞          LOVE UMBRELLA           6/2      RM490.00",
+   "image": "img/p/HB097.webp",
+   "thumb": "img/p/HB097-s.webp",
+   "image_size": [
+    421,
+    421
+   ],
+   "thumb_size": [
+    400,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 15"
+  },
+  {
+   "sku": "HB098",
+   "name": "龙蛋",
+   "title": "龙蛋",
+   "name_en": "NAGA (1.0)",
+   "packing": "72/12/12",
+   "price": 460.0,
+   "category": "fountain",
+   "source_line": "龙蛋              NAGA (1.0)        72/12/12    RM460.00",
+   "image": "img/p/HB098.webp",
+   "thumb": "img/p/HB098-s.webp",
+   "image_size": [
+    376,
+    386
+   ],
+   "thumb_size": [
+    376,
+    386
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 16"
+  },
+  {
+   "sku": "HB099",
+   "name": "超大龙蛋",
+   "title": "超大龙蛋",
+   "name_en": "NAGA BESAR (1.4)",
+   "packing": "36/12/12",
+   "price": 448.0,
+   "category": "fountain",
+   "source_line": "超大龙蛋          NAGA BESAR (1.4)     36/12/12    RM448.00",
+   "image": "img/p/HB099.webp",
+   "thumb": "img/p/HB099-s.webp",
+   "image_size": [
+    497,
+    386
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 16"
+  },
+  {
+   "sku": "HB100",
+   "name": "金玉满堂",
+   "title": "金玉满堂",
+   "name_en": "NAGA (3 MINIT)",
+   "packing": "60/6",
+   "price": 348.0,
+   "category": "fountain",
+   "source_line": "金玉满堂           NAGA (3 MINIT)        60/6      RM348.00",
+   "image": "img/p/HB100.webp",
+   "thumb": "img/p/HB100-s.webp",
+   "image_size": [
+    416,
+    386
+   ],
+   "thumb_size": [
+    400,
+    371
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 16"
+  },
+  {
+   "sku": "HB101",
+   "name": "超大金玉满堂",
+   "title": "超大金玉满堂",
+   "name_en": "NAGA BESAR (3 MINIT)",
+   "packing": "30/4",
+   "price": 398.0,
+   "category": "fountain",
+   "source_line": "超大金玉满堂       NAGA BESAR (3 MINIT)     30/4      RM398.00",
+   "image": "img/p/HB101.webp",
+   "thumb": "img/p/HB101-s.webp",
+   "image_size": [
+    496,
+    386
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 16"
+  },
+  {
+   "sku": "HB102",
+   "name": "坦克车",
+   "title": "坦克车",
+   "name_en": "TANK",
+   "packing": "30/12",
+   "price": 598.0,
+   "category": "fly",
+   "source_line": "坦克车               TANK             30/12      RM598.00",
+   "image": "img/p/HB102.webp",
+   "thumb": "img/p/HB102-s.webp",
+   "image_size": [
+    497,
+    386
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 16"
+  },
+  {
+   "sku": "HB103",
+   "name": "悟空",
+   "title": "悟空",
+   "name_en": "WU KONG",
+   "packing": "45/30",
+   "price": 420.0,
+   "category": "fly",
+   "source_line": "悟空              WU KONG            45/30      RM420.00",
+   "image": "img/p/HB103.webp",
+   "thumb": "img/p/HB103-s.webp",
+   "image_size": [
+    390,
+    395
+   ],
+   "thumb_size": [
+    390,
+    395
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB104",
+   "name": "超级大黄蜂",
+   "title": "超级大黄蜂",
+   "name_en": "SUPER BEE",
+   "packing": "60/12",
+   "price": 430.0,
+   "category": "fly",
+   "source_line": "超级大黄蜂             SUPER BEE          60/12      RM430.00",
+   "image": "img/p/HB104.webp",
+   "thumb": "img/p/HB104-s.webp",
+   "image_size": [
+    360,
+    391
+   ],
+   "thumb_size": [
+    360,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB105",
+   "name": "响天雷(小)",
+   "title": "响天雷(小)",
+   "name_en": "THUNDER CLAP (SMALL)",
+   "packing": "40/20/3",
+   "price": 678.0,
+   "category": "fly",
+   "source_line": "响天雷(小)     THUNDER CLAP (SMALL)     40/20/3    RM678.00",
+   "image": "img/p/HB105.webp",
+   "thumb": "img/p/HB105-s.webp",
+   "image_size": [
+    360,
+    393
+   ],
+   "thumb_size": [
+    360,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB106",
+   "name": "响天雷(大)",
+   "title": "响天雷(大)",
+   "name_en": "THUNDER CLAP (BIG)",
+   "packing": "30/20/3",
+   "price": 660.0,
+   "category": "fly",
+   "source_line": "响天雷(大)       THUNDER CLAP (BIG)     30/20/3    RM660.00",
+   "image": "img/p/HB106.webp",
+   "thumb": "img/p/HB106-s.webp",
+   "image_size": [
+    368,
+    468
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB107",
+   "name": "消声月旅行",
+   "title": "消声月旅行",
+   "name_en": "MOON",
+   "packing": "48/12/12",
+   "price": 698.0,
+   "category": "fly",
+   "source_line": "消声月旅行               MOON            48/12/12    RM698.00",
+   "image": "img/p/HB107.webp",
+   "thumb": "img/p/HB107-s.webp",
+   "image_size": [
+    370,
+    466
+   ],
+   "thumb_size": [
+    318,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB108",
+   "name": "50发飞天鼠",
+   "title": "50发飞天鼠",
+   "name_en": "TIKUS 50",
+   "packing": "30/2",
+   "price": 318.0,
+   "category": "fly",
+   "source_line": "50发飞天鼠             TIKUS 50           30/2      RM318.00",
+   "image": "img/p/HB108.webp",
+   "thumb": "img/p/HB108-s.webp",
+   "image_size": [
+    364,
+    465
+   ],
+   "thumb_size": [
+    313,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB109",
+   "name": "100发星空美人",
+   "title": "100发星空美人",
+   "name_en": "100 MAGIC TIKUS",
+   "packing": "36/1",
+   "price": 398.0,
+   "category": "fly",
+   "source_line": "100发星空美人        100 MAGIC TIKUS        36/1      RM398.00",
+   "image": "img/p/HB109.webp",
+   "thumb": "img/p/HB109-s.webp",
+   "image_size": [
+    363,
+    463
+   ],
+   "thumb_size": [
+    314,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB110",
+   "name": "狼嚎火箭",
+   "title": "狼嚎火箭",
+   "name_en": "WOLF ROCKET",
+   "packing": "20/6",
+   "price": 448.0,
+   "category": "fly",
+   "source_line": "狼嚎火箭           WOLF ROCKET           20/6      RM448.00",
+   "image": "img/p/HB110.webp",
+   "thumb": "img/p/HB110-s.webp",
+   "image_size": [
+    369,
+    465
+   ],
+   "thumb_size": [
+    317,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB111",
+   "name": "混合火箭",
+   "title": "混合火箭",
+   "name_en": "ROCKET MIX",
+   "packing": "24/7",
+   "price": 448.0,
+   "category": "fly",
+   "source_line": "混合火箭            ROCKET MIX           24/7      RM448.00",
+   "image": "img/p/HB111.webp",
+   "thumb": "img/p/HB111-s.webp",
+   "image_size": [
+    369,
+    463
+   ],
+   "thumb_size": [
+    319,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 17"
+  },
+  {
+   "sku": "HB112",
+   "name": "无人机",
+   "title": "无人机",
+   "name_en": "DRONE",
+   "packing": "12/1",
+   "price": 368.0,
+   "category": "fly",
+   "source_line": "无人机              DRONE              12/1      RM368.00",
+   "image": "img/p/HB112.webp",
+   "thumb": "img/p/HB112-s.webp",
+   "image_size": [
+    384,
+    393
+   ],
+   "thumb_size": [
+    384,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB113",
+   "name": "降落伞",
+   "title": "降落伞",
+   "name_en": "PAYUNG TERJUN",
+   "packing": "24/10",
+   "price": 348.0,
+   "category": "fly",
+   "source_line": "降落伞          PAYUNG TERJUN         24/10      RM348.00",
+   "image": "img/p/HB113.webp",
+   "thumb": "img/p/HB113-s.webp",
+   "image_size": [
+    365,
+    393
+   ],
+   "thumb_size": [
+    365,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB114",
+   "name": "蓄力闪频(加强版)",
+   "title": "蓄力闪频(加强版)",
+   "name_en": "STROBE (EXTRA PRO)",
+   "packing": "12/2",
+   "price": 748.0,
+   "category": "fly",
+   "source_line": "蓄力闪频(加强版)      STROBE (EXTRA PRO)      12/2      RM748.00",
+   "image": "img/p/HB114.webp",
+   "thumb": "img/p/HB114-s.webp",
+   "image_size": [
+    363,
+    394
+   ],
+   "thumb_size": [
+    363,
+    394
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB115",
+   "name": "三层飞机",
+   "title": "三层飞机",
+   "name_en": "THRIPLE FLY AEROPLANE",
+   "packing": "36/4",
+   "price": 528.0,
+   "category": "fly",
+   "source_line": "三层飞机       THRIPLE FLY AEROPLANE     36/4      RM528.00",
+   "image": "img/p/HB115.webp",
+   "thumb": "img/p/HB115-s.webp",
+   "image_size": [
+    371,
+    468
+   ],
+   "thumb_size": [
+    317,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB116",
+   "name": "一飞冲天",
+   "title": "一飞冲天",
+   "name_en": "1 SHOT TO THE SKY",
+   "packing": "36/24",
+   "price": 408.0,
+   "category": "fly",
+   "source_line": "一飞冲天         1 SHOT TO THE SKY      36/24      RM408.00",
+   "image": "img/p/HB116.webp",
+   "thumb": "img/p/HB116-s.webp",
+   "image_size": [
+    367,
+    468
+   ],
+   "thumb_size": [
+    314,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB117",
+   "name": "甲壳虫",
+   "title": "甲壳虫",
+   "name_en": "LADYBIRD",
+   "packing": "60/3",
+   "price": 488.0,
+   "category": "fly",
+   "source_line": "甲壳虫             LADYBIRD            60/3      RM488.00",
+   "image": "img/p/HB117.webp",
+   "thumb": "img/p/HB117-s.webp",
+   "image_size": [
+    364,
+    469
+   ],
+   "thumb_size": [
+    310,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB118",
+   "name": "水母",
+   "title": "水母",
+   "name_en": "UFO",
+   "packing": "20/10",
+   "price": 328.0,
+   "category": "fly",
+   "source_line": "水母                 UFO             20/10      RM328.00",
+   "image": "img/p/HB118.webp",
+   "thumb": "img/p/HB118-s.webp",
+   "image_size": [
+    367,
+    469
+   ],
+   "thumb_size": [
+    313,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB119",
+   "name": "超级大水母",
+   "title": "超级大水母",
+   "name_en": "SUPER UFO",
+   "packing": "20/5",
+   "price": 278.0,
+   "category": "fly",
+   "source_line": "超级大水母             SUPER UFO           20/5      RM278.00",
+   "image": "img/p/HB119.webp",
+   "thumb": "img/p/HB119-s.webp",
+   "image_size": [
+    372,
+    465
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB120",
+   "name": "49发花海 AB混装",
+   "title": "49发花海 AB混装",
+   "name_en": "49 MAGIC SHOOT CAKE",
+   "packing": "18/1",
+   "price": 390.0,
+   "category": "cake",
+   "source_line": "49发花海 AB混装    49 MAGIC SHOOT CAKE      18/1      RM390.00",
+   "image": "img/p/HB120.webp",
+   "thumb": "img/p/HB120-s.webp",
+   "image_size": [
+    366,
+    463
+   ],
+   "thumb_size": [
+    316,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 18"
+  },
+  {
+   "sku": "HB121",
+   "name": "单响火柴炮 - 小箱",
+   "title": "单响火柴炮 - 小箱",
+   "name_en": "MATCHES (1)",
+   "packing": "30/60/10",
+   "price": 308.0,
+   "category": "sound",
+   "source_line": "单响火柴炮 - 小箱        MATCHES (1)        30/60/10    RM308.00",
+   "image": "img/p/HB121.webp",
+   "thumb": "img/p/HB121-s.webp",
+   "image_size": [
+    383,
+    389
+   ],
+   "thumb_size": [
+    383,
+    389
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB122",
+   "name": "火柴炮 (双响)",
+   "title": "火柴炮 (双响)",
+   "name_en": "MATCHES (2)",
+   "packing": "50/10/20",
+   "price": 248.0,
+   "category": "sound",
+   "source_line": "火柴炮 (双响)         MATCHES (2)        50/10/20    RM248.00",
+   "image": "img/p/HB122.webp",
+   "thumb": "img/p/HB122-s.webp",
+   "image_size": [
+    360,
+    391
+   ],
+   "thumb_size": [
+    360,
+    391
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB123",
+   "name": "顺利红",
+   "title": "顺利红",
+   "name_en": "CILI PADI",
+   "packing": "300/10/26",
+   "price": 428.0,
+   "category": "sound",
+   "source_line": "顺利红              CILI PADI        300/10/26   RM428.00",
+   "image": "img/p/HB123.webp",
+   "thumb": "img/p/HB123-s.webp",
+   "image_size": [
+    360,
+    394
+   ],
+   "thumb_size": [
+    360,
+    394
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB124",
+   "name": "七色彩烟火柴炮 (1.0)",
+   "title": "七色彩烟火柴炮 (1.0)",
+   "name_en": "7 COLOUR SMOKE MANCIS (1.0)",
+   "packing": "20/10/14",
+   "price": 328.0,
+   "category": "sound",
+   "source_line": "七色彩烟火柴炮 (1.0)       7 COLOUR SMOKE MANCIS (1.0)      20/10/14   RM328.00",
+   "image": "img/p/HB124.webp",
+   "thumb": "img/p/HB124-s.webp",
+   "image_size": [
+    369,
+    464
+   ],
+   "thumb_size": [
+    318,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB125",
+   "name": "小号雨打芭蕉",
+   "title": "小号雨打芭蕉",
+   "name_en": "BANANA KECIL",
+   "packing": "60/6",
+   "price": 328.0,
+   "category": "sound",
+   "source_line": "小号雨打芭蕉                   BANANA KECIL               60/6     RM328.00",
+   "image": "img/p/HB125.webp",
+   "thumb": "img/p/HB125-s.webp",
+   "image_size": [
+    370,
+    462
+   ],
+   "thumb_size": [
+    320,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB126",
+   "name": "混合雨打芭蕉 (1.5)",
+   "title": "混合雨打芭蕉 (1.5)",
+   "name_en": "BANANA BESAR (1.5)",
+   "packing": "24/6",
+   "price": 438.0,
+   "category": "sound",
+   "source_line": "混合雨打芭蕉 (1.5)            BANANA BESAR (1.5)            24/6     RM438.00",
+   "image": "img/p/HB126.webp",
+   "thumb": "img/p/HB126-s.webp",
+   "image_size": [
+    362,
+    464
+   ],
+   "thumb_size": [
+    312,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB127",
+   "name": "飞天狼雨打芭蕉",
+   "title": "飞天狼雨打芭蕉",
+   "name_en": "WOLF BANANA HUJAN",
+   "packing": "36/6",
+   "price": 578.0,
+   "category": "sound",
+   "source_line": "飞天狼雨打芭蕉               WOLF BANANA HUJAN              36/6     RM578.00",
+   "image": "img/p/HB127.webp",
+   "thumb": "img/p/HB127-s.webp",
+   "image_size": [
+    362,
+    462
+   ],
+   "thumb_size": [
+    313,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB128",
+   "name": "一炮四响雨打芭蕉",
+   "title": "一炮四响雨打芭蕉",
+   "name_en": "ONE SHOT 4 SOUND BANANA",
+   "packing": "24/1",
+   "price": 390.0,
+   "category": "sound",
+   "source_line": "一炮四响雨打芭蕉           ONE SHOT 4 SOUND BANANA           24/1     RM390.00",
+   "image": "img/p/HB128.webp",
+   "thumb": "img/p/HB128-s.webp",
+   "image_size": [
+    362,
+    459
+   ],
+   "thumb_size": [
+    315,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+  },
+  {
+   "sku": "HB129",
+   "name": "天地双响 (小)",
+   "title": "天地双响 (小)",
+   "name_en": "THUNDER KING (SMALL)",
+   "packing": "72/6",
+   "price": 360.0,
+   "category": "sound",
+   "source_line": "天地双响 (小)             THUNDER KING (SMALL)           72/6     RM360.00",
+   "image": "img/p/HB129.webp",
+   "thumb": "img/p/HB129-s.webp",
+   "image_size": [
+    484,
+    603
+   ],
+   "thumb_size": [
+    321,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 20"
+  },
+  {
+   "sku": "HB130",
+   "name": "天地双响 (大)",
+   "title": "天地双响 (大)",
+   "name_en": "THUNDER KING (BIG)",
+   "packing": "48/6",
+   "price": 388.0,
+   "category": "sound",
+   "source_line": "天地双响 (大)              THUNDER KING (BIG)            48/6     RM388.00",
+   "image": "img/p/HB130.webp",
+   "thumb": "img/p/HB130-s.webp",
+   "image_size": [
+    484,
+    602
+   ],
+   "thumb_size": [
+    322,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 20"
+  },
+  {
+   "sku": "HB131",
+   "name": "8波罗马烛光",
+   "title": "8波罗马烛光",
+   "name_en": "8 DAS ROMAN CANDLE",
+   "packing": "30/3",
+   "price": 438.0,
+   "category": "fly",
+   "source_line": "8波罗马烛光               8 DAS ROMAN CANDLE             30/3     RM438.00",
+   "image": "img/p/HB131.webp",
+   "thumb": "img/p/HB131-s.webp",
+   "image_size": [
+    490,
+    616
+   ],
+   "thumb_size": [
+    318,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 20"
+  },
+  {
+   "sku": "HB132",
+   "name": "1.75 小炮弹",
+   "title": "1.75 小炮弹",
+   "name_en": "OSAMA1.75",
+   "packing": "12/12",
+   "price": 398.0,
+   "category": "sound",
+   "source_line": "1.75 小炮弹                OSAMA1.75                12/12     RM398.00",
+   "image": "img/p/HB132.webp",
+   "thumb": "img/p/HB132-s.webp",
+   "image_size": [
+    490,
+    618
+   ],
+   "thumb_size": [
+    317,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 20"
+  },
+  {
+   "sku": "HB133",
+   "name": "(熊炮) 雷王",
+   "title": "(熊炮) 雷王",
+   "name_en": "(Bearboom) THUNDER KING",
+   "packing": "72/6",
+   "price": 460.0,
+   "category": "bear",
+   "source_line": "(熊炮) 雷王           (Bearboom) THUNDER KING          72/6     RM460.00",
+   "image": null
+  },
+  {
+   "sku": "HB134",
+   "name": "(熊炮) 花开雪莲",
+   "title": "(熊炮) 花开雪莲",
+   "name_en": "(Bearboom) TAYCAN SPARKLE",
+   "packing": "12/1",
+   "price": 648.0,
+   "category": "bear",
+   "source_line": "(熊炮) 花开雪莲          (Bearboom) TAYCAN SPARKLE         12/1     RM648.00",
+   "image": null
+  },
+  {
+   "sku": "HB135",
+   "name": "(熊炮) 大风车",
+   "title": "(熊炮) 大风车",
+   "name_en": "(Bearboom) KIPAS FOUNTAIN",
+   "packing": "12/3",
+   "price": 640.0,
+   "category": "bear",
+   "source_line": "(熊炮) 大风车          (Bearboom) KIPAS FOUNTAIN         12/3     RM640.00",
+   "image": null
+  },
+  {
+   "sku": "HB136",
+   "name": "(熊炮) 仙女棒喷泉",
+   "title": "(熊炮) 仙女棒喷泉",
+   "name_en": "(Bearboom) MAGIC FOUNTAIN",
+   "packing": "20/4",
+   "price": 710.0,
+   "category": "bear",
+   "source_line": "(熊炮) 仙女棒喷泉         (Bearboom) MAGIC FOUNTAIN         20/4     RM710.00",
+   "image": null
+  },
+  {
+   "sku": "HB137",
+   "name": "(熊炮) 雪花瀑布",
+   "title": "(熊炮) 雪花瀑布",
+   "name_en": "(Bearboom) WATERFALL SUNSET",
+   "packing": "60/5",
+   "price": 510.0,
+   "category": "bear",
+   "source_line": "(熊炮) 雪花瀑布         (Bearboom) WATERFALL SUNSET        60/5     RM510.00",
+   "image": null
+  },
+  {
+   "sku": "HB138",
+   "name": "(熊炮) 大蝴蝶",
+   "title": "(熊炮) 大蝴蝶",
+   "name_en": "(Bearboom) BIG BUTTERFLY",
+   "packing": "36/6",
+   "price": 485.0,
+   "category": "bear",
+   "source_line": "(熊炮) 大蝴蝶           (Bearboom) BIG BUTTERFLY         36/6     RM485.00",
+   "image": null
+  },
+  {
+   "sku": "HB139",
+   "name": "(熊炮) 五色彩烟筒",
+   "title": "(熊炮) 五色彩烟筒",
+   "name_en": "(Bearboom) SMOKE 5 COLOR",
+   "packing": "50/5",
+   "price": 648.0,
+   "category": "bear",
+   "source_line": "(熊炮) 五色彩烟筒          (Bearboom) SMOKE 5 COLOR         50/5     RM648.00",
+   "image": null
+  },
+  {
+   "sku": "HB140",
+   "name": "纸筒4寸16发盆花 - 麒麟呈祥",
+   "title": "纸筒4寸16发盆花 - 麒麟呈祥",
+   "name_en": "4''16 SHOOT CAKE PAPER",
+   "packing": "40/1",
+   "price": 418.0,
+   "category": "cake",
+   "source_line": "纸筒4寸16发盆花 - 麒麟呈祥         4''16 SHOOT CAKE PAPER          40/1     RM418.00",
+   "image": "img/p/HB140.webp",
+   "thumb": "img/p/HB140-s.webp",
+   "image_size": [
+    390,
+    380
+   ],
+   "thumb_size": [
+    390,
+    380
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 22"
+  },
+  {
+   "sku": "HB141",
+   "name": "纸筒4寸25发盆花 - 玄武庄重",
+   "title": "纸筒4寸25发盆花 - 玄武庄重",
+   "name_en": "4''25 SHOOT CAKE PAPER",
+   "packing": "24/1",
+   "price": 378.0,
+   "category": "cake",
+   "source_line": "纸筒4寸25发盆花 - 玄武庄重         4''25 SHOOT CAKE PAPER          24/1     RM378.00",
+   "image": "img/p/HB141.webp",
+   "thumb": "img/p/HB141-s.webp",
+   "image_size": [
+    610,
+    370
+   ],
+   "thumb_size": [
+    400,
+    243
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 22"
+  },
+  {
+   "sku": "HB142",
+   "name": "纸筒4寸36发盆花 - 朱雀辉煌",
+   "title": "纸筒4寸36发盆花 - 朱雀辉煌",
+   "name_en": "4''36 SHOOT CAKE PAPER",
+   "packing": "16/1",
+   "price": 368.0,
+   "category": "cake",
+   "source_line": "纸筒4寸36发盆花 - 朱雀辉煌         4''36 SHOOT CAKE PAPER          16/1     RM368.00",
+   "image": "img/p/HB142.webp",
+   "thumb": "img/p/HB142-s.webp",
+   "image_size": [
+    460,
+    390
+   ],
+   "thumb_size": [
+    400,
+    339
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 22"
+  },
+  {
+   "sku": "HB143",
+   "name": "纸筒4寸49发盆花 - 白虎威武",
+   "title": "纸筒4寸49发盆花 - 白虎威武",
+   "name_en": "4''49 SHOOT CAKE PAPER",
+   "packing": "12/1",
+   "price": 368.0,
+   "category": "cake",
+   "source_line": "纸筒4寸49发盆花 - 白虎威武         4''49 SHOOT CAKE PAPER          12/1     RM368.00",
+   "image": "img/p/HB143.webp",
+   "thumb": "img/p/HB143-s.webp",
+   "image_size": [
+    590,
+    440
+   ],
+   "thumb_size": [
+    400,
+    298
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 22"
+  },
+  {
+   "sku": "HB144",
+   "name": "纸筒4寸138发盆花 - 青龙翱翔",
+   "title": "纸筒4寸138发盆花 - 青龙翱翔",
+   "name_en": "4''138 SHOOT CAKE PAPER",
+   "packing": "4/1",
+   "price": 360.0,
+   "category": "cake",
+   "source_line": "纸筒4寸138发盆花 - 青龙翱翔        4''138 SHOOT CAKE PAPER         4/1      RM360.00",
+   "image": "img/p/HB144.webp",
+   "thumb": "img/p/HB144-s.webp",
+   "image_size": [
+    800,
+    374
+   ],
+   "thumb_size": [
+    400,
+    187
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 22"
+  },
+  {
+   "sku": "HB145",
+   "name": "纸筒4寸138发盆花 AB - V形",
+   "title": "纸筒4寸138发盆花 AB - V形",
+   "name_en": "4''138 SHOOT CAKE AB - V SHAPE",
+   "packing": "4/1",
+   "price": 398.0,
+   "category": "cake",
+   "source_line": "纸筒4寸138发盆花 AB - V形   4''138 SHOOT CAKE AB - V SHAPE     4/1      RM398.00",
+   "image": "img/p/HB145.webp",
+   "thumb": "img/p/HB145-s.webp",
+   "image_size": [
+    670,
+    550
+   ],
+   "thumb_size": [
+    400,
+    328
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 23"
+  },
+  {
+   "sku": "HB146",
+   "name": "纸筒4寸276发盆花 AB - V形",
+   "title": "纸筒4寸276发盆花 AB - V形",
+   "name_en": "4''276 SHOOT CAKE AB - V SHAPE",
+   "packing": "2/2",
+   "price": 408.0,
+   "category": "cake",
+   "source_line": "纸筒4寸276发盆花 AB - V形   4''276 SHOOT CAKE AB - V SHAPE     2/2      RM408.00",
+   "image": null
+  },
+  {
+   "sku": "HB147",
+   "name": "纸筒5寸25发",
+   "title": "纸筒5寸25发",
+   "name_en": "5\"25 SHOOT CAKE PAPER",
+   "packing": "24/1",
+   "price": 408.0,
+   "category": "cake",
+   "source_line": "纸筒5寸25发             5\"25 SHOOT CAKE PAPER           24/1     RM408.00",
+   "image": "img/p/HB147.webp",
+   "thumb": "img/p/HB147-s.webp",
+   "image_size": [
+    370,
+    450
+   ],
+   "thumb_size": [
+    329,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 23"
+  },
+  {
+   "sku": "HB148",
+   "name": "纸筒5寸36发",
+   "title": "纸筒5寸36发",
+   "name_en": "5\"36 SHOOT CAKE PAPER",
+   "packing": "12/1",
+   "price": 298.0,
+   "category": "cake",
+   "source_line": "纸筒5寸36发             5\"36 SHOOT CAKE PAPER           12/1     RM298.00",
+   "image": "img/p/HB148.webp",
+   "thumb": "img/p/HB148-s.webp",
+   "image_size": [
+    370,
+    450
+   ],
+   "thumb_size": [
+    329,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 23"
+  },
+  {
+   "sku": "HB149",
+   "name": "纸筒5寸49发",
+   "title": "纸筒5寸49发",
+   "name_en": "5\"49 SHOOT CAKE PAPER",
+   "packing": "12/1",
+   "price": 408.0,
+   "category": "cake",
+   "source_line": "纸筒5寸49发             5\"49 SHOOT CAKE PAPER           12/1     RM408.00",
+   "image": "img/p/HB149.webp",
+   "thumb": "img/p/HB149-s.webp",
+   "image_size": [
+    390,
+    450
+   ],
+   "thumb_size": [
+    347,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 23"
+  },
+  {
+   "sku": "HB150",
+   "name": "模压4寸25发盆花 - 金钛柳系列",
+   "title": "模压4寸25发盆花 - 金钛柳系列",
+   "name_en": "4''25 SHOOT CAKE MOULD GOLD",
+   "packing": "24/1",
+   "price": 348.0,
+   "category": "cake",
+   "source_line": "模压4寸25发盆花 - 金钛柳系列     4''25 SHOOT CAKE MOULD GOLD        24/1     RM348.00",
+   "image": "img/p/HB150.webp",
+   "thumb": "img/p/HB150-s.webp",
+   "image_size": [
+    565,
+    460
+   ],
+   "thumb_size": [
+    400,
+    326
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 25"
+  },
+  {
+   "sku": "HB151",
+   "name": "模压4寸36发盆花 - 金钛柳系列",
+   "title": "模压4寸36发盆花 - 金钛柳系列",
+   "name_en": "4''36 SHOOT CAKE MOULD GOLD",
+   "packing": "16/1",
+   "price": 338.0,
+   "category": "cake",
+   "source_line": "模压4寸36发盆花 - 金钛柳系列     4''36 SHOOT CAKE MOULD GOLD        16/1     RM338.00",
+   "image": "img/p/HB151.webp",
+   "thumb": "img/p/HB151-s.webp",
+   "image_size": [
+    610,
+    460
+   ],
+   "thumb_size": [
+    400,
+    302
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 25"
+  },
+  {
+   "sku": "HB152",
+   "name": "模压4寸49发盆花 - 金钛柳系列",
+   "title": "模压4寸49发盆花 - 金钛柳系列",
+   "name_en": "4''49 SHOOT CAKE MOULD GOLD",
+   "packing": "12/1",
+   "price": 330.0,
+   "category": "cake",
+   "source_line": "模压4寸49发盆花 - 金钛柳系列     4''49 SHOOT CAKE MOULD GOLD        12/1     RM330.00",
+   "image": "img/p/HB152.webp",
+   "thumb": "img/p/HB152-s.webp",
+   "image_size": [
+    800,
+    243
+   ],
+   "thumb_size": [
+    400,
+    121
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 25"
+  },
+  {
+   "sku": "HB153",
+   "name": "模压4寸138发盆花 - 金钛柳系列",
+   "title": "模压4寸138发盆花 - 金钛柳系列",
+   "name_en": "4''138 SHOOT CAKE MOULD GOLD",
+   "packing": "4/1",
+   "price": 318.0,
+   "category": "cake",
+   "source_line": "模压4寸138发盆花 - 金钛柳系列    4''138 SHOOT CAKE MOULD GOLD       4/1      RM318.00",
+   "image": "img/p/HB153.webp",
+   "thumb": "img/p/HB153-s.webp",
+   "image_size": [
+    800,
+    332
+   ],
+   "thumb_size": [
+    400,
+    166
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 25"
+  },
+  {
+   "sku": "HB154",
+   "name": "模压4寸16发盆花 - 万众一心",
+   "title": "模压4寸16发盆花 - 万众一心",
+   "name_en": "4''16 SHOOT CAKE MOULD",
+   "packing": "40/1",
+   "price": 408.0,
+   "category": "cake",
+   "source_line": "模压4寸16发盆花 - 万众一心         4''16 SHOOT CAKE MOULD          40/1     RM408.00",
+   "image": "img/p/HB154.webp",
+   "thumb": "img/p/HB154-s.webp",
+   "image_size": [
+    380,
+    420
+   ],
+   "thumb_size": [
+    362,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 27"
+  },
+  {
+   "sku": "HB155",
+   "name": "模压4寸25发盆花 - 和气安康",
+   "title": "模压4寸25发盆花 - 和气安康",
+   "name_en": "4''25 SHOOT CAKE MOULD",
+   "packing": "24/1",
+   "price": 318.0,
+   "category": "cake",
+   "source_line": "模压4寸25发盆花 - 和气安康         4''25 SHOOT CAKE MOULD        24/1   RM318.00",
+   "image": "img/p/HB155.webp",
+   "thumb": "img/p/HB155-s.webp",
+   "image_size": [
+    520,
+    420
+   ],
+   "thumb_size": [
+    400,
+    323
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 27"
+  },
+  {
+   "sku": "HB156",
+   "name": "模压4寸36发盆花 - 步步高升",
+   "title": "模压4寸36发盆花 - 步步高升",
+   "name_en": "4''36 SHOOT CAKE MOULD",
+   "packing": "16/1",
+   "price": 308.0,
+   "category": "cake",
+   "source_line": "模压4寸36发盆花 - 步步高升         4''36 SHOOT CAKE MOULD        16/1   RM308.00",
+   "image": "img/p/HB156.webp",
+   "thumb": "img/p/HB156-s.webp",
+   "image_size": [
+    400,
+    460
+   ],
+   "thumb_size": [
+    348,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 27"
+  },
+  {
+   "sku": "HB157",
+   "name": "模压4寸49发盆花 - 团结就是力量",
+   "title": "模压4寸49发盆花 - 团结就是力量",
+   "name_en": "4''49 SHOOT CAKE MOULD",
+   "packing": "12/1",
+   "price": 308.0,
+   "category": "cake",
+   "source_line": "模压4寸49发盆花 - 团结就是力量        4''49 SHOOT CAKE MOULD        12/1   RM308.00",
+   "image": "img/p/HB157.webp",
+   "thumb": "img/p/HB157-s.webp",
+   "image_size": [
+    538,
+    470
+   ],
+   "thumb_size": [
+    400,
+    349
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 27"
+  },
+  {
+   "sku": "HB158",
+   "name": "模压4寸138发盆花 - 爱国精神",
+   "title": "模压4寸138发盆花 - 爱国精神",
+   "name_en": "4''138 SHOOT CAKE MOULD",
+   "packing": "4/1",
+   "price": 288.0,
+   "category": "cake",
+   "source_line": "模压4寸138发盆花 - 爱国精神        4''138 SHOOT CAKE MOULD       4/1    RM288.00",
+   "image": "img/p/HB158.webp",
+   "thumb": "img/p/HB158-s.webp",
+   "image_size": [
+    800,
+    422
+   ],
+   "thumb_size": [
+    400,
+    211
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 27"
+  },
+  {
+   "sku": "HB159",
+   "name": "模压5寸25发 - 吴国",
+   "title": "模压5寸25发 - 吴国",
+   "name_en": "5''25 SHOOT CAKE MOULD",
+   "packing": "24/1",
+   "price": 328.0,
+   "category": "cake",
+   "source_line": "模压5寸25发 - 吴国          5''25 SHOOT CAKE MOULD        24/1   RM328.00",
+   "image": "img/p/HB159.webp",
+   "thumb": "img/p/HB159-s.webp",
+   "image_size": [
+    370,
+    540
+   ],
+   "thumb_size": [
+    274,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 28"
+  },
+  {
+   "sku": "HB160",
+   "name": "模压5寸36发 - 魏国",
+   "title": "模压5寸36发 - 魏国",
+   "name_en": "5''36 SHOOT CAKE MOULD",
+   "packing": "16/1",
+   "price": 320.0,
+   "category": "cake",
+   "source_line": "模压5寸36发 - 魏国          5''36 SHOOT CAKE MOULD        16/1   RM320.00",
+   "image": "img/p/HB160.webp",
+   "thumb": "img/p/HB160-s.webp",
+   "image_size": [
+    420,
+    540
+   ],
+   "thumb_size": [
+    311,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 28"
+  },
+  {
+   "sku": "HB161",
+   "name": "模压5寸49发 - 蜀国",
+   "title": "模压5寸49发 - 蜀国",
+   "name_en": "5''49 SHOOT CAKE MOULD",
+   "packing": "12/1",
+   "price": 320.0,
+   "category": "cake",
+   "source_line": "模压5寸49发 - 蜀国          5''49 SHOOT CAKE MOULD        12/1   RM320.00",
+   "image": "img/p/HB161.webp",
+   "thumb": "img/p/HB161-s.webp",
+   "image_size": [
+    460,
+    510
+   ],
+   "thumb_size": [
+    361,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 28"
+  },
+  {
+   "sku": "HB162",
+   "name": "塑模 4寸25发盆花 - 和气安康",
+   "title": "塑模 4寸25发盆花 - 和气安康",
+   "name_en": "4''25 SHOOT CAKE PLASTIC",
+   "packing": "24/1",
+   "price": 308.0,
+   "category": "cake",
+   "source_line": "塑模 4寸25发盆花 - 和气安康        4''25 SHOOT CAKE PLASTIC      24/1   RM308.00",
+   "image": "img/p/HB162.webp",
+   "thumb": "img/p/HB162-s.webp",
+   "image_size": [
+    360,
+    400
+   ],
+   "thumb_size": [
+    360,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 29"
+  },
+  {
+   "sku": "HB163",
+   "name": "塑模 4寸36发盆花 - 步步高升",
+   "title": "塑模 4寸36发盆花 - 步步高升",
+   "name_en": "4''36 SHOOT CAKE PLASTIC",
+   "packing": "16/1",
+   "price": 300.0,
+   "category": "cake",
+   "source_line": "塑模 4寸36发盆花 - 步步高升        4''36 SHOOT CAKE PLASTIC      16/1   RM300.00",
+   "image": "img/p/HB163.webp",
+   "thumb": "img/p/HB163-s.webp",
+   "image_size": [
+    360,
+    400
+   ],
+   "thumb_size": [
+    360,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 29"
+  },
+  {
+   "sku": "HB164",
+   "name": "塑模 4寸49发盆花 - 团结就是力量",
+   "title": "塑模 4寸49发盆花 - 团结就是力量",
+   "name_en": "4''49 SHOOT CAKE PLASTIC",
+   "packing": "12/1",
+   "price": 298.0,
+   "category": "cake",
+   "source_line": "塑模 4寸49发盆花 - 团结就是力量       4''49 SHOOT CAKE PLASTIC      12/1   RM298.00",
+   "image": "img/p/HB164.webp",
+   "thumb": "img/p/HB164-s.webp",
+   "image_size": [
+    370,
+    400
+   ],
+   "thumb_size": [
+    370,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 29"
+  },
+  {
+   "sku": "HB165",
+   "name": "塑模 4寸138发盆花 - 爱国精神",
+   "title": "塑模 4寸138发盆花 - 爱国精神",
+   "name_en": "4''138 SHOOT CAKE PLASTIC (HOT SELLING)",
+   "packing": "4/1",
+   "price": 278.0,
+   "category": "cake",
+   "source_line": "塑模 4寸138发盆花 - 爱国精神     4''138 SHOOT CAKE PLASTIC (HOT   4/1    RM278.00 | SELLING)",
+   "image": "img/p/HB165.webp",
+   "thumb": "img/p/HB165-s.webp",
+   "image_size": [
+    420,
+    400
+   ],
+   "thumb_size": [
+    400,
+    381
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 29"
+  },
+  {
+   "sku": "HB166",
+   "name": "塑模 4寸138发盆花 - 全雷打",
+   "title": "塑模 4寸138发盆花 - 全雷打",
+   "name_en": "4''138 SHOOT CAKE (ONLY THUNDER KING)",
+   "packing": "4/1",
+   "price": 278.0,
+   "category": "cake",
+   "source_line": "塑模 4寸138发盆花 - 全雷打        4''138 SHOOT CAKE (ONLY       4/1    RM278.00 | THUNDER KING)",
+   "image": "img/p/HB166.webp",
+   "thumb": "img/p/HB166-s.webp",
+   "image_size": [
+    620,
+    440
+   ],
+   "thumb_size": [
+    400,
+    284
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 29"
+  },
+  {
+   "sku": "HB167",
+   "name": "5寸100发-百富齐放",
+   "title": "5寸100发-百富齐放",
+   "name_en": "5\"100 SHOOT CAKE",
+   "packing": "6/1",
+   "price": 810.0,
+   "category": "cake",
+   "source_line": "5寸100发-百富齐放              5\"100 SHOOT CAKE           6/1    RM810.00",
+   "image": null
+  },
+  {
+   "sku": "HB168",
+   "name": "5寸552发盆花 - 猎人之花",
+   "title": "5寸552发盆花 - 猎人之花",
+   "name_en": "5''552 SHOOT CAKE HUNTER FLOWER",
+   "packing": "4/1",
+   "price": 678.0,
+   "category": "cake",
+   "source_line": "5寸552发盆花 - 猎人之花        5''552 SHOOT CAKE HUNTER       4/1    RM678.00 | FLOWER",
+   "image": "img/p/HB168.webp",
+   "thumb": "img/p/HB168-s.webp",
+   "image_size": [
+    800,
+    521
+   ],
+   "thumb_size": [
+    400,
+    260
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB169",
+   "name": "5寸414发盆花 - 和A",
+   "title": "5寸414发盆花 - 和A",
+   "name_en": "5''414 SHOOT CAKE A",
+   "packing": "3/1",
+   "price": 460.0,
+   "category": "cake",
+   "source_line": "5寸414发盆花 - 和A           5''414 SHOOT CAKE A         3/1    RM460.00",
+   "image": "img/p/HB169.webp",
+   "thumb": "img/p/HB169-s.webp",
+   "image_size": [
+    390,
+    420
+   ],
+   "thumb_size": [
+    371,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB170",
+   "name": "5寸414发盆花 - 天B",
+   "title": "5寸414发盆花 - 天B",
+   "name_en": "5''414 SHOOT CAKE B",
+   "packing": "3/1",
+   "price": 498.0,
+   "category": "cake",
+   "source_line": "5寸414发盆花 - 天B           5''414 SHOOT CAKE B         3/1    RM498.00",
+   "image": "img/p/HB170.webp",
+   "thumb": "img/p/HB170-s.webp",
+   "image_size": [
+    400,
+    420
+   ],
+   "thumb_size": [
+    381,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB171",
+   "name": "5寸414发盆花 - 下C",
+   "title": "5寸414发盆花 - 下C",
+   "name_en": "5''414 SHOOT CAKE C",
+   "packing": "3/1",
+   "price": 498.0,
+   "category": "cake",
+   "source_line": "5寸414发盆花 - 下C            5''414 SHOOT CAKE C        3/1    RM498.00",
+   "image": "img/p/HB171.webp",
+   "thumb": "img/p/HB171-s.webp",
+   "image_size": [
+    440,
+    420
+   ],
+   "thumb_size": [
+    400,
+    382
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB172",
+   "name": "7寸25发盆花 - 红尾钛雷",
+   "title": "7寸25发盆花 - 红尾钛雷",
+   "name_en": "7\"25 SHOOT CAKE - THUNDER KING",
+   "packing": "12/1",
+   "price": 388.0,
+   "category": "cake",
+   "source_line": "7寸25发盆花 - 红尾钛雷       7\"25 SHOOT CAKE - THUNDER KING   12/1   RM388.00",
+   "image": "img/p/HB172.webp",
+   "thumb": "img/p/HB172-s.webp",
+   "image_size": [
+    390,
+    440
+   ],
+   "thumb_size": [
+    355,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB173",
+   "name": "7寸49发盆花 - 七七四九",
+   "title": "7寸49发盆花 - 七七四九",
+   "name_en": "7\"49 SHOOT CAKE - 7749",
+   "packing": "4/1",
+   "price": 378.0,
+   "category": "cake",
+   "source_line": "7寸49发盆花 - 七七四九           7\"49 SHOOT CAKE - 7749       4/1    RM378.00",
+   "image": "img/p/HB173.webp",
+   "thumb": "img/p/HB173-s.webp",
+   "image_size": [
+    390,
+    440
+   ],
+   "thumb_size": [
+    355,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB174",
+   "name": "7寸276发盆花 - 速度&激情AB",
+   "title": "7寸276发盆花 - 速度&激情AB",
+   "name_en": "7\"276 SHOOT CAKE A & B",
+   "packing": "1/2",
+   "price": 538.0,
+   "category": "cake",
+   "source_line": "7寸276发盆花 - 速度&激情AB        7\"276 SHOOT CAKE A & B       1/2    RM538.00",
+   "image": "img/p/HB174.webp",
+   "thumb": "img/p/HB174-s.webp",
+   "image_size": [
+    410,
+    440
+   ],
+   "thumb_size": [
+    373,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 30"
+  },
+  {
+   "sku": "HB175",
+   "name": "8寸25发 - 八面威风 (金钛柳)",
+   "title": "8寸25发 - 八面威风 (金钛柳)",
+   "name_en": "8\"25 SHOOT CAKE GOLD EFFECT",
+   "packing": "4/1",
+   "price": 328.0,
+   "category": "cake",
+   "source_line": "8寸25发 - 八面威风 (金钛柳)     8\"25 SHOOT CAKE GOLD EFFECT     4/1    RM328.00",
+   "image": "img/p/HB175.webp",
+   "thumb": "img/p/HB175-s.webp",
+   "image_size": [
+    450,
+    420
+   ],
+   "thumb_size": [
+    400,
+    373
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 31"
+  },
+  {
+   "sku": "HB176",
+   "name": "8寸49发盆花 - 八面玲珑 (金钛柳)",
+   "title": "8寸49发盆花 - 八面玲珑 (金钛柳)",
+   "name_en": "8\"49 SHOOT CAKE GOLD EFFECT",
+   "packing": "2/1",
+   "price": 318.0,
+   "category": "cake",
+   "source_line": "8寸49发盆花 - 八面玲珑 (金钛柳)    8\"49 SHOOT CAKE GOLD EFFECT     2/1    RM318.00",
+   "image": "img/p/HB176.webp",
+   "thumb": "img/p/HB176-s.webp",
+   "image_size": [
+    450,
+    420
+   ],
+   "thumb_size": [
+    400,
+    373
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 31"
+  },
+  {
+   "sku": "HB177",
+   "name": "8寸49发盆花-八面玲珑",
+   "title": "8寸49发盆花-八面玲珑",
+   "name_en": "8\"49 SHOOT CAKE",
+   "packing": "4/1",
+   "price": 535.0,
+   "category": "cake",
+   "source_line": "8寸49发盆花-八面玲珑               8\"49 SHOOT CAKE           4/1    RM535.00",
+   "image": null
+  },
+  {
+   "sku": "HB178",
+   "name": "精品1.2寸洞8寸49发",
+   "title": "精品1.2寸洞8寸49发",
+   "name_en": "8\"49 SHOOT CAKE",
+   "packing": "2/1",
+   "price": 498.0,
+   "category": "cake",
+   "source_line": "精品1.2寸洞8寸49发              8\"49 SHOOT CAKE           2/1    RM498.00",
+   "image": null
+  },
+  {
+   "sku": "HB179",
+   "name": "1寸洞49发-狼嚎天下",
+   "title": "1寸洞49发-狼嚎天下",
+   "name_en": "1\"49 SHOOT CAKE",
+   "packing": "6/1",
+   "price": 847.5,
+   "category": "cake",
+   "source_line": "1寸洞49发-狼嚎天下                1\"49 SHOOT CAKE           6/1    RM847.50",
+   "image": null
+  },
+  {
+   "sku": "HB180",
+   "name": "8寸138发盆花 AB - 八方来财",
+   "title": "8寸138发盆花 AB - 八方来财",
+   "name_en": "8\"138 SHOOT CAKE AB",
+   "packing": "2/1",
+   "price": 488.0,
+   "category": "cake",
+   "source_line": "8寸138发盆花 AB - 八方来财         8\"138 SHOOT CAKE AB         2/1    RM488.00",
+   "image": "img/p/HB180.webp",
+   "thumb": "img/p/HB180-s.webp",
+   "image_size": [
+    800,
+    627
+   ],
+   "thumb_size": [
+    400,
+    313
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 31"
+  },
+  {
+   "sku": "HB181",
+   "name": "9寸高138发盆花 - 七彩筋斗云",
+   "title": "9寸高138发盆花 - 七彩筋斗云",
+   "name_en": "9\"138 SHOOT CAKE - 7C JIN DOU CLOUD",
+   "packing": "1/1",
+   "price": 578.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 七彩筋斗云      9\"138 SHOOT CAKE - 7C JIN DOU   1/1    RM578.00 | CLOUD",
+   "image": "img/p/HB181.webp",
+   "thumb": "img/p/HB181-s.webp",
+   "image_size": [
+    580,
+    500
+   ],
+   "thumb_size": [
+    400,
+    345
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 32"
+  },
+  {
+   "sku": "HB182",
+   "name": "9寸高138发盆花 - 萤火虫",
+   "title": "9寸高138发盆花 - 萤火虫",
+   "name_en": "9\"138 SHOOT CAKE - FIREFLY",
+   "packing": "1/1",
+   "price": 488.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 萤火虫        9\"138 SHOOT CAKE - FIREFLY     1/1    RM488.00",
+   "image": "img/p/HB182.webp",
+   "thumb": "img/p/HB182-s.webp",
+   "image_size": [
+    550,
+    500
+   ],
+   "thumb_size": [
+    400,
+    364
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 32"
+  },
+  {
+   "sku": "HB183",
+   "name": "9寸高138发盆花 - 鸟巢烟花",
+   "title": "9寸高138发盆花 - 鸟巢烟花",
+   "name_en": "9\"138 SHOOT CAKE - BIRDNEST",
+   "packing": "1/1",
+   "price": 558.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 鸟巢烟花       9\"138 SHOOT CAKE - BIRDNEST     1/1    RM558.00",
+   "image": "img/p/HB183.webp",
+   "thumb": "img/p/HB183-s.webp",
+   "image_size": [
+    580,
+    420
+   ],
+   "thumb_size": [
+    400,
+    290
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 32"
+  },
+  {
+   "sku": "HB184",
+   "name": "9寸高138发盆花 - 王者金椰",
+   "title": "9寸高138发盆花 - 王者金椰",
+   "name_en": "9\"138 SHOOT CAKE - KING OF KELAPA",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 王者金椰        9\"138 SHOOT CAKE - KING OF     1/1    RM448.00 | KELAPA",
+   "image": "img/p/HB184.webp",
+   "thumb": "img/p/HB184-s.webp",
+   "image_size": [
+    560,
+    420
+   ],
+   "thumb_size": [
+    400,
+    300
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 32"
+  },
+  {
+   "sku": "HB185",
+   "name": "9寸高138发盆花 - 笑傲江湖",
+   "title": "9寸高138发盆花 - 笑傲江湖",
+   "name_en": "9\"138 SHOOT CAKE - THE SMILING",
+   "packing": "1/1",
+   "price": 478.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 笑傲江湖      9\"138 SHOOT CAKE - THE SMILING   1/1    RM478.00",
+   "image": "img/p/HB185.webp",
+   "thumb": "img/p/HB185-s.webp",
+   "image_size": [
+    570,
+    480
+   ],
+   "thumb_size": [
+    400,
+    337
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 33"
+  },
+  {
+   "sku": "HB186",
+   "name": "9寸高138发盆花 - 神雕侠侣",
+   "title": "9寸高138发盆花 - 神雕侠侣",
+   "name_en": "9\"138 SHOOT CAKE - CONDOR HERO",
+   "packing": "1/1",
+   "price": 478.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 - 神雕侠侣        9\"138 SHOOT CAKE - CONDOR         1/1   RM478.00 | HERO",
+   "image": "img/p/HB186.webp",
+   "thumb": "img/p/HB186-s.webp",
+   "image_size": [
+    570,
+    480
+   ],
+   "thumb_size": [
+    400,
+    337
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 33"
+  },
+  {
+   "sku": "HB187",
+   "name": "9寸高276发盆花 - 马上HUAT",
+   "title": "9寸高276发盆花 - 马上HUAT",
+   "name_en": "9\"276 SHOOT CAKE - MONEY COME",
+   "packing": "1/2",
+   "price": 660.0,
+   "category": "bigcake",
+   "source_line": "9寸高276发盆花 - 马上HUAT    9\"276 SHOOT CAKE - MONEY COME       1/2   RM660.00",
+   "image": "img/p/HB187.webp",
+   "thumb": "img/p/HB187-s.webp",
+   "image_size": [
+    580,
+    560
+   ],
+   "thumb_size": [
+    400,
+    386
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 33"
+  },
+  {
+   "sku": "HB188",
+   "name": "10寸高138发盆花 - 盲盒烟花",
+   "title": "10寸高138发盆花 - 盲盒烟花",
+   "name_en": "10\"138 SHOOT CAKE - BLIND BOX",
+   "packing": "1/1",
+   "price": 508.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 - 盲盒烟花      10\"138 SHOOT CAKE - BLIND BOX      1/1   RM508.00",
+   "image": "img/p/HB188.webp",
+   "thumb": "img/p/HB188-s.webp",
+   "image_size": [
+    570,
+    560
+   ],
+   "thumb_size": [
+    400,
+    393
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 33"
+  },
+  {
+   "sku": "HB189",
+   "name": "10寸高276发盆花 - 橙公子",
+   "title": "10寸高276发盆花 - 橙公子",
+   "name_en": "10\"276 SHOOT CAKE - MR ORANGE",
+   "packing": "1/2",
+   "price": 978.0,
+   "category": "bigcake",
+   "source_line": "10寸高276发盆花 - 橙公子      10\"276 SHOOT CAKE - MR ORANGE       1/2   RM978.00",
+   "image": "img/p/HB189.webp",
+   "thumb": "img/p/HB189-s.webp",
+   "image_size": [
+    800,
+    369
+   ],
+   "thumb_size": [
+    400,
+    184
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 51"
+  },
+  {
+   "sku": "HB190",
+   "name": "10寸高 - 张家界之夜",
+   "title": "10寸高 - 张家界之夜",
+   "name_en": "10 INCH CAKE - ZHANG JIAJIE",
+   "packing": "1/1",
+   "price": 408.0,
+   "category": "bigcake",
+   "source_line": "10寸高 - 张家界之夜           10 INCH CAKE - ZHANG JIAJIE      1/1   RM408.00",
+   "image": "img/p/HB190.webp",
+   "thumb": "img/p/HB190-s.webp",
+   "image_size": [
+    560,
+    410
+   ],
+   "thumb_size": [
+    400,
+    293
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 51"
+  },
+  {
+   "sku": "HB191",
+   "name": "10寸高 - 九寨沟之夜",
+   "title": "10寸高 - 九寨沟之夜",
+   "name_en": "10 INCH CAKE - JIU ZHAI GOU",
+   "packing": "1/1",
+   "price": 428.0,
+   "category": "bigcake",
+   "source_line": "10寸高 - 九寨沟之夜          10 INCH CAKE - JIU ZHAI GOU       1/1   RM428.00",
+   "image": "img/p/HB191.webp",
+   "thumb": "img/p/HB191-s.webp",
+   "image_size": [
+    660,
+    500
+   ],
+   "thumb_size": [
+    400,
+    303
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 51"
+  },
+  {
+   "sku": "HB192",
+   "name": "10寸高 - 万里长城之夜",
+   "title": "10寸高 - 万里长城之夜",
+   "name_en": "10 INCH CAKE - THE GREAT WALL OF CHINA",
+   "packing": "1/1",
+   "price": 430.0,
+   "category": "bigcake",
+   "source_line": "10寸高 - 万里长城之夜         10 INCH CAKE - THE GREAT WALL      1/1   RM430.00 | OF CHINA",
+   "image": "img/p/HB192.webp",
+   "thumb": "img/p/HB192-s.webp",
+   "image_size": [
+    630,
+    420
+   ],
+   "thumb_size": [
+    400,
+    267
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 51"
+  },
+  {
+   "sku": "HB193",
+   "name": "25发彩烟日景 - 六色混装",
+   "title": "25发彩烟日景 - 六色混装",
+   "name_en": "25 SHOOT CAKE COLOUR - 6 COLOR MIX",
+   "packing": "6/1",
+   "price": 430.0,
+   "category": "cake",
+   "source_line": "25发彩烟日景 - 六色混装       25 SHOOT CAKE COLOUR - 6 COLOR      6/1   RM430.00 | MIX",
+   "image": "img/p/HB193.webp",
+   "thumb": "img/p/HB193-s.webp",
+   "image_size": [
+    580,
+    600
+   ],
+   "thumb_size": [
+    387,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 34"
+  },
+  {
+   "sku": "HB194",
+   "name": "25发彩烟日景 - 蓝色",
+   "title": "25发彩烟日景 - 蓝色",
+   "name_en": "25 SHOOT CAKE COLOUR - BLUE",
+   "packing": "6/1",
+   "price": 418.0,
+   "category": "cake",
+   "source_line": "25发彩烟日景 - 蓝色         25 SHOOT CAKE COLOUR - BLUE        6/1   RM418.00",
+   "image": "img/p/HB194.webp",
+   "thumb": "img/p/HB194-s.webp",
+   "image_size": [
+    560,
+    600
+   ],
+   "thumb_size": [
+    373,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 34"
+  },
+  {
+   "sku": "HB195",
+   "name": "25发彩烟日景 - 粉色",
+   "title": "25发彩烟日景 - 粉色",
+   "name_en": "25 SHOOT CAKE COLOUR -PINK",
+   "packing": "6/1",
+   "price": 418.0,
+   "category": "cake",
+   "source_line": "25发彩烟日景 - 粉色          25 SHOOT CAKE COLOUR -PINK        6/1   RM418.00",
+   "image": "img/p/HB195.webp",
+   "thumb": "img/p/HB195-s.webp",
+   "image_size": [
+    550,
+    600
+   ],
+   "thumb_size": [
+    367,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 34"
+  },
+  {
+   "sku": "HB196",
+   "name": "9寸高138发盆花 A1 - 八仙过海 吕洞宾",
+   "title": "9寸高138发盆花 A1 - 八仙过海 吕洞宾",
+   "name_en": "9\"138 SHOOT CAKE A1 - LV DONG BIN",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A1 - 八仙过海 吕   9\"138 SHOOT CAKE A1 - LV DONG       1/1   RM448.00 | 洞宾                           BIN",
+   "image": "img/p/HB196.webp",
+   "thumb": "img/p/HB196-s.webp",
+   "image_size": [
+    420,
+    320
+   ],
+   "thumb_size": [
+    400,
+    305
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB197",
+   "name": "9寸高138发盆花 A2 - 八仙过海 铁拐李",
+   "title": "9寸高138发盆花 A2 - 八仙过海 铁拐李",
+   "name_en": "9\"138 SHOOT CAKE A2 - TIE GUAI LI",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A2 - 八仙过海 铁   9\"138 SHOOT CAKE A2 - TIE GUAI LI   1/1   RM448.00 | 拐李",
+   "image": "img/p/HB197.webp",
+   "thumb": "img/p/HB197-s.webp",
+   "image_size": [
+    800,
+    250
+   ],
+   "thumb_size": [
+    400,
+    125
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB198",
+   "name": "9寸高138发盆花 A3 - 八仙过海 何仙姑",
+   "title": "9寸高138发盆花 A3 - 八仙过海 何仙姑",
+   "name_en": "9\"138 SHOOT CAKE A3 - HO XIAN GU",
+   "packing": "1/1",
+   "price": 458.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A3 - 八仙过海 何    9\"138 SHOOT CAKE A3 - HO XIAN      1/1   RM458.00 | 仙姑                            GU",
+   "image": "img/p/HB198.webp",
+   "thumb": "img/p/HB198-s.webp",
+   "image_size": [
+    620,
+    280
+   ],
+   "thumb_size": [
+    400,
+    181
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB199",
+   "name": "9寸高138发盆花 A4 - 八仙过海 曹国舅",
+   "title": "9寸高138发盆花 A4 - 八仙过海 曹国舅",
+   "name_en": "9\"138 SHOOT CAKE A4 - CAO GUO JIU",
+   "packing": "1/1",
+   "price": 458.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A4 - 八仙过海 曹   9\"138 SHOOT CAKE A4 - CAO GUO       1/1   RM458.00 | 国舅                           JIU",
+   "image": "img/p/HB199.webp",
+   "thumb": "img/p/HB199-s.webp",
+   "image_size": [
+    540,
+    380
+   ],
+   "thumb_size": [
+    400,
+    281
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB200",
+   "name": "9寸高138发盆花 A5 - 八仙过海 张果老",
+   "title": "9寸高138发盆花 A5 - 八仙过海 张果老",
+   "name_en": "9\"138 SHOOT CAKE A5 - ZHANG GUO LAO",
+   "packing": "1/1",
+   "price": 460.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A5 - 八仙过海 张    9\"138 SHOOT CAKE A5 - ZHANG        1/1   RM460.00 | 果老                        GUO LAO",
+   "image": "img/p/HB200.webp",
+   "thumb": "img/p/HB200-s.webp",
+   "image_size": [
+    420,
+    330
+   ],
+   "thumb_size": [
+    400,
+    314
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB201",
+   "name": "9寸高138发盆花 A6 - 八仙过海 蓝采和",
+   "title": "9寸高138发盆花 A6 - 八仙过海 蓝采和",
+   "name_en": "9\"138 SHOOT CAKE A6 - LAN CAI HE",
+   "packing": "1/1",
+   "price": 460.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A6 - 八仙过海 蓝   9\"138 SHOOT CAKE A6 - LAN CAI HE    1/1   RM460.00 | 采和",
+   "image": "img/p/HB201.webp",
+   "thumb": "img/p/HB201-s.webp",
+   "image_size": [
+    800,
+    273
+   ],
+   "thumb_size": [
+    400,
+    137
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB202",
+   "name": "9寸高138发盆花 A7 - 八仙过海 韩湘子",
+   "title": "9寸高138发盆花 A7 - 八仙过海 韩湘子",
+   "name_en": "9\"138 SHOOT CAKE A7 - HAN XIANG ZI",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A7 - 八仙过海 韩   9\"138 SHOOT CAKE A7 - HAN XIANG     1/1   RM448.00 | 湘子                            ZI",
+   "image": "img/p/HB202.webp",
+   "thumb": "img/p/HB202-s.webp",
+   "image_size": [
+    660,
+    230
+   ],
+   "thumb_size": [
+    400,
+    139
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB203",
+   "name": "9寸高138发盆花 A8 - 八仙过海 汉钟离",
+   "title": "9寸高138发盆花 A8 - 八仙过海 汉钟离",
+   "name_en": "9\"138 SHOOT CAKE A8 - ZHONG LI QUAN",
+   "packing": "1/1",
+   "price": 458.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A8 - 八仙过海 汉   9\"138 SHOOT CAKE A8 - ZHONG LI      1/1   RM458.00 | 钟离                          QUAN",
+   "image": "img/p/HB203.webp",
+   "thumb": "img/p/HB203-s.webp",
+   "image_size": [
+    500,
+    300
+   ],
+   "thumb_size": [
+    400,
+    240
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 36"
+  },
+  {
+   "sku": "HB204",
+   "name": "9寸高138发盆花 W - 封神榜 苏妲己",
+   "title": "9寸高138发盆花 W - 封神榜 苏妲己",
+   "name_en": "9\"138 SHOOT CAKE W - SU DA JI",
+   "packing": "1/1",
+   "price": 328.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 W - 封神榜 苏妲己    9\"138 SHOOT CAKE W - SU DA JI      1/1   RM328.00",
+   "image": "img/p/HB204.webp",
+   "thumb": "img/p/HB204-s.webp",
+   "image_size": [
+    630,
+    490
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 38"
+  },
+  {
+   "sku": "HB205",
+   "name": "9寸高138发盆花 X - 封神榜 姜子牙",
+   "title": "9寸高138发盆花 X - 封神榜 姜子牙",
+   "name_en": "9\"138 SHOOT CAKE X - JIANG ZI YA",
+   "packing": "1/1",
+   "price": 328.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 X - 封神榜 姜子牙   9\"138 SHOOT CAKE X - JIANG ZI YA    1/1   RM328.00",
+   "image": "img/p/HB205.webp",
+   "thumb": "img/p/HB205-s.webp",
+   "image_size": [
+    630,
+    500
+   ],
+   "thumb_size": [
+    400,
+    317
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 38"
+  },
+  {
+   "sku": "HB206",
+   "name": "9寸高138发盆花 Y - 封神榜 哪吒",
+   "title": "9寸高138发盆花 Y - 封神榜 哪吒",
+   "name_en": "9\"138 SHOOT CAKE Y - NA ZA",
+   "packing": "1/1",
+   "price": 348.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 Y - 封神榜 哪吒      9\"138 SHOOT CAKE Y - NA ZA        1/1   RM348.00",
+   "image": "img/p/HB206.webp",
+   "thumb": "img/p/HB206-s.webp",
+   "image_size": [
+    610,
+    450
+   ],
+   "thumb_size": [
+    400,
+    295
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 38"
+  },
+  {
+   "sku": "HB207",
+   "name": "9寸高138发盆花 Z - 封神榜 申公豹",
+   "title": "9寸高138发盆花 Z - 封神榜 申公豹",
+   "name_en": "9\"138 SHOOT CAKE Z- SHEN GONG BAO",
+   "packing": "1/1",
+   "price": 328.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 Z - 封神榜 申公豹   9\"138 SHOOT CAKE Z- SHEN GONG       1/1   RM328.00 | BAO",
+   "image": "img/p/HB207.webp",
+   "thumb": "img/p/HB207-s.webp",
+   "image_size": [
+    630,
+    490
+   ],
+   "thumb_size": [
+    400,
+    311
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 38"
+  },
+  {
+   "sku": "HB208",
+   "name": "9寸高138发盆花 A - 五虎将 关羽",
+   "title": "9寸高138发盆花 A - 五虎将 关羽",
+   "name_en": "9\"138 SHOOT CAKE - A - GUAN YU",
+   "packing": "1/1",
+   "price": 408.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 A - 五虎将 关羽    9\"138 SHOOT CAKE - A - GUAN YU      1/1   RM408.00",
+   "image": "img/p/HB208.webp",
+   "thumb": "img/p/HB208-s.webp",
+   "image_size": [
+    640,
+    490
+   ],
+   "thumb_size": [
+    400,
+    306
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 40"
+  },
+  {
+   "sku": "HB209",
+   "name": "9寸高138发盆花 B - 五虎将 张飞",
+   "title": "9寸高138发盆花 B - 五虎将 张飞",
+   "name_en": "9\"138 SHOOT CAKE - B - ZHANG FEI",
+   "packing": "1/1",
+   "price": 460.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 B - 五虎将 张飞    9\"138 SHOOT CAKE - B - ZHANG FEI    1/1   RM460.00",
+   "image": "img/p/HB209.webp",
+   "thumb": "img/p/HB209-s.webp",
+   "image_size": [
+    500,
+    390
+   ],
+   "thumb_size": [
+    400,
+    312
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 40"
+  },
+  {
+   "sku": "HB210",
+   "name": "9寸高138发盆花 C - 五虎将 赵云",
+   "title": "9寸高138发盆花 C - 五虎将 赵云",
+   "name_en": "9\"138 SHOOT CAKE - C - ZHAO YUN",
+   "packing": "1/1",
+   "price": 430.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 C - 五虎将 赵云    9\"138 SHOOT CAKE - C - ZHAO YUN     1/1   RM430.00",
+   "image": "img/p/HB210.webp",
+   "thumb": "img/p/HB210-s.webp",
+   "image_size": [
+    800,
+    336
+   ],
+   "thumb_size": [
+    400,
+    168
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 40"
+  },
+  {
+   "sku": "HB211",
+   "name": "9寸高138发盆花 D - 五虎将 马超",
+   "title": "9寸高138发盆花 D - 五虎将 马超",
+   "name_en": "9\"138 SHOOT CAKE - D - MA CHAO",
+   "packing": "1/1",
+   "price": 438.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 D - 五虎将 马超    9\"138 SHOOT CAKE - D - MA CHAO      1/1   RM438.00",
+   "image": "img/p/HB211.webp",
+   "thumb": "img/p/HB211-s.webp",
+   "image_size": [
+    590,
+    470
+   ],
+   "thumb_size": [
+    400,
+    319
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 40"
+  },
+  {
+   "sku": "HB212",
+   "name": "9寸高138发盆花 E - 五虎将 黄忠",
+   "title": "9寸高138发盆花 E - 五虎将 黄忠",
+   "name_en": "9\"138 SHOOT CAKE - E - HUANG ZHONG",
+   "packing": "1/1",
+   "price": 420.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 E - 五虎将 黄忠     9\"138 SHOOT CAKE - E - HUANG       1/1   RM420.00 | ZHONG",
+   "image": "img/p/HB212.webp",
+   "thumb": "img/p/HB212-s.webp",
+   "image_size": [
+    510,
+    530
+   ],
+   "thumb_size": [
+    385,
+    400
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 40"
+  },
+  {
+   "sku": "HB213",
+   "name": "9寸高138发盆花 F - 五大军师 周瑜",
+   "title": "9寸高138发盆花 F - 五大军师 周瑜",
+   "name_en": "9\"138 SHOOT CAKE - F - ZHOU YU",
+   "packing": "1/1",
+   "price": 438.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 F - 五大军师 周瑜    9\"138 SHOOT CAKE - F - ZHOU YU     1/1   RM438.00",
+   "image": "img/p/HB213.webp",
+   "thumb": "img/p/HB213-s.webp",
+   "image_size": [
+    640,
+    430
+   ],
+   "thumb_size": [
+    400,
+    269
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 42"
+  },
+  {
+   "sku": "HB214",
+   "name": "9寸高138发盆花 G - 五大军师 诸葛亮",
+   "title": "9寸高138发盆花 G - 五大军师 诸葛亮",
+   "name_en": "9\"138 SHOOT CAKE - G - ZHU GE LIANG",
+   "packing": "1/1",
+   "price": 420.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 G - 五大军师 诸葛    9\"138 SHOOT CAKE - G - ZHU GE      1/1   RM420.00 | 亮                          LIANG",
+   "image": "img/p/HB214.webp",
+   "thumb": "img/p/HB214-s.webp",
+   "image_size": [
+    550,
+    330
+   ],
+   "thumb_size": [
+    400,
+    240
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 42"
+  },
+  {
+   "sku": "HB215",
+   "name": "9寸高138发盆花 H - 五大军师 陆逊",
+   "title": "9寸高138发盆花 H - 五大军师 陆逊",
+   "name_en": "9\"138 SHOOT CAKE - H - LU XUN",
+   "packing": "1/1",
+   "price": 418.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 H - 五大军师 陆逊     9\"138 SHOOT CAKE - H - LU XUN       1/1     RM418.00",
+   "image": "img/p/HB215.webp",
+   "thumb": "img/p/HB215-s.webp",
+   "image_size": [
+    800,
+    267
+   ],
+   "thumb_size": [
+    400,
+    133
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 42"
+  },
+  {
+   "sku": "HB216",
+   "name": "9寸高138发盆花 I - 五大军师 庞统",
+   "title": "9寸高138发盆花 I - 五大军师 庞统",
+   "name_en": "9\"138 SHOOT CAKE - I - PANG TONG",
+   "packing": "1/1",
+   "price": 408.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 I - 五大军师 庞统      9\"138 SHOOT CAKE - I - PANG        1/1     RM408.00 | TONG",
+   "image": "img/p/HB216.webp",
+   "thumb": "img/p/HB216-s.webp",
+   "image_size": [
+    800,
+    247
+   ],
+   "thumb_size": [
+    400,
+    123
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 42"
+  },
+  {
+   "sku": "HB217",
+   "name": "9寸高138发盆花 J - 五大军师 司马懿",
+   "title": "9寸高138发盆花 J - 五大军师 司马懿",
+   "name_en": "9\"138 SHOOT CAKE - J - SI MA Y",
+   "packing": "1/1",
+   "price": 430.0,
+   "category": "bigcake",
+   "source_line": "9寸高138发盆花 J - 五大军师 司马      9\"138 SHOOT CAKE - J - SI MA Y     1/1     RM430.00 | 懿",
+   "image": "img/p/HB217.webp",
+   "thumb": "img/p/HB217-s.webp",
+   "image_size": [
+    800,
+    238
+   ],
+   "thumb_size": [
+    400,
+    119
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 42"
+  },
+  {
+   "sku": "HB218",
+   "name": "9寸138发盆花-福星高照",
+   "title": "9寸138发盆花-福星高照",
+   "name_en": "9\"138 SHOOT CAKE",
+   "packing": "1/1",
+   "price": 390.0,
+   "category": "bigcake",
+   "source_line": "9寸138发盆花-福星高照                9\"138 SHOOT CAKE              1/1     RM390.00",
+   "image": null
+  },
+  {
+   "sku": "HB219",
+   "name": "9寸138发盆花-大富大贵",
+   "title": "9寸138发盆花-大富大贵",
+   "name_en": "9\"138 SHOOT CAKE - BESAR & MAHAL VIP",
+   "packing": "1/1",
+   "price": 478.0,
+   "category": "bigcake",
+   "source_line": "9寸138发盆花-大富大贵           9\"138 SHOOT CAKE - BESAR &         1/1     RM478.00 | MAHAL VIP",
+   "image": null
+  },
+  {
+   "sku": "HB220",
+   "name": "10寸138发盆花-焰火传奇",
+   "title": "10寸138发盆花-焰火传奇",
+   "name_en": "10\"138 SHOOT CAKE",
+   "packing": "1/1",
+   "price": 478.0,
+   "category": "bigcake",
+   "source_line": "10寸138发盆花-焰火传奇              10\"138 SHOOT CAKE              1/1     RM478.00",
+   "image": null
+  },
+  {
+   "sku": "HB221",
+   "name": "10寸高138发盆花 A - 东海龙王 敖广",
+   "title": "10寸高138发盆花 A - 东海龙王 敖广",
+   "name_en": "10\"138 SHOOT CAKE A - EAST DRAGON",
+   "packing": "1/1",
+   "price": 420.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 A - 东海龙王 敖      10\"138 SHOOT CAKE A - EAST         1/1     RM420.00 | 广                          DRAGON",
+   "image": "img/p/HB221.webp",
+   "thumb": "img/p/HB221-s.webp",
+   "image_size": [
+    800,
+    287
+   ],
+   "thumb_size": [
+    400,
+    144
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 44"
+  },
+  {
+   "sku": "HB222",
+   "name": "10寸高138发盆花 B - 西海龙王 敖闰",
+   "title": "10寸高138发盆花 B - 西海龙王 敖闰",
+   "name_en": "10\"138 SHOOT CAKE B - WEST DRAGON 1",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B - 西海龙王 敖闰     10\"138 SHOOT CAKE B - WEST         1/1     RM448.00 | DRAGON 1",
+   "image": "img/p/HB222.webp",
+   "thumb": "img/p/HB222-s.webp",
+   "image_size": [
+    800,
+    269
+   ],
+   "thumb_size": [
+    400,
+    134
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 44"
+  },
+  {
+   "sku": "HB223",
+   "name": "10寸高138发盆花 C - 北海龙王 敖顺",
+   "title": "10寸高138发盆花 C - 北海龙王 敖顺",
+   "name_en": "10\"138 SHOOT CAKE C - NORTH DRAGON",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 C - 北海龙王 敖顺    10\"138 SHOOT CAKE C - NORTH         1/1     RM448.00 | DRAGON",
+   "image": "img/p/HB223.webp",
+   "thumb": "img/p/HB223-s.webp",
+   "image_size": [
+    800,
+    287
+   ],
+   "thumb_size": [
+    400,
+    144
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 44"
+  },
+  {
+   "sku": "HB224",
+   "name": "10寸高138发盆花 D - 南海龙王 敖钦",
+   "title": "10寸高138发盆花 D - 南海龙王 敖钦",
+   "name_en": "10\"138 SHOOT CAKE D - SOUTH DRAGON",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 D - 南海龙王 敖     10\"138 SHOOT CAKE D - SOUTH         1/1     RM448.00 | 钦                          DRAGON",
+   "image": "img/p/HB224.webp",
+   "thumb": "img/p/HB224-s.webp",
+   "image_size": [
+    800,
+    262
+   ],
+   "thumb_size": [
+    400,
+    131
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 44"
+  },
+  {
+   "sku": "HB225",
+   "name": "10寸高138发盆花 B1 - 金麒麟",
+   "title": "10寸高138发盆花 B1 - 金麒麟",
+   "name_en": "10\"138 SHOOT CAKE B1 - GOLD KIRIN",
+   "packing": "1/1",
+   "price": 528.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B1 - 金麒麟      10\"138 SHOOT CAKE B1 - GOLD        1/1     RM528.00 | KIRIN",
+   "image": "img/p/HB225.webp",
+   "thumb": "img/p/HB225-s.webp",
+   "image_size": [
+    800,
+    224
+   ],
+   "thumb_size": [
+    400,
+    112
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 46"
+  },
+  {
+   "sku": "HB226",
+   "name": "10寸高138发盆花 B2 - 木麒麟",
+   "title": "10寸高138发盆花 B2 - 木麒麟",
+   "name_en": "10\"138 SHOOT CAKE B2 - WOOD KIRIN",
+   "packing": "1/1",
+   "price": 528.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B2 - 木麒麟     10\"138 SHOOT CAKE B2 - WOOD         1/1     RM528.00 | KIRIN",
+   "image": "img/p/HB226.webp",
+   "thumb": "img/p/HB226-s.webp",
+   "image_size": [
+    800,
+    314
+   ],
+   "thumb_size": [
+    400,
+    157
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 46"
+  },
+  {
+   "sku": "HB227",
+   "name": "10寸高138发盆花 B3 - 水麒麟",
+   "title": "10寸高138发盆花 B3 - 水麒麟",
+   "name_en": "10\"138 SHOOT CAKE B3 - AQUA KIRIN",
+   "packing": "1/1",
+   "price": 520.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B3 - 水麒麟     10\"138 SHOOT CAKE B3 - AQUA         1/1     RM520.00 | KIRIN",
+   "image": "img/p/HB227.webp",
+   "thumb": "img/p/HB227-s.webp",
+   "image_size": [
+    800,
+    280
+   ],
+   "thumb_size": [
+    400,
+    140
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 46"
+  },
+  {
+   "sku": "HB228",
+   "name": "10寸高138发盆花 B4 - 火麒麟",
+   "title": "10寸高138发盆花 B4 - 火麒麟",
+   "name_en": "10\"138 SHOOT CAKE B4 - FIRE KIRIN",
+   "packing": "1/1",
+   "price": 518.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B4 - 火麒麟    10\"138 SHOOT CAKE B4 - FIRE KIRIN    1/1     RM518.00",
+   "image": "img/p/HB228.webp",
+   "thumb": "img/p/HB228-s.webp",
+   "image_size": [
+    800,
+    333
+   ],
+   "thumb_size": [
+    400,
+    166
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 46"
+  },
+  {
+   "sku": "HB229",
+   "name": "10寸高138发盆花 B5 - 土麒麟",
+   "title": "10寸高138发盆花 B5 - 土麒麟",
+   "name_en": "10\"138 SHOOT CAKE B5 - SOIL KIRIN",
+   "packing": "1/1",
+   "price": 528.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 B5 - 土麒麟      10\"138 SHOOT CAKE B5 - SOIL        1/1     RM528.00 | KIRIN",
+   "image": "img/p/HB229.webp",
+   "thumb": "img/p/HB229-s.webp",
+   "image_size": [
+    800,
+    276
+   ],
+   "thumb_size": [
+    400,
+    138
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 46"
+  },
+  {
+   "sku": "HB230",
+   "name": "10寸高36发盆 - 红狼至尊",
+   "title": "10寸高36发盆 - 红狼至尊",
+   "name_en": "10\"36 SHOOT CAKE - RED WOLF",
+   "packing": "4/1",
+   "price": 430.0,
+   "category": "bigcake",
+   "source_line": "10寸高36发盆 - 红狼至尊        10\"36 SHOOT CAKE - RED WOLF         4/1     RM430.00",
+   "image": "img/p/HB230.webp",
+   "thumb": "img/p/HB230-s.webp",
+   "image_size": [
+    740,
+    460
+   ],
+   "thumb_size": [
+    400,
+    249
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 48"
+  },
+  {
+   "sku": "HB231",
+   "name": "10寸高49发盆 - 狼嚎天下",
+   "title": "10寸高49发盆 - 狼嚎天下",
+   "name_en": "10\"49 SHOOT CAKE - SILVER WOLF",
+   "packing": "4/1",
+   "price": 490.0,
+   "category": "bigcake",
+   "source_line": "10寸高49发盆 - 狼嚎天下       10\"49 SHOOT CAKE - SILVER WOLF       4/1     RM490.00",
+   "image": "img/p/HB231.webp",
+   "thumb": "img/p/HB231-s.webp",
+   "image_size": [
+    720,
+    420
+   ],
+   "thumb_size": [
+    400,
+    233
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 48"
+  },
+  {
+   "sku": "HB232",
+   "name": "10寸高138发盆花 - 狼王",
+   "title": "10寸高138发盆花 - 狼王",
+   "name_en": "10\"138 SHOOT CAKE - WOLF KING",
+   "packing": "1/1",
+   "price": 468.0,
+   "category": "bigcake",
+   "source_line": "10寸高138发盆花 - 狼王       10\"138 SHOOT CAKE - WOLF KING        1/1     RM468.00",
+   "image": "img/p/HB232.webp",
+   "thumb": "img/p/HB232-s.webp",
+   "image_size": [
+    800,
+    387
+   ],
+   "thumb_size": [
+    400,
+    193
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 48"
+  },
+  {
+   "sku": "HB233",
+   "name": "精品 10寸高138发盆花 - 杀破狼",
+   "title": "精品 10寸高138发盆花 - 杀破狼",
+   "name_en": "10\"138 SHOOT CAKE - WOLF KING VIP",
+   "packing": "1/1",
+   "price": 478.0,
+   "category": "bigcake",
+   "source_line": "精品 10寸高138发盆花 - 杀破狼     10\"138 SHOOT CAKE - WOLF KING        1/1     RM478.00 | VIP",
+   "image": "img/p/HB233.webp",
+   "thumb": "img/p/HB233-s.webp",
+   "image_size": [
+    800,
+    396
+   ],
+   "thumb_size": [
+    400,
+    198
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 48"
+  },
+  {
+   "sku": "HB234",
+   "name": "11寸高138发盆花 A - 四大天王 魔礼青",
+   "title": "11寸高138发盆花 A - 四大天王 魔礼青",
+   "name_en": "11\"138 SHOOT CAKE A - MOLI QING (1.5)",
+   "packing": "1/1",
+   "price": 568.0,
+   "category": "bigcake",
+   "source_line": "11寸高138发盆花 A - 四大天王 魔    11\"138 SHOOT CAKE A - MOLI QING      1/1     RM568.00 | 礼青                           (1.5)",
+   "image": "img/p/HB234.webp",
+   "thumb": "img/p/HB234-s.webp",
+   "image_size": [
+    800,
+    278
+   ],
+   "thumb_size": [
+    400,
+    139
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 50"
+  },
+  {
+   "sku": "HB235",
+   "name": "11寸高138发盆花 B - 四大天王 魔礼红",
+   "title": "11寸高138发盆花 B - 四大天王 魔礼红",
+   "name_en": "11\"138 SHOOT CAKE B - MOLI HONG (1.5)",
+   "packing": "1/1",
+   "price": 568.0,
+   "category": "bigcake",
+   "source_line": "11寸高138发盆花 B - 四大天王 魔礼     11\"138 SHOOT CAKE B - MOLI         1/1     RM568.00 | 红                        HONG (1.5)",
+   "image": "img/p/HB235.webp",
+   "thumb": "img/p/HB235-s.webp",
+   "image_size": [
+    800,
+    307
+   ],
+   "thumb_size": [
+    400,
+    154
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 50"
+  },
+  {
+   "sku": "HB236",
+   "name": "11寸高138发盆花 C - 四大天王 魔礼海",
+   "title": "11寸高138发盆花 C - 四大天王 魔礼海",
+   "name_en": "11\"138 SHOOT CAKE C - MOLI HAI (1.5)",
+   "packing": "1/1",
+   "price": 568.0,
+   "category": "bigcake",
+   "source_line": "11寸高138发盆花 C - 四大天王 魔礼   11\"138 SHOOT CAKE C - MOLI HAI       1/1     RM568.00 | 海                          (1.5)",
+   "image": "img/p/HB236.webp",
+   "thumb": "img/p/HB236-s.webp",
+   "image_size": [
+    800,
+    298
+   ],
+   "thumb_size": [
+    400,
+    149
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 50"
+  },
+  {
+   "sku": "HB237",
+   "name": "11寸高138发盆花 D - 四大天王 魔礼寿",
+   "title": "11寸高138发盆花 D - 四大天王 魔礼寿",
+   "name_en": "11\"138 SHOOT CAKE D - MOLI SOU (1.5)",
+   "packing": "1/1",
+   "price": 568.0,
+   "category": "bigcake",
+   "source_line": "11寸高138发盆花 D - 四大天王 魔    11\"138 SHOOT CAKE D - MOLI SOU       1/1     RM568.00 | 礼寿                           (1.5)",
+   "image": "img/p/HB237.webp",
+   "thumb": "img/p/HB237-s.webp",
+   "image_size": [
+    800,
+    290
+   ],
+   "thumb_size": [
+    400,
+    145
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 50"
+  },
+  {
+   "sku": "HB238",
+   "name": "12寸高138发盆花 - 吉腾之花",
+   "title": "12寸高138发盆花 - 吉腾之花",
+   "name_en": "12\"138 SHOOT CAKE - FLOWER OF JT",
+   "packing": "1/1",
+   "price": 558.0,
+   "category": "bigcake",
+   "source_line": "12寸高138发盆花 - 吉腾之花      12\"138 SHOOT CAKE - FLOWER OF        1/1     RM558.00 | JT",
+   "image": "img/p/HB238.webp",
+   "thumb": "img/p/HB238-s.webp",
+   "image_size": [
+    800,
+    420
+   ],
+   "thumb_size": [
+    400,
+    210
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 52"
+  },
+  {
+   "sku": "HB239",
+   "name": "12寸高138发盆花 - 蓝色梦想",
+   "title": "12寸高138发盆花 - 蓝色梦想",
+   "name_en": "12\"138 SHOOT CAKE - BLUE DREAM",
+   "packing": "1/1",
+   "price": 588.0,
+   "category": "bigcake",
+   "source_line": "12寸高138发盆花 - 蓝色梦想      12\"138 SHOOT CAKE - BLUE DREAM       1/1     RM588.00",
+   "image": "img/p/HB239.webp",
+   "thumb": "img/p/HB239-s.webp",
+   "image_size": [
+    800,
+    464
+   ],
+   "thumb_size": [
+    400,
+    232
+   ],
+   "image_source": "Hunter Boom CNY 2026 catalog page 52"
+  },
+  {
+   "sku": "HB240",
+   "name": "超级彩雷王",
+   "title": "超级彩雷王",
+   "name_en": "SUPER CLOUD CAI LEI WANG",
+   "packing": "100/20",
+   "price": 530.0,
+   "category": "sound",
+   "source_line": "超级彩雷王                SUPER CLOUD CAI LEI WANG         100/20   RM530.00",
+   "image": "img/p/HB240.webp",
+   "thumb": "img/p/HB240-s.webp",
+   "image_size": [
+    800,
+    236
+   ],
+   "thumb_size": [
+    400,
+    118
+   ],
+   "image_source": "TT Fireworks catalog page 2"
+  },
+  {
+   "sku": "HB241",
+   "name": "超级大地雷公",
+   "title": "超级大地雷公",
+   "name_en": "SUPER CLOUD DA DI LEI GONG",
+   "packing": "50/20",
+   "price": 708.0,
+   "category": "sound",
+   "source_line": "超级大地雷公              SUPER CLOUD DA DI LEI GONG        50/20    RM708.00",
+   "image": "img/p/HB241.webp",
+   "thumb": "img/p/HB241-s.webp",
+   "image_size": [
+    800,
+    356
+   ],
+   "thumb_size": [
+    400,
+    178
+   ],
+   "image_source": "TT Fireworks catalog page 2"
+  },
+  {
+   "sku": "HB242",
+   "name": "TT BOOM",
+   "title": "TT BOOM",
+   "name_en": "",
+   "packing": "80/10",
+   "price": 1008.0,
+   "category": "sound",
+   "source_line": "TT BOOM                      TT BOOM                 80/10    RM1,008.00",
+   "image": "img/p/HB242.webp",
+   "thumb": "img/p/HB242-s.webp",
+   "image_size": [
+    380,
+    460
+   ],
+   "thumb_size": [
+    330,
+    400
+   ],
+   "image_source": "TT Fireworks catalog page 2"
+  },
+  {
+   "sku": "HB243",
+   "name": "4寸168发盆花 三军海",
+   "title": "4寸168发盆花 三军海",
+   "name_en": "4\"168 SHOOT CAKE NAVY",
+   "packing": "3/1",
+   "price": 548.0,
+   "category": "cake",
+   "source_line": "4寸168发盆花 三军海             4\"168 SHOOT CAKE NAVY            3/1     RM548.00",
+   "image": "img/p/HB243.webp",
+   "thumb": "img/p/HB243-s.webp",
+   "image_size": [
+    700,
+    480
+   ],
+   "thumb_size": [
+    400,
+    274
+   ],
+   "image_source": "TT Fireworks catalog page 3"
+  },
+  {
+   "sku": "HB244",
+   "name": "4寸268发盆花 三军陆",
+   "title": "4寸268发盆花 三军陆",
+   "name_en": "4\"268 SHOOT CAKE ARMY",
+   "packing": "2/1",
+   "price": 608.0,
+   "category": "cake",
+   "source_line": "4寸268发盆花 三军陆          4\"268 SHOOT CAKE ARMY        2/1   RM608.00",
+   "image": "img/p/HB244.webp",
+   "thumb": "img/p/HB244-s.webp",
+   "image_size": [
+    740,
+    430
+   ],
+   "thumb_size": [
+    400,
+    232
+   ],
+   "image_source": "TT Fireworks catalog page 3"
+  },
+  {
+   "sku": "HB245",
+   "name": "5寸299发盆花 三军空",
+   "title": "5寸299发盆花 三军空",
+   "name_en": "5\"299 SHOOT CAKE AIRFORCE",
+   "packing": "2/1",
+   "price": 678.0,
+   "category": "cake",
+   "source_line": "5寸299发盆花 三军空         5\"299 SHOOT CAKE AIRFORCE     2/1   RM678.00",
+   "image": "img/p/HB245.webp",
+   "thumb": "img/p/HB245-s.webp",
+   "image_size": [
+    730,
+    420
+   ],
+   "thumb_size": [
+    400,
+    230
+   ],
+   "image_source": "TT Fireworks catalog page 3"
+  },
+  {
+   "sku": "HB246",
+   "name": "6寸308发 百乐门 (第五代)",
+   "title": "6寸308发 百乐门 (第五代)",
+   "name_en": "6\"308 SHOOT CAKE BAI LE MEN",
+   "packing": "1/1",
+   "price": 558.0,
+   "category": "cake",
+   "source_line": "6寸308发 百乐门 (第五代)     6\"308 SHOOT CAKE BAI LE MEN    1/1   RM558.00",
+   "image": "img/p/HB246.webp",
+   "thumb": "img/p/HB246-s.webp",
+   "image_size": [
+    640,
+    440
+   ],
+   "thumb_size": [
+    400,
+    275
+   ],
+   "image_source": "TT Fireworks catalog page 4"
+  },
+  {
+   "sku": "HB247",
+   "name": "7寸388发 千禧门 (第五代)",
+   "title": "7寸388发 千禧门 (第五代)",
+   "name_en": "7\"388 SHOOT CAKE QIAN XI MEN",
+   "packing": "1/1",
+   "price": 638.0,
+   "category": "cake",
+   "source_line": "7寸388发 千禧门 (第五代)    7\"388 SHOOT CAKE QIAN XI MEN    1/1   RM638.00",
+   "image": "img/p/HB247.webp",
+   "thumb": "img/p/HB247-s.webp",
+   "image_size": [
+    600,
+    470
+   ],
+   "thumb_size": [
+    400,
+    313
+   ],
+   "image_source": "TT Fireworks catalog page 4"
+  },
+  {
+   "sku": "HB248",
+   "name": "8寸200发 凯旋门 (全扇形)",
+   "title": "8寸200发 凯旋门 (全扇形)",
+   "name_en": "8\"200 SHOOT CAKE KAI XUAN MEN",
+   "packing": "1/1",
+   "price": 568.0,
+   "category": "cake",
+   "source_line": "8寸200发 凯旋门 (全扇形)    8\"200 SHOOT CAKE KAI XUAN MEN   1/1   RM568.00",
+   "image": "img/p/HB248.webp",
+   "thumb": "img/p/HB248-s.webp",
+   "image_size": [
+    800,
+    467
+   ],
+   "thumb_size": [
+    400,
+    233
+   ],
+   "image_source": "TT Fireworks catalog page 4"
+  },
+  {
+   "sku": "HB249",
+   "name": "9寸238发盆花 DEEPSEEK",
+   "title": "9寸238发盆花 DEEPSEEK",
+   "name_en": "9\"238 SHOOT CAKE DEEPSEEK",
+   "packing": "1/1",
+   "price": 730.0,
+   "category": "bigcake",
+   "source_line": "9寸238发盆花 DEEPSEEK     9\"238 SHOOT CAKE DEEPSEEK     1/1   RM730.00",
+   "image": "img/p/HB249.webp",
+   "thumb": "img/p/HB249-s.webp",
+   "image_size": [
+    800,
+    587
+   ],
+   "thumb_size": [
+    400,
+    293
+   ],
+   "image_source": "TT Fireworks catalog page 5"
+  },
+  {
+   "sku": "HB250",
+   "name": "9寸328发盆花 CHATGPT",
+   "title": "9寸328发盆花 CHATGPT",
+   "name_en": "9\"328 SHOOT CAKE CHATGPT",
+   "packing": "1/1",
+   "price": 920.0,
+   "category": "bigcake",
+   "source_line": "9寸328发盆花 CHATGPT      9\"328 SHOOT CAKE CHATGPT      1/1   RM920.00",
+   "image": "img/p/HB250.webp",
+   "thumb": "img/p/HB250-s.webp",
+   "image_size": [
+    800,
+    647
+   ],
+   "thumb_size": [
+    400,
+    324
+   ],
+   "image_source": "TT Fireworks catalog page 5"
+  },
+  {
+   "sku": "HB251",
+   "name": "10寸488发大汉风歌MAX版",
+   "title": "10寸488发大汉风歌MAX版",
+   "name_en": "10\"488 SHOOT SUPER CAKE",
+   "packing": "1/1",
+   "price": 2238.0,
+   "category": "bigcake",
+   "source_line": "10寸488发大汉风歌MAX版        10\"488 SHOOT SUPER CAKE      1/1   RM2,238.00",
+   "image": "img/p/HB251.webp",
+   "thumb": "img/p/HB251-s.webp",
+   "image_size": [
+    800,
+    607
+   ],
+   "thumb_size": [
+    400,
+    303
+   ],
+   "image_source": "TT Fireworks catalog page 6"
+  },
+  {
+   "sku": "HB252",
+   "name": "12寸588发大唐盛世MAX版",
+   "title": "12寸588发大唐盛世MAX版",
+   "name_en": "12\"588 SHOOT SUPER CAKE",
+   "packing": "1/1",
+   "price": 3178.0,
+   "category": "bigcake",
+   "source_line": "12寸588发大唐盛世MAX版        12\"588 SHOOT SUPER CAKE      1/1   RM3,178.00",
+   "image": "img/p/HB252.webp",
+   "thumb": "img/p/HB252-s.webp",
+   "image_size": [
+    800,
+    567
+   ],
+   "thumb_size": [
+    400,
+    283
+   ],
+   "image_source": "TT Fireworks catalog page 6"
+  },
+  {
+   "sku": "HB253",
+   "name": "2寸洞25发 马皇后",
+   "title": "2寸洞25发 马皇后",
+   "name_en": "2INCH 25 SHOT MA HUANG HOU",
+   "packing": "1/1",
+   "price": 348.0,
+   "category": "shot",
+   "source_line": "2寸洞25发 马皇后        2INCH 25 SHOT MA HUANG HOU      1/1   RM348.00",
+   "image": "img/p/HB253.webp",
+   "thumb": "img/p/HB253-s.webp",
+   "image_size": [
+    520,
+    640
+   ],
+   "thumb_size": [
+    325,
+    400
+   ],
+   "image_source": "TT Fireworks catalog page 7"
+  },
+  {
+   "sku": "HB254",
+   "name": "2寸洞36发 朱元璋",
+   "title": "2寸洞36发 朱元璋",
+   "name_en": "2INCH 36 SHOT ZHU YUAN ZHANG",
+   "packing": "1/1",
+   "price": 448.0,
+   "category": "shot",
+   "source_line": "2寸洞36发 朱元璋        2INCH 36 SHOT ZHU YUAN ZHANG    1/1   RM448.00",
+   "image": "img/p/HB254.webp",
+   "thumb": "img/p/HB254-s.webp",
+   "image_size": [
+    540,
+    640
+   ],
+   "thumb_size": [
+    337,
+    400
+   ],
+   "image_source": "TT Fireworks catalog page 7"
+  },
+  {
+   "sku": "HB255",
+   "name": "2寸洞68发 环环相扣",
+   "title": "2寸洞68发 环环相扣",
+   "name_en": "2INCH 68 SHOT RING SHAPE",
+   "packing": "1/1",
+   "price": 688.0,
+   "category": "shot",
+   "source_line": "2寸洞68发 环环相扣          2INCH 68 SHOT RING SHAPE      1/1   RM688.00",
+   "image": "img/p/HB255.webp",
+   "thumb": "img/p/HB255-s.webp",
+   "image_size": [
+    530,
+    640
+   ],
+   "thumb_size": [
+    331,
+    400
+   ],
+   "image_source": "TT Fireworks catalog page 7"
+  },
+  {
+   "sku": "HB256",
+   "name": "2寸洞88发 刘伯温",
+   "title": "2寸洞88发 刘伯温",
+   "name_en": "2INCH 88 SHOT LIU BO WEN",
+   "packing": "1/1",
+   "price": 788.0,
+   "category": "shot",
+   "source_line": "2寸洞88发 刘伯温          2INCH 88 SHOT LIU BO WEN      1/1   RM788.00",
+   "image": "img/p/HB256.webp",
+   "thumb": "img/p/HB256-s.webp",
+   "image_size": [
+    570,
+    640
+   ],
+   "thumb_size": [
+    356,
+    400
+   ],
+   "image_source": "TT Fireworks catalog page 7"
+  },
+  {
+   "sku": "HB257",
+   "name": "3寸洞25发 赤壁之战",
+   "title": "3寸洞25发 赤壁之战",
+   "name_en": "3\"25 SHOT CHI BI",
+   "packing": "1/1",
+   "price": 848.0,
+   "category": "shot",
+   "source_line": "3寸洞25发 赤壁之战               3\"25 SHOT CHI BI         1/1   RM848.00",
+   "image": "img/p/HB257.webp",
+   "thumb": "img/p/HB257-s.webp",
+   "image_size": [
+    800,
+    518
+   ],
+   "thumb_size": [
+    400,
+    259
+   ],
+   "image_source": "TT Fireworks catalog page 8"
+  },
+  {
+   "sku": "HB258",
+   "name": "精品3寸洞25发 金意金钛柳",
+   "title": "精品3寸洞25发 金意金钛柳",
+   "name_en": "3\"25 SHOT JIN YI",
+   "packing": "1/1",
+   "price": 948.0,
+   "category": "shot",
+   "source_line": "精品3寸洞25发 金意金钛柳             3\"25 SHOT JIN YI         1/1   RM948.00",
+   "image": "img/p/HB258.webp",
+   "thumb": "img/p/HB258-s.webp",
+   "image_size": [
+    800,
+    512
+   ],
+   "thumb_size": [
+    400,
+    256
+   ],
+   "image_source": "TT Fireworks catalog page 9"
+  },
+  {
+   "sku": "HB259",
+   "name": "4寸洞16发 龙腾盛世",
+   "title": "4寸洞16发 龙腾盛世",
+   "name_en": "4\"16 SHOT DRAGON",
+   "packing": "1/1",
+   "price": 1148.0,
+   "category": "shot",
+   "source_line": "4寸洞16发 龙腾盛世              4\"16 SHOT DRAGON          1/1   RM1,148.00",
+   "image": "img/p/HB259.webp",
+   "thumb": "img/p/HB259-s.webp",
+   "image_size": [
+    800,
+    508
+   ],
+   "thumb_size": [
+    400,
+    254
+   ],
+   "image_source": "TT Fireworks catalog page 8"
+  },
+  {
+   "sku": "HB260",
+   "name": "精品4寸洞16发 金意金丝柳",
+   "title": "精品4寸洞16发 金意金丝柳",
+   "name_en": "4\"16 SHOT JIN YI",
+   "packing": "1/1",
+   "price": 1348.0,
+   "category": "shot",
+   "source_line": "精品4寸洞16发 金意金丝柳             4\"16 SHOT JIN YI         1/1   RM1,348.00",
+   "image": "img/p/HB260.webp",
+   "thumb": "img/p/HB260-s.webp",
+   "image_size": [
+    800,
+    508
+   ],
+   "thumb_size": [
+    400,
+    254
+   ],
+   "image_source": "TT Fireworks catalog page 9"
+  }
+ ],
+ "generated": "2026-11-12"
+}
