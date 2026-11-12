@@ -194,3 +194,11 @@ footer .legal{grid-column:1/-1;border-top:1px solid #ffffff22;padding-top:12px;f
 @media(min-width:700px){.ship ul{grid-template-columns:repeat(3,1fr)}}
 .ship li{background:#fff8e8;border-radius:12px;padding:12px 14px;font-size:13.5px;color:#6d4538;line-height:1.45;border:1px solid #f0c87855}
 .ship b{display:block;color:#8f0d13;font-size:15px;margin-bottom:3px}
+
+/* 羊年春节海报 — 手机、电脑都显示 */
+.cny-poster{margin:12px 0 14px;border-radius:18px;overflow:hidden;background:#8f0d13;border:2px solid var(--gold);box-shadow:0 8px 24px #8f0d1333}
+.cny-poster a{display:block}
+.cny-poster img{width:100%;height:auto;aspect-ratio:1200/2278;vertical-align:bottom}
+@media(min-width:720px){
+  .cny-poster{max-width:460px;margin-left:auto;margin-right:auto}
+}

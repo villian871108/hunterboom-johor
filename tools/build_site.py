@@ -89,7 +89,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=5">
+<link rel="stylesheet" href="{root}css/style.css?v=6">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Optional analytics: none installed. Add your own tag here if needed. -->
 </head>
@@ -440,6 +440,14 @@ def home():
     body = f"""<body data-root="">
 {topbar(root, 'home', home=True)}
 <main class="wrap">
+<figure class="cny-poster">
+<a href="img/cny2027-poster.jpg" target="_blank" rel="noopener">
+<picture>
+<source srcset="img/cny2027-poster.webp" type="image/webp">
+<img src="img/cny2027-poster.jpg" width="1200" height="2278" alt="Hunter BOOM JOHOR 羊年春节海报：三阳开泰，总代理·新山，2027年2月6日，WhatsApp 017-827 0901" decoding="async">
+</picture>
+</a>
+</figure>
 <section class="hero" aria-labelledby="h1">
 <span class="tag">🐐 {CNY}</span>
 <h1 id="h1"><em>新山烟花</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
