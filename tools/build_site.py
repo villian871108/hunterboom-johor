@@ -747,7 +747,7 @@ def about():
     nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回 Hunter BOOM JOHOR 新山烟花首页。", "404.html", r404).replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex">')
     write("404.html", nf + f"""<body data-root="{r404}">{topbar(r404)}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="{r404}index.html" style="color:#c8161d">返回首页</a>，或 <a href="{WA}" style="color:#1fae55">WhatsApp {PHONE_D}</a> 询问。</p></div></main>{footer(r404)}</body></html>""")
 
-# ---------------- 店铺统计 / 下单记录 (stats.html): PRIVATE, owner PIN, unlisted, noindex, not in sitemap ----------------
+# ---------------- 店铺统计 / 下单记录 (zwvh.html): PRIVATE, owner PIN, unlisted, noindex, not in sitemap ----------------
 STATS_CSS = """<style>
 .st-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px}
 .st-hd h1{margin:0}
@@ -844,7 +844,7 @@ button.od-no{border:0;cursor:pointer;font-size:14px;font-weight:800;text-decorat
 
 def stats_page():
     root = ""
-    hd = head("店家后台 | Hunter BOOM JOHOR", "店家内部页面。", "stats.html", root)
+    hd = head("店家后台 | Hunter BOOM JOHOR", "店家内部页面。", "zwvh.html", root)
     hd = hd.replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex,nofollow,noarchive">\n<meta name="referrer" content="no-referrer">')
     hd = hd.replace("</head>", STATS_CSS + "\n</head>")
     body = f"""<body data-root="" data-stats-page>
@@ -901,7 +901,7 @@ def stats_page():
 <div class="st-modal" id="st-slip" hidden role="dialog" aria-modal="true" aria-label="出货单"><div class="st-slip" id="st-slip-in"></div></div>
 {footer(root)}
 </body></html>"""
-    write("stats.html", hd + body)
+    write("zwvh.html", hd + body)
 
 def meta_files():
     urls = [("", "1.0"), ("c/index.html", "0.6"), ("c/kids.html", "0.8"), ("about.html", "0.5")] + [(f"c/{c['id']}.html", "0.8") for c in CATS] + [(f"p/{p['sku']}.html", "0.7") for p in P]

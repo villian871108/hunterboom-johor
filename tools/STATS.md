@@ -1,6 +1,6 @@
 # 店家后台 · 网站统计 / 下单记录（店家专用）
 
-**后台网址：https://hunterboom.my/stats.html**（不在页脚、导航、sitemap；noindex,nofollow；只写在这份文档）
+**后台网址：https://hunterboom.my/zwvh.html**（不在页脚、导航、sitemap；noindex,nofollow；只写在这份文档）
 
 后台能看：
 - 今日下单次数、今日销售（商品参考合计）、今日人数、今日浏览。
@@ -11,7 +11,7 @@
 
 ## 后台密码（OWNER_PIN）
 - 存在 Apps Script「脚本属性」`OWNER_PIN`（不在网站、不在 git）。
-- **第一次设置**：打开 /stats.html，若还没设置密码会显示「设置后台密码」。需要一次性的 **设置码** —— 只写在店家私人 Google 表格的「后台设置」分页 B2 格（在编辑器运行 `setup` 也会在日志显示）。输入设置码 + 新密码（≥6 位）即设置并登录，设置码随即作废，之后不能再用这个方式改密码（防止别人抢先或覆盖）。
+- **第一次设置**：打开 /zwvh.html，若还没设置密码会显示「设置后台密码」。需要一次性的 **设置码** —— 只写在店家私人 Google 表格的「后台设置」分页 B2 格（在编辑器运行 `setup` 也会在日志显示）。输入设置码 + 新密码（≥6 位）即设置并登录，设置码随即作废，之后不能再用这个方式改密码（防止别人抢先或覆盖）。
 - 也可以照旧手动在脚本属性里设 `OWNER_PIN`。忘记密码：到脚本属性直接改。
 - 登录后可在后台底部「修改后台密码」（需输入当前密码）。错误 8 次锁 15 分钟。
 
@@ -20,7 +20,7 @@
 - 后台：Google Apps Script `tools/stats_api.gs`，数据写入 Google 表格 **Hunter BOOM JOHOR 网站统计**
   https://docs.google.com/spreadsheets/d/16_7iC4omnsluDDrX5F1SWNmQD0u-nBmjcGmEI_7pRTE/edit
   （tabs: daily / orders / visitors / events / 说明；表格 ID 已写在脚本 `SPREADSHEET_ID`）
-- 私人页面：`/stats.html`（不在页脚、导航、sitemap；noindex,nofollow）。需输入店家密码（服务器端 Script Property `OWNER_PIN` 验证），之后用 6 小时的会话 token（sessionStorage）。未登录时 API 不返回任何数字或订单。
+- 私人页面：`/zwvh.html`（不在页脚、导航、sitemap；noindex,nofollow）。需输入店家密码（服务器端 Script Property `OWNER_PIN` 验证），之后用 6 小时的会话 token（sessionStorage）。未登录时 API 不返回任何数字或订单。
 - 人工通知：顾客发单时本来就直接打开 wa.me/60177891688（017-789 1688）把订单文字发给店家；统计页每笔工单另有「用 WhatsApp 跟进」和「标记已处理 / 改回待处理」。
 
 ## 部署（一次）

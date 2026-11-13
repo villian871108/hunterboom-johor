@@ -40,7 +40,7 @@
  *   1. Open the spreadsheet → Extensions → Apps Script (or script.google.com → New project).
  *   2. Replace Code.gs with this whole file. Save.
  *   3. Project Settings → Time zone → (GMT+08:00) Kuala Lumpur  (the code also forces TZ below).
- *   4. Owner PIN: EITHER open /stats.html →「设置后台密码」with the one-time 设置码 from the spreadsheet
+ *   4. Owner PIN: EITHER open /zwvh.html →「设置后台密码」with the one-time 设置码 from the spreadsheet
  *      tab「后台设置」(created on first visit / by setup()), OR Project Settings → Script Properties →
  *      OWNER_PIN = <owner's private PIN>. Login is refused while it is empty. Never commit the PIN.
  *   5. Run `setup` once from the editor and accept the permission prompt (Sheets access).
@@ -106,7 +106,7 @@ function setup() {
   orders_().getRange('M:N').setNumberFormat('@');
   Logger.log('OK: ' + ss_().getUrl() + ' today=' + today_());
   if (!PropertiesService.getScriptProperties().getProperty('OWNER_PIN')) {
-    Logger.log('后台密码未设置。打开 /stats.html →「设置后台密码」，输入设置码：' + setupCode_() + '（也写在表格「后台设置」分页）');
+    Logger.log('后台密码未设置。打开 /zwvh.html →「设置后台密码」，输入设置码：' + setupCode_() + '（也写在表格「后台设置」分页）');
   }
 }
 
@@ -320,7 +320,7 @@ function login_(b) {
   return { ok: true, token: newSession_(), expires_in: SESSION_S };
 }
 /* ---- first-time 设置后台密码 ----
- * While OWNER_PIN is unset, the owner sets it from /stats.html. To stop a stranger from setting it first,
+ * While OWNER_PIN is unset, the owner sets it from /zwvh.html. To stop a stranger from setting it first,
  * setting it also needs a one-time 设置码 that only the owner can read: it is written into the PRIVATE
  * spreadsheet (tab「后台设置」) and logged by setup(). After a PIN is set, the code is deleted and
  * setpin is refused; OWNER_PIN stays a Script Property exactly as before (can still be set by hand). */
@@ -334,7 +334,7 @@ function setupCode_() {
     for (var i = 0; i < 10; i++) code += A[parseInt(raw.substr(i * 2, 2), 16) % 32];
     props.setProperty('SETUP_CODE', code);
     var sh = setupSheet_();
-    sh.getRange(2, 1, 1, 3).setValues([['后台设置码', code, '第一次打开 /stats.html「设置后台密码」时输入；设置成功后自动作废。不要外传。']]);
+    sh.getRange(2, 1, 1, 3).setValues([['后台设置码', code, '第一次打开 /zwvh.html「设置后台密码」时输入；设置成功后自动作废。不要外传。']]);
   }
   return code;
 }

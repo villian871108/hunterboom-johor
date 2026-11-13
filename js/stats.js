@@ -1,4 +1,4 @@
-/* Hunter BOOM JOHOR — 网站统计 tracker + private owner page (stats.html).
+/* Hunter BOOM JOHOR — 网站统计 tracker + private owner page (zwvh.html).
  * Real hits only, no fake numbers. Backend: Google Apps Script web app (tools/stats_api.gs).
  * Visitors get an anonymous random id in localStorage; no IP, name or phone is sent.
  * The public tracker can only ADD counts; reading anything needs the owner PIN (checked server-side). */
@@ -60,7 +60,7 @@ var isStats = document.body && document.body.hasAttribute('data-stats-page');
 /* 1 pageview per page load (the server also counts the browser as today's 1 unique visitor) */
 if(!isStats){ send('view'); return; }
 
-/* ================= private 店家后台 page (stats.html): sales, 单号 lookup, 出货单, visitors ================= */
+/* ================= private 店家后台 page (zwvh.html): sales, 单号 lookup, 出货单, visitors ================= */
 function $(id){ return document.getElementById(id); }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
 function n(x){ return String(Number(x)||0).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
