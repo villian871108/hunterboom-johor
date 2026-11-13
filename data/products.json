@@ -1,7 +1,7 @@
 {
  "currency": "MYR",
  "source": "Hunter Boom supply/agent price list PDF (价目表)",
- "price_note": "价格按价目表原文（PACKING 为原表箱规）。实际零售单位与价格以 WhatsApp 确认为准。",
+ "price_note": "价目表价为整盒（箱）价。散装卖价 = 价目表箱价 ÷ 一盒件数 × 1.40（四舍五入到 RM0.01）；整盒按价目表箱价。包装为 N/1 的产品可买散装或整盒（1/1 为单件，只卖散装卖价）；其他包装规格的散装件数待确认，暂时只卖整盒。实际价格与数量以 WhatsApp 店家确认为准。",
  "categories": [
   {
    "id": "hongpao",
@@ -90,7 +90,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/BtHwOqHN1EQ",
    "video_orientation": "vertical",
    "video_title": "八尺红炮 条装 8 KAKI",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 200.0,
+   "piece_qty": 40,
+   "loose_price": 7.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB002",
@@ -117,7 +122,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/y-X_F5ysGLo",
    "video_orientation": "vertical",
    "video_title": "八尺红炮彩盒 8 KAKI BOX",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 238.0,
+   "piece_qty": 40,
+   "loose_price": 8.33,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB003",
@@ -144,7 +154,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/L5KgrKCTdus",
    "video_orientation": "vertical",
    "video_title": "八尺特红1.0 - 8 kaki 1.0 Red",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 30,
+   "loose_price": 16.24,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB004",
@@ -171,7 +186,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/EEbCxcBSCxE",
    "video_orientation": "horizontal",
    "video_title": "八尺玫瑰1.0 - 8 kaki 1.0 Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 30,
+   "loose_price": 16.24,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB005",
@@ -198,7 +218,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/npOtVRJlC9k",
    "video_orientation": "vertical",
    "video_title": "八尺满地黄金1.0 - 8 kaki 1.0 Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": 30,
+   "loose_price": 16.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB006",
@@ -225,7 +250,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Zk6cKP1Gh4A",
    "video_orientation": "vertical",
    "video_title": "八尺王2.0 - 8 Kaki 2.0",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 12,
+   "loose_price": 42.93,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB007",
@@ -252,7 +282,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/L5KgrKCTdus",
    "video_orientation": "vertical",
    "video_title": "八尺特红1.0 - 8 kaki 1.0 Red",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": 30,
+   "loose_price": 16.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB008",
@@ -279,7 +314,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/EEbCxcBSCxE",
    "video_orientation": "horizontal",
    "video_title": "八尺玫瑰1.0 - 8 kaki 1.0 Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 30,
+   "loose_price": 17.17,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB009",
@@ -306,7 +346,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/npOtVRJlC9k",
    "video_orientation": "vertical",
    "video_title": "八尺满地黄金1.0 - 8 kaki 1.0 Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.3, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 30,
+   "loose_price": 17.64,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB010",
@@ -333,7 +378,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/E9Uk8xDTpS4",
    "video_orientation": "vertical",
    "video_title": "8尺 1.0 五色混装",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 30,
+   "loose_price": 19.51,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB011",
@@ -360,7 +410,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/OQqEgbndJyU",
    "video_orientation": "vertical",
    "video_title": "五万头礼炮 50000 MERCUN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": 4,
+   "loose_price": 167.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB012",
@@ -387,7 +442,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/D2Ih6-ATafc",
    "video_orientation": "vertical",
    "video_title": "十万头礼炮 100,000 MERCUN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 2,
+   "loose_price": 313.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB013",
@@ -414,7 +474,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/eq0E88w797I",
    "video_orientation": "vertical",
    "video_title": "东方巨龙 特红礼炮",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 3,
+   "loose_price": 176.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB014",
@@ -441,7 +506,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/JEj4deYEXY4",
    "video_orientation": "vertical",
    "video_title": "东方巨龙 玫瑰礼炮",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 3,
+   "loose_price": 176.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB015",
@@ -468,7 +538,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ybrbZeRJjDo",
    "video_orientation": "vertical",
    "video_title": "东方巨龙 黄金礼炮",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 3,
+   "loose_price": 176.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB016",
@@ -495,7 +570,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/iQdgL12jBaw",
    "video_orientation": "vertical",
    "video_title": "东方巨龙 五彩礼炮",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 3,
+   "loose_price": 176.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB017",
@@ -522,7 +602,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/jchOI-XyS80",
    "video_orientation": "horizontal",
    "video_title": "18尺特红 - 18 Kaki Red",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 18,
+   "loose_price": 31.73,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB018",
@@ -549,7 +634,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/pBDnXq3SuYo",
    "video_orientation": "vertical",
    "video_title": "18尺玫瑰 - 18 Kaki Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.4, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": 18,
+   "loose_price": 33.29,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB019",
@@ -576,7 +666,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/EmF9dUZiAvs",
    "video_orientation": "vertical",
    "video_title": "18尺满地黄金 - 18 Kaki Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 18,
+   "loose_price": 34.84,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB020",
@@ -603,7 +698,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/6yJ22_OMHfo",
    "video_orientation": "vertical",
    "video_title": "18尺王2.0 - 18 Kaki 2.0",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 4,
+   "loose_price": 132.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB021",
@@ -630,7 +730,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/E01LOLBw3z0",
    "video_orientation": "horizontal",
    "video_title": "18尺特红 礼盒装 - 18 Kaki Red（Box）",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 12,
+   "loose_price": 42.93,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB022",
@@ -657,7 +762,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/pBDnXq3SuYo",
    "video_orientation": "vertical",
    "video_title": "18尺玫瑰 - 18 Kaki Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 358.0,
+   "piece_qty": 12,
+   "loose_price": 41.77,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB023",
@@ -684,7 +794,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/EmF9dUZiAvs",
    "video_orientation": "vertical",
    "video_title": "18尺满地黄金 - 18 Kaki Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 12,
+   "loose_price": 44.1,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB024",
@@ -711,7 +826,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/nWmJAr-PIW4",
    "video_orientation": "vertical",
    "video_title": "30尺七星报喜 7 COLOR",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 488.0,
+   "piece_qty": 5,
+   "loose_price": 136.64,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB025",
@@ -738,7 +858,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/fch-sczz6rM",
    "video_orientation": "vertical",
    "video_title": "38尺大红大紫 RED & ROSE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 5,
+   "loose_price": 117.04,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB026",
@@ -765,7 +890,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/0fudEjqaq24",
    "video_orientation": "vertical",
    "video_title": "38尺翡翠玫瑰 ROSE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 390.0,
+   "piece_qty": 5,
+   "loose_price": 109.2,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB027",
@@ -792,7 +922,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/HHPnddiZI1Y",
    "video_orientation": "vertical",
    "video_title": "38尺满地黄金 GOLD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.5, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 5,
+   "loose_price": 114.24,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB028",
@@ -819,7 +954,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/0oJhijOyyDE",
    "video_orientation": "vertical",
    "video_title": "88尺红宝石特红 - 88 Kaki Red",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 4,
+   "loose_price": 156.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB029",
@@ -846,7 +986,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/wJkFlUmrJpg",
    "video_orientation": "horizontal",
    "video_title": "88尺翡翠玫瑰 - 88 Kaki Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": 4,
+   "loose_price": 161.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB030",
@@ -873,7 +1018,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/iD_pxQT5w3w",
    "video_orientation": "horizontal",
    "video_title": "88尺满地黄金 - 88 Kaki Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": 4,
+   "loose_price": 167.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB031",
@@ -890,7 +1040,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/cNrO7Alslz0",
    "video_orientation": "vertical",
    "video_title": "88尺七星高照 - 88 Kaki Seven Color",
-   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title"
+   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title",
+   "carton_price": 685.0,
+   "piece_qty": 4,
+   "loose_price": 239.75,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB032",
@@ -917,7 +1072,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/1yjkqYkEzOs",
    "video_orientation": "horizontal",
    "video_title": "88尺九五至尊 九色 - 88 KAKI 9 COLOF",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 608.0,
+   "piece_qty": 4,
+   "loose_price": 212.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB033",
@@ -944,7 +1104,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/kekpgN-XLdk",
    "video_orientation": "horizontal",
    "video_title": "108尺红宝石特红 - 108 Kaki Red",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 3,
+   "loose_price": 209.07,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB034",
@@ -971,7 +1136,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/IM8867EBVPc",
    "video_orientation": "horizontal",
    "video_title": "108尺翡翠玫瑰 - 108 Kaki Rose",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 458.0,
+   "piece_qty": 3,
+   "loose_price": 213.73,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB035",
@@ -998,7 +1168,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ktFQcK3Tm8w",
    "video_orientation": "horizontal",
    "video_title": "108尺满地黄金 - 108 Kaki Gold",
-   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.6, link on product card",
+   "carton_price": 468.0,
+   "piece_qty": 3,
+   "loose_price": 218.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB036",
@@ -1019,7 +1194,12 @@
     322,
     400
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+   "image_source": "Hunter Boom CNY 2026 catalog page 7",
+   "carton_price": 490.0,
+   "piece_qty": 3,
+   "loose_price": 228.67,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB037",
@@ -1040,7 +1220,12 @@
     321,
     400
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+   "image_source": "Hunter Boom CNY 2026 catalog page 7",
+   "carton_price": 508.0,
+   "piece_qty": 2,
+   "loose_price": 355.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB038",
@@ -1061,7 +1246,12 @@
     319,
     400
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+   "image_source": "Hunter Boom CNY 2026 catalog page 7",
+   "carton_price": 508.0,
+   "piece_qty": 2,
+   "loose_price": 355.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB039",
@@ -1082,7 +1272,12 @@
     320,
     400
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 7"
+   "image_source": "Hunter Boom CNY 2026 catalog page 7",
+   "carton_price": 518.0,
+   "piece_qty": 2,
+   "loose_price": 362.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB040",
@@ -1109,7 +1304,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/tqnG4QAG23I",
    "video_orientation": "horizontal",
    "video_title": "彩色砂炮 - POP POP KECIL",
-   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card",
+   "carton_price": 278.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB041",
@@ -1136,7 +1336,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/k4XakawT4vc",
    "video_orientation": "horizontal",
    "video_title": "彩色大砂炮 - POP POP BESAR",
-   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card",
+   "carton_price": 290.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB042",
@@ -1163,7 +1368,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/vlacsO1_Gr4",
    "video_orientation": "horizontal",
    "video_title": "超级雷神砂炮 - SUPER POP POP",
-   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.8, link on product card",
+   "carton_price": 278.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB043",
@@ -1190,7 +1400,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Gg-5AJ3jsI0",
    "video_orientation": "horizontal",
    "video_title": "莲花开 - Lotus",
-   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card",
+   "carton_price": 398.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB044",
@@ -1217,7 +1432,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/DJJcKIq2wns",
    "video_orientation": "horizontal",
    "video_title": "炸珠大地花开 - Gasing",
-   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card",
+   "carton_price": 498.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB045",
@@ -1244,7 +1464,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/DJJcKIq2wns",
    "video_orientation": "horizontal",
    "video_title": "炸珠大地花开 - Gasing",
-   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card",
+   "carton_price": 585.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB046",
@@ -1271,7 +1496,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/v3MOEKmM5mU",
    "video_orientation": "vertical",
    "video_title": "彩烟陀螺 GASING SMOKE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card",
+   "carton_price": 320.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB047",
@@ -1298,7 +1528,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/DnvlGBbI10s",
    "video_orientation": "vertical",
    "video_title": "东方明珠塔 ORIENTAL PEARL CAMELIA",
-   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.9, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": 16,
+   "loose_price": 31.5,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB048",
@@ -1325,7 +1560,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/u-hIZlkhcoo",
    "video_orientation": "horizontal",
    "video_title": "小霞光 - Sunset Kecil",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB049",
@@ -1352,7 +1592,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/-cIhXJWbmT8",
    "video_orientation": "horizontal",
    "video_title": "大霞光 - Sunset Bar",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB050",
@@ -1379,7 +1624,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/rQX_H9l4iwY",
    "video_orientation": "vertical",
    "video_title": "超级变变变 SUPER SUNSET",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 358.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB051",
@@ -1406,7 +1656,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/LEFOz7Z9aNE",
    "video_orientation": "horizontal",
    "video_title": "四色花 - Sunset 4 Color",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB052",
@@ -1433,7 +1688,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/79K6DW0AV9U",
    "video_orientation": "vertical",
    "video_title": "大号手持瀑布 SUNSET DIAMOND",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB053",
@@ -1460,7 +1720,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/bCTv0cptycs",
    "video_orientation": "horizontal",
    "video_title": "彩色棒 - Asap Color",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB054",
@@ -1487,7 +1752,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/kZMDnR9J6Lc",
    "video_orientation": "horizontal",
    "video_title": "7寸金色电光花 - 7 inch Besi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 388.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB055",
@@ -1514,7 +1784,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Ej5qATqzUgQ",
    "video_orientation": "horizontal",
    "video_title": "14寸金色电光花 - 14 inch Besi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB056",
@@ -1541,7 +1816,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Ej5qATqzUgQ",
    "video_orientation": "horizontal",
    "video_title": "14寸金色电光花 - 14 inch Besi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB057",
@@ -1568,7 +1848,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/A-Dd7Lic-rI",
    "video_orientation": "horizontal",
    "video_title": "18寸彩色电光花 - 18 inch Besi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.10, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB058",
@@ -1595,7 +1880,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/UpXZG2uENEI",
    "video_orientation": "vertical",
    "video_title": "18寸彩色电光花 18 INCI COLOR BESI",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB059",
@@ -1622,7 +1912,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/OHd8lWczccQ",
    "video_orientation": "horizontal",
    "video_title": "精品10波流星雨 - 10 Das VIP",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB060",
@@ -1649,7 +1944,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/wNJzNn9m5O0",
    "video_orientation": "horizontal",
    "video_title": "10波霹雳雨 - 10 Das Pili",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB061",
@@ -1670,7 +1970,12 @@
     363,
     390
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 11"
+   "image_source": "Hunter Boom CNY 2026 catalog page 11",
+   "carton_price": 418.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB062",
@@ -1697,7 +2002,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/-7owq3xdSO4",
    "video_orientation": "vertical",
    "video_title": "20波奇幻魔术弹 - 20 Das",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB063",
@@ -1724,7 +2034,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ycy35WzrzF8",
    "video_orientation": "vertical",
    "video_title": "30波奇幻魔术弹 - 30 Das",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB064",
@@ -1751,7 +2066,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ySm3DnzaNy8",
    "video_orientation": "vertical",
    "video_title": "舞龙棒 - Dragon Fireworks",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 288.0,
+   "piece_qty": 40,
+   "loose_price": 10.08,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB065",
@@ -1778,7 +2098,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/tzbZNgjmJG0",
    "video_orientation": "vertical",
    "video_title": "手持五彩炬火 5 COLOR FIREWORKS",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB066",
@@ -1805,7 +2130,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/xy9MVonLKkM",
    "video_orientation": "vertical",
    "video_title": "灭霸 THANOS",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 508.0,
+   "piece_qty": 8,
+   "loose_price": 88.9,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB067",
@@ -1832,7 +2162,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/TN-D67Wngb0",
    "video_orientation": "vertical",
    "video_title": "如意金箍棒 JIN GU STICK",
-   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.11, link on product card",
+   "carton_price": 490.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB068",
@@ -1859,7 +2194,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/gA_XVHhNRAY",
    "video_orientation": "vertical",
    "video_title": "拉环五色烟雾 5 COLOR SMOKE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 50,
+   "loose_price": 9.18,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB069",
@@ -1876,7 +2216,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/0FJQyeAueS4",
    "video_orientation": "vertical",
    "video_title": "888 蓝色海洋 加特林 Gatling",
-   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title"
+   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title",
+   "carton_price": 578.0,
+   "piece_qty": 12,
+   "loose_price": 67.43,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB070",
@@ -1893,7 +2238,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/zeVklP3U6YE",
    "video_orientation": "vertical",
    "video_title": "1088 黄金瀑布 加特林 Gatling",
-   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title"
+   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title",
+   "carton_price": 618.0,
+   "piece_qty": 12,
+   "loose_price": 72.1,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB071",
@@ -1920,7 +2270,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/e7_vZxLNBkQ",
    "video_orientation": "vertical",
    "video_title": "1088 加特林 天降黄金（GOLD）",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": 12,
+   "loose_price": 51.1,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB072",
@@ -1947,7 +2302,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/FGs_2DTtC4s",
    "video_orientation": "vertical",
    "video_title": "1288 加特林 大展红图（RED）",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 12,
+   "loose_price": 52.27,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB073",
@@ -1974,7 +2334,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/q9YzMn6bMUE",
    "video_orientation": "vertical",
    "video_title": "1388 加特林 粉色浪漫（PINK）",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 12,
+   "loose_price": 52.27,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB074",
@@ -2001,7 +2366,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/G4Vvv9kerbU",
    "video_orientation": "vertical",
    "video_title": "一触即发 8/1 GOLDEN BLUE WALL",
-   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.12, link on product card",
+   "carton_price": 390.0,
+   "piece_qty": 8,
+   "loose_price": 68.25,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB075",
@@ -2028,7 +2398,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/JkPCi-4mGF0",
    "video_orientation": "vertical",
    "video_title": "7寸冰淇淋 - 7 inch Ice Cream",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 488.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB076",
@@ -2055,7 +2430,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/BZxRu0fHcrg",
    "video_orientation": "vertical",
    "video_title": "10寸冰淇淋 10” ICE CREAM",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB077",
@@ -2082,7 +2462,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/m454xJlsMnM",
    "video_orientation": "vertical",
    "video_title": "13寸冰淇淋 - 13 inch Ice Cream",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 390.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB078",
@@ -2109,7 +2494,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/VQeaXvJ6nyI",
    "video_orientation": "vertical",
    "video_title": "15寸冰淇淋 - 15 inch Ice Cream",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB079",
@@ -2136,7 +2526,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/HrVyPuwifYU",
    "video_orientation": "vertical",
    "video_title": "巴黎铁塔喷泉13寸",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 420.0,
+   "piece_qty": 16,
+   "loose_price": 36.75,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB080",
@@ -2163,7 +2558,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/8yR-Uqyn8U4",
    "video_orientation": "horizontal",
    "video_title": "发财树 - Pokok Raya",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB081",
@@ -2190,7 +2590,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/LrHi5_10I3w",
    "video_orientation": "vertical",
    "video_title": "超大发财树 POKOK RAYA BESAR",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 498.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB082",
@@ -2217,7 +2622,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/cyyFRw8cpiM",
    "video_orientation": "horizontal",
    "video_title": "和生财 - Fountain Tiga Segi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 40,
+   "loose_price": 12.18,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB083",
@@ -2244,7 +2654,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/7Mb2iaQ_SKI",
    "video_orientation": "vertical",
    "video_title": "惊喜双色 BLUE & RED FOUNTAIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.13, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 18,
+   "loose_price": 29.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB084",
@@ -2271,7 +2686,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ZEnDhaPBWdg",
    "video_orientation": "vertical",
    "video_title": "孔雀开屏 - Peacock Fountain",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 24,
+   "loose_price": 24.38,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB085",
@@ -2298,7 +2718,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/MURNIELNeKg",
    "video_orientation": "vertical",
    "video_title": "孔雀下蛋 PEACOCK BERTELUR",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 24,
+   "loose_price": 25.08,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB086",
@@ -2325,7 +2750,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/9btAZF7RZE8",
    "video_orientation": "vertical",
    "video_title": "母鸡下蛋 - Ayam Bertelur",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 388.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB087",
@@ -2352,7 +2782,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/MywwDOkAVBA",
    "video_orientation": "vertical",
    "video_title": "满地珍珠 FULL OF PEARL",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB088",
@@ -2379,7 +2814,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ulrLrCFuhdk",
    "video_orientation": "vertical",
    "video_title": "超级MILO罐 MILO GONG",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 320.0,
+   "piece_qty": 8,
+   "loose_price": 56.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB089",
@@ -2406,7 +2846,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/RpRDeKH1ylc",
    "video_orientation": "vertical",
    "video_title": "微醺多巴胺喷泉 TIPSY DUOBA FOUNTAIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB090",
@@ -2433,7 +2878,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/wNNyguyOajw",
    "video_orientation": "vertical",
    "video_title": "魔法风车 MAGIC WINDMILL",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": 24,
+   "loose_price": 24.97,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB091",
@@ -2460,7 +2910,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Nb-0BPl6ARQ",
    "video_orientation": "vertical",
    "video_title": "南马四方来财 SOUTHERN MAGIC CUBE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 508.0,
+   "piece_qty": 18,
+   "loose_price": 39.51,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB092",
@@ -2487,7 +2942,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/vpj1kIpcVxc",
    "video_orientation": "vertical",
    "video_title": "南方虎金三角 TRIANGLE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.14, link on product card",
+   "carton_price": 508.0,
+   "piece_qty": 12,
+   "loose_price": 59.27,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB093",
@@ -2514,7 +2974,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/fJxjTZOqqdM",
    "video_orientation": "vertical",
    "video_title": "京剧喷泉 PEKIN OPERA",
-   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card",
+   "carton_price": 388.0,
+   "piece_qty": 25,
+   "loose_price": 21.73,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB094",
@@ -2541,7 +3006,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/qAHzXBZx9qU",
    "video_orientation": "vertical",
    "video_title": "火山爆发 VOLCANO FOUNTAIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 18,
+   "loose_price": 27.07,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB095",
@@ -2568,7 +3038,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/xECBoBQGvmM",
    "video_orientation": "vertical",
    "video_title": "黄金树 GOLDEN TREE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 24,
+   "loose_price": 25.08,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB096",
@@ -2595,7 +3070,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/iBdU_Fsti9A",
    "video_orientation": "vertical",
    "video_title": "狼嚎喷泉花筒 WOLF FOUNTAIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card",
+   "carton_price": 318.0,
+   "piece_qty": 12,
+   "loose_price": 37.1,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB097",
@@ -2622,7 +3102,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/scHC1zHL1Yo",
    "video_orientation": "vertical",
    "video_title": "爱情伞 LOVE UMBRELLA",
-   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.15, link on product card",
+   "carton_price": 490.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB098",
@@ -2649,7 +3134,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/jR8y4xEG1TU",
    "video_orientation": "horizontal",
    "video_title": "龙蛋 - Naga",
-   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB099",
@@ -2676,7 +3166,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Xep3Ewwzd0A",
    "video_orientation": "horizontal",
    "video_title": "超大龙蛋 - Naga Besar",
-   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB100",
@@ -2703,7 +3198,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/KzlaVthrCDA",
    "video_orientation": "vertical",
    "video_title": "金玉满堂 - Naga 3 Minit",
-   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB101",
@@ -2730,7 +3230,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/7CugwI-JFzI",
    "video_orientation": "vertical",
    "video_title": "大号金玉满堂 NAGA BESAR 3MIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card",
+   "carton_price": 398.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB102",
@@ -2757,7 +3262,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/qE4ALiq7dRo",
    "video_orientation": "vertical",
    "video_title": "坦克车带炸 TANK",
-   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.16, link on product card",
+   "carton_price": 598.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB103",
@@ -2784,7 +3294,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/2OzAE3HhEss",
    "video_orientation": "vertical",
    "video_title": "悟空 WUKONG",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 420.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB104",
@@ -2811,7 +3326,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/hur861zXI_U",
    "video_orientation": "vertical",
    "video_title": "大黄峰 - Super Bee",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB105",
@@ -2838,7 +3358,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/JXKLp_xCe_c",
    "video_orientation": "horizontal",
    "video_title": "炸珠响天雷 （小） - Thunder Clap S",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 678.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB106",
@@ -2865,7 +3390,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Hl8im2yZjsU",
    "video_orientation": "horizontal",
    "video_title": "炸珠响天雷 （大） - Thunder Clap B",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 660.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB107",
@@ -2892,7 +3422,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/q18OszzePaQ",
    "video_orientation": "horizontal",
    "video_title": "消响月旅行 - Moon Rocket",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 698.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB108",
@@ -2919,7 +3454,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/eNum0cIRhA8",
    "video_orientation": "horizontal",
    "video_title": "50发飞天鼠 - 50 Tikus",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 318.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB109",
@@ -2946,7 +3486,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/qVfAkkw6bIs",
    "video_orientation": "vertical",
    "video_title": "100发闪亮美人 - 100 Tikus",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 398.0,
+   "piece_qty": 36,
+   "loose_price": 15.48,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB110",
@@ -2973,7 +3518,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/wyzh4JqrN50",
    "video_orientation": "vertical",
    "video_title": "狼嚎火箭 WOLF ROCKET",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB111",
@@ -3000,7 +3550,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/vtZQxzT3Y3o",
    "video_orientation": "vertical",
    "video_title": "混合火箭 ROCKET MIX",
-   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.17, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB112",
@@ -3027,7 +3582,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/oa1zilEFz6Y",
    "video_orientation": "vertical",
    "video_title": "无人机 DRONE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 12,
+   "loose_price": 42.93,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB113",
@@ -3054,7 +3614,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/eoc8rTofpfM",
    "video_orientation": "vertical",
    "video_title": "降落伞 - Payung Terjun",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB114",
@@ -3081,7 +3646,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/7Rg6M3IpTlk",
    "video_orientation": "vertical",
    "video_title": "闪屏火箭 加强版 STROBE EXTRA PRO",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 748.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB115",
@@ -3108,7 +3678,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/dBs6kIZeDzw",
    "video_orientation": "vertical",
    "video_title": "三层飞机 TRIPLE FLY AEROPLANE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 528.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB116",
@@ -3135,7 +3710,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/QNcssna0tY8",
    "video_orientation": "vertical",
    "video_title": "一飞冲天 1 SHOT TO THE SKY",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB117",
@@ -3162,7 +3742,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/VrFRRs3mtH4",
    "video_orientation": "vertical",
    "video_title": "甲壳虫 LADYBIRD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 488.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB118",
@@ -3189,7 +3774,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/MfjVZm37nRs",
    "video_orientation": "horizontal",
    "video_title": "水母 - UFO",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB119",
@@ -3216,7 +3806,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/9M8sqjPne5k",
    "video_orientation": "vertical",
    "video_title": "超级大水母 SUPER UFO",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 278.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB120",
@@ -3243,7 +3838,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Bhv8m8JbkNY",
    "video_orientation": "vertical",
    "video_title": "49发花海 B - 49 Magic Shots B",
-   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.18, link on product card",
+   "carton_price": 390.0,
+   "piece_qty": 18,
+   "loose_price": 30.33,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB121",
@@ -3270,7 +3870,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/PXanILMwGig",
    "video_orientation": "horizontal",
    "video_title": "特响火柴炮 - Mancis",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB122",
@@ -3291,7 +3896,12 @@
     360,
     391
    ],
-   "image_source": "Hunter Boom CNY 2026 catalog page 19"
+   "image_source": "Hunter Boom CNY 2026 catalog page 19",
+   "carton_price": 248.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB123",
@@ -3318,7 +3928,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Y4dPcsFyqgU",
    "video_orientation": "horizontal",
    "video_title": "顺利红 - Cili Padi",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB124",
@@ -3345,7 +3960,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Thu3elb0S2s",
    "video_orientation": "vertical",
    "video_title": "七色彩烟火柴炮 7 COLOR MANCIS",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB125",
@@ -3372,7 +3992,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/BXkG-rU61A4",
    "video_orientation": "horizontal",
    "video_title": "小号雨打芭蕉 - Banana Kecil",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB126",
@@ -3399,7 +4024,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/I3-7-POP0lc",
    "video_orientation": "horizontal",
    "video_title": "大号雨打芭蕉 - Banana Besar",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB127",
@@ -3426,7 +4056,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/bZJTTgYeIhw",
    "video_orientation": "vertical",
    "video_title": "飞天狼雨打芭蕉（狼嚎） BANANA WOLF",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 578.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB128",
@@ -3453,7 +4088,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/6MpetLj2DYc",
    "video_orientation": "vertical",
    "video_title": "一炮四响 1 SHOT 4 SOUND",
-   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.19, link on product card",
+   "carton_price": 390.0,
+   "piece_qty": 24,
+   "loose_price": 22.75,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB129",
@@ -3480,7 +4120,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/aawhu9kXQ2c",
    "video_orientation": "vertical",
    "video_title": "天地双响 （小） - Thunder King Small",
-   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB130",
@@ -3507,7 +4152,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/D-wP14iBgsI",
    "video_orientation": "vertical",
    "video_title": "天地双响（大） - Thunder King Big",
-   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card",
+   "carton_price": 388.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB131",
@@ -3534,7 +4184,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/3fsbw8WHMAI",
    "video_orientation": "vertical",
    "video_title": "8波罗马烛光 - 8 Shots Roman Candal",
-   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB132",
@@ -3561,7 +4216,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/xBvRBUq6qBU",
    "video_orientation": "vertical",
    "video_title": "1.75寸 小炮弹 - Osama",
-   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.20, link on product card",
+   "carton_price": 398.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB133",
@@ -3573,7 +4233,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 雷王           (Bearboom) THUNDER KING          72/6     RM460.00",
-   "image": null
+   "image": null,
+   "carton_price": 460.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB134",
@@ -3585,7 +4250,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 花开雪莲          (Bearboom) TAYCAN SPARKLE         12/1     RM648.00",
-   "image": null
+   "image": null,
+   "carton_price": 648.0,
+   "piece_qty": 12,
+   "loose_price": 75.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB135",
@@ -3597,7 +4267,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 大风车          (Bearboom) KIPAS FOUNTAIN         12/3     RM640.00",
-   "image": null
+   "image": null,
+   "carton_price": 640.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB136",
@@ -3609,7 +4284,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 仙女棒喷泉         (Bearboom) MAGIC FOUNTAIN         20/4     RM710.00",
-   "image": null
+   "image": null,
+   "carton_price": 710.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB137",
@@ -3621,7 +4301,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 雪花瀑布         (Bearboom) WATERFALL SUNSET        60/5     RM510.00",
-   "image": null
+   "image": null,
+   "carton_price": 510.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB138",
@@ -3633,7 +4318,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 大蝴蝶           (Bearboom) BIG BUTTERFLY         36/6     RM485.00",
-   "image": null
+   "image": null,
+   "carton_price": 485.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB139",
@@ -3645,7 +4335,12 @@
    "category": "bear",
    "published": false,
    "source_line": "(熊炮) 五色彩烟筒          (Bearboom) SMOKE 5 COLOR         50/5     RM648.00",
-   "image": null
+   "image": null,
+   "carton_price": 648.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB140",
@@ -3672,7 +4367,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/uwMnjTCdLCU",
    "video_orientation": "vertical",
    "video_title": "4寸高16发 麒麟呈祥 - 4inch H 16 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 40,
+   "loose_price": 14.63,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB141",
@@ -3699,7 +4399,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/VIv5JgiPa1c",
    "video_orientation": "vertical",
    "video_title": "4寸高25发 玄武庄重 - 4inch H 25 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 24,
+   "loose_price": 22.05,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB142",
@@ -3726,7 +4431,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/NWcmfT1GMvk",
    "video_orientation": "vertical",
    "video_title": "4寸高36发 朱雀辉煌 - 4 inch H 36 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 16,
+   "loose_price": 32.2,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB143",
@@ -3753,7 +4463,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/TKUDnWmUfPc",
    "video_orientation": "vertical",
    "video_title": "4寸高49发 白虎威武 - 4 inch H 49 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card",
+   "carton_price": 368.0,
+   "piece_qty": 12,
+   "loose_price": 42.93,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB144",
@@ -3780,7 +4495,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/pxx6LIOf_Ps",
    "video_orientation": "vertical",
    "video_title": "4寸高138发 青龙翱翔 - 4 inch H 138 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.22, link on product card",
+   "carton_price": 360.0,
+   "piece_qty": 4,
+   "loose_price": 126.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB145",
@@ -3807,7 +4527,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/7xukoAkHacc",
    "video_orientation": "vertical",
    "video_title": "4寸138发 V SHAPE AB",
-   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card",
+   "carton_price": 398.0,
+   "piece_qty": 4,
+   "loose_price": 139.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB146",
@@ -3818,7 +4543,12 @@
    "price": 408.0,
    "category": "cake",
    "source_line": "纸筒4寸276发盆花 AB - V形   4''276 SHOOT CAKE AB - V SHAPE     2/2      RM408.00",
-   "image": null
+   "image": null,
+   "carton_price": 408.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB147",
@@ -3845,7 +4575,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/y8QvNd3c98o",
    "video_orientation": "vertical",
    "video_title": "5寸25发 纸筒 5025 PAPERTUBE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 24,
+   "loose_price": 23.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB148",
@@ -3872,7 +4607,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_gaw0HicOqU",
    "video_orientation": "vertical",
    "video_title": "5寸36发 纸筒 5036 PAPERTUBE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card",
+   "carton_price": 298.0,
+   "piece_qty": 12,
+   "loose_price": 34.77,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB149",
@@ -3899,7 +4639,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/0bning6SO1M",
    "video_orientation": "vertical",
    "video_title": "5寸49发 纸筒 5049 PAPERTUBE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.23, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 12,
+   "loose_price": 47.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB150",
@@ -3926,7 +4671,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Ub3ORQ7ql1U",
    "video_orientation": "vertical",
    "video_title": "4寸25发 金钛柳 GOLDEN EFFECT",
-   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 24,
+   "loose_price": 20.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB151",
@@ -3953,7 +4703,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/8-qCp3JXIJQ",
    "video_orientation": "vertical",
    "video_title": "4寸36发 金钛柳 GOLDEN EFFECT",
-   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card",
+   "carton_price": 338.0,
+   "piece_qty": 16,
+   "loose_price": 29.58,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB152",
@@ -3980,7 +4735,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/v-NiOkLxFbU",
    "video_orientation": "vertical",
    "video_title": "4寸49发 金钛柳 GOLDEN EFFECT",
-   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card",
+   "carton_price": 330.0,
+   "piece_qty": 12,
+   "loose_price": 38.5,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB153",
@@ -4007,7 +4767,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/C0yph8FnMu8",
    "video_orientation": "vertical",
    "video_title": "4寸138发 金钛柳 GOLDEN EFFECT",
-   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.25, link on product card",
+   "carton_price": 318.0,
+   "piece_qty": 4,
+   "loose_price": 111.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB154",
@@ -4034,7 +4799,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Bb5fIKp72-A",
    "video_orientation": "vertical",
    "video_title": "模压4寸16发 4016 MOULD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 40,
+   "loose_price": 14.28,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB155",
@@ -4061,7 +4831,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ijW8_C--iqY",
    "video_orientation": "vertical",
    "video_title": "模压4寸25发 4025 MOULD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card",
+   "carton_price": 318.0,
+   "piece_qty": 24,
+   "loose_price": 18.55,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB156",
@@ -4088,7 +4863,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ikH_iAnppzE",
    "video_orientation": "vertical",
    "video_title": "模压4寸36发 4036 MOULD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": 16,
+   "loose_price": 26.95,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB157",
@@ -4115,7 +4895,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/B8bCi0sMQLY",
    "video_orientation": "vertical",
    "video_title": "模压4寸49发 4049 MOULD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": 12,
+   "loose_price": 35.93,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB158",
@@ -4142,7 +4927,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/gBDohmkVDKU",
    "video_orientation": "vertical",
    "video_title": "模压4寸138发 4138 MOULD",
-   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.27, link on product card",
+   "carton_price": 288.0,
+   "piece_qty": 4,
+   "loose_price": 100.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB159",
@@ -4169,7 +4959,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/rKI7JHhlBpM",
    "video_orientation": "vertical",
    "video_title": "5寸高25发 吴国 - 5 inch H 25 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 24,
+   "loose_price": 19.13,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB160",
@@ -4196,7 +4991,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Vy_3ghw6Unk",
    "video_orientation": "vertical",
    "video_title": "5寸高36发 魏国 - 5 inch H 36 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card",
+   "carton_price": 320.0,
+   "piece_qty": 16,
+   "loose_price": 28.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB161",
@@ -4223,7 +5023,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/y9--EHMhWcg",
    "video_orientation": "vertical",
    "video_title": "5寸高49发 蜀国 - 5 inch H 49 Shots",
-   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.28, link on product card",
+   "carton_price": 320.0,
+   "piece_qty": 12,
+   "loose_price": 37.33,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB162",
@@ -4250,7 +5055,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_813X-t2AnU",
    "video_orientation": "vertical",
    "video_title": "塑模4寸25发 PLASTIC 4025",
-   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card",
+   "carton_price": 308.0,
+   "piece_qty": 24,
+   "loose_price": 17.97,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB163",
@@ -4277,7 +5087,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/dhK8ATbox5g",
    "video_orientation": "vertical",
    "video_title": "塑模4寸36发 PLASTIC 4036",
-   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card",
+   "carton_price": 300.0,
+   "piece_qty": 16,
+   "loose_price": 26.25,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB164",
@@ -4304,7 +5119,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/T_n6XFZXLr0",
    "video_orientation": "vertical",
    "video_title": "塑模4寸49发 PLASTIC 4049",
-   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card",
+   "carton_price": 298.0,
+   "piece_qty": 12,
+   "loose_price": 34.77,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB165",
@@ -4331,7 +5151,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/opVG_2Br-UY",
    "video_orientation": "vertical",
    "video_title": "塑模4寸138发 PLASTIC 4138",
-   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card",
+   "carton_price": 278.0,
+   "piece_qty": 4,
+   "loose_price": 97.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB166",
@@ -4358,7 +5183,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/7MiEFLl-1P0",
    "video_orientation": "vertical",
    "video_title": "4138 全雷打 （ONLY THUNDER KING）",
-   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.29, link on product card",
+   "carton_price": 278.0,
+   "piece_qty": 4,
+   "loose_price": 97.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB167",
@@ -4369,7 +5199,12 @@
    "price": 810.0,
    "category": "cake",
    "source_line": "5寸100发-百富齐放              5\"100 SHOOT CAKE           6/1    RM810.00",
-   "image": null
+   "image": null,
+   "carton_price": 810.0,
+   "piece_qty": 6,
+   "loose_price": 189.0,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB168",
@@ -4396,7 +5231,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/muUJlLF96AU",
    "video_orientation": "horizontal",
    "video_title": "5寸552发 猎人之花 HUNTER FLOWER",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 678.0,
+   "piece_qty": 4,
+   "loose_price": 237.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB169",
@@ -4423,7 +5263,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Oe10WT-euto",
    "video_orientation": "vertical",
    "video_title": "5寸138发 和天下 A1 A2 A3",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": 3,
+   "loose_price": 214.67,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB170",
@@ -4450,7 +5295,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/oi8D0Gw_WFI",
    "video_orientation": "vertical",
    "video_title": "5寸138发 B 和天下 5138B",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 498.0,
+   "piece_qty": 3,
+   "loose_price": 232.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB171",
@@ -4477,7 +5327,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/os6JXJGD26Q",
    "video_orientation": "vertical",
    "video_title": "5寸138发 C 和天下 5138C",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 498.0,
+   "piece_qty": 3,
+   "loose_price": 232.4,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB172",
@@ -4504,7 +5359,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Tn9RfGL9JXQ",
    "video_orientation": "vertical",
    "video_title": "7寸25发 红尾钛雷",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 388.0,
+   "piece_qty": 12,
+   "loose_price": 45.27,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB173",
@@ -4531,7 +5391,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/A4-nx55e9mQ",
    "video_orientation": "vertical",
    "video_title": "7寸49发 7749",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 378.0,
+   "piece_qty": 4,
+   "loose_price": 132.3,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB174",
@@ -4558,7 +5423,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_ZylbvLdmfQ",
    "video_orientation": "vertical",
    "video_title": "7寸276发 速度与激情 FAST & FURIOUS 7‘276",
-   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.30, link on product card",
+   "carton_price": 538.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB175",
@@ -4585,7 +5455,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/s_g4zSmUIqQ",
    "video_orientation": "vertical",
    "video_title": "8寸25发 8025 八面威风",
-   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 4,
+   "loose_price": 114.8,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB176",
@@ -4612,7 +5487,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/wWCqQtc7whM",
    "video_orientation": "vertical",
    "video_title": "8寸49发 8049 八面玲珑",
-   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card",
+   "carton_price": 318.0,
+   "piece_qty": 2,
+   "loose_price": 222.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB177",
@@ -4629,7 +5509,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/-0-ADwhfGwY",
    "video_orientation": "vertical",
    "video_title": "8寸高49发 八面玲珑 - 8 inch H 49 Shots",
-   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title"
+   "video_source": "Hunter Boom official YouTube channel @HUNTERBOOMOFFICIAL, exact product title",
+   "carton_price": 535.0,
+   "piece_qty": 4,
+   "loose_price": 187.25,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB178",
@@ -4640,7 +5525,12 @@
    "price": 498.0,
    "category": "cake",
    "source_line": "精品1.2寸洞8寸49发              8\"49 SHOOT CAKE           2/1    RM498.00",
-   "image": null
+   "image": null,
+   "carton_price": 498.0,
+   "piece_qty": 2,
+   "loose_price": 348.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB179",
@@ -4651,7 +5541,12 @@
    "price": 847.5,
    "category": "cake",
    "source_line": "1寸洞49发-狼嚎天下                1\"49 SHOOT CAKE           6/1    RM847.50",
-   "image": null
+   "image": null,
+   "carton_price": 847.5,
+   "piece_qty": 6,
+   "loose_price": 197.75,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB180",
@@ -4678,7 +5573,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/FGGPBQtqbk8",
    "video_orientation": "vertical",
    "video_title": "8寸138发 八方来财 AB",
-   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.31, link on product card",
+   "carton_price": 488.0,
+   "piece_qty": 2,
+   "loose_price": 341.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB181",
@@ -4705,7 +5605,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/M0I7KdVGn-A",
    "video_orientation": "vertical",
    "video_title": "9寸138发 七彩筋斗云 7 COLOR FIREWORKS",
-   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card",
+   "carton_price": 578.0,
+   "piece_qty": 1,
+   "loose_price": 809.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB182",
@@ -4732,7 +5637,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/AmZWnxjWfu8",
    "video_orientation": "vertical",
    "video_title": "9寸138发 萤火虫 FIREFLY",
-   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card",
+   "carton_price": 488.0,
+   "piece_qty": 1,
+   "loose_price": 683.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB183",
@@ -4759,7 +5669,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/rsHrALErB30",
    "video_orientation": "vertical",
    "video_title": "9寸138发 鸟巢 O SHAPE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card",
+   "carton_price": 558.0,
+   "piece_qty": 1,
+   "loose_price": 781.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB184",
@@ -4786,7 +5701,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/mM2WR1DaNdA",
    "video_orientation": "vertical",
    "video_title": "9寸138发 王者金椰",
-   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.32, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB185",
@@ -4813,7 +5733,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_a_kJVpL02s",
    "video_orientation": "vertical",
    "video_title": "9寸138发 VIP笑傲江湖",
-   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": 1,
+   "loose_price": 669.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB186",
@@ -4840,7 +5765,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/zL5SH3X1sBo",
    "video_orientation": "vertical",
    "video_title": "9寸138发 VIP 神雕侠侣",
-   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": 1,
+   "loose_price": 669.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB187",
@@ -4867,7 +5797,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/hpdN0um57Lo",
    "video_orientation": "vertical",
    "video_title": "9寸276发 马上发AB 9‘276",
-   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card",
+   "carton_price": 660.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB188",
@@ -4894,7 +5829,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/ZxdB7XAYnX4",
    "video_orientation": "vertical",
    "video_title": "10寸138发 盲盒 BLIND BOX 10‘138",
-   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.33, link on product card",
+   "carton_price": 508.0,
+   "piece_qty": 1,
+   "loose_price": 711.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB189",
@@ -4921,7 +5861,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/1OraNmbN0Kk",
    "video_orientation": "vertical",
    "video_title": "10寸276发 橙公子 10‘276",
-   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card",
+   "carton_price": 978.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB190",
@@ -4948,7 +5893,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/yelsPkv5-SA",
    "video_orientation": "vertical",
    "video_title": "10寸92发 张家界之夜 ZHANG JIA JIE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 1,
+   "loose_price": 571.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB191",
@@ -4975,7 +5925,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/QrHYmclL1nY",
    "video_orientation": "vertical",
    "video_title": "10寸99发 九寨沟 JIU ZHAI GOU",
-   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card",
+   "carton_price": 428.0,
+   "piece_qty": 1,
+   "loose_price": 599.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB192",
@@ -5002,7 +5957,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/eWL-IYng0bE",
    "video_orientation": "vertical",
    "video_title": "10寸101发 万里长城 WAN LI CHANG CHENG",
-   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.51, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 1,
+   "loose_price": 602.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB193",
@@ -5029,7 +5989,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/IJuvNg7Hlb8",
    "video_orientation": "vertical",
    "video_title": "25发 彩烟日景 6色 SIX COLOR",
-   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 6,
+   "loose_price": 100.33,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB194",
@@ -5056,7 +6021,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/itueWvypagQ",
    "video_orientation": "vertical",
    "video_title": "25发 彩烟日景 蓝色 BLUE",
-   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 6,
+   "loose_price": 97.53,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB195",
@@ -5083,7 +6053,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/LLi14l5G4BY",
    "video_orientation": "vertical",
    "video_title": "25发彩烟日景 粉色 PINK",
-   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.34, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 6,
+   "loose_price": 97.53,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB196",
@@ -5110,7 +6085,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/gcD8e4Szc00",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A1 八仙过海 吕洞宾",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB197",
@@ -5137,7 +6117,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/VqfolJVzxWg",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A2 八仙过海 铁拐李",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB198",
@@ -5164,7 +6149,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/vXjOMGtwovI",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A3 八仙过海 何仙姑",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 458.0,
+   "piece_qty": 1,
+   "loose_price": 641.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB199",
@@ -5191,7 +6181,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/aFGybbYD1-8",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A4 八仙过海 曹国舅",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 458.0,
+   "piece_qty": 1,
+   "loose_price": 641.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB200",
@@ -5218,7 +6213,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/McZohh8_C3w",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A5 八仙过海 张果老",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": 1,
+   "loose_price": 644.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB201",
@@ -5245,7 +6245,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/s5x1be3jroQ",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A6 八仙过海 蓝采和",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": 1,
+   "loose_price": 644.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB202",
@@ -5272,7 +6277,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/yI7XivKN7Cw",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A7 八仙过海 韩湘子",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB203",
@@ -5299,7 +6309,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/rRYQsB_0V3k",
    "video_orientation": "vertical",
    "video_title": "9寸138发 A8 八仙过海 汉钟离",
-   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.36, link on product card",
+   "carton_price": 458.0,
+   "piece_qty": 1,
+   "loose_price": 641.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB204",
@@ -5326,7 +6341,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/QyKZhXyTdnM",
    "video_orientation": "vertical",
    "video_title": "9寸138发 W 苏妲己",
-   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 1,
+   "loose_price": 459.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB205",
@@ -5353,7 +6373,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/DRUuZh9_i7c",
    "video_orientation": "vertical",
    "video_title": "9寸138发 X 姜子牙",
-   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 1,
+   "loose_price": 459.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB206",
@@ -5380,7 +6405,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/SoEXK9ROHzc",
    "video_orientation": "vertical",
    "video_title": "9寸138发 Y 哪吒",
-   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 1,
+   "loose_price": 487.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB207",
@@ -5407,7 +6437,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/-lZ66_3O68Y",
    "video_orientation": "vertical",
    "video_title": "9寸138发 Z 申公豹",
-   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.38, link on product card",
+   "carton_price": 328.0,
+   "piece_qty": 1,
+   "loose_price": 459.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB208",
@@ -5434,7 +6469,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/v9tjrDsyliE",
    "video_orientation": "vertical",
    "video_title": "9寸138发A 五虎将 关羽",
-   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 1,
+   "loose_price": 571.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB209",
@@ -5461,7 +6501,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_WRV1n1FoBM",
    "video_orientation": "vertical",
    "video_title": "9寸138发 B 五虎将 张飞",
-   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card",
+   "carton_price": 460.0,
+   "piece_qty": 1,
+   "loose_price": 644.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB210",
@@ -5488,7 +6533,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/pzGe6wpF6MU",
    "video_orientation": "vertical",
    "video_title": "9寸138发 C 五虎将 赵云",
-   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 1,
+   "loose_price": 602.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB211",
@@ -5515,7 +6565,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Ikh78jn50wE",
    "video_orientation": "vertical",
    "video_title": "9寸138发 D 五虎将 马超",
-   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": 1,
+   "loose_price": 613.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB212",
@@ -5542,7 +6597,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/GPygfhhXIGw",
    "video_orientation": "vertical",
    "video_title": "9寸138发 E 五虎将 黄忠",
-   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.40, link on product card",
+   "carton_price": 420.0,
+   "piece_qty": 1,
+   "loose_price": 588.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB213",
@@ -5569,7 +6629,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/4TZGXxy68LM",
    "video_orientation": "vertical",
    "video_title": "9寸138发 军师系列：周瑜9138F",
-   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card",
+   "carton_price": 438.0,
+   "piece_qty": 1,
+   "loose_price": 613.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB214",
@@ -5596,7 +6661,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/e_U6byU4HfQ",
    "video_orientation": "vertical",
    "video_title": "9寸138发 军师系列：诸葛亮9138G",
-   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card",
+   "carton_price": 420.0,
+   "piece_qty": 1,
+   "loose_price": 588.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB215",
@@ -5623,7 +6693,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/mNpc28jKoUc",
    "video_orientation": "vertical",
    "video_title": "9寸138发 军师系列：陆逊9138H",
-   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card",
+   "carton_price": 418.0,
+   "piece_qty": 1,
+   "loose_price": 585.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB216",
@@ -5650,7 +6725,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/43ShqKqfquI",
    "video_orientation": "vertical",
    "video_title": "9寸138发 军师系列：庞统9138I",
-   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card",
+   "carton_price": 408.0,
+   "piece_qty": 1,
+   "loose_price": 571.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB217",
@@ -5677,7 +6757,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/w9vBdms4PHM",
    "video_orientation": "vertical",
    "video_title": "9寸138发 军师系列： 司马懿9138J",
-   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.42, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 1,
+   "loose_price": 602.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB218",
@@ -5688,7 +6773,12 @@
    "price": 390.0,
    "category": "bigcake",
    "source_line": "9寸138发盆花-福星高照                9\"138 SHOOT CAKE              1/1     RM390.00",
-   "image": null
+   "image": null,
+   "carton_price": 390.0,
+   "piece_qty": 1,
+   "loose_price": 546.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB219",
@@ -5699,7 +6789,12 @@
    "price": 478.0,
    "category": "bigcake",
    "source_line": "9寸138发盆花-大富大贵           9\"138 SHOOT CAKE - BESAR &         1/1     RM478.00 | MAHAL VIP",
-   "image": null
+   "image": null,
+   "carton_price": 478.0,
+   "piece_qty": 1,
+   "loose_price": 669.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB220",
@@ -5710,7 +6805,12 @@
    "price": 478.0,
    "category": "bigcake",
    "source_line": "10寸138发盆花-焰火传奇              10\"138 SHOOT CAKE              1/1     RM478.00",
-   "image": null
+   "image": null,
+   "carton_price": 478.0,
+   "piece_qty": 1,
+   "loose_price": 669.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB221",
@@ -5737,7 +6837,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/LQpeF6wfM6s",
    "video_orientation": "vertical",
    "video_title": "10寸138发A 东海龙王",
-   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card",
+   "carton_price": 420.0,
+   "piece_qty": 1,
+   "loose_price": 588.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB222",
@@ -5764,7 +6869,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/KvUoXkHNi6I",
    "video_orientation": "vertical",
    "video_title": "10寸138 B 西海龙王",
-   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB223",
@@ -5791,7 +6901,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/piOuNHydch4",
    "video_orientation": "vertical",
    "video_title": "10寸138 C 北海龙王",
-   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB224",
@@ -5818,7 +6933,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/aGtBT-V4vP8",
    "video_orientation": "vertical",
    "video_title": "10寸138 D 南海龙王",
-   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.44, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB225",
@@ -5845,7 +6965,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/2yo5HF_NodA",
    "video_orientation": "vertical",
    "video_title": "10寸138发 B1 金麒麟 GOLD KIRIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card",
+   "carton_price": 528.0,
+   "piece_qty": 1,
+   "loose_price": 739.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB226",
@@ -5872,7 +6997,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/l9x9Xj2GFQ4",
    "video_orientation": "vertical",
    "video_title": "10寸138发 B2 木麒麟 WOOD KIRIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card",
+   "carton_price": 528.0,
+   "piece_qty": 1,
+   "loose_price": 739.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB227",
@@ -5899,7 +7029,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/DjQCAFFzDg0",
    "video_orientation": "vertical",
    "video_title": "10寸138发 B3 水麒麟 AQUA KIRIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card",
+   "carton_price": 520.0,
+   "piece_qty": 1,
+   "loose_price": 728.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB228",
@@ -5926,7 +7061,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/0gF6tyCwHGA",
    "video_orientation": "vertical",
    "video_title": "10寸138发 B4 火麒麟 FIRE KIRIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card",
+   "carton_price": 518.0,
+   "piece_qty": 1,
+   "loose_price": 725.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB229",
@@ -5953,7 +7093,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/YqYaHJBgQXE",
    "video_orientation": "vertical",
    "video_title": "10寸138发 B5 土麒麟 SOIL KIRIN",
-   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.46, link on product card",
+   "carton_price": 528.0,
+   "piece_qty": 1,
+   "loose_price": 739.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB230",
@@ -5980,7 +7125,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/qbBNOQJuG4M",
    "video_orientation": "vertical",
    "video_title": "10寸36发 狼嚎 红狼至尊1036",
-   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card",
+   "carton_price": 430.0,
+   "piece_qty": 4,
+   "loose_price": 150.5,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB231",
@@ -6007,7 +7157,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/1T6PQpVSWV4",
    "video_orientation": "vertical",
    "video_title": "10寸49发 狼嚎天下 1049",
-   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card",
+   "carton_price": 490.0,
+   "piece_qty": 4,
+   "loose_price": 171.5,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB232",
@@ -6034,7 +7189,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/SaZHk2ls7J4",
    "video_orientation": "vertical",
    "video_title": "10寸138发 狼王 10”138 Wolf King",
-   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card",
+   "carton_price": 468.0,
+   "piece_qty": 1,
+   "loose_price": 655.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB233",
@@ -6061,7 +7221,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/3uVfwKEH48E",
    "video_orientation": "vertical",
    "video_title": "10寸138发 杀破狼 WOLF VVIP",
-   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.48, link on product card",
+   "carton_price": 478.0,
+   "piece_qty": 1,
+   "loose_price": 669.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB234",
@@ -6088,7 +7253,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/h8rGX9oUjBE",
    "video_orientation": "vertical",
    "video_title": "11寸138A 四大天王魔家四将-魔礼青",
-   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card",
+   "carton_price": 568.0,
+   "piece_qty": 1,
+   "loose_price": 795.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB235",
@@ -6115,7 +7285,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/tyb-0WzOVYA",
    "video_orientation": "vertical",
    "video_title": "11寸138B 四大天王魔家四将-魔礼红",
-   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card",
+   "carton_price": 568.0,
+   "piece_qty": 1,
+   "loose_price": 795.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB236",
@@ -6142,7 +7317,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/Tg3WYKl19uQ",
    "video_orientation": "vertical",
    "video_title": "11寸138C 四大天王魔家四将-魔礼海",
-   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card",
+   "carton_price": 568.0,
+   "piece_qty": 1,
+   "loose_price": 795.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB237",
@@ -6169,7 +7349,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/6zNmMrbYkUQ",
    "video_orientation": "vertical",
    "video_title": "11寸138D 四大天王魔家四将-魔礼寿",
-   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.50, link on product card",
+   "carton_price": 568.0,
+   "piece_qty": 1,
+   "loose_price": 795.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB238",
@@ -6196,7 +7381,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/_dWr_06ODCY",
    "video_orientation": "vertical",
    "video_title": "12寸138发 吉腾之花 JT FLOWER",
-   "video_source": "Hunter Boom CNY 2026 catalog p.52, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.52, link on product card",
+   "carton_price": 558.0,
+   "piece_qty": 1,
+   "loose_price": 781.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB239",
@@ -6223,7 +7413,12 @@
    "video_embed": "https://www.youtube-nocookie.com/embed/YMOSkjwSFdo",
    "video_orientation": "vertical",
    "video_title": "12寸138发 蓝色梦想 BLUE DREAM 12‘138",
-   "video_source": "Hunter Boom CNY 2026 catalog p.52, link on product card"
+   "video_source": "Hunter Boom CNY 2026 catalog p.52, link on product card",
+   "carton_price": 588.0,
+   "piece_qty": 1,
+   "loose_price": 823.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB240",
@@ -6250,7 +7445,12 @@
    "video_embed": "https://drive.google.com/file/d/1YUCegN93Ppo70KchfJCLzH_htHyV4JJS/preview",
    "video_orientation": "vertical",
    "video_title": "1) 超级彩雷王 - SUPER CLOUD CAI LEI WANG.mp4",
-   "video_source": "TT Fireworks catalog p.2, link on product card"
+   "video_source": "TT Fireworks catalog p.2, link on product card",
+   "carton_price": 530.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB241",
@@ -6277,7 +7477,12 @@
    "video_embed": "https://drive.google.com/file/d/1qjI-XdhsRwW0BLinP3xfasiFDYBpfFyC/preview",
    "video_orientation": "vertical",
    "video_title": "2) 超级大地雷公 - SUPER CLOUD DA DI LEI GONG.mp4",
-   "video_source": "TT Fireworks catalog p.2, link on product card"
+   "video_source": "TT Fireworks catalog p.2, link on product card",
+   "carton_price": 708.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB242",
@@ -6304,7 +7509,12 @@
    "video_embed": "https://drive.google.com/file/d/1IbdQSLPXku58y8pVFaBAP4MwGXbrxSRW/preview",
    "video_orientation": "vertical",
    "video_title": "3) TT BOOM.mp4",
-   "video_source": "TT Fireworks catalog p.2, link on product card"
+   "video_source": "TT Fireworks catalog p.2, link on product card",
+   "carton_price": 1008.0,
+   "piece_qty": null,
+   "loose_price": null,
+   "loose_qty_pending": true,
+   "sale_mode": "carton"
   },
   {
    "sku": "HB243",
@@ -6331,7 +7541,12 @@
    "video_embed": "https://drive.google.com/file/d/1rAfARrHdz7aaLd1ncphLtmlfQssO_Bid/preview",
    "video_orientation": "vertical",
    "video_title": "1) NAVY 海军.mov",
-   "video_source": "TT Fireworks catalog p.3, link on product card"
+   "video_source": "TT Fireworks catalog p.3, link on product card",
+   "carton_price": 548.0,
+   "piece_qty": 3,
+   "loose_price": 255.73,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB244",
@@ -6358,7 +7573,12 @@
    "video_embed": "https://drive.google.com/file/d/12hX3uVuXVwP3dLcFXs88zQj2VlAAmvAv/preview",
    "video_orientation": "vertical",
    "video_title": "2) ARMY 陆军.mov",
-   "video_source": "TT Fireworks catalog p.3, link on product card"
+   "video_source": "TT Fireworks catalog p.3, link on product card",
+   "carton_price": 608.0,
+   "piece_qty": 2,
+   "loose_price": 425.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB245",
@@ -6385,7 +7605,12 @@
    "video_embed": "https://drive.google.com/file/d/1Q7FsOFzTQGA3Qyyu_8uEbQHgjakj1_wQ/preview",
    "video_orientation": "vertical",
    "video_title": "3) AirForce 空军.mov",
-   "video_source": "TT Fireworks catalog p.3, link on product card"
+   "video_source": "TT Fireworks catalog p.3, link on product card",
+   "carton_price": 678.0,
+   "piece_qty": 2,
+   "loose_price": 474.6,
+   "loose_qty_pending": false,
+   "sale_mode": "dual"
   },
   {
    "sku": "HB246",
@@ -6412,7 +7637,12 @@
    "video_embed": "https://drive.google.com/file/d/1mi2I2BxIhqEgx4PLbxPLDzUnzJlUOysz/preview",
    "video_orientation": "vertical",
    "video_title": "1) 百乐门 Bai Le Men.mp4",
-   "video_source": "TT Fireworks catalog p.4, link on product card"
+   "video_source": "TT Fireworks catalog p.4, link on product card",
+   "carton_price": 558.0,
+   "piece_qty": 1,
+   "loose_price": 781.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB247",
@@ -6439,7 +7669,12 @@
    "video_embed": "https://drive.google.com/file/d/1BcxJC3EN_10hSpVoqlmbAHZdBzDTENP2/preview",
    "video_orientation": "vertical",
    "video_title": "2) 千禧门 Qian Xi Men.mp4",
-   "video_source": "TT Fireworks catalog p.4, link on product card"
+   "video_source": "TT Fireworks catalog p.4, link on product card",
+   "carton_price": 638.0,
+   "piece_qty": 1,
+   "loose_price": 893.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB248",
@@ -6466,7 +7701,12 @@
    "video_embed": "https://drive.google.com/file/d/1toYoZBD85uT0RxfLaica3tJ7FO7zvcYj/preview",
    "video_orientation": "vertical",
    "video_title": "3) 凯旋门 Kai Xuan Men.mp4",
-   "video_source": "TT Fireworks catalog p.4, link on product card"
+   "video_source": "TT Fireworks catalog p.4, link on product card",
+   "carton_price": 568.0,
+   "piece_qty": 1,
+   "loose_price": 795.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB249",
@@ -6493,7 +7733,12 @@
    "video_embed": "https://drive.google.com/file/d/1y0wAPlmpxe-Nr8YLcIeqoYQ1EbEDuxfa/preview",
    "video_orientation": "vertical",
    "video_title": "9238 - DEEPSEEK.mp4",
-   "video_source": "TT Fireworks catalog p.5, link on product card"
+   "video_source": "TT Fireworks catalog p.5, link on product card",
+   "carton_price": 730.0,
+   "piece_qty": 1,
+   "loose_price": 1022.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB250",
@@ -6520,7 +7765,12 @@
    "video_embed": "https://drive.google.com/file/d/1kxae0dFBZYwEn_zNl8CoqCWbZj9_Lc34/preview",
    "video_orientation": "vertical",
    "video_title": "9328 - CHATGPT.mp4",
-   "video_source": "TT Fireworks catalog p.5, link on product card"
+   "video_source": "TT Fireworks catalog p.5, link on product card",
+   "carton_price": 920.0,
+   "piece_qty": 1,
+   "loose_price": 1288.0,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB251",
@@ -6547,7 +7797,12 @@
    "video_embed": "https://drive.google.com/file/d/1DsEnJTpVdbsk-DQAvgaMaAMahssH2Yur/preview",
    "video_orientation": "vertical",
    "video_title": "10寸488发大汉风歌MAX版 - DA HAN.mp4",
-   "video_source": "TT Fireworks catalog p.6, link on product card"
+   "video_source": "TT Fireworks catalog p.6, link on product card",
+   "carton_price": 2238.0,
+   "piece_qty": 1,
+   "loose_price": 3133.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB252",
@@ -6574,7 +7829,12 @@
    "video_embed": "https://drive.google.com/file/d/1ll7wXhX-NyX4Cpbtiy0kGJxopyuMO8TT/preview",
    "video_orientation": "vertical",
    "video_title": "12寸588发大唐盛世MAX版 - DA TANG.mp4",
-   "video_source": "TT Fireworks catalog p.6, link on product card"
+   "video_source": "TT Fireworks catalog p.6, link on product card",
+   "carton_price": 3178.0,
+   "piece_qty": 1,
+   "loose_price": 4449.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB253",
@@ -6601,7 +7861,12 @@
    "video_embed": "https://drive.google.com/file/d/1sDpE8tPgfiH3GgC2Uq1f0DAx7IuCt7lt/preview",
    "video_orientation": "vertical",
    "video_title": "1) 马皇后.mp4",
-   "video_source": "TT Fireworks catalog p.7, link on product card"
+   "video_source": "TT Fireworks catalog p.7, link on product card",
+   "carton_price": 348.0,
+   "piece_qty": 1,
+   "loose_price": 487.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB254",
@@ -6628,7 +7893,12 @@
    "video_embed": "https://drive.google.com/file/d/1azG9cRCoaSEPWHgHOoDP7kwUjflG0QKT/preview",
    "video_orientation": "vertical",
    "video_title": "2) 朱元璋.mp4",
-   "video_source": "TT Fireworks catalog p.7, link on product card"
+   "video_source": "TT Fireworks catalog p.7, link on product card",
+   "carton_price": 448.0,
+   "piece_qty": 1,
+   "loose_price": 627.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB255",
@@ -6655,7 +7925,12 @@
    "video_embed": "https://drive.google.com/file/d/1L1JLc0o9tWcSkWkFMhbfVHsCIflbQDEB/preview",
    "video_orientation": "vertical",
    "video_title": "3) 环环相扣.mp4",
-   "video_source": "TT Fireworks catalog p.7, link on product card"
+   "video_source": "TT Fireworks catalog p.7, link on product card",
+   "carton_price": 688.0,
+   "piece_qty": 1,
+   "loose_price": 963.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB256",
@@ -6682,7 +7957,12 @@
    "video_embed": "https://drive.google.com/file/d/1Uc8iBn2csNOOu5TEKkKIX7mvW1GAkpF5/preview",
    "video_orientation": "vertical",
    "video_title": "2寸洞88发 刘伯温 2INCH 88 SHOT LIU BO WEN.mp4",
-   "video_source": "TT Fireworks catalog p.7, card links to a public Drive folder; this is its only file"
+   "video_source": "TT Fireworks catalog p.7, card links to a public Drive folder; this is its only file",
+   "carton_price": 788.0,
+   "piece_qty": 1,
+   "loose_price": 1103.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB257",
@@ -6709,7 +7989,12 @@
    "video_embed": "https://drive.google.com/file/d/1iGLTL6Xx_4BD5zKSBrKY6nfew8XVvIfM/preview",
    "video_orientation": "vertical",
    "video_title": "5) 3寸洞25发 赤壁之战.mp4",
-   "video_source": "TT Fireworks catalog p.8, link on product card"
+   "video_source": "TT Fireworks catalog p.8, link on product card",
+   "carton_price": 848.0,
+   "piece_qty": 1,
+   "loose_price": 1187.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB258",
@@ -6736,7 +8021,12 @@
    "video_embed": "https://drive.google.com/file/d/1iyzTahxraVGZUxJzHCGXst4YB38TpIhB/preview",
    "video_orientation": "vertical",
    "video_title": "7) 精品3寸洞25发 金意金钛柳.mp4",
-   "video_source": "TT Fireworks catalog p.9, link on product card"
+   "video_source": "TT Fireworks catalog p.9, link on product card",
+   "carton_price": 948.0,
+   "piece_qty": 1,
+   "loose_price": 1327.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB259",
@@ -6763,7 +8053,12 @@
    "video_embed": "https://drive.google.com/file/d/1lEtHTDhL521PPIXxhBJesgCLeIaSbQUn/preview",
    "video_orientation": "vertical",
    "video_title": "6) 4寸洞16发 龙腾盛世.mp4",
-   "video_source": "TT Fireworks catalog p.8, link on product card"
+   "video_source": "TT Fireworks catalog p.8, link on product card",
+   "carton_price": 1148.0,
+   "piece_qty": 1,
+   "loose_price": 1607.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   },
   {
    "sku": "HB260",
@@ -6790,8 +8085,19 @@
    "video_embed": "https://drive.google.com/file/d/1qGEpWv3xZzHinlTozP5Z0OCuhDKGztQg/preview",
    "video_orientation": "vertical",
    "video_title": "8) 精品4寸洞16发 金意金丝柳.mp4",
-   "video_source": "TT Fireworks catalog p.9, link on product card"
+   "video_source": "TT Fireworks catalog p.9, link on product card",
+   "carton_price": 1348.0,
+   "piece_qty": 1,
+   "loose_price": 1887.2,
+   "loose_qty_pending": false,
+   "sale_mode": "single"
   }
  ],
- "generated": "2026-11-12"
+ "generated": "2026-11-12",
+ "pricing_rule": {
+  "loose_markup": 1.4,
+  "rounding": "ROUND_HALF_UP 0.01",
+  "formula": "loose_price = carton_price / piece_qty * 1.40",
+  "set": "2026-11-13"
+ }
 }

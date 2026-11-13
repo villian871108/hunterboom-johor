@@ -26,7 +26,16 @@ python3 tools/build_site.py --origin https://你的域名.com
 这会把 canonical、og:url、og:image、JSON-LD、`sitemap.xml`（协议要求绝对网址）和 `robots.txt` 的 Sitemap 行全部改成绝对网址。然后把整个文件夹（`tools/` 可不上传）上传到主机根目录，并在 Google Search Console 提交 `sitemap.xml`。
 
 ## 修改产品 / 价格
-编辑 `data/products.json`（`price` 为数字 RM，`packing` 为价目表包装规格），然后 `python3 tools/build_site.py`。
+编辑 `data/products.json`（`price` / `carton_price` 为价目表箱价 RM，`packing` 为价目表包装规格），然后依次运行
+`python3 tools/apply_loose_pricing.py`（重算散装字段）和 `python3 tools/build_site.py`。
+
+散装规则（2026-11-13）：散装卖价 `loose_price` = 箱价 ÷ 一盒件数 `piece_qty` × 1.40（ROUND_HALF_UP 到 RM0.01）。
+- `sale_mode: "dual"`：包装 N/1（N>1），可买散装（每件）或整盒（价目表箱价）。
+- `sale_mode: "single"`：包装 1/1，单件卖 `loose_price`。
+- `sale_mode: "carton"`：其他包装，`loose_qty_pending: true`（散装件数待确认），只卖整盒。确认件数后可在 `packing` 以外手动设定（改脚本规则）再重建。
+
+下单：购物车必须选取货方式（自取 Sutera Mall / Lalamove 联系客服安排 / 邮寄，邮寄需填 6 项邮寄资料 + 邮费 RM15），
+每次发送生成单号 `HBJ-YYYYMMDD-XXXX`。出货单归档：`tools/file_order.py`，存到 box 私人文件夹 `/workspace/hunterboom-orders/`（不进 repo）。
 
 ## 下单流程
 购物车 → 「发送订单到 WhatsApp」→ 打开 `https://wa.me/60177891688?text=我要下单…`（每行：编号 名称 x数量，附参考合计）。

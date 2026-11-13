@@ -30,13 +30,30 @@ function send(type, extra){
     if(!ok && window.fetch){ fetch(API, {method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=UTF-8'}, body:body}).catch(function(){}); }
   }catch(e){}
 }
-/* order hook: cart.js calls this right before window.open(WhatsApp) with a non-empty cart */
-window.HBJStats = { order: function(items){
+/* order hook: cart.js calls this right before window.open(WhatsApp) with the order record
+ *   {order_no, time, delivery, delivery_label, ship, items:[{c,n,m,t,u,q,p,line}], subtotal, postage, total}
+ * (an old-style plain items array is still accepted). Optional fields order_no / delivery / ship / postage
+ * are only stored by the updated tools/stats_api.gs; an older deployment simply ignores them.
+ * The 散装 / 整盒 unit is also written into the item name, so even the old sheet shows it. */
+var DLV_T = {pickup:'自取（Sutera Mall）', lalamove:'Lalamove（联系客服安排）', post:'邮寄'};
+var SHIP_F = [['name','收件人姓名'],['phone','电话'],['addr','地址'],['pc','邮区编号'],['city','城市'],['state','州属']];
+window.HBJStats = { order: function(o){
   try{
-    var list = (items || []).filter(function(x){ return x && (x.c || x.n); }).slice(0, 60).map(function(x){
-      return {c:String(x.c||'').slice(0,20), n:String(x.n||'').slice(0,80), q:Math.max(1, parseInt(x.q,10)||1), p:Number(x.p)||0};
+    if(Object.prototype.toString.call(o) === '[object Array]') o = {items:o};
+    o = o || {};
+    var list = (o.items || []).filter(function(x){ return x && (x.c || x.n); }).slice(0, 60).map(function(x){
+      var n = String(x.n||'') + (x.t ? '（' + x.t + '）' : '');
+      return {c:String(x.c||'').slice(0,20), n:n.slice(0,80), q:Math.max(1, parseInt(x.q,10)||1), p:Number(x.p)||0, m:String(x.m||'').slice(0,2)};
     });
-    if(list.length) send('order', {items:list});
+    if(!list.length) return;
+    var ex = {items:list};
+    if(o.order_no) ex.order_no = String(o.order_no).slice(0,24);
+    if(DLV_T[o.delivery]){
+      ex.delivery = o.delivery;
+      ex.postage = o.delivery === 'post' ? 15 : 0;
+      if(o.delivery === 'post' && o.ship){ ex.ship = {}; SHIP_F.forEach(function(f){ ex.ship[f[0]] = String(o.ship[f[0]]||'').slice(0,200); }); }
+    }
+    send('order', ex);
   }catch(e){}
 }};
 var isStats = document.body && document.body.hasAttribute('data-stats-page');
@@ -63,11 +80,27 @@ function gate(show, msg){
   if(show){ var i = $('st-pin'); if(i){ i.value = ''; try{ i.focus(); }catch(e){} } }
 }
 var sel = '', last = null, filt = 'all';
+function dlvText(o){ return DLV_T[o.delivery] || ''; }
 function waText(o){
-  var l = ['网站订单跟进（' + o.time + '，UTC+8）'];
+  var l = [];
+  if(o.order_no) l.push('单号：' + o.order_no);
+  l.push('网站订单跟进（' + o.time + '，UTC+8）');
   (o.items||[]).forEach(function(x){ l.push(x.c + ' ' + x.n + ' x' + x.q); });
-  l.push(''); l.push('参考合计：' + rm(o.ref_total) + '（以店家确认为准，不含运费）');
+  l.push(''); l.push('商品参考小计：' + rm(o.ref_total));
+  if(o.delivery === 'post'){ l.push('邮费：' + rm(o.postage || 15)); l.push('参考合计：' + rm((o.ref_total||0) + (o.postage || 15)) + '（以店家确认为准）'); }
+  else l.push('参考合计：' + rm(o.ref_total) + '（以店家确认为准' + (o.delivery === 'lalamove' ? '，不含 Lalamove 运费' : '') + '）');
+  if(dlvText(o)){ l.push(''); l.push('取货方式：' + dlvText(o)); }
+  if(o.delivery === 'post' && o.ship){ l.push('邮寄资料：'); SHIP_F.forEach(function(f){ l.push(f[1] + '：' + (o.ship[f[0]] || '')); }); }
   return l.join('\n');
+}
+function dlvHtml(o){
+  var h = '';
+  if(dlvText(o)) h += '<p class="od-d">🚚 ' + esc(dlvText(o)) + (o.delivery === 'post' ? ' · 邮费 ' + rm(o.postage || 15) : '') + '</p>';
+  else h += '<p class="od-d od-na">🚚 取货方式：未记录（旧订单或统计接口未更新）</p>';
+  if(o.delivery === 'post' && o.ship){
+    h += '<dl class="od-ship">' + SHIP_F.map(function(f){ return '<dt>' + f[1] + '</dt><dd>' + esc(o.ship[f[0]] || '') + '</dd>'; }).join('') + '</dl>';
+  }
+  return h;
 }
 function renderOrders(r){
   var list = r.orders || [], day = r.order_day || {orders:0, order_total:0}, d = r.order_date;
@@ -84,9 +117,9 @@ function renderOrders(r){
   $('od-list').innerHTML = show.map(function(o){
     var done = o.status === 'done';
     var items = (o.items||[]).map(function(x){ return '<li><b>' + esc(x.c) + '</b> ' + esc(x.n) + ' <span>× ' + n(x.q) + '</span>' + (x.p ? ' <small>' + rm(x.p) + '</small>' : '') + '</li>'; }).join('');
-    return '<article class="od' + (done ? ' done' : '') + '"><div class="od-h"><span class="od-t">🕒 ' + esc(o.time) + ' <small>UTC+8</small></span>' +
+    return '<article class="od' + (done ? ' done' : '') + '"><div class="od-h"><span class="od-t">' + (o.order_no ? '<b class="od-no">' + esc(o.order_no) + '</b> ' : '<b class="od-no od-na">无单号</b> ') + '🕒 ' + esc(o.time) + ' <small>UTC+8</small></span>' +
       '<span class="od-s">' + (done ? '✅ 已处理' + (o.handled_at ? ' <small>' + esc(String(o.handled_at).slice(11,16)) + '</small>' : '') : '⏳ 待处理') + '</span></div>' +
-      '<ul>' + items + '</ul><div class="od-f"><span>共 ' + n(o.qty) + ' 件 · 参考合计 <b>' + rm(o.ref_total) + '</b></span><span class="od-b">' +
+      '<ul>' + items + '</ul>' + dlvHtml(o) + '<div class="od-f"><span>共 ' + n(o.qty) + ' 件/盒 · 商品参考 <b>' + rm(o.ref_total) + '</b>' + (o.delivery === 'post' ? ' + 邮费 ' + rm(o.postage || 15) : '') + '</span><span class="od-b">' +
       '<a class="btn wa" href="https://wa.me/' + WA + '?text=' + encodeURIComponent(waText(o)) + '" target="_blank" rel="noopener">用 WhatsApp 跟进</a>' +
       (o.id ? '<button type="button" class="btn ' + (done ? 'ol' : 'gd') + '" data-oid="' + esc(o.id) + '" data-to="' + (done ? 'pending' : 'done') + '">' + (done ? '改回待处理' : '标记已处理') + '</button>' : '') +
       '</span></div></article>';

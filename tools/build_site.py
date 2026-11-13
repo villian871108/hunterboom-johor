@@ -33,14 +33,31 @@ FB = "https://www.facebook.com/profile.php?id=61585987514444"
 ADDR = "Iskandar Puteri, Johor Bahru, Malaysia, 81200"
 ADDR_ZH = "柔佛新山 依斯干达公主城（Iskandar Puteri）81200"
 CNY = "羊年春节（2027年2月6日）"
-# Delivery as stated by the shop (12 Nov 2026). Do not invent East Malaysia or free meetup.
-SHIP_FACE = "五福城（Sutera）可面交，请先 WhatsApp 约时间"
-SHIP_JB = "新山区可用 Lalamove，运费自付"
-SHIP_WM = "西马邮费一律 RM15，买多少都是 RM15"
-SHIP_LINE = "五福城（Sutera）可面交；新山区可用 Lalamove（运费自付）；西马邮费一律 RM15（任买）。"
+# Delivery as stated by the shop (12–13 Nov 2026). Checkout must pick exactly one of these 3 (js/cart.js).
+# Do not invent East Malaysia or other fees.
+SHIP_FACE = "自取（Sutera Mall），请先 WhatsApp 约时间"
+SHIP_JB = "Lalamove（联系客服安排，新山区运费自付）"
+SHIP_WM = "西马邮寄 RM15 任买（需填写邮寄资料）"
+SHIP_LINE = "自取（Sutera Mall）；Lalamove（联系客服安排，新山区运费自付）；西马邮寄 RM15 任买（需填写邮寄资料）。"
 
 e = lambda s: html.escape(str(s if s is not None else ""), quote=True)
 def rm(x): return "RM{:,.2f}".format(x)
+
+# ---- 散装 / 整盒 pricing (fields written by tools/apply_loose_pricing.py) ----
+# sale_mode "dual":   N/1 with N>1 → 散装 loose_price /件 + 整盒 carton_price /盒
+# sale_mode "single": 1/1          → one unit, loose_price (= 箱价 × 1.40) /件
+# sale_mode "carton": other packing → 整盒 only at carton_price; 散装件数待确认
+def mode(p): return p.get("sale_mode") or "carton"
+def carton(p): return p.get("carton_price", p["price"])
+def main_price(p):
+    """Primary customer price: 散装卖价 for N/1 products, 整盒价 for packing still 待确认."""
+    return p["loose_price"] if mode(p) in ("dual", "single") else carton(p)
+def price_txt(p):
+    """Plain-text price summary for meta descriptions."""
+    m = mode(p)
+    if m == "dual": return f"散装卖价 {rm(p['loose_price'])}/件，整盒 {rm(carton(p))}/盒（{p['piece_qty']}件）"
+    if m == "single": return f"卖价 {rm(p['loose_price'])}/件"
+    return f"整盒价 {rm(carton(p))}/盒（散装件数待确认）"
 def absu(path):  # path like "p/HB001.html" or "" for home
     return (SITE_ORIGIN + "/" + path) if SITE_ORIGIN else "/" + path
 def jd(o): return '<script type="application/ld+json">' + json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + "</script>"
@@ -95,7 +112,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=7">
+<link rel="stylesheet" href="{root}css/style.css?v=8">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Site stats: js/stats.js -> Google Apps Script (tools/stats_api.gs); see tools/STATS.md -->
 </head>
@@ -113,7 +130,7 @@ def topbar(root, active=None, home=False):
 <form class="sb" role="search"{act} method="get"><label class="sr" for="q">搜索产品</label><input id="q" name="q" type="search" placeholder="搜索名称或编号，如 HB001、红炮、加特林" autocomplete="off"><button type="submit">搜索</button></form>
 <nav class="tabs" aria-label="产品分类">{''.join(tabs)}</nav>
 </div></header>
-<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山批发零售</span><span>🤝 五福城（Sutera）面交</span><span>📦 西马邮费 RM15 任买</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
+<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山批发零售</span><span>🛍️ 自取（Sutera Mall）</span><span>📦 西马邮寄 RM15 任买</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
 """
 
 def footer(root, active=None):
@@ -127,17 +144,17 @@ def footer(root, active=None):
 <p>👍 Facebook：<a href="{FB}" target="_blank" rel="noopener">{SHOP}</a></p>
 <p>🕒 营业时间：Facebook 主页显示 Always open，来取货前请先 WhatsApp 约时间。</p></address></div>
 <div><h3>产品分类</h3><p class="cats">{cats}</p><p><a href="{root}about.html">关于我们 · 下单方式</a></p></div>
-<p class="legal">温馨提示：燃放烟花请遵守当地法律法规及燃放时间、地点规定；购买前请自行确认所选产品在您所在地区允许使用。价格依据最新价目表（PACKING 为原表包装规格），最终价格、数量与送货安排以 WhatsApp 确认为准。本站为 {SHOP} 店铺网站，并非 Hunter Boom 品牌总部官网。© {datetime.date.today().year} {BRAND}</p>
+<p class="legal">温馨提示：燃放烟花请遵守当地法律法规及燃放时间、地点规定；购买前请自行确认所选产品在您所在地区允许使用。整盒按价目表箱价；散装卖价 = 箱价 ÷ 一盒件数 × 1.40（PACKING 为原表包装规格）。最终价格、数量与送货安排以 WhatsApp 店家确认为准。本站为 {SHOP} 店铺网站，并非 Hunter Boom 品牌总部官网。© {datetime.date.today().year} {BRAND}</p>
 </div></footer>
-<button class="fc" id="fc" type="button" data-open-cart aria-label="打开购物车">{IC_CART.replace('<svg','<svg width="20" height="20"')}<span>0 件</span></button>
+<button class="fc" id="fc" type="button" data-open-cart aria-label="打开购物车">{IC_CART.replace('<svg','<svg width="20" height="20"')}<span>0 项</span></button>
 <nav class="bn" aria-label="底部导航">
 <a href="{root}index.html"{on('home')}>{IC_HOME}首页</a>
 <a href="{root}c/index.html"{on('cats')}>{IC_CAT}分类</a>
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/stats.js?v=1" defer></script>
-<script src="{root}js/cart.js?v=7" defer></script>
+<script src="{root}js/stats.js?v=2" defer></script>
+<script src="{root}js/cart.js?v=8" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -149,9 +166,29 @@ def img_block(p, root, big=False, lazy=True, eager=False):
         return f'<img src="{root}{src}" width="{w}" height="{h}" alt="{e(alt)}" {ld}>'
     return f'<div class="ph" role="img" aria-label="{e(p["name"])}（暂无产品图）">{BURST}<b>{e(p["name"])}</b><i>产品图待更新</i></div>'
 
-def btn_attrs(p, root):
+def btn_attrs(p, root, m=None):
+    """Cart button data. m: "l" 散装 (per piece), "b" 整盒 (per box), "s" 单件 (1/1). Default = the product's primary unit."""
     i = p["thumb"] if p.get("image") else ""
-    return f'data-sku="{p["sku"]}" data-name="{e(p["title"])}" data-price="{p["price"]:.2f}" data-img="{e(i)}"'
+    if m is None: m = {"dual": "l", "single": "s"}.get(mode(p), "b")
+    pr = carton(p) if m == "b" else p["loose_price"]
+    return f'data-sku="{p["sku"]}" data-name="{e(p["title"])}" data-mode="{m}" data-price="{pr:.2f}" data-img="{e(i)}"'
+
+def card_price(p):
+    m = mode(p)
+    if m == "dual":
+        return (f'<div class="pr"><small>散装</small> {rm(p["loose_price"])}<small>/件</small></div>'
+                f'<div class="pk">整盒 {rm(carton(p))}/盒 · {p["piece_qty"]}件</div>')
+    if m == "single":
+        return f'<div class="pr">{rm(p["loose_price"])}<small>/件</small></div><div class="pk">单件 · 包装 {e(p["packing"])}</div>'
+    return (f'<div class="pr"><small>整盒</small> {rm(carton(p))}<small>/盒</small></div>'
+            f'<div class="pk">包装 {e(p["packing"])} · 散装件数待确认</div>')
+
+def card_buttons(p, root):
+    t = e(p["title"])
+    if mode(p) == "dual":
+        return (f'<div class="ab"><button type="button" class="add" data-add {btn_attrs(p, root, "l")} aria-label="把 {t} 散装 1 件加入购物车">+ 散装</button>'
+                f'<button type="button" class="add bx" data-add {btn_attrs(p, root, "b")} aria-label="把 {t} 整盒 1 盒加入购物车">+ 整盒</button></div>')
+    return f'<button type="button" class="add" data-add {btn_attrs(p, root)} aria-label="把 {t} 加入购物车">加入购物车</button>'
 
 
 def intro(p):
@@ -338,8 +375,8 @@ def card(p, root, idx=0):
     return (f'<article class="pc" data-s="{e(s)}"><a class="im" href="{root}p/{p["sku"]}.html">{img_block(p, root, eager=idx<4)}<span class="cd2">{p["sku"]}</span>{'<span class="vb" title="有视频介绍">▶ 视频</span>' if p.get("video_embed") else ""}</a>'
             f'<div class="b"><h3><a href="{root}p/{p["sku"]}.html">{e(p["title"])}</a></h3>{en}'
             f'<p class="intro">{e(blurb)}</p>'
-            f'<div class="row"><div><div class="pr">{rm(p["price"])}</div><div class="pk">包装 {e(p["packing"])}</div></div>'
-            f'<button type="button" class="add" data-add {btn_attrs(p, root)} aria-label="把 {e(p["title"])} 加入购物车">加入购物车</button></div></div></article>')
+            f'<div class="row{" dual" if mode(p) == "dual" else ""}"><div>{card_price(p)}</div>'
+            f'{card_buttons(p, root)}</div></div></article>')
 
 STORE_LD = {
     "@context": "https://schema.org", "@type": "Store", "@id": absu("") + "#store",
@@ -347,7 +384,7 @@ STORE_LD = {
     "description": f"{TAG}。新山烟花批发零售：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花，WhatsApp 下单。",
     "url": absu(""), "image": (SITE_ORIGIN + "/img/og-cny2027.jpg") if SITE_ORIGIN else "/img/og-cny2027.jpg",
     "logo": (SITE_ORIGIN + "/img/icon-512.png") if SITE_ORIGIN else "/img/icon-512.png",
-    "telephone": PHONE_I, "priceRange": "RM{:,.0f} – RM{:,.0f}".format(min(p["price"] for p in P), max(p["price"] for p in P)),
+    "telephone": PHONE_I, "priceRange": "RM{:,.0f} – RM{:,.0f}".format(min(main_price(p) for p in P), max(main_price(p) for p in P)),
     "currenciesAccepted": "MYR",
     "address": {"@type": "PostalAddress", "addressLocality": "Iskandar Puteri, Johor Bahru", "addressRegion": "Johor", "postalCode": "81200", "addressCountry": "MY"},
     "areaServed": [{"@type": "City", "name": "Johor Bahru"}, {"@type": "Place", "name": "Iskandar Puteri"}, {"@type": "State", "name": "Johor"}],
@@ -465,13 +502,13 @@ def home():
 <div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
 <nav class="ic" aria-label="分类快捷入口">{icons}</nav>
-<div class="info"><div><b>🏮 批发 · 零售</b>整箱批发与零售都可询价</div><div><b>🚚 送货方式</b>五福城面交 · 新山 Lalamove 自付 · 西马 RM15</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
+<div class="info"><div><b>🏮 散装 · 整盒</b>散装按件买，整盒按价目表箱价</div><div><b>🚚 取货 / 送货</b>自取 Sutera Mall · Lalamove 联系客服 · 西马邮寄 RM15</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
 <section class="ship" id="ship" aria-labelledby="h-ship">
 <h2 id="h-ship">🚚 送货方式</h2>
 <ul>
-<li><b>🤝 面交</b>五福城（Sutera），请先 WhatsApp 约时间</li>
-<li><b>🛵 新山区</b>可用 Lalamove，运费自付</li>
-<li><b>📦 西马</b>邮费一律 RM15，买多少都是 RM15</li>
+<li><b>🛍️ 自取（Sutera Mall）</b>请先 WhatsApp 约时间</li>
+<li><b>🛵 Lalamove（联系客服安排）</b>新山区 Lalamove 运费自付</li>
+<li><b>📦 邮寄</b>西马邮费一律 RM15（任买），下单时需填写邮寄资料</li>
 </ul>
 </section>
 <a class="kids-banner" href="#kids"><span>🧒</span><span>小朋友专区<small>手持、喷泉和趣味小品，请在家长看护下燃放</small></span></a>
@@ -486,10 +523,10 @@ def catpages():
     root = "../"
     for c in CATS:
         items = BYCAT[c["id"]]
-        prices = [p["price"] for p in items]
+        prices = [main_price(p) for p in items]
         title = f"{c['name']}烟花 | 新山烟花批发零售 | Hunter BOOM JOHOR 总代理"
         sample = "、".join(p["name"] for p in items[:4])
-        desc = f"新山 {c['name']}：{len(items)} 款，价目表价 {rm(min(prices))} 起，如 {sample} 等。Hunter BOOM JOHOR 总代理，柔佛依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+        desc = f"新山 {c['name']}：{len(items)} 款，散装 {rm(min(prices))} 起，如 {sample} 等。Hunter BOOM JOHOR 总代理，柔佛依斯干达公主城，WhatsApp {PHONE_D} 下单。"
         ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{c['name']} | {BRAND}", "url": absu(f"c/{c['id']}.html"), "inLanguage": "zh-Hans",
                "isPartOf": {"@type": "WebSite", "name": BRAND, "url": absu("")},
                "mainEntity": {"@type": "ItemList", "numberOfItems": len(items),
@@ -501,7 +538,7 @@ def catpages():
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>{e(c['name'])}</span></nav>
 <section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">{c['icon']} {e(c['name'])} · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(items)} 款)</small></h1>
-<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理 {e(c['name'])}系列，价目表价 {rm(min(prices))} – {rm(max(prices))}。依斯干达公主城出货，羊年烟花批发零售，加入购物车后一键 WhatsApp 下单。</p>
+<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理 {e(c['name'])}系列，售价 {rm(min(prices))} – {rm(max(prices))}（包装 N/1 的可买散装或整盒；散装卖价 = 箱价 ÷ 件数 × 1.40）。依斯干达公主城出货，加入购物车后一键 WhatsApp 下单。</p>
 <div class="g">{''.join(card(p, root, i) for i, p in enumerate(items))}</div></section>
 <p style="font-size:13px;margin:0 2px 20px">其他分类：{others}</p>
 </main>
@@ -512,7 +549,7 @@ def catpages():
     kids_tile = (f'<a href="kids.html" class="pc" style="padding:14px;text-align:center;background:linear-gradient(180deg,#fff8e8,#fff)">'
                  f'<span style="font-size:34px">🧒</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">小朋友专区</h2>'
                  f'<span class="pk">{len(KIDS_ALL)} 款 · 手持喷泉小品</span></a>')
-    tiles = kids_tile + "".join(f'<a href="{c["id"]}.html" class="pc" style="padding:14px;text-align:center"><span style="font-size:34px">{c["icon"]}</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">{e(c["name"])}</h2><span class="pk">{len(BYCAT[c["id"]])} 款 · {rm(min(p["price"] for p in BYCAT[c["id"]]))} 起</span></a>' for c in CATS)
+    tiles = kids_tile + "".join(f'<a href="{c["id"]}.html" class="pc" style="padding:14px;text-align:center"><span style="font-size:34px">{c["icon"]}</span><h2 style="margin:6px 0 2px;font-size:16px;color:#8f0d13">{e(c["name"])}</h2><span class="pk">{len(BYCAT[c["id"]])} 款 · {rm(min(main_price(p) for p in BYCAT[c["id"]]))} 起</span></a>' for c in CATS)
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"全部分类 | {BRAND}", "url": absu("c/index.html"),
            "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"c/{c['id']}.html"), "name": c["name"]} for i, c in enumerate(CATS)]}},
           bc_ld([("首页", ""), ("全部分类", "c/index.html")])]
@@ -527,9 +564,9 @@ def catpages():
 
     # 小朋友专区 collection (editorial merchandising, not a formal category)
     kids_items = [BY_SKU[s] for s in KIDS_ALL]
-    prices = [p["price"] for p in kids_items]
+    prices = [main_price(p) for p in kids_items]
     kids_title = "小朋友专区 | 新山烟花 | Hunter BOOM JOHOR 总代理"
-    kids_desc = f"Hunter BOOM JOHOR 小朋友专区：{len(kids_items)} 款较温和的手持、喷泉和趣味小品，价目表价 {rm(min(prices))} 起。请由成人操作或家长看护，遵守当地规定。新山依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+    kids_desc = f"Hunter BOOM JOHOR 小朋友专区：{len(kids_items)} 款较温和的手持、喷泉和趣味小品，售价 {rm(min(prices))} 起。请由成人操作或家长看护，遵守当地规定。新山依斯干达公主城，WhatsApp {PHONE_D} 下单。"
     kids_ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"小朋友专区 | {BRAND}", "url": absu("c/kids.html"), "inLanguage": "zh-Hans",
                 "isPartOf": {"@type": "WebSite", "name": BRAND, "url": absu("")},
                 "description": KIDS_NOTE,
@@ -541,7 +578,7 @@ def catpages():
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>小朋友专区</span></nav>
 <section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">🧒 小朋友专区 · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(kids_items)} 款)</small></h1>
-<p class="shelf-note" style="margin:0 2px 14px">{e(KIDS_NOTE)} 价目表价 {rm(min(prices))} – {rm(max(prices))}。</p>
+<p class="shelf-note" style="margin:0 2px 14px">{e(KIDS_NOTE)} 售价 {rm(min(prices))} – {rm(max(prices))}。</p>
 <div class="g">{''.join(card(p, root, i) for i, p in enumerate(kids_items))}</div></section>
 </main>
 {footer(root)}
@@ -580,17 +617,51 @@ def video_ld(p, url):
             "description": f"{p['title']}（{p['sku']}）烟花燃放效果视频，Hunter BOOM JOHOR 新山。",
             "thumbnailUrl": thumb, "embedUrl": p["video_embed"], "url": p["video"], "isPartOf": absu(url)}
 
+def pd_price(p):
+    """Product page price block; for dual products a 散装 / 整盒 picker (radio name="mode")."""
+    m = mode(p)
+    if m == "dual":
+        lp, cp, n = p["loose_price"], carton(p), p["piece_qty"]
+        return (f'<fieldset class="um"><legend>选择购买方式</legend>'
+                f'<label><input type="radio" name="mode" value="l" data-price="{lp:.2f}" data-unit="件" checked>'
+                f'<span><b>散装</b><em>{rm(lp)}</em><small>/件</small></span></label>'
+                f'<label><input type="radio" name="mode" value="b" data-price="{cp:.2f}" data-unit="盒">'
+                f'<span><b>整盒</b><em>{rm(cp)}</em><small>/盒 · {n}件</small></span></label></fieldset>')
+    if m == "single":
+        return f'<div class="pr">{rm(p["loose_price"])}<small>/件</small></div>'
+    return f'<div class="pr"><small>整盒</small> {rm(carton(p))}<small>/盒</small></div>'
+
+def pd_note(p):
+    m = mode(p)
+    if m == "dual": return f"散装按件卖（{p['piece_qty']}件一盒），也可整盒买（整盒按价目表箱价）。"
+    if m == "single": return "单件卖价。"
+    return f"整盒价 · 包装 {p['packing']}。散装件数待确认，暂时只卖整盒，散装请 WhatsApp 询问。"
+
+def pd_unit(p):
+    return {"dual": "件（散装）", "single": "件"}.get(mode(p), "盒（整盒）")
+
+def pd_rows(p):
+    m = mode(p)
+    if m == "dual":
+        return (f'<tr><th>一盒件数</th><td>{p["piece_qty"]} 件</td></tr>'
+                f'<tr><th>散装卖价</th><td>{rm(p["loose_price"])} / 件</td></tr>'
+                f'<tr><th>整盒价</th><td>{rm(carton(p))} / 盒（价目表箱价）</td></tr>')
+    if m == "single":
+        return f'<tr><th>卖价</th><td>{rm(p["loose_price"])} / 件</td></tr>'
+    return (f'<tr><th>整盒价</th><td>{rm(carton(p))} / 盒（价目表箱价）</td></tr>'
+            f'<tr><th>散装</th><td>件数待确认，暂只卖整盒</td></tr>')
+
 def products():
     root = "../"
     for i, p in enumerate(P):
         c = CAT[p["category"]]
         en = f" {p['name_en']}" if p["name_en"] else ""
         title = f"{p['title']}{en} | {c['name']} | 新山烟花 Hunter BOOM JOHOR"
-        desc = f"{p['title']}{('（' + p['name_en'] + '）') if p['name_en'] else ''}，编号 {p['sku']}，包装 {p['packing']}，价目表价 {rm(p['price'])}。Hunter BOOM JOHOR 总代理，新山依斯干达公主城烟花批发零售，WhatsApp {PHONE_D} 下单。"
+        desc = f"{p['title']}{('（' + p['name_en'] + '）') if p['name_en'] else ''}，编号 {p['sku']}，包装 {p['packing']}，{price_txt(p)}。Hunter BOOM JOHOR 总代理，新山依斯干达公主城烟花批发零售，WhatsApp {PHONE_D} 下单。"
         url = f"p/{p['sku']}.html"
         prod = {"@context": "https://schema.org", "@type": "Product", "name": p["title"] + en, "sku": p["sku"],
                 "description": desc, "category": c["name"], "url": absu(url), "brand": {"@type": "Brand", "name": "Hunter Boom"},
-                "offers": {"@type": "Offer", "price": f"{p['price']:.2f}", "priceCurrency": "MYR", "url": absu(url),
+                "offers": {"@type": "Offer", "price": f"{main_price(p):.2f}", "priceCurrency": "MYR", "url": absu(url),
                            "itemCondition": "https://schema.org/NewCondition",
                            "seller": {"@type": "Organization", "name": SHOP, "@id": absu("") + "#store"}}}
         if p["name_en"]: prod["alternateName"] = p["name_en"]
@@ -615,23 +686,23 @@ def products():
 <span class="cd2" style="position:static;display:inline-block">{p['sku']}</span>
 <h1>{e(p['title'])}</h1>
 {f'<p class="en" lang="en">{e(p["name_en"])}</p>' if p['name_en'] else ''}
-<div class="pr">{rm(p['price'])}</div>
-<p class="note">价目表价 · 包装 {e(p['packing'])}。{e(SHIP_LINE)}最终价格与数量以 WhatsApp 确认为准。</p>
-<div class="act"><div class="qty"><button type="button" data-step="-1" data-for="qty" aria-label="减少数量">−</button><input id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="数量"><button type="button" data-step="1" data-for="qty" aria-label="增加数量">+</button></div></div>
-<div class="act"><button type="button" class="btn gd" data-add data-qty-from="qty" {btn_attrs(p, root)}>加入购物车</button>
-<button type="button" class="btn wa" data-wa-item data-qty-from="qty" {btn_attrs(p, root)}>WhatsApp 下单此款</button></div>
+{pd_price(p)}
+<p class="note">{e(pd_note(p))}{e(SHIP_LINE)}产品价格以店家确认为准。</p>
+<div class="act"><div class="qty"><button type="button" data-step="-1" data-for="qty" aria-label="减少数量">−</button><input id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="数量"><button type="button" data-step="1" data-for="qty" aria-label="增加数量">+</button></div><span class="qu" id="qu">{pd_unit(p)}</span></div>
+<div class="act"><button type="button" class="btn gd" data-add data-qty-from="qty" data-mode-from="mode" {btn_attrs(p, root)}>加入购物车</button>
+<button type="button" class="btn wa" data-wa-item data-qty-from="qty" data-mode-from="mode" {btn_attrs(p, root)}>WhatsApp 下单此款</button></div>
 <table class="sp"><caption class="sr">产品资料</caption>
 <tr><th>编号</th><td>{p['sku']}</td></tr>
 <tr><th>中文名</th><td>{e(p['name'])}</td></tr>{en_row}
 <tr><th>包装</th><td>{e(p['packing'])}</td></tr>
-<tr><th>价目表价</th><td>{rm(p['price'])}</td></tr>
+{pd_rows(p)}
 <tr><th>分类</th><td><a href="../c/{c['id']}.html" style="color:#c8161d">{e(c['name'])}</a></td></tr>
 </table>
 </div></article>
 {video_section(p)}
 <section class="desc"><h2>产品说明</h2>
 <p>{e(intro(p))}。</p>
-<p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，价目表价 {rm(p['price'])}。</p>
+<p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，{e(price_txt(p))}。</p>
 <p>送货：{e(SHIP_LINE)}新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货与批发数量。{img_src}。</p>
 </section>
 {pn}
@@ -645,10 +716,10 @@ def products():
 # ---------------- about / 404 ----------------
 def about():
     root = ""
-    faq = [("怎么下单？", "在网站挑选产品加入购物车，点「发送订单到 WhatsApp」，系统会把产品编号与数量整理成一段文字，发送给 017-789 1688，店家确认价格、数量与交货方式后完成下单。"),
-           ("可以批发吗？", "可以。Hunter BOOM JOHOR 总代理提供批发与零售，整箱数量请 WhatsApp 询价。"),
-           ("有送货吗？", SHIP_FACE + "。" + SHIP_JB + "。" + SHIP_WM + "。"),
-           ("价格是最终价格吗？", "网站价格依据最新价目表，包装栏位（PACKING）为原表规格；最终价格与数量以店家 WhatsApp 回复为准。西马邮费一律 RM15（任买）；新山区 Lalamove 运费自付。")]
+    faq = [("怎么下单？", "在网站挑选产品，选散装或整盒加入购物车；打开购物车选好取货方式（自取 Sutera Mall / Lalamove / 邮寄，邮寄需填写邮寄资料），点「发送订单到 WhatsApp」。系统会生成单号，把单号、产品、数量和取货方式整理成一段文字发送给客服 017-789 1688，店家确认后完成下单。"),
+           ("散装和整盒有什么分别？", "包装为 N/1 的产品可以按件买散装，也可以买整盒。整盒按价目表箱价；散装卖价 = 价目表箱价 ÷ 一盒件数 × 1.40。1/1 的产品本身就是单件。其他包装规格的散装件数待确认，暂时只卖整盒，散装请 WhatsApp 询问。"),
+           ("有送货吗？", "下单时选一项：" + SHIP_FACE + "；" + SHIP_JB + "；" + SHIP_WM + "。"),
+           ("价格是最终价格吗？", "网站价格为参考价，产品价格以店家确认为准。邮寄西马一律 RM15（任买），会算进参考合计；Lalamove 新山区运费自付，由客服联系安排。")]
     ld = [STORE_LD, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
           bc_ld([("首页", ""), ("关于我们", "about.html")])]
     body = f"""<body data-root="">
@@ -657,12 +728,12 @@ def about():
 <article class="txt"><h1>关于 Hunter BOOM JOHOR 总代理</h1>
 <p><b>{TAG}</b></p>
 <p>Hunter BOOM JOHOR 总代理位于柔佛新山依斯干达公主城（Iskandar Puteri），提供新山烟花、柔佛烟花批发与零售，产品包括红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、飞天趣味、响声系列、盆花与大盆花等，迎接{CNY}。</p>
-<h2>下单方式</h2><ol><li>浏览产品，点「加入购物车」，可调整数量。</li><li>打开购物车，点「发送订单到 WhatsApp」。</li><li>店家通过 WhatsApp 确认价格、数量与送货安排。</li></ol>
+<h2>下单方式</h2><ol><li>浏览产品，选散装或整盒，点「加入购物车」，可调整数量。</li><li>打开购物车，选择取货方式：自取（Sutera Mall）、Lalamove（联系客服安排）或邮寄；选邮寄需填写邮寄资料（收件人姓名、电话、地址、邮区编号、城市、州属）。</li><li>点「发送订单到 WhatsApp」，系统生成单号并发给客服 {PHONE_D}。</li><li>店家通过 WhatsApp 确认价格、数量与送货安排。</li></ol>
 <h2>送货方式</h2>
 <ul>
-<li><b>面交：</b>五福城（Sutera），请先 WhatsApp 约时间</li>
-<li><b>新山区：</b>可用 Lalamove，运费自付</li>
-<li><b>西马：</b>邮费一律 RM15，买多少都是 RM15</li>
+<li><b>自取（Sutera Mall）：</b>请先 WhatsApp 约时间</li>
+<li><b>Lalamove（联系客服安排）：</b>新山区 Lalamove 运费自付</li>
+<li><b>邮寄：</b>西马邮费一律 RM15（任买），下单时需填写邮寄资料</li>
 </ul>
 <h2>常见问题</h2>{''.join(f'<h3 style="font-size:15px;margin:12px 0 4px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q, a in faq)}
 <h2>联系资料</h2><address style="font-style:normal"><p>店名：{SHOP}<br>地址：{ADDR}（{ADDR_ZH}）<br>WhatsApp / 电话：<a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a><br>Facebook：<a href="{FB}" target="_blank" rel="noopener" style="color:#c8161d">{SHOP}</a><br>营业时间：Facebook 主页显示 Always open（来取货前请先 WhatsApp 约时间）</p></address>
@@ -725,6 +796,11 @@ STATS_CSS = """<style>
 .od li span{font-weight:700;color:var(--rd)}
 .od li small{color:var(--mut)}
 .od-f{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+.od-no{font-family:ui-monospace,Menlo,Consolas,monospace;background:#fff3d0;color:#8f0d13;border-radius:6px;padding:1px 6px;margin-right:4px;letter-spacing:.3px}
+.od-na{color:var(--mut);font-weight:500}
+.od-d{margin:0 0 6px;font-size:13.5px;font-weight:700;color:#14693a}
+.od-ship{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0 0 8px;font-size:13px;background:#fffaf0;border-radius:8px;padding:6px 10px}
+.od-ship dt{color:var(--mut)}.od-ship dd{margin:0;word-break:break-word}
 .od-b{display:flex;gap:6px;flex-wrap:wrap}
 .od-b .btn{padding:7px 12px;font-size:13px}
 .od-empty{text-align:center;color:var(--mut);padding:18px 6px}
@@ -769,7 +845,7 @@ def stats_page():
 <p><b>下单</b> = 从本站发送到 WhatsApp 的订单次数（最终成交以店家确认为准）</p>
 <p><b>人数</b> = 当日独立访客（同一手机/浏览器一天只算一次）</p>
 <p><b>浏览</b> = 当日页面浏览次数</p>
-<p style="color:var(--mut);font-size:12px">日期按马来西亚时间（UTC+8）每天 00:00 重新计算。数字全部来自真实访问记录，从统计上线当天开始累计；本页本身的打开不计入浏览。参考合计按价目表计算，不含运费。</p>
+<p style="color:var(--mut);font-size:12px">日期按马来西亚时间（UTC+8）每天 00:00 重新计算。数字全部来自真实访问记录，从统计上线当天开始累计；本页本身的打开不计入浏览。参考合计为商品参考价（散装 / 整盒按网站卖价），邮寄单另记邮费 RM15；Lalamove 运费不含。</p>
 </div>
 </section></main>
 {footer(root)}

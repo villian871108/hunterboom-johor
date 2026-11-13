@@ -14,18 +14,22 @@
  *
  * API
  *   POST (text/plain JSON) {op:"hit", type:"view"|"visit"|"order", vid, host, path, extra}
- *        order extra = {items:[{c:SKU, n:name, q:qty, p:unit price}]}; empty items are rejected.
+ *        order extra = {items:[{c:SKU, n:name, q:qty, p:unit price, m:"l"|"b"|"s"}], empty items are rejected,
+ *                       optional: order_no:"HBJ-YYYYMMDD-XXXX", delivery:"pickup"|"lalamove"|"post",
+ *                       ship:{name,phone,addr,pc,city,state} (only for post; postage is fixed server-side RM15)}
  *        → {ok, date, views, visitors, orders, order_total}
  *        → {ok, counted}  (never returns any totals)
  *   OWNER ONLY (PIN stored in Script Properties → OWNER_PIN, never in the website/repo):
  *   POST {op:"login", pin} → {ok, token}  (session 6 h; 8 wrong PINs in 15 min locks login)
  *   POST {op:"read", token, days:30, date:"YYYY-MM-DD"}
  *        → {ok, today, days:[{date,views,visitors,orders,order_total}], order_date, order_day, pending,
- *           orders:[{id,status:"pending"|"done",handled_at,ts,time,qty,ref_total,items:[{c,n,q,p}]}]}
+ *           orders:[{id,status:"pending"|"done",handled_at,ts,time,qty,ref_total,items:[{c,n,q,p,m}],
+ *                    order_no,delivery,postage,grand_total,ship}]}
  *   POST {op:"status", token, id, status:"done"|"pending"}  → mark 已处理 / 待处理
  *   POST {op:"logout", token}
  *   GET → {ok:false, error:"auth_required"}  (no data without login)
- *   The order list contains only products/qty/reference totals — no customer name/phone/IP.
+ *   Orders with delivery "post" store the customer's 邮寄资料 (name/phone/address) in the private
+ *   orders tab (owner-only; returned only after PIN login). No IP is stored. Nothing is exposed publicly.
  *
  * DEPLOY (see tools/STATS.md for the full checklist):
  *   1. Open the spreadsheet → Extensions → Apps Script (or script.google.com → New project).
@@ -72,7 +76,20 @@ function sheet_(name, header) {
 function daily_() { return sheet_('daily', ['date', 'views', 'visitors', 'orders', 'order_total', 'updated_at']); }
 function events_() { return sheet_('events', ['timestamp', 'date', 'type', 'path', 'vid', 'extra']); }
 function visitors_() { return sheet_('visitors', ['key', 'date', 'vid', 'views', 'orders', 'first_seen', 'last_seen']); }
-function orders_() { return sheet_('orders', ['timestamp', 'date', 'time', 'qty', 'ref_total', 'items', 'items_json', 'path', 'vid', 'id', 'status', 'handled_at']); }
+var ORDER_HEAD = ['timestamp', 'date', 'time', 'qty', 'ref_total', 'items', 'items_json', 'path', 'vid', 'id', 'status', 'handled_at',
+                  'order_no', 'delivery', 'postage', 'grand_total', 'ship_json'];
+var ORDER_COLS = ORDER_HEAD.length;   // 17; columns M–Q were added 2026-11-13 (old rows leave them empty)
+var DELIVERY = { pickup: '自取（Sutera Mall）', lalamove: 'Lalamove（联系客服安排）', post: '邮寄' };
+var POSTAGE_POST = 15;               // 西马邮费一律 RM15（任买）
+var SHIP_KEYS = ['name', 'phone', 'addr', 'pc', 'city', 'state'];
+function orders_() {
+  var sh = sheet_('orders', ORDER_HEAD);
+  if (sh.getLastColumn() < ORDER_COLS) {   // older sheet: append the new header cells, keep existing data
+    var have = sh.getLastColumn();
+    sh.getRange(1, have + 1, 1, ORDER_COLS - have).setValues([ORDER_HEAD.slice(have)]);
+  }
+  return sh;
+}
 
 /** Run once from the editor to authorize and make sure tabs/formats exist. Writes no counts. */
 function setup() {
@@ -122,9 +139,23 @@ function cleanItems_(extra) {
     var pr = Math.max(0, Math.min(100000, Number(x.p) || 0));
     var c = str_(x.c, 20), n = str_(x.n, 80);
     if (!c && !n) continue;
-    out.push({ c: c, n: n, q: q, p: r2_(pr) });
+    var m = /^[lbs]$/.test(String(x.m || '')) ? String(x.m) : '';
+    out.push(m ? { c: c, n: n, q: q, p: r2_(pr), m: m } : { c: c, n: n, q: q, p: r2_(pr) });
   }
   return out;
+}
+
+/** Optional order meta from the site: 单号, 取货方式, 邮寄资料. Unknown/invalid values are dropped. */
+function cleanMeta_(extra) {
+  extra = extra || {};
+  var no = String(extra.order_no || '').toUpperCase();
+  var d = DELIVERY[extra.delivery] ? String(extra.delivery) : '';
+  var ship = null;
+  if (d === 'post' && extra.ship) {
+    ship = {};
+    SHIP_KEYS.forEach(function (k) { ship[k] = str_(extra.ship[k], 200); });
+  }
+  return { order_no: /^HBJ-\d{8}-[0-9A-Z]{4}$/.test(no) ? no : '', delivery: d, postage: d === 'post' ? POSTAGE_POST : 0, ship: ship };
 }
 
 function hit_(b) {
@@ -136,16 +167,17 @@ function hit_(b) {
   if (ALLOWED_HOSTS.indexOf(host) < 0) return { ok: false, error: 'host not allowed' };
   var path = str_(b.path, 200);
   var date = today_(), ts = now_();
-  var items = [], qty = 0, total = 0;
+  var items = [], qty = 0, total = 0, meta = null;
 
   if (type === 'order') {
     items = cleanItems_(b.extra);
+    meta = cleanMeta_(b.extra);
     if (!items.length) return { ok: false, error: 'empty order' };   // never count an empty cart
     items.forEach(function (x) { qty += x.q; total += x.q * x.p; });
     total = r2_(total);
     // debounce double click / duplicate send: same vid + same items within N seconds = one order
     var cache = CacheService.getScriptCache();
-    var sig = 'o_' + Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_1, vid + '|' + JSON.stringify(items)));
+    var sig = 'o_' + Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_1, vid + '|' + meta.order_no + '|' + JSON.stringify(items)));
     if (cache.get(sig)) return { ok: true, dup: true };
     cache.put(sig, '1', ORDER_DEBOUNCE_S);
   }
@@ -172,7 +204,7 @@ function hit_(b) {
     var ev = events_(), rows = [];
     counted.forEach(function (t) {
       if (t === 'view') return;                     // views are only aggregated (keeps the log small)
-      rows.push([ts, date, t, path, vid, t === 'order' ? JSON.stringify({ qty: qty, ref_total: total }) : '']);
+      rows.push([ts, date, t, path, vid, t === 'order' ? JSON.stringify({ qty: qty, ref_total: total, order_no: meta.order_no, delivery: meta.delivery }) : '']);
     });
     if (rows.length) {
       var start = ev.getLastRow() + 1;
@@ -184,8 +216,10 @@ function hit_(b) {
       var text = items.map(function (x) { return x.c + ' ' + x.n + ' x' + x.q; }).join('；');
       osh.getRange(orow, 1, 1, 3).setNumberFormat('@');
       osh.getRange(orow, 10, 1, 2).setNumberFormat('@');
-      osh.getRange(orow, 1, 1, 12).setValues([[ts, date, ts.slice(11, 19), qty, total, text, JSON.stringify(items), path, vid,
-        Utilities.getUuid().replace(/-/g, '').slice(0, 12), 'pending', '']]);
+      osh.getRange(orow, 13, 1, 2).setNumberFormat('@');
+      osh.getRange(orow, 1, 1, ORDER_COLS).setValues([[ts, date, ts.slice(11, 19), qty, total, text, JSON.stringify(items), path, vid,
+        Utilities.getUuid().replace(/-/g, '').slice(0, 12), 'pending', '',
+        meta.order_no, meta.delivery, meta.postage, r2_(total + meta.postage), meta.ship ? JSON.stringify(meta.ship) : '']]);
     }
     SpreadsheetApp.flush();
     return { ok: true, counted: counted };   // public tracker never gets totals back
@@ -201,13 +235,16 @@ function ordersFor_(date) {
   var row = sh.getRange(2, 2, last - 1, 1).createTextFinder(date).matchEntireCell(true).findNext();
   if (!row) return out;
   var first = row.getRow();
-  var vals = sh.getRange(first, 1, last - first + 1, 12).getValues();
+  var vals = sh.getRange(first, 1, last - first + 1, ORDER_COLS).getValues();
   vals.forEach(function (r) {
     if (dateStr_(r[1]) !== date) return;
     var items = [];
+    var ship = null;
     try { items = JSON.parse(r[6] || '[]'); } catch (x) { items = []; }
+    try { ship = r[16] ? JSON.parse(r[16]) : null; } catch (x) { ship = null; }
     out.push({ id: String(r[9] || ''), status: r[10] === 'done' ? 'done' : 'pending', handled_at: String(r[11] || ''),
-      ts: String(r[0]), time: String(r[2]).slice(0, 8), qty: num_(r[3]), ref_total: num_(r[4]), items: items });
+      ts: String(r[0]), time: String(r[2]).slice(0, 8), qty: num_(r[3]), ref_total: num_(r[4]), items: items,
+      order_no: String(r[12] || ''), delivery: String(r[13] || ''), postage: num_(r[14]), grand_total: num_(r[15]) || num_(r[4]), ship: ship });
   });
   return out.reverse().slice(0, 500);
 }
