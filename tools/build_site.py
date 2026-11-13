@@ -127,17 +127,17 @@ def topbar(root, active=None, home=False):
     act = "" if home else f' action="{root}index.html"'
     return f"""<header class="top"><div class="in">
 <a class="lg" href="{root}index.html" aria-label="{SHOP} 首页">{LOGO}<span class="wm"><b>Hunter BOOM</b><small>JOHOR 总代理 · 新山</small></span></a>
-<form class="sb" role="search"{act} method="get"><label class="sr" for="q">搜索产品</label><input id="q" name="q" type="search" placeholder="搜索名称或编号，如 HB001、红炮、加特林" autocomplete="off"><button type="submit">搜索</button></form>
+<form class="sb" role="search"{act} method="get"><label class="sr" for="q">搜索产品</label><input id="q" name="q" type="search" placeholder="搜索名称或编号，如 HB001、红炮、炮竹" autocomplete="off"><button type="submit">搜索</button></form>
 <nav class="tabs" aria-label="产品分类">{''.join(tabs)}</nav>
 </div></header>
-<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山批发零售</span><span>🛍️ 自取（Sutera Mall）</span><span>📦 西马邮寄 RM15 任买</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
+<div class="ann" role="note"><div class="in"><span>🧧 <b>{CNY}</b> 年货烟花现正接单</span><span>🏮 新山烟花炮竹批发零售</span><span>🛍️ 自取（Sutera Mall）</span><span>📦 西马邮寄 RM15 任买</span><span>📲 <a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE_D}</a></span></div></div>
 """
 
 def footer(root, active=None):
     cats = "".join(f'<a href="{root}c/{c["id"]}.html">{e(c["name"])}</a>' for c in CATS)
     def on(x): return ' class="on"' if active == x else ""
     return f"""<footer><div class="in">
-<div><h2>{SHOP}</h2><p>{TAG}</p><p>新山烟花批发零售。{SHIP_LINE}</p></div>
+<div><h2>{SHOP}</h2><p>{TAG}</p><p>新山烟花炮竹批发零售。{SHIP_LINE}</p></div>
 <div><h3>联系我们</h3>
 <address style="font-style:normal"><p>📍 {ADDR}<br><small>{ADDR_ZH}</small></p>
 <p>📲 WhatsApp / 电话：<a href="{WA}" target="_blank" rel="noopener">{PHONE_D}</a></p>
@@ -380,8 +380,8 @@ def card(p, root, idx=0):
 
 STORE_LD = {
     "@context": "https://schema.org", "@type": "Store", "@id": absu("") + "#store",
-    "name": SHOP, "alternateName": ["Hunter BOOM JOHOR", "Hunter Boom Johor 新山烟花", "猎人烟花 新山"],
-    "description": f"{TAG}。新山烟花批发零售：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花，WhatsApp 下单。",
+    "name": SHOP, "alternateName": ["Hunter BOOM JOHOR", "Hunter Boom Johor 新山烟花", "猎人烟花 新山", "新山炮竹", "柔佛烟花炮竹"],
+    "description": f"{TAG}。新山烟花炮竹、柔佛烟花炮竹批发零售：红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花，可在 hunterboom.my 网上订购，WhatsApp 下单。",
     "url": absu(""), "image": (SITE_ORIGIN + "/img/og-cny2027.jpg") if SITE_ORIGIN else "/img/og-cny2027.jpg",
     "logo": (SITE_ORIGIN + "/img/icon-512.png") if SITE_ORIGIN else "/img/icon-512.png",
     "telephone": PHONE_I, "priceRange": "RM{:,.0f} – RM{:,.0f}".format(min(main_price(p) for p in P), max(main_price(p) for p in P)),
@@ -404,7 +404,7 @@ def write(rel, s):
     fp = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(fp), exist_ok=True)
     open(fp, "w", encoding="utf-8").write(s)
 
-KW = "新山烟花, 柔佛烟花, 猎人烟花, Hunter Boom Johor, 依斯干达公主城, 烟花批发, 羊年烟花, Johor Bahru fireworks, mercun Johor"
+KW = "新山烟花, 新山炮竹, 新山鞭炮, 新山烟花批发, 柔佛烟花, 柔佛炮竹, 马来西亚烟花, 马来西亚炮竹, 猎人烟花, Hunter Boom Johor, 依斯干达公主城, Sutera Mall 烟花, 烟花批发, 炮竹批发, 羊年烟花, 新年烟花, 网上买烟花, 网上买炮, Johor Bahru fireworks, mercun Johor, bunga api Johor"
 
 # ---------------- home: curated diverse shelves (not a raw dump) ----------------
 # Merchandising picks requested for the shop homepage. These are editorial
@@ -477,8 +477,8 @@ def home():
         f'<h2>搜索结果 <small>全部 {len(P)} 款</small></h2>'
         f'<div class="g">{cat_cards}</div></section>'
     )
-    title = "新山烟花批发零售 | Hunter BOOM JOHOR 总代理 | 柔佛依斯干达公主城"
-    desc = f"Hunter BOOM JOHOR 总代理：新山烟花、柔佛烟花批发零售，{len(P)} 款羊年烟花——红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花。依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+    title = "新山烟花炮竹批发零售 | Hunter BOOM JOHOR | 柔佛"
+    desc = f"Hunter BOOM JOHOR 总代理：新山烟花、新山炮竹、柔佛烟花炮竹批发零售，{len(P)} 款羊年新年烟花——红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花。Sutera Mall 自取，西马可邮寄。官网 hunterboom.my，WhatsApp {PHONE_D} 网上订购。"
     item_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Hunter BOOM JOHOR 产品分类",
                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": c["name"], "url": absu(f"c/{c['id']}.html")} for i, c in enumerate(CATS)]}
     body = f"""<body data-root="">
@@ -488,16 +488,16 @@ def home():
 <a href="img/cny2027-poster.jpg" target="_blank" rel="noopener">
 <picture>
 <source srcset="img/cny2027-poster.webp" type="image/webp">
-<img src="img/cny2027-poster.jpg" width="1200" height="2278" alt="Hunter BOOM JOHOR 羊年春节海报：三阳开泰，总代理·新山，2027年2月6日，WhatsApp 017-789 1688" decoding="async">
+<img src="img/cny2027-poster.jpg" width="1200" height="2278" alt="Hunter BOOM JOHOR 新山烟花炮竹羊年春节海报：三阳开泰，总代理·新山，2027年2月6日，WhatsApp 017-789 1688" decoding="async">
 </picture>
 </a>
 </figure>
 <section class="hero" aria-labelledby="h1">
 <span class="tag">🐐 {CNY}</span>
-<h1 id="h1"><em>新山烟花</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
-<p>{TAG}。柔佛烟花、猎人烟花（Hunter Boom）羊年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货。{SHIP_LINE}</p>
-<p lang="en">Hunter BOOM JOHOR is the Johor Bahru authorised dealer for Hunter Boom fireworks — wholesale and retail from Iskandar Puteri. WhatsApp {PHONE_D} to order. This shop is not the Hunter Boom brand headquarters.</p>
-<p lang="ms">Hunter BOOM JOHOR ialah ejen sah Johor Bahru untuk bunga api Hunter Boom. Borong dan runcit dari Iskandar Puteri. Tempah melalui WhatsApp {PHONE_D}. Laman ini bukan laman rasmi ibu pejabat jenama Hunter Boom.</p>
+<h1 id="h1"><em>新山烟花炮竹</em>批发零售 · Hunter BOOM JOHOR 总代理</h1>
+<p>{TAG}。柔佛新山买烟花、买炮竹、买鞭炮，猎人烟花（Hunter Boom）羊年新年烟花一站购齐：红炮礼炮、沙炮、手持烟花、喷泉与盆花，依斯干达公主城出货，官网 hunterboom.my 网上就能订。{SHIP_LINE}</p>
+<p lang="en">Hunter BOOM JOHOR is the Johor Bahru authorised dealer for Hunter Boom fireworks and firecrackers — wholesale and retail from Iskandar Puteri. Order online at hunterboom.my or WhatsApp {PHONE_D}. This shop is not the Hunter Boom brand headquarters.</p>
+<p lang="ms">Hunter BOOM JOHOR ialah ejen sah Johor Bahru untuk bunga api dan mercun Hunter Boom. Borong dan runcit dari Iskandar Puteri. Tempah dalam talian di hunterboom.my atau WhatsApp {PHONE_D}. Laman ini bukan laman rasmi ibu pejabat jenama Hunter Boom.</p>
 <div class="cd" id="cd" aria-live="polite"></div>
 <div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
@@ -510,6 +510,10 @@ def home():
 <li><b>🛵 Lalamove（联系客服安排）</b>新山区 Lalamove 运费自付</li>
 <li><b>📦 邮寄</b>西马邮费一律 RM15（任买），下单时需填写邮寄资料</li>
 </ul>
+</section>
+<section class="ship" id="buy" aria-labelledby="h-buy">
+<h2 id="h-buy">新山烟花炮竹，网上就能订</h2>
+<p>要在新山买烟花、新山买炮竹或柔佛买鞭炮，不用只靠跑店。Hunter BOOM JOHOR 总代理在 <a href="https://hunterboom.my/">hunterboom.my</a> 做柔佛烟花炮竹批发零售，羊年春节新年烟花、红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花和盆花都可以网上选、网上订。自取在 Sutera Mall；新山也可请客服安排 Lalamove（运费自付）；西马邮寄 RM15。WhatsApp {PHONE_D}。</p>
 </section>
 <a class="kids-banner" href="#kids"><span>🧒</span><span>小朋友专区<small>手持、喷泉和趣味小品，请在家长看护下燃放</small></span></a>
 <div id="list"><div id="featured">{''.join(secs)}</div>{catalog}<p class="nores" id="nores" hidden>找不到相关产品，试试其他关键词，或直接 <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">WhatsApp 询问</a>。</p></div>
@@ -524,9 +528,12 @@ def catpages():
     for c in CATS:
         items = BYCAT[c["id"]]
         prices = [main_price(p) for p in items]
-        title = f"{c['name']}烟花 | 新山烟花批发零售 | Hunter BOOM JOHOR 总代理"
+        if c["id"] == "hongpao":
+            title = "红炮礼炮炮竹 | 新山炮竹批发 | Hunter BOOM JOHOR"
+        else:
+            title = f"{c['name']} | 新山烟花炮竹批发零售 | Hunter BOOM JOHOR"
         sample = "、".join(p["name"] for p in items[:4])
-        desc = f"新山 {c['name']}：{len(items)} 款，散装 {rm(min(prices))} 起，如 {sample} 等。Hunter BOOM JOHOR 总代理，柔佛依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+        desc = f"新山{c['name']}、柔佛烟花炮竹：{len(items)} 款，散装 {rm(min(prices))} 起，如 {sample} 等。Hunter BOOM JOHOR 总代理，依斯干达公主城，可在 hunterboom.my 网上订购，WhatsApp {PHONE_D}。"
         ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"{c['name']} | {BRAND}", "url": absu(f"c/{c['id']}.html"), "inLanguage": "zh-Hans",
                "isPartOf": {"@type": "WebSite", "name": BRAND, "url": absu("")},
                "mainEntity": {"@type": "ItemList", "numberOfItems": len(items),
@@ -537,8 +544,8 @@ def catpages():
 {topbar(root, c['id'])}
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>{e(c['name'])}</span></nav>
-<section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">{c['icon']} {e(c['name'])} · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(items)} 款)</small></h1>
-<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理 {e(c['name'])}系列，售价 {rm(min(prices))} – {rm(max(prices))}（包装 N/1 的可买散装或整盒；散装卖价 = 箱价 ÷ 件数 × 1.40）。依斯干达公主城出货，加入购物车后在网站一键提交订单。</p>
+<section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">{c['icon']} {e(c['name'])} · 新山烟花炮竹 <small style="font-size:13px;color:#8a5a4a">({len(items)} 款)</small></h1>
+<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理{e(c['name'])}，新山、柔佛烟花炮竹批发零售，售价 {rm(min(prices))} – {rm(max(prices))}（包装 N/1 的可买散装或整盒；散装卖价 = 箱价 ÷ 件数 × 1.40）。依斯干达公主城出货，官网 hunterboom.my 网上就能订。</p>
 <div class="g">{''.join(card(p, root, i) for i, p in enumerate(items))}</div></section>
 <p style="font-size:13px;margin:0 2px 20px">其他分类：{others}</p>
 </main>
@@ -556,17 +563,17 @@ def catpages():
     body = f"""<body data-root="../">
 {topbar(root)}
 <main class="wrap"><nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>全部分类</span></nav>
-<h1 style="font-size:21px;margin:4px 2px 12px;color:#8f0d13">烟花分类 · 新山 Hunter BOOM JOHOR</h1>
+<h1 style="font-size:21px;margin:4px 2px 12px;color:#8f0d13">烟花炮竹分类 · 新山 Hunter BOOM JOHOR</h1>
 <div class="g">{tiles}</div></main>
 {footer(root, 'cats')}
 </body></html>"""
-    write("c/index.html", head("烟花分类 | 新山烟花批发零售 | Hunter BOOM JOHOR 总代理", f"浏览 Hunter BOOM JOHOR 总代理全部 {len(CATS)} 个烟花分类：红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、盆花、大盆花等，新山依斯干达公主城 WhatsApp 下单。", "c/index.html", root, extra_ld=ld, keywords=KW) + body)
+    write("c/index.html", head("烟花炮竹分类 | 新山烟花炮竹批发零售 | Hunter BOOM JOHOR", f"浏览 Hunter BOOM JOHOR 总代理全部 {len(CATS)} 个新山烟花炮竹分类：红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉喷花、盆花、大盆花等。柔佛依斯干达公主城，官网网上订购，WhatsApp 下单。", "c/index.html", root, extra_ld=ld, keywords=KW) + body)
 
     # 小朋友专区 collection (editorial merchandising, not a formal category)
     kids_items = [BY_SKU[s] for s in KIDS_ALL]
     prices = [main_price(p) for p in kids_items]
-    kids_title = "小朋友专区 | 新山烟花 | Hunter BOOM JOHOR 总代理"
-    kids_desc = f"Hunter BOOM JOHOR 小朋友专区：{len(kids_items)} 款较温和的手持、喷泉和趣味小品，售价 {rm(min(prices))} 起。请由成人操作或家长看护，遵守当地规定。新山依斯干达公主城，WhatsApp {PHONE_D} 下单。"
+    kids_title = "小朋友专区 | 新山烟花炮竹 | Hunter BOOM JOHOR"
+    kids_desc = f"Hunter BOOM JOHOR 小朋友专区：{len(kids_items)} 款较温和的手持烟花、喷泉和趣味小品，售价 {rm(min(prices))} 起。请由成人操作或家长看护。新山、柔佛烟花网上可订，依斯干达公主城，WhatsApp {PHONE_D}。"
     kids_ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"小朋友专区 | {BRAND}", "url": absu("c/kids.html"), "inLanguage": "zh-Hans",
                 "isPartOf": {"@type": "WebSite", "name": BRAND, "url": absu("")},
                 "description": KIDS_NOTE,
@@ -577,7 +584,7 @@ def catpages():
 {topbar(root)}
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>小朋友专区</span></nav>
-<section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">🧒 小朋友专区 · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(kids_items)} 款)</small></h1>
+<section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">🧒 小朋友专区 · 新山烟花炮竹 <small style="font-size:13px;color:#8a5a4a">({len(kids_items)} 款)</small></h1>
 <p class="shelf-note" style="margin:0 2px 14px">{e(KIDS_NOTE)} 售价 {rm(min(prices))} – {rm(max(prices))}。</p>
 <div class="g">{''.join(card(p, root, i) for i, p in enumerate(kids_items))}</div></section>
 </main>
@@ -614,7 +621,7 @@ def video_ld(p, url):
     else:
         fid = p["video_embed"].split("/d/")[1].split("/")[0]; thumb = f"https://drive.google.com/thumbnail?id={fid}&sz=w640"
     return {"@context": "https://schema.org", "@type": "VideoObject", "name": f"{p['title']} 燃放视频介绍",
-            "description": f"{p['title']}（{p['sku']}）烟花燃放效果视频，Hunter BOOM JOHOR 新山。",
+            "description": f"{p['title']}（{p['sku']}）烟花炮竹燃放效果视频，Hunter BOOM JOHOR 新山。",
             "thumbnailUrl": thumb, "embedUrl": p["video_embed"], "url": p["video"], "isPartOf": absu(url)}
 
 def pd_price(p):
@@ -656,8 +663,8 @@ def products():
     for i, p in enumerate(P):
         c = CAT[p["category"]]
         en = f" {p['name_en']}" if p["name_en"] else ""
-        title = f"{p['title']}{en} | {c['name']} | 新山烟花 Hunter BOOM JOHOR"
-        desc = f"{p['title']}{('（' + p['name_en'] + '）') if p['name_en'] else ''}，编号 {p['sku']}，包装 {p['packing']}，{price_txt(p)}。Hunter BOOM JOHOR 总代理，新山依斯干达公主城烟花批发零售，WhatsApp {PHONE_D} 下单。"
+        title = f"{p['title']}{en} | {c['name']} | 新山烟花炮竹"
+        desc = f"{p['title']}{('（' + p['name_en'] + '）') if p['name_en'] else ''}，编号 {p['sku']}，包装 {p['packing']}，{price_txt(p)}。Hunter BOOM JOHOR 总代理，新山依斯干达公主城烟花炮竹批发零售，可在 hunterboom.my 网上订购，WhatsApp {PHONE_D}。"
         url = f"p/{p['sku']}.html"
         prod = {"@context": "https://schema.org", "@type": "Product", "name": p["title"] + en, "sku": p["sku"],
                 "description": desc, "category": c["name"], "url": absu(url), "brand": {"@type": "Brand", "name": "Hunter Boom"},
@@ -702,7 +709,7 @@ def products():
 {video_section(p)}
 <section class="desc"><h2>产品说明</h2>
 <p>{e(intro(p))}。</p>
-<p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，包装规格 {e(p['packing'])}，{e(price_txt(p))}。</p>
+<p>{e(p['title'])}{('（' + e(p['name_en']) + '）') if p['name_en'] else ''}属于 Hunter BOOM JOHOR 总代理「{e(c['name'])}」系列，新山烟花炮竹批发零售，包装规格 {e(p['packing'])}，{e(price_txt(p))}。可在 hunterboom.my 网上订购。</p>
 <p>送货：{e(SHIP_LINE)}新山、柔佛顾客可 WhatsApp <a href="{WA}" target="_blank" rel="noopener" style="color:#1fae55;font-weight:700">{PHONE_D}</a> 询问现货与批发数量。{img_src}。</p>
 </section>
 {pn}
@@ -716,7 +723,9 @@ def products():
 # ---------------- about / 404 ----------------
 def about():
     root = ""
-    faq = [("怎么下单？", "在网站挑选产品，选散装或整盒加入购物车；打开购物车选好取货方式（自取 Sutera Mall / Lalamove / 邮寄，邮寄需填写邮寄资料），填写姓名和电话（邮寄需填写邮寄资料），点「提交订单」。网站会记录订单并显示单号，同时打开 WhatsApp 方便你把「下单成功」和单号发给客服 017-789 1688。客服确认款项后才会备货及出货。"),
+    faq = [("新山哪里可以买烟花炮竹？", "Hunter BOOM JOHOR 总代理在官网 hunterboom.my 就能订新山烟花、新山炮竹和柔佛鞭炮，不用只靠跑店。自取在 Sutera Mall；新山也可请客服安排 Lalamove（运费自付）；西马邮寄 RM15。WhatsApp 017-789 1688。"),
+           ("可以网上买烟花、网上买炮吗？", "可以。打开 hunterboom.my，选好烟花或炮竹，填写取货方式后提交订单即可。客服确认款项后才会备货及出货。"),
+           ("怎么下单？", "在网站挑选产品，选散装或整盒加入购物车；打开购物车选好取货方式（自取 Sutera Mall / Lalamove / 邮寄，邮寄需填写邮寄资料），填写姓名和电话（邮寄需填写邮寄资料），点「提交订单」。网站会记录订单并显示单号，同时打开 WhatsApp 方便你把「下单成功」和单号发给客服 017-789 1688。客服确认款项后才会备货及出货。"),
            ("散装和整盒有什么分别？", "包装为 N/1 的产品可以按件买散装，也可以买整盒。整盒按价目表箱价；散装卖价 = 价目表箱价 ÷ 一盒件数 × 1.40。1/1 的产品本身就是单件。其他包装规格的散装件数待确认，暂时只卖整盒，散装请 WhatsApp 询问。"),
            ("有送货吗？", "下单时选一项：" + SHIP_FACE + "；" + SHIP_JB + "；" + SHIP_WM + "。"),
            ("价格是最终价格吗？", "网站价格为参考价，产品价格以店家确认为准。邮寄西马一律 RM15（任买），会算进参考合计；Lalamove 新山区运费自付，由客服联系安排。")]
@@ -727,7 +736,7 @@ def about():
 <main class="wrap"><nav class="bc" aria-label="面包屑"><a href="index.html">首页</a> › <span>关于我们</span></nav>
 <article class="txt"><h1>关于 Hunter BOOM JOHOR 总代理</h1>
 <p><b>{TAG}</b></p>
-<p>Hunter BOOM JOHOR 总代理位于柔佛新山依斯干达公主城（Iskandar Puteri），提供新山烟花、柔佛烟花批发与零售，产品包括红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、飞天趣味、响声系列、盆花与大盆花等，迎接{CNY}。</p>
+<p>Hunter BOOM JOHOR 总代理位于柔佛新山依斯干达公主城（Iskandar Puteri），提供新山烟花、新山炮竹、柔佛烟花炮竹批发与零售，产品包括红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉喷花、飞天趣味、响声系列、盆花与大盆花等，迎接{CNY}。也可以在官网 hunterboom.my 网上买烟花、网上买炮。</p>
 <h2>下单方式</h2><ol><li>浏览产品，选散装或整盒，点「加入购物车」，可调整数量。</li><li>打开购物车，选择取货方式：自取（Sutera Mall）、Lalamove（联系客服安排）或邮寄；每单都需填写姓名和电话；选邮寄另需填写邮寄资料（地址、邮区编号、城市、州属）。</li><li>点「提交订单」，网站记录订单并显示「下单成功」和单号，再打开 WhatsApp 方便你把单号发给客服 {PHONE_D}（未发送也不影响订单）。</li><li>客服通过 WhatsApp 确认价格、数量与付款；确认款项后才备货及出货。</li></ol>
 <h2>送货方式</h2>
 <ul>
@@ -741,7 +750,7 @@ def about():
 </article></main>
 {footer(root)}
 </body></html>"""
-    write("about.html", head("关于我们 · 下单方式 | Hunter BOOM JOHOR 总代理 | 新山烟花", f"Hunter BOOM JOHOR 总代理：柔佛新山依斯干达公主城烟花批发零售。了解 WhatsApp 下单方式、柔佛送货与联系资料：{PHONE_D}。", "about.html", root, extra_ld=ld, keywords=KW) + body)
+    write("about.html", head("关于我们 · 下单方式 | 新山烟花炮竹 | Hunter BOOM JOHOR", f"Hunter BOOM JOHOR 总代理：柔佛新山烟花炮竹批发零售，Sutera Mall 自取，也可网上订购。了解下单方式、柔佛送货与联系资料：{PHONE_D}，官网 hunterboom.my。", "about.html", root, extra_ld=ld, keywords=KW) + body)
     # 404 is served for any missing path; use the public origin so links do not jump off the GitHub Pages subpath.
     r404 = (SITE_ORIGIN + "/") if SITE_ORIGIN else "/"
     nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回 Hunter BOOM JOHOR 新山烟花首页。", "404.html", r404).replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex">')
@@ -918,7 +927,7 @@ def meta_files():
             loc += f'<image:image><image:loc>{e(absu("img/cny2027-poster.jpg"))}</image:loc><image:title>Hunter BOOM JOHOR 羊年春节海报</image:title></image:image>'
         p = img_by_path.get(u)
         if p:
-            title = e(p["title"] + ((" " + p["name_en"]) if p.get("name_en") else "") + " 烟花产品图")
+            title = e(p["title"] + ((" " + p["name_en"]) if p.get("name_en") else "") + " 烟花炮竹产品图")
             loc += f'<image:image><image:loc>{e(absu(p["image"]))}</image:loc><image:title>{title}</image:title></image:image>'
         loc += "</url>"
         sm.append(loc)
