@@ -38,7 +38,7 @@ python3 tools/build_site.py --origin https://你的域名.com
 每次发送生成单号 `HBJ-YYYYMMDD-XXXX`。出货单归档：`tools/file_order.py`，存到 box 私人文件夹 `/workspace/hunterboom-orders/`（不进 repo）。
 
 ## 下单流程
-购物车 → 「发送订单到 WhatsApp」→ 打开 `https://wa.me/60177891688?text=我要下单…`（每行：编号 名称 x数量，附参考合计）。
+购物车 → 选取货方式、填姓名电话 →「提交订单」→ 网站记录订单（js/stats.js → Apps Script）并显示「下单成功」+ 单号 → 再打开 `https://wa.me/60177891688?text=下单成功…` 让顾客把单号发给客服（不发也不影响订单）。客服确认收款后才备货出货。
 
 ## 分析代码
 未安装任何 analytics。如需要，在 `tools/build_site.py` 的 `<!-- Optional analytics -->` 注释处加入自己的代码再重建。

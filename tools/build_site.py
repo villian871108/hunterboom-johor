@@ -35,7 +35,7 @@ ADDR_ZH = "柔佛新山 依斯干达公主城（Iskandar Puteri）81200"
 CNY = "羊年春节（2027年2月6日）"
 # Delivery as stated by the shop (12–13 Nov 2026). Checkout must pick exactly one of these 3 (js/cart.js).
 # Do not invent East Malaysia or other fees.
-SHIP_FACE = "自取（Sutera Mall），请先 WhatsApp 约时间"
+SHIP_FACE = "自取（Sutera Mall），客服会联系约自取时间"
 SHIP_JB = "Lalamove（联系客服安排，新山区运费自付）"
 SHIP_WM = "西马邮寄 RM15 任买（需填写邮寄资料）"
 SHIP_LINE = "自取（Sutera Mall）；Lalamove（联系客服安排，新山区运费自付）；西马邮寄 RM15 任买（需填写邮寄资料）。"
@@ -112,7 +112,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
 <link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=8">
+<link rel="stylesheet" href="{root}css/style.css?v=9">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Site stats: js/stats.js -> Google Apps Script (tools/stats_api.gs); see tools/STATS.md -->
 </head>
@@ -153,8 +153,8 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/stats.js?v=2" defer></script>
-<script src="{root}js/cart.js?v=8" defer></script>
+<script src="{root}js/stats.js?v=3" defer></script>
+<script src="{root}js/cart.js?v=9" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -502,11 +502,11 @@ def home():
 <div class="btns"><a class="btn wa" href="{WA}" target="_blank" rel="noopener">{IC_WA.replace('<svg','<svg width="18" height="18"')} WhatsApp {PHONE_D}</a><a class="btn gd" href="#hot">看精选推荐</a></div>
 </section>
 <nav class="ic" aria-label="分类快捷入口">{icons}</nav>
-<div class="info"><div><b>🏮 散装 · 整盒</b>散装按件买，整盒按价目表箱价</div><div><b>🚚 取货 / 送货</b>自取 Sutera Mall · Lalamove 联系客服 · 西马邮寄 RM15</div><div><b>📲 WhatsApp 下单</b>选好产品一键发送订单</div></div>
+<div class="info"><div><b>🏮 散装 · 整盒</b>散装按件买，整盒按价目表箱价</div><div><b>🚚 取货 / 送货</b>自取 Sutera Mall · Lalamove 联系客服 · 西马邮寄 RM15</div><div><b>🧾 网站下单</b>选好产品、填好取货方式，一键提交订单</div></div>
 <section class="ship" id="ship" aria-labelledby="h-ship">
 <h2 id="h-ship">🚚 送货方式</h2>
 <ul>
-<li><b>🛍️ 自取（Sutera Mall）</b>请先 WhatsApp 约时间</li>
+<li><b>🛍️ 自取（Sutera Mall）</b>下单时填写联系电话，客服会联系约自取时间</li>
 <li><b>🛵 Lalamove（联系客服安排）</b>新山区 Lalamove 运费自付</li>
 <li><b>📦 邮寄</b>西马邮费一律 RM15（任买），下单时需填写邮寄资料</li>
 </ul>
@@ -538,7 +538,7 @@ def catpages():
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>{e(c['name'])}</span></nav>
 <section class="sec"><h1 style="font-size:21px;margin:4px 2px 4px;color:#8f0d13">{c['icon']} {e(c['name'])} · 新山烟花 <small style="font-size:13px;color:#8a5a4a">({len(items)} 款)</small></h1>
-<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理 {e(c['name'])}系列，售价 {rm(min(prices))} – {rm(max(prices))}（包装 N/1 的可买散装或整盒；散装卖价 = 箱价 ÷ 件数 × 1.40）。依斯干达公主城出货，加入购物车后一键 WhatsApp 下单。</p>
+<p style="margin:0 2px 12px;color:#8a5a4a;font-size:13.5px">Hunter BOOM JOHOR 总代理 {e(c['name'])}系列，售价 {rm(min(prices))} – {rm(max(prices))}（包装 N/1 的可买散装或整盒；散装卖价 = 箱价 ÷ 件数 × 1.40）。依斯干达公主城出货，加入购物车后在网站一键提交订单。</p>
 <div class="g">{''.join(card(p, root, i) for i, p in enumerate(items))}</div></section>
 <p style="font-size:13px;margin:0 2px 20px">其他分类：{others}</p>
 </main>
@@ -690,7 +690,7 @@ def products():
 <p class="note">{e(pd_note(p))}{e(SHIP_LINE)}产品价格以店家确认为准。</p>
 <div class="act"><div class="qty"><button type="button" data-step="-1" data-for="qty" aria-label="减少数量">−</button><input id="qty" type="number" min="1" value="1" inputmode="numeric" aria-label="数量"><button type="button" data-step="1" data-for="qty" aria-label="增加数量">+</button></div><span class="qu" id="qu">{pd_unit(p)}</span></div>
 <div class="act"><button type="button" class="btn gd" data-add data-qty-from="qty" data-mode-from="mode" {btn_attrs(p, root)}>加入购物车</button>
-<button type="button" class="btn wa" data-wa-item data-qty-from="qty" data-mode-from="mode" {btn_attrs(p, root)}>WhatsApp 下单此款</button></div>
+<button type="button" class="btn rd" data-wa-item data-qty-from="qty" data-mode-from="mode" {btn_attrs(p, root)}>加入购物车并下单</button></div>
 <table class="sp"><caption class="sr">产品资料</caption>
 <tr><th>编号</th><td>{p['sku']}</td></tr>
 <tr><th>中文名</th><td>{e(p['name'])}</td></tr>{en_row}
@@ -716,7 +716,7 @@ def products():
 # ---------------- about / 404 ----------------
 def about():
     root = ""
-    faq = [("怎么下单？", "在网站挑选产品，选散装或整盒加入购物车；打开购物车选好取货方式（自取 Sutera Mall / Lalamove / 邮寄，邮寄需填写邮寄资料），点「发送订单到 WhatsApp」。系统会生成单号，把单号、产品、数量和取货方式整理成一段文字发送给客服 017-789 1688，店家确认后完成下单。"),
+    faq = [("怎么下单？", "在网站挑选产品，选散装或整盒加入购物车；打开购物车选好取货方式（自取 Sutera Mall / Lalamove / 邮寄，邮寄需填写邮寄资料），填写姓名和电话（邮寄需填写邮寄资料），点「提交订单」。网站会记录订单并显示单号，同时打开 WhatsApp 方便你把「下单成功」和单号发给客服 017-789 1688。客服确认款项后才会备货及出货。"),
            ("散装和整盒有什么分别？", "包装为 N/1 的产品可以按件买散装，也可以买整盒。整盒按价目表箱价；散装卖价 = 价目表箱价 ÷ 一盒件数 × 1.40。1/1 的产品本身就是单件。其他包装规格的散装件数待确认，暂时只卖整盒，散装请 WhatsApp 询问。"),
            ("有送货吗？", "下单时选一项：" + SHIP_FACE + "；" + SHIP_JB + "；" + SHIP_WM + "。"),
            ("价格是最终价格吗？", "网站价格为参考价，产品价格以店家确认为准。邮寄西马一律 RM15（任买），会算进参考合计；Lalamove 新山区运费自付，由客服联系安排。")]
@@ -728,10 +728,10 @@ def about():
 <article class="txt"><h1>关于 Hunter BOOM JOHOR 总代理</h1>
 <p><b>{TAG}</b></p>
 <p>Hunter BOOM JOHOR 总代理位于柔佛新山依斯干达公主城（Iskandar Puteri），提供新山烟花、柔佛烟花批发与零售，产品包括红炮礼炮、Pop Pop 沙炮、手持烟花、喷泉喷花、飞天趣味、响声系列、盆花与大盆花等，迎接{CNY}。</p>
-<h2>下单方式</h2><ol><li>浏览产品，选散装或整盒，点「加入购物车」，可调整数量。</li><li>打开购物车，选择取货方式：自取（Sutera Mall）、Lalamove（联系客服安排）或邮寄；选邮寄需填写邮寄资料（收件人姓名、电话、地址、邮区编号、城市、州属）。</li><li>点「发送订单到 WhatsApp」，系统生成单号并发给客服 {PHONE_D}。</li><li>店家通过 WhatsApp 确认价格、数量与送货安排。</li></ol>
+<h2>下单方式</h2><ol><li>浏览产品，选散装或整盒，点「加入购物车」，可调整数量。</li><li>打开购物车，选择取货方式：自取（Sutera Mall）、Lalamove（联系客服安排）或邮寄；每单都需填写姓名和电话；选邮寄另需填写邮寄资料（地址、邮区编号、城市、州属）。</li><li>点「提交订单」，网站记录订单并显示「下单成功」和单号，再打开 WhatsApp 方便你把单号发给客服 {PHONE_D}（未发送也不影响订单）。</li><li>客服通过 WhatsApp 确认价格、数量与付款；确认款项后才备货及出货。</li></ol>
 <h2>送货方式</h2>
 <ul>
-<li><b>自取（Sutera Mall）：</b>请先 WhatsApp 约时间</li>
+<li><b>自取（Sutera Mall）：</b>下单时填写联系电话，客服会联系约自取时间</li>
 <li><b>Lalamove（联系客服安排）：</b>新山区 Lalamove 运费自付</li>
 <li><b>邮寄：</b>西马邮费一律 RM15（任买），下单时需填写邮寄资料</li>
 </ul>
@@ -793,6 +793,9 @@ STATS_CSS = """<style>
 .od-h{display:flex;justify-content:space-between;gap:8px;font-weight:700}
 .od-h small{font-weight:400;color:var(--mut)}
 .od-s{color:#c8161d}.od.done .od-s{color:#1fae55}
+.od-p{color:#b3121b;font-weight:800;margin-left:8px}.od-p.ok{color:#1fae55}
+.od-warn{margin:0 0 6px;font-size:13px;font-weight:700;color:#8f4a00;background:#fff3d6;border-radius:8px;padding:4px 8px}
+.od-b .btn[disabled]{opacity:.55;cursor:not-allowed}
 .od ul{margin:8px 0;padding-left:18px;font-size:14px}
 .od li span{font-weight:700;color:var(--rd)}
 .od li small{color:var(--mut)}
@@ -877,11 +880,11 @@ def stats_page():
 <div id="find-res"></div></div>
 <div class="od-box" id="orders">
 <div class="od-top"><h2>🧾 下单记录 · 客服工单</h2><label><span class="sr">选择日期</span><select id="od-day"></select></label></div>
-<div class="od-sum"><span id="od-title">—</span><span>下单 <b id="od-count">0</b> 次</span><span>商品小计 <b id="od-total">RM0.00</b></span><span>邮费 <b id="od-post">RM0.00</b></span><span>合计 <b id="od-grand">RM0.00</b></span><span>当天待处理 <b id="od-pend">0</b></span><span>全部待处理 <b id="st-pall">0</b></span></div>
+<div class="od-sum"><span id="od-title">—</span><span>下单 <b id="od-count">0</b> 次</span><span>商品小计 <b id="od-total">RM0.00</b></span><span>邮费 <b id="od-post">RM0.00</b></span><span>合计 <b id="od-grand">RM0.00</b></span><span>当天待处理 <b id="od-pend">0</b></span><span>当天待收款 <b id="od-unpaid">0</b></span><span>全部待处理 <b id="st-pall">0</b></span></div>
 <div class="od-brk" id="od-brk"></div>
-<div class="od-fl"><button type="button" data-filt="all" class="on">全部</button><button type="button" data-filt="pending">⏳ 待处理</button><button type="button" data-filt="done">✅ 已处理</button></div>
+<div class="od-fl"><button type="button" data-filt="all" class="on">全部</button><button type="button" data-filt="unpaid">💰 待收款</button><button type="button" data-filt="pending">⏳ 待处理</button><button type="button" data-filt="done">✅ 已处理</button></div>
 <div id="od-list"></div>
-<p class="st-status">顾客点「发送订单到 WhatsApp」时，订单（含单号）会直接发到客服 WhatsApp 017-789 1688；这里同步记一笔工单，点单号看完整出货单，跟进后点「标记已处理」。时间为马来西亚时间（UTC+8）。</p>
+<p class="st-status">顾客在网站点「提交订单」后，订单（含单号、姓名、电话）先记在这里，再打开 WhatsApp 让顾客把单号发给客服。流程：💰 待收款 →「确认收款」→ 备货 / 出货 →「已备货出货（标记已处理）」。未确认收款不能标记出货。时间为马来西亚时间（UTC+8）。</p>
 </div>
 <h2>近 14 天走势</h2>
 <div class="st-chart" id="st-chart"></div>
@@ -890,7 +893,7 @@ def stats_page():
 <p class="st-status" id="st-sum"></p>
 <div style="overflow-x:auto"><table class="st-tbl"><thead><tr><th>日期</th><th>下单</th><th>商品参考合计</th><th>人数</th><th>浏览</th></tr></thead><tbody id="st-rows"></tbody></table></div>
 <div class="st-def">
-<p><b>下单</b> = 从本站发送到 WhatsApp 的订单次数（最终成交以店家确认为准）</p>
+<p><b>下单</b> = 在本站提交成功的订单次数（最终成交以店家确认收款为准）</p>
 <p><b>人数</b> = 当日独立访客（同一手机/浏览器一天只算一次）</p>
 <p><b>浏览</b> = 当日页面浏览次数</p>
 <p style="color:var(--mut);font-size:12px">日期按马来西亚时间（UTC+8）每天 00:00 重新计算。数字全部来自真实访问记录，从统计上线当天开始累计；本页本身的打开不计入浏览。参考合计为商品参考价（散装 / 整盒按网站卖价），邮寄单另记邮费 RM15；Lalamove 运费不含。</p>

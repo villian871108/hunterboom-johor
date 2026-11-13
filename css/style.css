@@ -246,3 +246,18 @@ footer .legal{grid-column:1/-1;border-top:1px solid #ffffff22;padding-top:12px;f
 .dw .ok b{font-size:15px;letter-spacing:.3px}
 .dw .sub[hidden]{display:none}
 .shp label{min-width:0}.shp input,.shp textarea,.shp select{width:100%;box-sizing:border-box;max-width:100%}
+/* 提交订单 / 下单成功 (v9) */
+.btn.rd{background:var(--r);color:#fff;box-shadow:0 4px 12px #c8161d44}
+.dw .send[disabled]{opacity:.75;cursor:default}
+.dw .ls>.ok{margin:10px 4px 4px;display:flex;flex-direction:column;gap:4px;line-height:1.45}
+.dw .ok .ok-h{font-size:16px;color:#0f5c31}
+.dw .ok ul{margin:2px 0;padding-left:18px;font-size:12.5px}
+.dw .ok small{color:#3d6b50;font-size:11.5px}
+.dw .ok .pay{background:#fff;border:1px dashed #9ee0b6;border-radius:10px;padding:8px 10px;margin:4px 0;color:var(--ink)}
+.dw .ok .pay dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:4px 0;font-size:13px}
+.dw .ok .pay dt{color:var(--mut)}.dw .ok .pay dd{margin:0;word-break:break-all}
+.dw .ok .pay .qr{display:block;width:180px;max-width:100%;height:auto;margin:6px auto;border-radius:8px}
+.dw .ok .pn{margin:6px 0 0;font-weight:800;color:#8f4a00}
+.dw .ok .wa2{margin-top:6px;text-align:center;justify-content:center}
+.dw .err .lk{color:#8a5a4a;font-weight:500;font-size:12px}
+.dw .ls>.ok[hidden]{display:none}
