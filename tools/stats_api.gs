@@ -26,7 +26,12 @@
  *           orders:[{id,status:"pending"|"done",handled_at,ts,time,qty,ref_total,items:[{c,n,q,p,m}],
  *                    order_no,delivery,postage,grand_total,ship}]}
  *   POST {op:"status", token, id, status:"done"|"pending"}  → mark 已处理 / 待处理
+ *   POST {op:"find", token, q:"HBJ-20261113-9F4F" | partial}  → {ok, q, orders:[…]}  (search by 单号)
+ *   POST {op:"changepin", token, old, pin}
  *   POST {op:"logout", token}
+ *   FIRST-TIME PIN (public, safe): POST {op:"pin_status"} → {ok, pin_set}
+ *        POST {op:"setpin", code, pin} → {ok, token}; only while OWNER_PIN is unset and only with the
+ *        one-time 设置码 from the private spreadsheet tab「后台设置」(also printed by running setup()).
  *   GET → {ok:false, error:"auth_required"}  (no data without login)
  *   Orders with delivery "post" store the customer's 邮寄资料 (name/phone/address) in the private
  *   orders tab (owner-only; returned only after PIN login). No IP is stored. Nothing is exposed publicly.
@@ -35,8 +40,9 @@
  *   1. Open the spreadsheet → Extensions → Apps Script (or script.google.com → New project).
  *   2. Replace Code.gs with this whole file. Save.
  *   3. Project Settings → Time zone → (GMT+08:00) Kuala Lumpur  (the code also forces TZ below).
- *   4. Project Settings → Script Properties → Add: OWNER_PIN = <owner's private PIN>  (TODO: set it;
- *      login is refused while it is empty). Never commit the PIN.
+ *   4. Owner PIN: EITHER open /stats.html →「设置后台密码」with the one-time 设置码 from the spreadsheet
+ *      tab「后台设置」(created on first visit / by setup()), OR Project Settings → Script Properties →
+ *      OWNER_PIN = <owner's private PIN>. Login is refused while it is empty. Never commit the PIN.
  *   5. Run `setup` once from the editor and accept the permission prompt (Sheets access).
  *   6. Deploy → New deployment → type "Web app"
  *        Execute as: Me (loting87@gmail.com)
@@ -97,7 +103,11 @@ function setup() {
   events_().getRange('A:B').setNumberFormat('@');
   visitors_().getRange('A:C').setNumberFormat('@');
   orders_().getRange('A:C').setNumberFormat('@');
+  orders_().getRange('M:N').setNumberFormat('@');
   Logger.log('OK: ' + ss_().getUrl() + ' today=' + today_());
+  if (!PropertiesService.getScriptProperties().getProperty('OWNER_PIN')) {
+    Logger.log('后台密码未设置。打开 /stats.html →「设置后台密码」，输入设置码：' + setupCode_() + '（也写在表格「后台设置」分页）');
+  }
 }
 
 function findRow_(sh, text) {
@@ -238,15 +248,31 @@ function ordersFor_(date) {
   var vals = sh.getRange(first, 1, last - first + 1, ORDER_COLS).getValues();
   vals.forEach(function (r) {
     if (dateStr_(r[1]) !== date) return;
-    var items = [];
-    var ship = null;
-    try { items = JSON.parse(r[6] || '[]'); } catch (x) { items = []; }
-    try { ship = r[16] ? JSON.parse(r[16]) : null; } catch (x) { ship = null; }
-    out.push({ id: String(r[9] || ''), status: r[10] === 'done' ? 'done' : 'pending', handled_at: String(r[11] || ''),
-      ts: String(r[0]), time: String(r[2]).slice(0, 8), qty: num_(r[3]), ref_total: num_(r[4]), items: items,
-      order_no: String(r[12] || ''), delivery: String(r[13] || ''), postage: num_(r[14]), grand_total: num_(r[15]) || num_(r[4]), ship: ship });
+    out.push(orderRow_(r));
   });
   return out.reverse().slice(0, 500);
+}
+
+/** One orders-tab row → order object for the owner page. */
+function orderRow_(r) {
+  var items = [], ship = null;
+  try { items = JSON.parse(r[6] || '[]'); } catch (x) { items = []; }
+  try { ship = r[16] ? JSON.parse(r[16]) : null; } catch (x) { ship = null; }
+  return { id: String(r[9] || ''), status: r[10] === 'done' ? 'done' : 'pending', handled_at: String(r[11] || ''),
+    ts: String(r[0]), date: dateStr_(r[1]), time: String(r[2]).slice(0, 8), qty: num_(r[3]), ref_total: num_(r[4]), items: items,
+    order_no: String(r[12] || ''), delivery: String(r[13] || ''), postage: num_(r[14]), grand_total: num_(r[15]) || num_(r[4]), ship: ship };
+}
+
+/** OWNER ONLY: find orders by 单号 (full or partial, e.g. "HBJ-20261113" or "9F4F"). Newest first, max 50. */
+function find_(q) {
+  q = String(q || '').toUpperCase().replace(/[^0-9A-Z-]/g, '').slice(0, 24);
+  if (q.length < 3) return { ok: false, error: 'query_short' };
+  var sh = orders_(), last = sh.getLastRow(), out = [];
+  if (last < 2) return { ok: true, q: q, orders: out };
+  var cells = sh.getRange(2, 13, last - 1, 1).createTextFinder(q).matchCase(false).findAll();
+  var rows = cells.map(function (c) { return c.getRow(); }).sort(function (a, b) { return b - a; }).slice(0, 50);
+  rows.forEach(function (row) { out.push(orderRow_(sh.getRange(row, 1, 1, ORDER_COLS).getValues()[0])); });
+  return { ok: true, q: q, orders: out };
 }
 
 function read_(days, date) {
@@ -291,10 +317,70 @@ function login_(b) {
     Utilities.sleep(800);
     return { ok: false, error: 'auth' };
   }
-  var token = Utilities.getUuid().replace(/-/g, '') + Utilities.getUuid().replace(/-/g, '');
-  cache.put('sess_' + token, '1', SESSION_S);
-  return { ok: true, token: token, expires_in: SESSION_S };
+  return { ok: true, token: newSession_(), expires_in: SESSION_S };
 }
+/* ---- first-time 设置后台密码 ----
+ * While OWNER_PIN is unset, the owner sets it from /stats.html. To stop a stranger from setting it first,
+ * setting it also needs a one-time 设置码 that only the owner can read: it is written into the PRIVATE
+ * spreadsheet (tab「后台设置」) and logged by setup(). After a PIN is set, the code is deleted and
+ * setpin is refused; OWNER_PIN stays a Script Property exactly as before (can still be set by hand). */
+var PIN_MIN = 6, PIN_MAX = 32;
+function setupSheet_() { return sheet_('后台设置', ['项目', '值', '说明']); }
+function setupCode_() {
+  var props = PropertiesService.getScriptProperties(), code = props.getProperty('SETUP_CODE');
+  if (!code) {
+    var A = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ', raw = Utilities.getUuid().replace(/-/g, '') + Utilities.getUuid().replace(/-/g, '');
+    code = '';
+    for (var i = 0; i < 10; i++) code += A[parseInt(raw.substr(i * 2, 2), 16) % 32];
+    props.setProperty('SETUP_CODE', code);
+    var sh = setupSheet_();
+    sh.getRange(2, 1, 1, 3).setValues([['后台设置码', code, '第一次打开 /stats.html「设置后台密码」时输入；设置成功后自动作废。不要外传。']]);
+  }
+  return code;
+}
+function pinStatus_() {
+  var set = !!PropertiesService.getScriptProperties().getProperty('OWNER_PIN');
+  if (!set) setupCode_();          // make sure the owner has a code waiting in the private sheet
+  return { ok: true, pin_set: set };
+}
+function newSession_() {
+  var token = Utilities.getUuid().replace(/-/g, '') + Utilities.getUuid().replace(/-/g, '');
+  CacheService.getScriptCache().put('sess_' + token, '1', SESSION_S);
+  return token;
+}
+function validPin_(p) { p = String(p || ''); return p.length >= PIN_MIN && p.length <= PIN_MAX && !/\s/.test(p); }
+function setPin_(b) {
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(20000)) return { ok: false, error: 'busy' };
+  try {
+    var props = PropertiesService.getScriptProperties();
+    if (props.getProperty('OWNER_PIN')) return { ok: false, error: 'pin_already_set' };
+    var cache = CacheService.getScriptCache(), fails = parseInt(cache.get('pin_fails') || '0', 10);
+    if (fails >= MAX_FAILS) return { ok: false, error: 'locked' };
+    var code = setupCode_();
+    if (String(b.code || '').toUpperCase().replace(/\s/g, '') !== code) {
+      cache.put('pin_fails', String(fails + 1), 900);
+      Utilities.sleep(800);
+      return { ok: false, error: 'bad_code' };
+    }
+    if (!validPin_(b.pin)) return { ok: false, error: 'weak_pin' };
+    props.setProperty('OWNER_PIN', String(b.pin));
+    props.deleteProperty('SETUP_CODE');
+    setupSheet_().getRange(2, 1, 1, 3).setValues([['后台设置码', '（已使用）', '后台密码已于 ' + now_() + ' 设置。忘记密码：Apps Script → 项目设置 → 脚本属性 → 修改 OWNER_PIN。']]);
+    return { ok: true, token: newSession_(), expires_in: SESSION_S };
+  } finally { lock.releaseLock(); }
+}
+/** OWNER ONLY: change the PIN (needs the current one). */
+function changePin_(b) {
+  var props = PropertiesService.getScriptProperties(), cur = props.getProperty('OWNER_PIN') || '';
+  var cache = CacheService.getScriptCache(), fails = parseInt(cache.get('pin_fails') || '0', 10);
+  if (fails >= MAX_FAILS) return { ok: false, error: 'locked' };
+  if (!cur || String(b.old || '') !== cur) { cache.put('pin_fails', String(fails + 1), 900); Utilities.sleep(800); return { ok: false, error: 'bad_old' }; }
+  if (!validPin_(b.pin)) return { ok: false, error: 'weak_pin' };
+  props.setProperty('OWNER_PIN', String(b.pin));
+  return { ok: true };
+}
+
 function authed_(b) {
   var t = String((b && b.token) || '');
   return /^[a-f0-9]{64}$/.test(t) && CacheService.getScriptCache().get('sess_' + t) === '1';
@@ -328,10 +414,15 @@ function doPost(e) {
     try { b = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (x) { return json_({ ok: false, error: 'bad json' }); }
     if (b.op === 'hit') return json_(hit_(b));                 // public, write-only, rate-limited
     if (b.op === 'login') return json_(login_(b));
+    if (b.op === 'pin_status') return json_(pinStatus_());            // public: only says whether a PIN exists
+    if (b.op === 'setpin') return json_(setPin_(b));                  // public, but needs the private 设置码
+
     if (b.op === 'logout') { if (authed_(b)) CacheService.getScriptCache().remove('sess_' + b.token); return json_({ ok: true }); }
     if (!authed_(b)) return json_({ ok: false, error: 'auth' });
     if (b.op === 'read') return json_(read_(b.days, b.date));
     if (b.op === 'status') return json_(setStatus_(b));
+    if (b.op === 'find') return json_(find_(b.q));
+    if (b.op === 'changepin') return json_(changePin_(b));
     return json_({ ok: false, error: 'unknown op' });
   } catch (err) { return json_({ ok: false, error: String(err) }); }
 }

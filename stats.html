@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>店铺统计 | Hunter BOOM JOHOR</title>
-<meta name="description" content="店家内部统计页。">
+<title>店家后台 | Hunter BOOM JOHOR</title>
+<meta name="description" content="店家内部页面。">
 
 <link rel="canonical" href="https://hunterboom.my/stats.html">
 <meta name="robots" content="noindex,nofollow,noarchive">
@@ -14,8 +14,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hunter BOOM JOHOR">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="店铺统计 | Hunter BOOM JOHOR">
-<meta property="og:description" content="店家内部统计页。">
+<meta property="og:title" content="店家后台 | Hunter BOOM JOHOR">
+<meta property="og:description" content="店家内部页面。">
 <meta property="og:url" content="https://hunterboom.my/stats.html">
 <meta property="og:image" content="https://hunterboom.my/img/og-cny2027.jpg">
 <meta property="og:image:width" content="1200">
@@ -23,8 +23,8 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="Hunter BOOM JOHOR 总代理 三阳开泰 羊年海报">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="店铺统计 | Hunter BOOM JOHOR">
-<meta name="twitter:description" content="店家内部统计页。">
+<meta name="twitter:title" content="店家后台 | Hunter BOOM JOHOR">
+<meta name="twitter:description" content="店家内部页面。">
 <meta name="twitter:image" content="https://hunterboom.my/img/og-cny2027.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
@@ -38,7 +38,8 @@
 .st-hd h1{margin:0}
 .st-date{color:var(--mut);font-size:13px}
 .st-out{border:0;background:none;color:var(--mut);text-decoration:underline;cursor:pointer;font-size:12px}
-.st-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.st-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+@media(min-width:700px){.st-tiles{grid-template-columns:repeat(4,1fr)}}
 .st-tile{background:linear-gradient(160deg,#c8161d,#8f0d13);color:#fff3d0;border-radius:16px;padding:14px 12px;text-align:center;box-shadow:0 6px 18px #8f0d1333;position:relative;overflow:hidden}
 .st-tile:after{content:"";position:absolute;inset:auto -20px -30px auto;width:90px;height:90px;border-radius:50%;background:#f6c45322}
 .st-tile span{display:block;font-size:13px;letter-spacing:1px;color:#ffdf8a}
@@ -90,6 +91,40 @@
 .od-b .btn{padding:7px 12px;font-size:13px}
 .od-empty{text-align:center;color:var(--mut);padding:18px 6px}
 @media(max-width:420px){.st-tile b{font-size:30px}.st-tile{padding:12px 6px}}
+.st-tile b.rmv{font-size:26px}
+@media(max-width:420px){.st-tile b.rmv{font-size:21px}}
+.st-gate form.col{flex-direction:column;text-align:left}
+.st-gate form.col label{font-size:13px;color:var(--mut);font-weight:600;display:flex;flex-direction:column;gap:4px}
+.st-gate form.col input{letter-spacing:1px;font-size:16px;text-align:left}
+.st-gate .hint{font-size:13px;color:var(--mut);text-align:left;background:#fffaf0;border-radius:10px;padding:8px 10px;margin:8px 0 0}
+.st-find{display:flex;gap:8px;margin:4px 0 6px}
+.st-find input{flex:1;min-width:0;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase}
+.st-find .btn{padding:9px 14px}
+.st-box{border:1px solid var(--line);border-radius:16px;padding:12px;background:#fff;margin:6px 0 14px}
+.st-box h2{margin:0 0 6px}
+.od-brk{display:grid;gap:10px;margin:6px 0 10px}
+@media(min-width:700px){.od-brk{grid-template-columns:1fr 1.4fr}}
+.od-brk table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;background:#fff;border-radius:10px;overflow:hidden}
+.od-brk caption{text-align:left;font-weight:800;color:var(--rd);font-size:13.5px;padding:0 0 4px}
+.od-brk th,.od-brk td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:right}
+.od-brk th{background:#fff3d0;color:#8f0d13}
+.od-brk th:first-child,.od-brk td:first-child{text-align:left}
+button.od-no{border:0;cursor:pointer;font-size:14px;font-weight:800;text-decoration:underline dotted}
+.od li .tg{font-size:11px;background:#fde3c0;color:#8f0d13;border-radius:6px;padding:0 5px;margin-left:3px;font-weight:700}
+.st-modal{position:fixed;inset:0;z-index:70;background:#2a0a0699;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 10px}
+.st-modal[hidden]{display:none}
+.st-slip{background:#fff;border-radius:16px;max-width:560px;width:100%;padding:16px 18px;box-shadow:0 10px 30px #0005}
+.st-slip h2{margin:0 0 6px;color:#8f0d13}
+.st-slip table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;font-variant-numeric:tabular-nums}
+.st-slip th,.st-slip td{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+.st-slip td.n,.st-slip th.n{text-align:right}
+.st-slip .tot{text-align:right;font-size:14px}.st-slip .tot b{font-size:18px;color:var(--r)}
+.st-slip .bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.st-pw{margin:16px 0 0;font-size:13px}
+.st-pw summary{cursor:pointer;color:var(--mut)}
+.st-pw form{display:grid;gap:6px;max-width:320px;margin-top:8px}
+.st-pw input{padding:8px 10px;border:1px solid var(--line);border-radius:10px;font-size:15px}
+@media print{body *{visibility:hidden}#st-slip,#st-slip *{visibility:visible}#st-slip{position:absolute;inset:0;background:#fff;padding:0}.st-slip{box-shadow:none}.st-slip .bar{display:none}}
 </style>
 </head>
 <body data-root="" data-stats-page>
@@ -102,38 +137,54 @@
 
 <main class="wrap">
 <section class="txt st-gate" id="st-gate">
-<h1>🔒 店铺统计</h1><p>仅限店家查看，请输入密码。</p>
-<form id="st-login" autocomplete="off"><label class="sr" for="st-pin">密码</label><input id="st-pin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="密码"><button class="btn gd" id="st-go" type="submit">进入</button></form>
+<h1>🔒 店家后台</h1>
+<div id="st-lg"><p>仅限店家查看，请输入后台密码。</p>
+<form id="st-login" autocomplete="off"><label class="sr" for="st-pin">密码</label><input id="st-pin" type="password" autocomplete="current-password" placeholder="密码"><button class="btn gd" id="st-go" type="submit">进入</button></form></div>
+<div id="st-su" hidden><p><b>第一次使用：请设置后台密码</b></p>
+<p class="hint">为防止别人抢先设置，需要输入一次性的「设置码」。设置码在店家自己的 Google 表格「Hunter BOOM JOHOR 网站统计」→「后台设置」分页（B2 格）。设置成功后设置码自动作废。</p>
+<form id="st-setup" class="col" autocomplete="off">
+<label for="su-code">设置码<input id="su-code" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false"></label>
+<label for="su-pin">新后台密码（至少 6 位，不含空格）<input id="su-pin" type="password" autocomplete="new-password"></label>
+<label for="su-pin2">再输入一次<input id="su-pin2" type="password" autocomplete="new-password"></label>
+<button class="btn gd" id="su-go" type="submit">设置密码并进入</button></form></div>
 <p class="st-status" id="st-gmsg"></p>
 </section>
 <section class="txt" id="stats" hidden>
-<div class="st-hd"><h1>📊 店铺统计</h1><span class="st-date">今天：<b id="st-date">—</b> <button type="button" class="st-out" id="st-out">退出</button></span></div>
+<div class="st-hd"><h1>🏪 店家后台</h1><span class="st-date">今天：<b id="st-date">—</b> <button type="button" class="st-out" id="st-out">退出</button></span></div>
 <p class="st-status" id="st-status">正在读取…</p>
 <div class="st-tiles">
-<div class="st-tile"><span>今日下单</span><b id="st-orders">—</b><small id="st-ototal">参考合计 —</small></div>
+<div class="st-tile"><span>今日下单</span><b id="st-orders">—</b><small>次（网站发出）</small></div>
+<div class="st-tile"><span>今日销售</span><b class="rmv" id="st-sales">—</b><small id="st-ototal">商品参考合计</small></div>
 <div class="st-tile"><span>今日人数</span><b id="st-visitors">—</b><small>独立访客</small></div>
 <div class="st-tile"><span>今日浏览</span><b id="st-views">—</b><small>页面浏览次数</small></div>
 </div>
+<div class="st-box" id="find"><h2>🔎 查单号</h2>
+<form class="st-find" id="st-find" autocomplete="off"><label class="sr" for="fq">单号</label><input id="fq" placeholder="HBJ-20261113-XXXX 或后 4 位" maxlength="24" spellcheck="false"><button class="btn gd" type="submit">查找</button></form>
+<div id="find-res"></div></div>
 <div class="od-box" id="orders">
 <div class="od-top"><h2>🧾 下单记录 · 客服工单</h2><label><span class="sr">选择日期</span><select id="od-day"></select></label></div>
-<div class="od-sum"><span id="od-title">—</span><span>下单 <b id="od-count">0</b> 次</span><span>参考合计 <b id="od-total">RM0.00</b></span><span>当天待处理 <b id="od-pend">0</b></span><span>全部待处理 <b id="st-pall">0</b></span></div>
+<div class="od-sum"><span id="od-title">—</span><span>下单 <b id="od-count">0</b> 次</span><span>商品小计 <b id="od-total">RM0.00</b></span><span>邮费 <b id="od-post">RM0.00</b></span><span>合计 <b id="od-grand">RM0.00</b></span><span>当天待处理 <b id="od-pend">0</b></span><span>全部待处理 <b id="st-pall">0</b></span></div>
+<div class="od-brk" id="od-brk"></div>
 <div class="od-fl"><button type="button" data-filt="all" class="on">全部</button><button type="button" data-filt="pending">⏳ 待处理</button><button type="button" data-filt="done">✅ 已处理</button></div>
 <div id="od-list"></div>
-<p class="st-status">顾客点「发送订单到 WhatsApp」时，订单内容会直接发到店家 WhatsApp 017-789 1688（人工通知）；这里同步记一笔工单，跟进后点「标记已处理」。时间为马来西亚时间（UTC+8）。</p>
+<p class="st-status">顾客点「发送订单到 WhatsApp」时，订单（含单号）会直接发到客服 WhatsApp 017-789 1688；这里同步记一笔工单，点单号看完整出货单，跟进后点「标记已处理」。时间为马来西亚时间（UTC+8）。</p>
 </div>
 <h2>近 14 天走势</h2>
 <div class="st-chart" id="st-chart"></div>
 <div class="st-key"><span><i style="background:#f6c453"></i>浏览</span><span><i style="background:#c8161d"></i>人数</span><span>🛒 下单次数</span></div>
 <h2>近 30 天每日明细 <small style="font-size:12px;color:var(--mut);font-weight:400">（马来西亚时间 UTC+8，点一行看当天订单）</small></h2>
 <p class="st-status" id="st-sum"></p>
-<div style="overflow-x:auto"><table class="st-tbl"><thead><tr><th>日期</th><th>下单</th><th>参考合计</th><th>人数</th><th>浏览</th></tr></thead><tbody id="st-rows"></tbody></table></div>
+<div style="overflow-x:auto"><table class="st-tbl"><thead><tr><th>日期</th><th>下单</th><th>商品参考合计</th><th>人数</th><th>浏览</th></tr></thead><tbody id="st-rows"></tbody></table></div>
 <div class="st-def">
 <p><b>下单</b> = 从本站发送到 WhatsApp 的订单次数（最终成交以店家确认为准）</p>
 <p><b>人数</b> = 当日独立访客（同一手机/浏览器一天只算一次）</p>
 <p><b>浏览</b> = 当日页面浏览次数</p>
 <p style="color:var(--mut);font-size:12px">日期按马来西亚时间（UTC+8）每天 00:00 重新计算。数字全部来自真实访问记录，从统计上线当天开始累计；本页本身的打开不计入浏览。参考合计为商品参考价（散装 / 整盒按网站卖价），邮寄单另记邮费 RM15；Lalamove 运费不含。</p>
 </div>
+<details class="st-pw"><summary>🔑 修改后台密码</summary>
+<form id="st-chg" autocomplete="off"><input id="pw-old" type="password" placeholder="当前密码" autocomplete="current-password"><input id="pw-new" type="password" placeholder="新密码（至少 6 位）" autocomplete="new-password"><input id="pw-new2" type="password" placeholder="再输入一次" autocomplete="new-password"><button class="btn ol" type="submit">保存新密码</button><span class="st-status" id="pw-msg"></span></form></details>
 </section></main>
+<div class="st-modal" id="st-slip" hidden role="dialog" aria-modal="true" aria-label="出货单"><div class="st-slip" id="st-slip-in"></div></div>
 <footer><div class="in">
 <div><h2>Hunter BOOM JOHOR 总代理</h2><p>用一分钟的绚烂，治愈一整年的荒芜</p><p>新山烟花批发零售。自取（Sutera Mall）；Lalamove（联系客服安排，新山区运费自付）；西马邮寄 RM15 任买（需填写邮寄资料）。</p></div>
 <div><h3>联系我们</h3>
