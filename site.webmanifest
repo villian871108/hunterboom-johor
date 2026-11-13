@@ -2,10 +2,10 @@
  "name": "Hunter BOOM JOHOR 总代理",
  "short_name": "Hunter BOOM",
  "lang": "zh-Hans",
- "start_url": "./index.html",
+ "start_url": "./",
  "display": "standalone",
- "background_color": "#fdf3e3",
- "theme_color": "#c8161d",
+ "background_color": "#9a1017",
+ "theme_color": "#9a1017",
  "icons": [
   {
    "src": "img/icon-192.png",

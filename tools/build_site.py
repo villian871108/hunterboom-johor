@@ -11,11 +11,19 @@ import json, os, sys, html, datetime, urllib.parse
 
 # ===== The ONE place to set the public domain (no trailing slash). =====
 # Official shop domain. GitHub Pages still serves the same repo as a fallback.
-SITE_ORIGIN = "https://hunterboom.my"
+PUBLIC_ORIGIN = "https://hunterboom.my"
+SITE_ORIGIN = PUBLIC_ORIGIN
 if "--origin" in sys.argv:
     SITE_ORIGIN = sys.argv[sys.argv.index("--origin") + 1].rstrip("/")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Unlisted staff-demo path. Customers see a maintenance poster at the domain root.
+# Do not add this slug to the public sitemap or robots Allow list.
+DEMO_SLUG = "hfkd"
+OUT_DIR = ROOT
+DEMO_MODE = False
+# When the shop is built under DEMO_SLUG, CSS/JS/images stay at the domain root.
+PAGE_ASSET = ""
 D = json.load(open(os.path.join(ROOT, "data", "products.json"), encoding="utf-8"))
 # unpublished (published: false) stay in the data file but are not built into the public shop
 ALL_P = D["products"]
@@ -76,7 +84,8 @@ IC_WA = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0
 def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", keywords=None):
     can = absu(path)
     img = og_img or "img/og-cny2027.jpg"
-    img_abs = (SITE_ORIGIN + "/" + img) if SITE_ORIGIN else root + img
+    pub = PUBLIC_ORIGIN if PUBLIC_ORIGIN else SITE_ORIGIN
+    img_abs = (pub + "/" + img) if pub else asset(img)
     og_dims = (
         '<meta property="og:image:width" content="1200">\n'
         '<meta property="og:image:height" content="630">\n'
@@ -94,7 +103,7 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <meta name="description" content="{e(desc)}">
 {kw}
 <link rel="canonical" href="{e(can)}">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="robots" content="{'noindex,nofollow,noarchive' if DEMO_MODE else 'index,follow,max-image-preview:large'}">
 <meta name="theme-color" content="#c8161d">
 <meta name="format-detection" content="telephone=no">
 <meta property="og:type" content="{og_type}">
@@ -108,11 +117,11 @@ def head(title, desc, path, root, og_img=None, extra_ld=(), og_type="website", k
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="twitter:image" content="{e(img_abs)}">
-<link rel="icon" href="{root}img/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="{root}img/favicon-48.png" sizes="48x48" type="image/png">
-<link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
-<link rel="manifest" href="{root}site.webmanifest">
-<link rel="stylesheet" href="{root}css/style.css?v=9">
+<link rel="icon" href="{asset('img/favicon.svg')}" type="image/svg+xml">
+<link rel="icon" href="{asset('img/favicon-48.png')}" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="{asset('img/apple-touch-icon.png')}">
+<link rel="manifest" href="{asset('site.webmanifest')}">
+<link rel="stylesheet" href="{asset('css/style.css')}?v=9">
 {''.join(jd(x) for x in extra_ld)}
 <!-- Site stats: js/stats.js -> Google Apps Script (tools/stats_api.gs); see tools/STATS.md -->
 </head>
@@ -125,7 +134,10 @@ def topbar(root, active=None, home=False):
     for c in CATS:
         tabs.append(f'<a href="{href(c)}"{" class=on" if active==c["id"] else ""}>{e(c["name"])}</a>')
     act = "" if home else f' action="{root}index.html"'
-    return f"""<header class="top"><div class="in">
+    banner = ('<div class="demo-banner" role="note" style="background:#3b0a0d;color:#f6e2a2;text-align:center;'
+              'padding:8px 12px;font-size:13px;letter-spacing:.04em;font-weight:600">'
+              "此页面仅供工作人员演示学习，不是顾客下单页</div>\n") if DEMO_MODE else ""
+    return banner + f"""<header class="top"><div class="in">
 <a class="lg" href="{root}index.html" aria-label="{SHOP} 首页">{LOGO}<span class="wm"><b>Hunter BOOM</b><small>JOHOR 总代理 · 新山</small></span></a>
 <form class="sb" role="search"{act} method="get"><label class="sr" for="q">搜索产品</label><input id="q" name="q" type="search" placeholder="搜索名称或编号，如 HB001、红炮、炮竹" autocomplete="off"><button type="submit">搜索</button></form>
 <nav class="tabs" aria-label="产品分类">{''.join(tabs)}</nav>
@@ -153,8 +165,8 @@ def footer(root, active=None):
 <button type="button" data-open-cart>{IC_CART}购物车<i class="bdg" data-badge>0</i></button>
 <a class="wa" href="{WA}" target="_blank" rel="noopener">{IC_WA}WhatsApp</a>
 </nav>
-<script src="{root}js/stats.js?v=3" defer></script>
-<script src="{root}js/cart.js?v=9" defer></script>
+<script src="{asset('js/stats.js')}?v=3" defer></script>
+<script src="{asset('js/cart.js')}?v=9" defer></script>
 """
 
 def img_block(p, root, big=False, lazy=True, eager=False):
@@ -163,7 +175,7 @@ def img_block(p, root, big=False, lazy=True, eager=False):
         w, h = (p["thumb_size"] if not big else p["image_size"])
         alt = f"{p['name']} {p['name_en']} 烟花产品图（Hunter BOOM JOHOR 新山）".replace("  ", " ")
         ld = 'loading="lazy" decoding="async"' if lazy and not eager else 'fetchpriority="high"'
-        return f'<img src="{root}{src}" width="{w}" height="{h}" alt="{e(alt)}" {ld}>'
+        return f'<img src="{asset(src)}" width="{w}" height="{h}" alt="{e(alt)}" {ld}>'
     return f'<div class="ph" role="img" aria-label="{e(p["name"])}（暂无产品图）">{BURST}<b>{e(p["name"])}</b><i>产品图待更新</i></div>'
 
 def btn_attrs(p, root, m=None):
@@ -382,8 +394,8 @@ STORE_LD = {
     "@context": "https://schema.org", "@type": "Store", "@id": absu("") + "#store",
     "name": SHOP, "alternateName": ["Hunter BOOM JOHOR", "Hunter Boom Johor 新山烟花", "猎人烟花 新山", "新山炮竹", "柔佛烟花炮竹"],
     "description": f"{TAG}。新山烟花炮竹、柔佛烟花炮竹批发零售：红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花，可在 hunterboom.my 网上订购，WhatsApp 下单。",
-    "url": absu(""), "image": (SITE_ORIGIN + "/img/og-cny2027.jpg") if SITE_ORIGIN else "/img/og-cny2027.jpg",
-    "logo": (SITE_ORIGIN + "/img/icon-512.png") if SITE_ORIGIN else "/img/icon-512.png",
+    "url": absu(""), "image": (PUBLIC_ORIGIN + "/img/og-cny2027.jpg") if PUBLIC_ORIGIN else "/img/og-cny2027.jpg",
+    "logo": (PUBLIC_ORIGIN + "/img/icon-512.png") if PUBLIC_ORIGIN else "/img/icon-512.png",
     "telephone": PHONE_I, "priceRange": "RM{:,.0f} – RM{:,.0f}".format(min(main_price(p) for p in P), max(main_price(p) for p in P)),
     "currenciesAccepted": "MYR",
     "address": {"@type": "PostalAddress", "addressLocality": "Iskandar Puteri, Johor Bahru", "addressRegion": "Johor", "postalCode": "81200", "addressCountry": "MY"},
@@ -401,8 +413,20 @@ def bc_ld(items):
             "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": absu(u)} for i, (n, u) in enumerate(items)]}
 
 def write(rel, s):
-    fp = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(fp), exist_ok=True)
+    fp = os.path.join(OUT_DIR, rel)
+    parent = os.path.dirname(fp)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
     open(fp, "w", encoding="utf-8").write(s)
+
+def asset(path=""):
+    """URL to a root-level static file (css, js, img)."""
+    base = PAGE_ASSET if PAGE_ASSET != "" else ""
+    return base + path
+
+def data_root(rel=""):
+    """cart.js data-root: shop images live at the domain root."""
+    return PAGE_ASSET if PAGE_ASSET != "" else rel
 
 KW = "新山烟花, 新山炮竹, 新山鞭炮, 新山烟花批发, 柔佛烟花, 柔佛炮竹, 马来西亚烟花, 马来西亚炮竹, 猎人烟花, Hunter Boom Johor, 依斯干达公主城, Sutera Mall 烟花, 烟花批发, 炮竹批发, 羊年烟花, 新年烟花, 网上买烟花, 网上买炮, Johor Bahru fireworks, mercun Johor, bunga api Johor"
 
@@ -481,7 +505,7 @@ def home():
     desc = f"Hunter BOOM JOHOR 总代理：新山烟花、新山炮竹、柔佛烟花炮竹批发零售，{len(P)} 款羊年新年烟花——红炮礼炮、鞭炮、Pop Pop 沙炮、手持烟花、喷泉、盆花与大盆花。Sutera Mall 自取，西马可邮寄。官网 hunterboom.my，WhatsApp {PHONE_D} 网上订购。"
     item_ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Hunter BOOM JOHOR 产品分类",
                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": c["name"], "url": absu(f"c/{c['id']}.html")} for i, c in enumerate(CATS)]}
-    body = f"""<body data-root="">
+    body = f"""<body data-root="{data_root()}">
 {topbar(root, 'home', home=True)}
 <main class="wrap">
 <figure class="cny-poster">
@@ -540,7 +564,7 @@ def catpages():
                               "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"p/{p['sku']}.html"), "name": p["title"]} for i, p in enumerate(items)]}},
               bc_ld([("首页", ""), (c["name"], f"c/{c['id']}.html")])]
         others = " · ".join(f'<a href="{x["id"]}.html" style="color:#c8161d">{e(x["name"])}</a>' for x in CATS if x["id"] != c["id"])
-        body = f"""<body data-root="../">
+        body = f"""<body data-root="{data_root('../')}">
 {topbar(root, c['id'])}
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>{e(c['name'])}</span></nav>
@@ -560,7 +584,7 @@ def catpages():
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": f"全部分类 | {BRAND}", "url": absu("c/index.html"),
            "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"c/{c['id']}.html"), "name": c["name"]} for i, c in enumerate(CATS)]}},
           bc_ld([("首页", ""), ("全部分类", "c/index.html")])]
-    body = f"""<body data-root="../">
+    body = f"""<body data-root="{data_root('../')}">
 {topbar(root)}
 <main class="wrap"><nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>全部分类</span></nav>
 <h1 style="font-size:21px;margin:4px 2px 12px;color:#8f0d13">烟花炮竹分类 · 新山 Hunter BOOM JOHOR</h1>
@@ -580,7 +604,7 @@ def catpages():
                 "mainEntity": {"@type": "ItemList", "numberOfItems": len(kids_items),
                                "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": absu(f"p/{p['sku']}.html"), "name": p["title"]} for i, p in enumerate(kids_items)]}},
                bc_ld([("首页", ""), ("小朋友专区", "c/kids.html")])]
-    kids_body = f"""<body data-root="../">
+    kids_body = f"""<body data-root="{data_root('../')}">
 {topbar(root)}
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <span>小朋友专区</span></nav>
@@ -683,7 +707,7 @@ def products():
         pn = '<nav class="pn" aria-label="上一款/下一款">' + (f'<a href="{prv["sku"]}.html" rel="prev">‹ {e(prv["title"])}</a>' if prv else "<span></span>") + (f'<a href="{nxt["sku"]}.html" rel="next">{e(nxt["title"])} ›</a>' if nxt else "<span></span>") + "</nav>"
         en_row = f'<tr><th>英文名</th><td lang="en">{e(p["name_en"])}</td></tr>' if p["name_en"] else ""
         img_src = (("产品图片取自 TT Fireworks 产品目录" if p.get("image_source","").startswith("TT") else "产品图片取自 Hunter Boom 年货产品目录") if p.get("image") else "此款暂无目录产品图，实物请 WhatsApp 询问")
-        body = f"""<body data-root="../">
+        body = f"""<body data-root="{data_root('../')}">
 {topbar(root, c['id'])}
 <main class="wrap">
 <nav class="bc" aria-label="面包屑"><a href="../index.html">首页</a> › <a href="../c/{c['id']}.html">{e(c['name'])}</a> › <span>{e(p['title'])}</span></nav>
@@ -731,7 +755,7 @@ def about():
            ("价格是最终价格吗？", "网站价格为参考价，产品价格以店家确认为准。邮寄西马一律 RM15（任买），会算进参考合计；Lalamove 新山区运费自付，由客服联系安排。")]
     ld = [STORE_LD, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
           bc_ld([("首页", ""), ("关于我们", "about.html")])]
-    body = f"""<body data-root="">
+    body = f"""<body data-root="{data_root()}">
 {topbar(root)}
 <main class="wrap"><nav class="bc" aria-label="面包屑"><a href="index.html">首页</a> › <span>关于我们</span></nav>
 <article class="txt"><h1>关于 Hunter BOOM JOHOR 总代理</h1>
@@ -859,7 +883,7 @@ def stats_page():
     hd = head("店家后台 | Hunter BOOM JOHOR", "店家内部页面。", "zwvh.html", root)
     hd = hd.replace('<meta name="robots" content="index,follow,max-image-preview:large">', '<meta name="robots" content="noindex,nofollow,noarchive">\n<meta name="referrer" content="no-referrer">')
     hd = hd.replace("</head>", STATS_CSS + "\n</head>")
-    body = f"""<body data-root="" data-stats-page>
+    body = f"""<body data-root="{data_root()}" data-stats-page>
 {topbar(root)}
 <main class="wrap">
 <section class="txt st-gate" id="st-gate">
@@ -946,19 +970,249 @@ def cleanup_unpublished():
     live_skus = {p["sku"] for p in P}
     live_cats = {c["id"] for c in CATS} | {"index", "kids"}
     removed = []
-    for fp in glob.glob(os.path.join(ROOT, "p", "*.html")):
+    for fp in glob.glob(os.path.join(OUT_DIR, "p", "*.html")):
         sku = os.path.splitext(os.path.basename(fp))[0]
         if sku not in live_skus:
             os.remove(fp); removed.append("p/" + os.path.basename(fp))
-    for fp in glob.glob(os.path.join(ROOT, "c", "*.html")):
+    for fp in glob.glob(os.path.join(OUT_DIR, "c", "*.html")):
         cid = os.path.splitext(os.path.basename(fp))[0]
         if cid not in live_cats:
             os.remove(fp); removed.append("c/" + os.path.basename(fp))
     return removed
 
-if __name__ == "__main__":
-    home(); catpages(); products(); about(); stats_page(); n = meta_files()
+
+def maintenance_html():
+    """Customer-facing poster: site under maintenance, contact customer service."""
+    wa_ask = WA + "?text=" + urllib.parse.quote("你好，我想询问一下。")
+    return f"""<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>网站正在维护 | Hunter BOOM JOHOR</title>
+<meta name="description" content="Hunter BOOM JOHOR 网站正在维护。有询问请联系客服 WhatsApp {PHONE_D}。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{e(PUBLIC_ORIGIN)}/">
+<meta name="theme-color" content="#9a1017">
+<meta name="format-detection" content="telephone=yes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{BRAND}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="网站正在维护 | Hunter BOOM JOHOR">
+<meta property="og:description" content="网站正在维护。有询问请联系客服 WhatsApp {PHONE_D}。">
+<meta property="og:url" content="{e(PUBLIC_ORIGIN)}/">
+<meta property="og:image" content="{e(PUBLIC_ORIGIN)}/img/og-cny2027.jpg">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+  :root {{ --red:#9a1017; --red2:#c8161d; --deep:#5a090e; --gold:#e7c56a; --gold2:#f6e2a2; --cream:#fff3d0; --wa:#1fae55; }}
+  * {{ box-sizing:border-box; }}
+  html,body {{ margin:0; min-height:100%; }}
+  body {{
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px 16px 40px;
+    background:
+      radial-gradient(ellipse at 50% 12%, #d41c24 0%, var(--red) 42%, var(--deep) 100%);
+    font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei","Source Han Sans SC",sans-serif;
+    color:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }}
+  .poster {{
+    width:min(560px, 100%);
+    text-align:center;
+    padding:44px 28px 36px;
+    background:linear-gradient(180deg, #b7141b 0%, #8f1016 55%, #7a0d13 100%);
+    border:2px solid var(--gold);
+    outline:6px solid rgba(90,9,14,.55);
+    box-shadow:0 0 0 8px var(--gold), 0 28px 64px rgba(0,0,0,.38);
+    border-radius:10px;
+  }}
+  .logo {{
+    width:88px; height:88px;
+    margin:0 auto 10px;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
+  }}
+  .logo svg {{ width:88px; height:88px; display:block; }}
+  .brand {{
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    font-size:1.05rem;
+    letter-spacing:.22em;
+    color:var(--gold);
+    font-weight:700;
+    margin:0 0 2px;
+    text-transform:uppercase;
+  }}
+  .subbrand {{
+    font-size:.85rem;
+    letter-spacing:.28em;
+    color:var(--gold2);
+    margin:0 0 28px;
+    opacity:.95;
+  }}
+  h1 {{
+    margin:0 0 16px;
+    font-size:clamp(2rem, 8vw, 2.75rem);
+    font-weight:800;
+    letter-spacing:.18em;
+    color:var(--gold2);
+    text-shadow:0 2px 0 rgba(90,9,14,.45);
+    line-height:1.25;
+  }}
+  .msg {{
+    margin:0 0 28px;
+    font-size:1.2rem;
+    letter-spacing:.08em;
+    line-height:1.7;
+    color:#fff8e8;
+  }}
+  .wa {{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--wa);
+    color:#fff;
+    text-decoration:none;
+    font-weight:800;
+    font-size:clamp(1.05rem, 4.6vw, 1.25rem);
+    letter-spacing:.04em;
+    padding:14px 22px;
+    border-radius:999px;
+    box-shadow:0 8px 22px rgba(0,0,0,.28);
+    white-space:nowrap;
+  }}
+  .wa:hover {{ filter:brightness(1.06); }}
+  .wa svg {{ width:26px; height:26px; fill:#fff; }}
+  .hint {{
+    margin:18px 0 0;
+    font-size:.95rem;
+    letter-spacing:.06em;
+    color:var(--gold2);
+    opacity:.9;
+  }}
+  .domain {{
+    margin:22px 0 0;
+    font-size:.8rem;
+    letter-spacing:.16em;
+    color:var(--gold);
+    opacity:.75;
+  }}
+</style>
+</head>
+<body>
+  <main class="poster">
+    <div class="logo" aria-hidden="true">{LOGO}</div>
+    <p class="brand">Hunter BOOM JOHOR</p>
+    <p class="subbrand">总代理 · 新山</p>
+    <h1>网站正在维护</h1>
+    <p class="msg">有询问请联系客服</p>
+    <a class="wa" href="{e(wa_ask)}" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.5 2 2 6.37 2 11.76c0 1.72.46 3.4 1.34 4.88L2 22l5.52-1.44A10.2 10.2 0 0 0 12.04 21.5C17.6 21.5 22 17.13 22 11.75 22 6.37 17.6 2 12.04 2zm5.95 14.18c-.25.7-1.45 1.3-2.02 1.38-.52.07-1.18.1-1.9-.12-.44-.13-1-.32-1.73-.63-3.05-1.32-5.04-4.4-5.19-4.6-.15-.2-1.22-1.62-1.22-3.1 0-1.47.77-2.2 1.04-2.5.27-.3.6-.37.8-.37h.58c.18 0 .43-.07.67.51.25.6.85 2.07.92 2.22.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.32-.13.62.17.3.76 1.25 1.63 2.03 1.12 1 2.07 1.32 2.36 1.47.3.15.47.13.64-.07.17-.2.73-.85.93-1.14.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>
+      WhatsApp {PHONE_D}
+    </a>
+    <p class="hint">点击上方按钮即可联系客服</p>
+    <p class="domain">hunterboom.my</p>
+  </main>
+</body>
+</html>
+"""
+
+
+def write_customer_pages():
+    """Homepage, 404, and previously public shop URLs all show the maintenance poster."""
+    poster = maintenance_html()
+    write("index.html", poster)
+    write("404.html", poster)
+    write("about.html", poster)
+    # Category and product URLs already indexed by Google: show the same poster,
+    # do not leave the live shop at these paths.
+    write("c/index.html", poster)
+    write("c/kids.html", poster)
+    for c in CATS:
+        write(f"c/{c['id']}.html", poster)
+    for p in P:
+        write(f"p/{p['sku']}.html", poster)
+
+
+def write_public_meta():
+    sm = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        f"<url><loc>{e(PUBLIC_ORIGIN)}/</loc><lastmod>{TODAY}</lastmod><priority>1.0</priority></url>",
+        "</urlset>",
+        "",
+    ]
+    write("sitemap.xml", "\n".join(sm))
+    write(
+        "robots.txt",
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Disallow: /{DEMO_SLUG}\n"
+        f"Disallow: /{DEMO_SLUG}/\n"
+        "Disallow: /zwvh.html\n"
+        f"\nSitemap: {PUBLIC_ORIGIN}/sitemap.xml\n",
+    )
+    # Keep the existing public webmanifest at the domain root (icons, theme).
+    write("site.webmanifest", json.dumps({
+        "name": SHOP, "short_name": "Hunter BOOM", "lang": "zh-Hans",
+        "start_url": "./", "display": "standalone",
+        "background_color": "#9a1017", "theme_color": "#9a1017",
+        "icons": [
+            {"src": "img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "img/icon-512.png", "sizes": "512x512", "type": "image/png"},
+        ],
+    }, ensure_ascii=False, indent=1))
+
+
+def build_staff_demo():
+    """Full shop under the unlisted demo path, for staff learning only."""
+    global SITE_ORIGIN, OUT_DIR, DEMO_MODE, PAGE_ASSET
+    DEMO_MODE = True
+    PAGE_ASSET = "/"
+    SITE_ORIGIN = PUBLIC_ORIGIN + "/" + DEMO_SLUG
+    OUT_DIR = os.path.join(ROOT, DEMO_SLUG)
+    os.makedirs(OUT_DIR, exist_ok=True)
+    home(); catpages(); products(); about()
+    # Demo 404 stays inside the demo shop so staff are not sent to the public poster.
+    r404 = SITE_ORIGIN + "/"
+    nf = head("找不到页面 | Hunter BOOM JOHOR", "页面不存在，返回演示首页。", "404.html", r404)
+    write("404.html", nf + f"""<body data-root="{data_root()}">{topbar("")}<main class="wrap"><div class="txt"><h1>找不到这个页面</h1><p>链接可能已更改。<a href="{r404}" style="color:#c8161d">返回演示首页</a>。</p></div></main>{footer("")}</body></html>""")
+    write("site.webmanifest", json.dumps({
+        "name": SHOP + " 演示", "short_name": "Hunter BOOM", "lang": "zh-Hans",
+        "start_url": "./index.html", "display": "standalone",
+        "background_color": "#fdf3e3", "theme_color": "#c8161d",
+        "icons": [
+            {"src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png"},
+        ],
+    }, ensure_ascii=False, indent=1))
     gone = cleanup_unpublished()
-    print(f"built {len(P)} products, {len(CATS)} categories, sitemap urls={n}, SITE_ORIGIN={SITE_ORIGIN or '(relative)'}")
+    return gone
+
+
+def build_public_site(demo_gone):
+    """Customer site at the domain root: maintenance poster + merchant backend."""
+    global SITE_ORIGIN, OUT_DIR, DEMO_MODE, PAGE_ASSET
+    DEMO_MODE = False
+    PAGE_ASSET = ""
+    SITE_ORIGIN = PUBLIC_ORIGIN
+    OUT_DIR = ROOT
+    write_customer_pages()
+    write_public_meta()
+    stats_page()  # zwvh.html stays at the public origin, unlisted
+    return demo_gone
+
+
+if __name__ == "__main__":
+    gone = build_staff_demo()
+    build_public_site(gone)
+    demo_url = PUBLIC_ORIGIN + "/" + DEMO_SLUG + "/"
+    print(f"built {len(P)} products, {len(CATS)} categories")
+    print(f"customer site: {PUBLIC_ORIGIN}/  (maintenance poster)")
+    print(f"staff demo:    {demo_url}")
     if gone:
-        print("removed unpublished:", ", ".join(gone))
+        print("removed unpublished from demo:", ", ".join(gone))

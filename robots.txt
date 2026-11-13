@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /hfkd
+Disallow: /hfkd/
+Disallow: /zwvh.html
 
 Sitemap: https://hunterboom.my/sitemap.xml
